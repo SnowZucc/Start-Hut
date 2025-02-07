@@ -1,0 +1,40 @@
+body {
+    /* Centrer la page */
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  /* Grille des annonces */
+  .grid {
+    display: grid;                          /* Pour que ce soit en grille */
+    grid-template-columns: repeat(3, 1fr); /* 3 images sur chaque ligne */
+    gap: 10px;                              /* Espacement */
+  }
+
+  /* Limiter la taille des images */
+  .grid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .grid figure {
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  figcaption {
+    margin-top: -20px;
+  }
+  
+  figcaption h1 {
+    margin: 5px 0;
+  }
+  
+  figcaption p {
+    margin: -5px 0;
+  }
+  
