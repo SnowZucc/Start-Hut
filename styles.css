@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;                 /* Qu'est-ce que c'est que ça ? */
+  padding: 0;                   /* Pour enlever les marges et paddings par défaut */
   box-sizing: border-box;
 }
 
@@ -11,19 +11,22 @@ body {
 }
 /* Style général */
 
+
 /* Navbar */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center; /* Centre tout le contenu */
+  justify-content: center;       /* Centre tout le contenu */
   padding: 10px ;
   background-color: white;
   border-bottom: 1px solid #ddd;
-  gap: 60px; /* Espacement entre logo, liens, et bouton connexion*/
+  gap: 60px;                    /* Espacement entre logo, liens, et bouton connexion*/
+  font-weight: bold;            /* Met la police en gras. Dis moi si tu veux garder */
+  margin-bottom: 30px;          /* Marge après la navbar */
 }
 
 .logo {
-  display: flex; /* pour aligner avec le reste de navbar*/
+  display: flex;                /* pour aligner avec le reste de navbar*/
 }
 
 .logo img {
@@ -53,14 +56,12 @@ body {
 
 }
 .auth-buttons .login {
-    
   text-decoration: none;
   padding: 10px;
   color: black;
 }
 
 .auth-buttons .signup {
-  
   text-decoration: none;
   color: green;
   font-weight: bold;
@@ -68,22 +69,47 @@ body {
 }
 /* Navbar */
   
+
 /* Contenu de la page (centré) */
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 20vh; /* pour ajuste la hauteur pour centrer le contenu sinon coller a la barre */
+  /* min-height: 20vh;                     /* pour ajuste la hauteur pour centrer le contenu sinon coller a la barre */
   text-align: center;
 }
 /* Contenu de la page (centré) */
 
+/* Barre de recherche */
+.search-bar {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  width: 400px;
+  height: 50px;
+  padding-left: 20px;
+  border: 1px solid #ddd;
+}
+/* Barre de recherche */
+
+/* Dropdown */
+.dropdown {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  padding-left: 20px;
+  border: 1px solid #ddd;
+  background-color: transparent;
+}
+/* Dropdown */
+
+
 /* Grille des annonces */
 .grid {
   display: grid;                          /* Pour que ce soit en grille */
-  grid-template-columns: repeat(3, 1fr); /* 3 images sur chaque ligne */
-  gap: 10px;                              /* Espacement */
+  grid-template-columns: repeat(3, 1fr);  /* 3 images sur chaque ligne */
+  gap: 50px;                              /* Espacement */
 }
 
 /* Limiter la taille des images */

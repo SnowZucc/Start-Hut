@@ -12,7 +12,25 @@
     <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
     <div class="content">
-      <input type="text" class="search" placeholder="Recherchez par mot-clé, domaine ou compétence">
+      <input type="text" class="search-bar" placeholder="Recherchez par mot-clé, domaine ou compétence">
+
+      <div class="grid">
+        <select class="dropdown">
+          <option value="" disabled selected>Catégorie</option>
+          <option value="volvo">Développement</option>
+          <option value="saab">Marketing</option>
+        </select>
+        <select class="dropdown">
+          <option value="" disabled selected>Compétence</option>
+          <option value="volvo">Développement</option>
+          <option value="saab">Marketing</option>
+        </select>
+        <select class="dropdown">
+          <option value="" disabled selected>Rémunération</option>
+          <option value="volvo">Développement</option>
+          <option value="saab">Marketing</option>
+        </select>
+      </div>
 
       <div class="grid">
         <figure>
