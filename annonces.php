@@ -9,9 +9,9 @@
       <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <?php include('header.php'); ?>
+    <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
-    <div class="content">  
+    <div class="content">
       <input type="text" class="search" placeholder="Recherchez par mot-clé, domaine ou compétence">
 
       <div class="grid">
