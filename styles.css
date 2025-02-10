@@ -5,7 +5,7 @@ body {
     font-family: 'Open Sans', sans-serif;
   }
 
-  /* Grille des annonces */
+/* Grille des annonces */
   .grid {
     display: grid;                          /* Pour que ce soit en grille */
     grid-template-columns: repeat(3, 1fr); /* 3 images sur chaque ligne */
@@ -38,44 +38,4 @@ body {
   figcaption p {
     margin: -5px 0;
   }
-  
-
-  header {
-    font-family: 'Open Sans', sans-serif;
-    padding: 15px 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-.right {
-  display: flex;
-  gap: 0px; /* Espacement entre les éléments */
-  margin-left: auto; /* Pousse à droite */
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #1a6f2d;
-}
-
-.logo {
-  width: 100%;
-  max-width: 25px;
-  height: auto;
-}
+/* Grille des annonces */
