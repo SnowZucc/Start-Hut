@@ -11,7 +11,7 @@
         <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
         
         <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
-            <p>les info de la page ici.</p>
+            <p>les info de la page.</p>
         </div>
     </body>
 </html>
