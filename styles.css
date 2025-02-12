@@ -80,6 +80,79 @@ body {
 }
 /* Contenu de la page (centré) */
 
+
+
+                                                /* LANDING PAGE */
+  /* Premiere section */                                              
+.landing {
+  margin-top: 30px; /* espacement avec le header */     
+  display: flex; /* pour organiser en ligne */
+  background-color: #ffffff; 
+  border: 3px solid green;  /* bord de la premiere section  */
+  border-radius: 20px; /* contour des bords */
+  padding: 40px; /* Espacement intérieur */
+  width: 80%;  /* largeur prise sur la page */
+  max-width: 900px;  /* pour pas que la section prennent une place plus large */
+}
+
+.landing-text {
+  flex: auto; 
+  color: black; 
+  text-align: left; /* Alignement du texte à gauche */
+  margin-right: 40px; /* Espacement entre le texte et l'image */
+}
+
+.landing h1 {
+  font-size: 32px; /* taille de police du titre */
+  font-weight: bold;
+  margin-bottom: 30px; /* sspacement sous le titre */
+  white-space: nowrap; /* empeche START-HUT ne soit couper en 2 et de passer à la ligne */
+}
+
+.landing p {
+  font-size: 20px; /* Taille de police du texte */
+  margin-bottom: 20px; /* espacement sous le paragraphe */
+  line-height: 1.5; /* espacement entre ligne  */
+}
+
+.highlight {
+  font-weight: bold;
+  color: green; /* Couleur verte pour le highlight */
+}
+
+.btn {
+  background-color: black; /* Bouton noir */
+  color: white;
+  padding: 12px 25px; /* Taille du bouton */
+  font-size: 16px; /* Taille de police du bouton */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer; /* quand on arrive sur le bouton le curseur change de forme  */
+  margin-top: 20px; /* Espacement au-dessus du bouton */
+  transition: background-color 0.3s ease; /* pour l'animation hover en bas s'acctive en 3scd */
+  margin-left: 95px; 
+}
+
+.btn:hover {
+  background-color: green; /* Si le bouton est selectionner il change en vert */
+}
+
+.landing-image {
+  display: flex;
+  justify-content: flex-end; /* Pour mettre  l'image à droie */
+  align-items: flex-start; /* Alignement en haut */
+}
+
+.landing-image img {
+  width: 350px; /* Taille de l'image à modifier si on change l'image*/
+  height: auto;
+  border-radius: 40px; /* Bords arrondis pour l'image */
+}
+/* Premiere section */   
+
+                                               /* LANDING PAGE */
+
+                                               
 /* Barre de recherche */
 .search-bar {
   margin-bottom: 30px;
@@ -103,18 +176,6 @@ body {
 }
 /* Dropdown */
 
-
-.landing {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #175C2B;
-  color: white;
-  padding: 40px;
-  border-radius: 20px;
-  width: 80%;
-  max-width: 1000px;
-}
 
 
 /* Grille des annonces */
