@@ -152,13 +152,13 @@ body {
 
                                                /* LANDING PAGE */
 
-                                               
+
 /* Barre de recherche */
 .search-bar {
   margin-bottom: 30px;
   border-radius: 10px;
   width: 400px;
-  height: 50px;
+  height: 30px; 
   padding-left: 20px;
   border: 1px solid #ddd;
 }
@@ -166,11 +166,11 @@ body {
 
 /* Dropdown */
 .dropdown {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   border-radius: 10px;
-  width: 200px;
-  height: 40px;
-  padding-left: 20px;
+  width: 160px;
+  height: 30px;
+  padding-left: 5px;
   border: 1px solid #ddd;
   background-color: transparent;
 }
