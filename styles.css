@@ -21,7 +21,6 @@ body {
   background-color: white;
   border-bottom: 1px solid #ddd;
   gap: 60px;                    /* Espacement entre logo, liens, et bouton connexion*/
-  font-weight: bold;            /* Met la police en gras. Dis moi si tu veux garder */
   margin-bottom: 30px;          /* Marge après la navbar */
 }
 
@@ -103,6 +102,19 @@ body {
   background-color: transparent;
 }
 /* Dropdown */
+
+
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #175C2B;
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 1000px;
+}
 
 
 /* Grille des annonces */
