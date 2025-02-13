@@ -77,5 +77,6 @@
           </figure>
         </div>
       </div>
+      <?php include('footer.php'); ?> <!-- Inclusion du footer -->
   </body>
 </html>
