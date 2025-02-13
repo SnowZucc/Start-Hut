@@ -77,12 +77,66 @@ body {
   flex-direction: column;
   /* min-height: 20vh;                     /* pour ajuste la hauteur pour centrer le contenu sinon coller a la barre */
   text-align: center;
+  padding-bottom: 100px;
 }
 /* Contenu de la page (centré) */
 
+                                                         /* Footer  */
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 100%;
+  position : relative; /* bouge pas fixe en bas */
+  bottom : 0px; /* pour que le footer collé en bas */
+  margin-top: auto;
+  
+}
 
+/* Conteneur des sections */
+.footer-container {
+  flex: 1;
+  display: flex; /* pour organiser en ligne */
+  justify-content: center;
+  gap: 100px; /* espace entre les sections */
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+/* titre de section */
+.footer-section h3 {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px; /* espace en dessous du titre de la section */
+}
+/* Information de chaque section */
+.footer-section p {
+  margin: 5px 0;
+  font-size: 12px;
+}
 
-                                                /* LANDING PAGE */
+/* Barre footer */
+.footer-bottom {
+  border-top: 1px solid gray;
+  padding-top: 10px;
+  display: flex;/* pour organiser en ligne */
+  justify-content: center;
+  gap: 50px; /* espace entre les elements */
+}
+
+.footer-bottom a { /* ligne : mentions/cgu/cookies du footer */ 
+  color: white;
+  text-decoration: none; 
+  font-size: 12px; /* ltaille */
+  padding-bottom: 10px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;  /* lors de la survole l'element devient souligner */
+}
+
+                                                          /* Footer  */
+
+                                                       /* LANDING PAGE */
   /* Premiere section */                                              
 .landing {
   margin-top: 30px; /* espacement avec le header */     
