@@ -1,13 +1,18 @@
+/* Style général */
 * {
   margin: 0;
   padding: 0;                   /* Pour enlever les marges et paddings par défaut */
   box-sizing: border-box;
 }
 
-/* Style général */
 body {
   width: auto;
   font-family: 'Open Sans', sans-serif;
+
+  /* Mettre le footer toujours en bas */
+  display: flex;                /* Active le modèle de boîte flexible */
+  flex-direction: column;       /* Organise les enfants (navbar, contenu, footer) en colonne */
+  min-height: 100vh;            /* Garantit que la hauteur minimale du corps est égale à 100% de la hauteur de la fenêtre visible */
 }
 /* Style général */
 
@@ -81,7 +86,7 @@ body {
 }
 /* Contenu de la page (centré) */
 
-                                                         /* Footer  */
+                                                         /* FOOTER  */
 footer {
   background-color: black;
   color: white;
@@ -134,7 +139,7 @@ footer {
   text-decoration: underline;  /* lors de la survole l'element devient souligner */
 }
 
-                                                          /* Footer  */
+                                                          /* FOOTER  */
 
                                                        /* LANDING PAGE */
   /* Premiere section */                                              
@@ -206,7 +211,7 @@ footer {
 
                                                /* LANDING PAGE */
 
-
+                                               /* ANNONCES */
 /* Barre de recherche */
 .search-bar {
   margin-bottom: 30px;
@@ -258,3 +263,4 @@ figcaption {
   margin-top: 5px;
 }
 /* Grille des annonces */
+                                               /* ANNONCES */
