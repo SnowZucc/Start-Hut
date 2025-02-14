@@ -209,6 +209,46 @@ footer {
 }
 /* Premiere section */   
 
+
+/*Deuxieme section ANNONCES POPULAIRE*/
+.popular {
+  display: flex;                          /* pour aligner horizontalement */
+  gap: 50px;                              /* Espacement entre chaque annonce */
+  margin-top : 10px;
+  align-items: center;
+}
+
+
+.popular-centre {
+  border: 2px solid green;  /* bord de la premiere section  */
+  fill : black;
+  border-radius: 10%;
+  padding: 50px;
+  height: 250px;
+
+}
+.popular-center figure:hover {
+  zoom: 1;
+}
+.popular-cote {
+  border: 2px solid rgb(129, 169, 128);  /* bord de la premiere section  */
+  border-radius: 10%;
+  padding: 50px;
+  height: 200px;
+
+}
+
+.textepop h2 {
+  margin-top: 100px;
+  margin-right: 1025px;
+  line-height: 1.5; /* espacement entre ligne  */
+  text-align: left; /* Alignement du texte à gauche */
+  font-size: 22px; /* ltaille */
+}
+
+
+/*Deuxieme dection ANNONCES POPULAIRE*/
+
                                                /* LANDING PAGE */
 
                                                /* ANNONCES */
