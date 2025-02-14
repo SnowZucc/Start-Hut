@@ -304,3 +304,17 @@ figcaption {
 }
 /* Grille des annonces */
                                                /* ANNONCES */
+
+                                        
+
+                                               /* PROFIL */
+  /* Nom */
+.nom {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  width: 400px;
+  height: 30px; 
+  padding-left: 20px;
+  border: 1px solid #ddd;
+}
+/* Noù */                                          
