@@ -13,8 +13,11 @@
         <h1>Inscription</h1>
         <p> Déjà inscrit ? <a href="connexion.php">Connectez-vous</a></p> <!--  ATTENTION Modifier le lien de connexion lors de la création de la page de connexion -->
         <h3>Adresse Mail</h3>
+            <input type="text" class="search-bar" placeholder="Veuillez saisir votre adresse mail">
         <h3>Mot de passe</h3>
+            <input type="text" class="search-bar" placeholder="Veuillez saisir votre mot de passe">
         <h3>Confirmation du mot de passe</h3>
+            <input type="text" class="search-bar" placeholder="Veuillez saisir votre mot de passe">
 
     <?php include('footer.php'); ?>    
     </body>
