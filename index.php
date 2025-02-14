@@ -22,10 +22,33 @@
                                                     tard ou yaura des info sur lentreprise, prq start-hut et comment sa marche  -->
                     </div>
                     <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
-                    <img src="landing.png" alt="Illustration">
+                        <img src="landing.png" alt="Illustration">
                     </div>
                 </div>
-            </div>
+                <div class ="textepop">
+                <h2>Nos annonces<br>
+                <span class ="highlight"> populaires</span>
+                </h2> 
+                </div>
+                <div class ="popular">
+                    <figure class = "popular-cote">
+                    <h3>popular 1</h3>
+                    </figure>
+                    <figure class = "popular-cote">
+                    <h3>popular 2</h3>
+                    </figure>
+                    <figure class = "popular-centre">
+                    <h3>popular centre</h3>
+                    </figure>
+                    <figure class = "popular-cote">
+                    <h3>popular 3</h3>
+                    </figure>
+                    <figure class = "popular-cote">
+                    <h3>popular 4</h3>
+                    </figure>
+
+                </div>
+
             </div>
         <?php include('footer.php'); ?>    
     </body>
