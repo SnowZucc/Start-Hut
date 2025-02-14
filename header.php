@@ -11,7 +11,7 @@
         </ul>
         <div class="auth-buttons"> 
             <a href="#" class="login">Connexion</a>
-            <a href="#" class="signup">Inscription</a>
+            <a href="inscription.php" class="signup">Inscription</a>
         </div>
     </nav>
     <div class="navbar-border"></div> <!-- Bordure largeur de tout l'écran-->
