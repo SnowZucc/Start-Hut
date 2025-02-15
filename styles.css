@@ -212,40 +212,41 @@ footer {
 
 /*Deuxieme section ANNONCES POPULAIRE*/
 .popular {
-  display: flex;                          /* pour aligner horizontalement */
-  gap: 50px;                              /* Espacement entre chaque annonce */
-  margin-top : 10px;
+  display: flex; /* Alignement horizontal */
+  gap: 20px; /* Espacement entre chaque annonce */
+  margin-top: 10px;
   align-items: center;
+  justify-content: center; /* Centrer les annonces */
 }
 
-
-.popular-centre {
-  border: 2px solid green;  /* bord de la premiere section  */
-  fill : black;
-  border-radius: 10%;
-  padding: 50px;
+.popular-annonce {
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 20px;
   height: 250px;
-
+  width: 200px; /* Taille uniforme pour toutes les annonces finalement */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* pour rendre fluide la transtion zoom et couleur ( voir hover) */
+  background-color: #f8f8f8; 
+  display: flex;
+  align-items: center; /* centre texte intérieur annonce horizon */
+  justify-content: center; /* centre texte intérieur annonce vertical  */
+  text-align: center;
 }
-.popular-center figure:hover {
-  zoom: 1;
-}
-.popular-cote {
-  border: 2px solid rgb(129, 169, 128);  /* bord de la premiere section  */
-  border-radius: 10%;
-  padding: 50px;
-  height: 200px;
 
+.popular-annonce:hover {
+  transform: scale(1.1); /* effet de zoom au survol */
+  background-color: #d1ffd1; /* changment de couleur au survol */
+  border-color: darkgreen;
 }
 
 .textepop h2 {
-  margin-top: 100px;
+  margin-top: 100px; /* espace avec section 1 */
+  margin-bottom: 20px; /* espace avec les annonces */
   margin-right: 1025px;
   line-height: 1.5; /* espacement entre ligne  */
   text-align: left; /* Alignement du texte à gauche */
   font-size: 22px; /* ltaille */
 }
-
 
 /*Deuxieme dection ANNONCES POPULAIRE*/
 

@@ -24,27 +24,27 @@
                     <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
                         <img src="landing.png" alt="Illustration">
                     </div>
-                </div>
-                <div class ="textepop">
+                </div>   <!-- partie annonce populaire -->
+                <div class ="textepop">  <!-- texte --> 
                 <h2>Nos annonces<br>
-                <span class ="highlight"> populaires</span>
+                <span class ="highlight"> populaires</span>  <!-- pour stylisée le mot populaire uniquement -->
                 </h2> 
                 </div>
-                <div class ="popular">
-                    <figure class = "popular-cote">
+                <div class ="popular">  <!-- les annonces (5 annonces pour le moment)-->
+                    <figure class = "popular-annonce">
                     <h3>popular 1</h3>
                     </figure>
-                    <figure class = "popular-cote">
+                    <figure class = "popular-annonce">
                     <h3>popular 2</h3>
                     </figure>
-                    <figure class = "popular-centre">
-                    <h3>popular centre</h3>
-                    </figure>
-                    <figure class = "popular-cote">
+                    <figure class = "popular-annonce">
                     <h3>popular 3</h3>
                     </figure>
-                    <figure class = "popular-cote">
+                    <figure class = "popular-annonce">
                     <h3>popular 4</h3>
+                    </figure>
+                    <figure class = "popular-annonce">
+                    <h3>popular 5</h3>
                     </figure>
 
                 </div>
