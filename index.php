@@ -24,7 +24,8 @@
                     <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
                         <img src="landing.png" alt="Illustration">
                     </div>
-                </div>   <!-- partie annonce populaire -->
+                </div>  
+                 <!-- partie annonce populaire -->
                 <div class ="textepop">  <!-- texte --> 
                 <h2>Nos annonces<br>
                 <span class ="highlight"> populaires</span>  <!-- pour stylisée le mot populaire uniquement -->
@@ -46,10 +47,43 @@
                     <figure class = "popular-annonce">
                     <h3>popular 5</h3>
                     </figure>
-
                 </div>
-
             </div>
+           <!-- Partie pourquoi nous chosir -->
+           <div class="conteneur-pourquoinouschoisir">
+    <div class="imagepourquoinouschoisir">
+        <img src="pourquoinouschoisir.png" alt="illustration">
+    </div>
+    <div class="textepourquoinouschoisir">
+        <h2>Lancez vous, c'est facile.</h2>
+        <div class="liste-choix">
+            <figure>
+                <img src="pourquoinouschoisir1.png" alt="Image 1">
+                <figcaption>
+                    <h3>RAISON 1</h3>
+                    <p>Description </p>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="pourquoinouschoisir2.png" alt="Image 2">
+                <figcaption>
+                    <h3>RAISON 2</h3>
+                    <p>Description </p>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="pourquoinouschosir3.png" alt="Image 3">
+                <figcaption>
+                    <h3>RAISON 3</h3>
+                    <p>Description </p>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+
         <?php include('footer.php'); ?>    
     </body>
 </html>
