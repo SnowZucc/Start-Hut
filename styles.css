@@ -383,6 +383,85 @@ figcaption {
 }
 /* Grille des annonces */
                                                /* ANNONCES */
+                                                /*CONSULTER LES ABONNEMENT */
+.container {
+    max-width: 1000px; /* largeur max */
+    margin: 50px auto; /* centrer le conteneur */
+    background: white;
+    padding: 20px; /* espage int */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ombre du conteneur */
+
+
+  }
+
+
+h1 {
+    font-size: 24px; /* taille textes */
+    margin-bottom: 30px; /* espace aores le tetxte */
+}
+
+.plans {
+    display: flex;
+    justify-content: space-around; /* pour disposer les 3 plan de maniere egale */
+}
+
+.plan {
+    background: #C7E4CD;
+    border-radius: 10px;
+    padding: 20px; /* espage int */
+    width: 30%;
+
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.plan h2 {
+    margin-bottom: 15px; /* espage sous le titre */
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.plan ul li {
+    margin: 10px 0; /* espage entre les elments de la luste */
+ }
+
+.price { /* parametre prix*/
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+button {
+    background: #4caf50;/* couleur */
+    color: white; /* texte */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #45a049;  /*bouton change de couleur lors de la survol */
+}
+
+.condition {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.condition a {
+    color: #2c7b2c;
+    text-decoration: none;
+}
+
+
+                                                 /* CONSULTER LES ABONNEMENT */                                                                                           
 
                                         
 
