@@ -30,7 +30,7 @@
 
             <div class="checkbox-container">
                 <input type="checkbox" id="cgu" required>
-                <label for="cgu">J'ai lu et j'accepte les <a href="#"><!-- Ajouter les conditons générales d'utilisation -->
+                <label for="cgu">J'ai lu et j'accepte les CGU<a href="#"><!-- Ajouter les conditons générales d'utilisation -->
             </div>
 
             <div class="button-container">
