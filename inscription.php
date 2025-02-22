@@ -10,6 +10,8 @@
   </head>
 
     <body>
+    <?php include('header.php'); ?>
+    
         <h1 class="inscription" >INSCRIPTION</h1>
         <p class="already-registered"> Déjà inscrit ? <a href="connexion.php">Se Connecter</a></p> <!--  ATTENTION Modifier le lien de connexion lors de la création de la page de connexion -->
 
