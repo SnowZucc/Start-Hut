@@ -317,4 +317,111 @@ figcaption {
   padding-left: 20px;
   border: 1px solid #ddd;
 }
-/* Noù */                                          
+/* Noù */    
+
+/* PARTIE INSCRIPTION */
+
+/* Style du titre principal */
+h1.inscription {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style des liens hypertextes */
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style du formulaire d'inscription */
+form.inscription {
+  width: 50%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 30px auto; /* Centrage du formulaire */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Groupement des champs pour un meilleur alignement */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Barre d'inscription */
+.input-field { 
+  width: 100%; /* S'étend sur toute la largeur */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  display: block;
+}
+
+/* Style des labels des champs */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style des champs obligatoires */
+label .required {
+  color: red;
+}
+
+/* Conteneur de la case à cocher et son texte */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+/* Bouton pour valider l'inscription */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 15px 0px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+}
+
+/* Changement de couleur du bouton au survol */
+.btnInscription:hover {
+  background-color: #004d00;
+}
+
+/* Centrer le "Déjà inscrit ?" */
+.already-registered{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Assurer le centrage du bouton s'inscrire */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
