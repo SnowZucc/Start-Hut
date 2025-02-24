@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
-<div class="content">
+    <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
+    <div class="content">                     <!-- on mets tout dans cette classe pour que les info soient centré -->
+            <div class="landing"> 
+                 <div class="landing-text">
     <input type="text" class="search-bar" placeholder="Rechercher">
         <section>
             <h2>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
@@ -34,6 +36,7 @@
                 <p>Réponse: Vous pouvez contacter notre support technique via le formulaire de contact ou par téléphone au 07 45 45 67 89.</p>
             </div>
         </section>
+        </div>
         <?php include('footer.php'); ?>
     </body>
 </html>
