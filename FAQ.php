@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Start Hut</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-    <?php include('header.php'); ?>  
-    </header>
-    <main>
+<?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
+<div class="content">
+    <input type="text" class="search-bar" placeholder="Rechercher">
         <section>
-            <h2>Questions Générales</h2>
+            <h2>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
             <div class="faq-item">
                 <h3>Question 1: Comment puis-je m'inscrire ?</h3>
                 <p>Réponse: Vous pouvez vous inscrire en cliquant sur le bouton "S'inscrire" en haut à droite de la page d'accueil.</p>
@@ -33,9 +34,6 @@
                 <p>Réponse: Vous pouvez contacter notre support technique via le formulaire de contact ou par téléphone au 07 45 45 67 89.</p>
             </div>
         </section>
-    </main>
-    <footer>
-    <?php include('footer.php'); ?> <!-- Inclusion du footer -->
-    </footer>
-</body>
+        <?php include('footer.php'); ?>
+    </body>
 </html>
