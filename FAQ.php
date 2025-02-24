@@ -53,15 +53,18 @@
   </div> <!-- .content -->
 
   <script>
+  // Attendre que le DOM soit complètement chargé
   document.addEventListener("DOMContentLoaded", function() {
+    // Sélectionne toutes les questions de la FAQ
     document.querySelectorAll('.faq-question').forEach(function(question) {
+      // Ajoute un écouteur d'événement sur le clic de chaque question
       question.addEventListener('click', function() {
+        // Bascule la classe 'active' sur l'élément parent (l'item de la FAQ)
         this.parentElement.classList.toggle('active');
       });
     });
   });
   </script>
-
 
   <?php include('footer.php'); ?>
 </body>
