@@ -53,13 +53,15 @@
   </div> <!-- .content -->
 
   <script>
-    // Bascule l'affichage des réponses au clic sur la question
+  document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.faq-question').forEach(function(question) {
       question.addEventListener('click', function() {
         this.parentElement.classList.toggle('active');
       });
     });
+  });
   </script>
+
 
   <?php include('footer.php'); ?>
 </body>
