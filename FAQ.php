@@ -10,8 +10,6 @@
 </head>
 <body>
   <?php include('header.php'); ?> <!-- Rajoute le header par la magie de PHP -->
-  
-  <div class="content"> <!-- Contenu centré -->
     <div class="landing">
       <div class="landing-text">
         <input type="text" class="search-bar" placeholder="Rechercher">
@@ -41,7 +39,6 @@
         </section>
       </div> <!-- .landing-text -->
     </div> <!-- .landing -->
-  </div> <!-- .content -->
 
   <?php include('footer.php'); ?>
 </body>
