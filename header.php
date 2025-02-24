@@ -7,7 +7,7 @@
             <li><a href="annonces.php">Poster une annonce</a></li>
             <li><a href="#">Rejoindre un projet</a></li>
             <li><a href="#">Abonnement</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="FAQ.php">FAQ</a></li>
         </ul>
         <div class="auth-buttons"> 
             <a href="#" class="login">Connexion</a>
