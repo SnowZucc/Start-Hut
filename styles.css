@@ -209,46 +209,6 @@ footer {
 }
 /* Premiere section */   
 
-
-/*Deuxieme section ANNONCES POPULAIRE*/
-.popular {
-  display: flex;                          /* pour aligner horizontalement */
-  gap: 50px;                              /* Espacement entre chaque annonce */
-  margin-top : 10px;
-  align-items: center;
-}
-
-
-.popular-centre {
-  border: 2px solid green;  /* bord de la premiere section  */
-  fill : black;
-  border-radius: 10%;
-  padding: 50px;
-  height: 250px;
-
-}
-.popular-center figure:hover {
-  zoom: 1;
-}
-.popular-cote {
-  border: 2px solid rgb(129, 169, 128);  /* bord de la premiere section  */
-  border-radius: 10%;
-  padding: 50px;
-  height: 200px;
-
-}
-
-.textepop h2 {
-  margin-top: 100px;
-  margin-right: 1025px;
-  line-height: 1.5; /* espacement entre ligne  */
-  text-align: left; /* Alignement du texte à gauche */
-  font-size: 22px; /* ltaille */
-}
-
-
-/*Deuxieme dection ANNONCES POPULAIRE*/
-
                                                /* LANDING PAGE */
 
                                                /* ANNONCES */
@@ -302,19 +262,58 @@ footer {
 figcaption {
   margin-top: 5px;
 }
-/* Grille des annonces */
-                                               /* ANNONCES */
-
-                                        
-
-                                               /* PROFIL */
-  /* Nom */
-.nom {
-  margin-bottom: 30px;
+/* Conteneur global de la FAQ */
+.faq-container {
+  border: 1px solid #ccc;
   border-radius: 10px;
-  width: 400px;
-  height: 30px; 
-  padding-left: 20px;
-  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
 }
-/* Noù */                                          
+
+/* Style pour chaque item de la FAQ */
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Style de la question */
+.faq-question {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #007BFF;
+  position: relative;
+  padding-right: 30px;
+}
+
+/* Icône à droite de la question */
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Changement d'icône quand actif */
+.faq-item.active .faq-question::after {
+  content: '-';
+}
+
+/* Style de la réponse (initialement cachée) */
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Affichage de la réponse quand l'item est actif */
+.faq-item.active .faq-answer {
+  display: block;
+}

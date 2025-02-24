@@ -16,33 +16,37 @@
         <input type="text" class="search-bar" placeholder="Rechercher">
         <h2>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
 
-        <div class="faq-item">
-          <div class="faq-question">Comment puis-je m'inscrire ?</div>
-          <div class="faq-answer">
-            <p>Vous pouvez vous inscrire en cliquant sur le bouton "S'inscrire" en haut à droite de la page d'accueil.</p>
+        <!-- Conteneur de la FAQ -->
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">Comment puis-je m'inscrire ?</div>
+            <div class="faq-answer">
+              <p>Vous pouvez vous inscrire en cliquant sur le bouton "S'inscrire" en haut à droite de la page d'accueil.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-question">Quels sont les modes de paiement acceptés ?</div>
-          <div class="faq-answer">
-            <p>Nous acceptons les paiements par carte de crédit, PayPal et virement bancaire.</p>
+          <div class="faq-item">
+            <div class="faq-question">Quels sont les modes de paiement acceptés ?</div>
+            <div class="faq-answer">
+              <p>Nous acceptons les paiements par carte de crédit, PayPal et virement bancaire.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-question">Comment réinitialiser mon mot de passe ?</div>
-          <div class="faq-answer">
-            <p>Vous pouvez réinitialiser votre mot de passe en cliquant sur "Mot de passe oublié" sur la page de connexion.</p>
+          <div class="faq-item">
+            <div class="faq-question">Comment réinitialiser mon mot de passe ?</div>
+            <div class="faq-answer">
+              <p>Vous pouvez réinitialiser votre mot de passe en cliquant sur "Mot de passe oublié" sur la page de connexion.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <div class="faq-question">Comment contacter le support technique ?</div>
-          <div class="faq-answer">
-            <p>Vous pouvez contacter notre support technique via le formulaire de contact ou par téléphone au 07 45 45 67 89.</p>
+          <div class="faq-item">
+            <div class="faq-question">Comment contacter le support technique ?</div>
+            <div class="faq-answer">
+              <p>Vous pouvez contacter notre support technique via le formulaire de contact ou par téléphone au 07 45 45 67 89.</p>
+            </div>
           </div>
         </div>
+        <!-- Fin du conteneur FAQ -->
 
       </div> <!-- .landing-text -->
     </div> <!-- .landing -->
