@@ -12,7 +12,7 @@
   <?php include('header.php'); ?>
   <div class="content">
       <div class="landing-text">
-        <h2>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
+        <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
           <div class="faq-item">
             <div class="faq-question">Comment puis-je m'inscrire ?</div>
             <div class="faq-answer">
