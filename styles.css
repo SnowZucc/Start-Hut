@@ -324,51 +324,107 @@ footer {
   color: #555;
 }
 
-/* Style général pour la page CGU */
-
-.containerCGU {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  background-color: #ffffff;
-  text-align: left;
-}
-
-.containerCGU h1 {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 40px;
-  color: black;
-}
-
-.containerCGU h2 {
-  font-size: 24px;
-  color: #1A702D;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-right: 200px;
-}
-
-.containerCGU p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 0px;
-  margin-right: 200px;
-}
-
-/* Alignement du texte avec le logo */
-.containerCGU {
-  margin-left: 175px; /* Ajuster selon l’alignement du logo */
-
-}
 
 /*Troisieme dection POURQUOI NOUS CHOISIR*/
 
                                                /* LANDING PAGE */
 
+                                              /* Style général pour la page CGU */
+
+.containerCGU {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: left;
+  line-height: 1.2;
+  color: #333;
+}
+
+.containerCGU h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+  color: #000000;
+}
+
+.containerCGU h2 {
+  font-size: 21px;
+  color: #1A702D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #a3a6a4;
+  padding-bottom: 5px;
+}
+
+.containerCGU p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Alignement du texte avec le logo */
+.containerCGU {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  margin-left: 175px; /* Ajuster selon l’alignement du logo */
+
+}
+                                    /* Style général pour la page CGU */
+                                              /* Mentions légales*/
+
+.containerMentions {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: left;
+  line-height: 1.2;
+  color: #333;
+}
+
+.containerMentions h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+  color: #000000;
+}
+
+.containerMentions h2 {
+  font-size: 21px;
+  color: #1A702D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #a3a6a4;
+  padding-bottom: 5px;
+}
+
+.containerMentions p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Alignement et structuration */
+.containerMentions {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  margin-left: 175px; /* Ajuster selon l’alignement du logo */
+}
+
+
+                                              /* Mentions légales*/
+
                                                /* ANNONCES */
+                                              
 /* Barre de recherche */
 .search-bar {
   margin-bottom: 30px;
