@@ -235,8 +235,6 @@ footer {
 }
 /* Dropdown */
 
-
-
 /* Grille des annonces */
 .grid {
   display: grid;                          /* Pour que ce soit en grille */
@@ -261,6 +259,7 @@ footer {
 
 figcaption {
   margin-top: 5px;
+  max-width: 310px;  /*10px de plus que les images */
 }
 /* Espacement des sections */
 .faq-section {
