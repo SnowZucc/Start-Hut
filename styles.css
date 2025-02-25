@@ -68,7 +68,6 @@ body {
 .auth-buttons .signup {
   text-decoration: none;
   color: green;
-  font-weight: bold;
   padding: 10px;
 }
 /* Navbar */
@@ -325,6 +324,45 @@ footer {
   color: #555;
 }
 
+/* Style général pour la page CGU */
+
+.containerCGU {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  text-align: left;
+}
+
+.containerCGU h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.containerCGU h2 {
+  font-size: 24px;
+  color: #1A702D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 200px;
+}
+
+.containerCGU p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0px;
+  margin-right: 200px;
+}
+
+/* Alignement du texte avec le logo */
+.containerCGU {
+  margin-left: 175px; /* Ajuster selon l’alignement du logo */
+
+}
 
 /*Troisieme dection POURQUOI NOUS CHOISIR*/
 

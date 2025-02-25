@@ -9,7 +9,7 @@
     </head>
     <body>
         <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
-        <div class="content">   
+        <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
         <div class="container">  
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
         <h1>Consultez nos abonnements et accédez à des fonctionnalités exclusives pour optimiser votre expérience.</h1>
@@ -55,6 +55,7 @@
         </div>
     </div>
     </div>
+    
         <?php include('footer.php'); ?>    
     </body>
 </html>
