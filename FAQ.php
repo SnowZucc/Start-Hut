@@ -115,7 +115,9 @@
       <label for="message">Votre question :</label>
       <textarea id="message" name="message" rows="4" required></textarea>
 
+      <div class="content">
       <button type="submit">Envoyer</button>
+      </div>
     </form>
   </div>
 
