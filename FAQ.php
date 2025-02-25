@@ -100,25 +100,23 @@
     </div>
 
   <!-- Section Besoin d'aide -->
-  <div class="faq-section help-section">
-    <div class="content">
-    <h2>Besoin d'aide ?</h2>
-    <p>Vous ne trouvez pas votre question ? Contactez-nous directement :</p>
+  <div class="content">
+    <div class="faq-section help-section">
+      <h2>Besoin d'aide ?</h2>
+      <p>Vous ne trouvez pas votre question ? Contactez-nous directement :</p>
+      <form action="contact_support.php" method="POST" class="help-form">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Votre question :</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
     </div>
-    <form action="contact_support.php" method="POST" class="help-form">
-      <label for="name">Nom :</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Votre question :</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-
-      <div class="content">
-      <button type="submit">Envoyer</button>
-      </div>
-    </form>
   </div>
 
   <script>
