@@ -11,7 +11,6 @@
 <body>
   <?php include('header.php'); ?>
   <div class="content">
-    <div class="landing">
       <div class="landing-text">
         <h2>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
           <div class="faq-item">
@@ -43,7 +42,6 @@
           </div>
 
       </div> <!-- .landing-text -->
-    </div> <!-- .landing -->
   </div> <!-- .content -->
 
   <script>
