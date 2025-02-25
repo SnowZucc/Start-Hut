@@ -23,34 +23,33 @@
          <div class="name">
              <input type="text" class="nom" placeholder="Votre mot de passe">
          </div>
-         <form method="post" action="">
-            <label for="statut">Statut :</label>
-            <select name="Statut" id="statut">
-              <option value="Collaborateur">Collaborateur</option>
-              <option value="Porteur de projet">Porteur de projet</option>
-          </select>
-          <input type="submit" name="submit" value="Selectionner">
-        </form>
-        <form method="post" action="">
-            <label for="abonnement">Abonnement :</label>
-            <select name="Abonnement" id="abonnement">
-              <option value="Formule gratuite">Formule gratuite</option>
-              <option value="Formule payante">Formule payante</option>
-              <option value="Formule payante +">Formule payante +</option>
-          </select>
-          <input type="submit" name="submit" value="Selectionner">
-        </form>
-        <form method="post" action="">
-            <label for="Language">Language :</label>
-            <select name="Language" id="Language">
-              <option value="Français">Français</option>
-              <option value="Anglais">Anglais</option>
-              <option value="Allemand">Allemand</option>
-              <option value="Espagnol">Espagnol</option>
-              <option value="Chinois">Chinois</option>
-          </select>
-          <input type="submit" name="submit" value="Selectionner">
-        </form>
+         <div class="grid">
+            <select class="dropdown">
+              <option value="" disabled selected>Statut</option>
+              <option value="volvo">Entrepreneur</option>
+              <option value="saab">En recherche d'emploi</option>
+              <option value="saab">Investisseur</option>
+            </select>
+            <select class="dropdown">
+              <option value="" disabled selected>Abonnement</option>
+              <option value="volvo">Formule gratuite</option>
+              <option value="saab">Formule suivie</option>
+              <option value="saab">Formule suivie +</option>
+            </select>
+            <select class="dropdown">
+              <option value="" disabled selected>Pays</option>
+              <option value="volvo">France</option>
+              <option value="saab">Allemagne</option>
+              <option value="saab">Angleterre</option>
+              <option value="saab">Espagne</option>
+              <option value="saab">Japon</option>
+              <option value="saab">Etats-Unis</option>
+              <option value="saab">Chine</option>
+              <option value="saab">Russie</option>
+            </select>
+          </div>
+        
+        </div>
            
     </div> 
 
