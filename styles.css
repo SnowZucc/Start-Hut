@@ -358,13 +358,6 @@ h1 {
   background-color: #006400;
 }
 
-/* Empêcher le footer de cacher la dernière section */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .faq-section {
   flex-grow: 1;
 }
