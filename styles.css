@@ -275,7 +275,7 @@ figcaption {
 .faq-question {
   cursor: pointer;
   font-size: 1.2em;
-  color: green;
+  color: #008000;
   position: relative;
   padding-right: 30px;
 }
