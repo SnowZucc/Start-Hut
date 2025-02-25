@@ -321,8 +321,11 @@ h1 {
 
 /* Formulaire d'aide */
 .help-form {
-  margin-left: 20px;
-  max-width: 600px;
+  background-color: #e6f7ff;
+  border-left: 5px solid #008000;
+  margin-bottom: 60px; /* Augmente l'écart entre cette section et le footer */
+  padding-bottom: 30px;
+  border-bottom: 2px solid #ccc; /* Ligne de séparation */
 }
 
 .help-form label {
