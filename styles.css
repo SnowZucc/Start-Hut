@@ -307,3 +307,51 @@ figcaption {
 .faq-item.active .faq-answer {
   display: block;
 }
+
+/* Espacement des sections */
+.faq-section {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+/* Style des titres */
+.faq-section h2 {
+  color: #2c3e50;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Formulaire d'aide */
+.help-form {
+  margin-left: 20px;
+  max-width: 500px;
+}
+
+.help-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.help-form input, 
+.help-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.help-form button {
+  margin-top: 15px;
+  background-color: #008000;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.help-form button:hover {
+  background-color: #006400;
+}
