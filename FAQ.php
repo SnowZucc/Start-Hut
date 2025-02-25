@@ -11,7 +11,7 @@
 <body>
   <?php include('header.php'); ?>
 
-  <div class="landing-text">
+  <div class="faq-container">
     <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
 
     <!-- Section Inscription et Gestion du Compte -->
@@ -101,7 +101,7 @@
     </div>
 
     <!-- Section Besoin d'aide -->
-    <div class="faq-section">
+    <div class="faq-section help-section">
       <h2>Besoin d'aide ?</h2>
       <p>Vous ne trouvez pas votre question ? Contactez-nous directement :</p>
       <form action="contact_support.php" method="POST" class="help-form">
@@ -117,8 +117,7 @@
         <button type="submit">Envoyer</button>
       </form>
     </div>
-
-  </div> <!-- .landing-text -->
+  </div>
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
