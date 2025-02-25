@@ -10,7 +10,7 @@
 </head>
 <body>
   <?php include('header.php'); ?>
-
+  <div class="content">
   <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
 
   <!-- Section Inscription et Gestion du Compte -->
@@ -73,7 +73,7 @@
         </div>
       </div>
     </div>
-    
+
   <!-- Section Gestion des Services -->
   <div class="faq-section">
       <h2>Gestion des Services</h2>
@@ -126,7 +126,7 @@
     });
   });
   </script>
-
+  </div>
   <?php include('footer.php'); ?>
 </body>
 </html>
