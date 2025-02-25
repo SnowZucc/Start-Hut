@@ -262,13 +262,6 @@ footer {
 figcaption {
   margin-top: 5px;
 }
-/* Conteneur principal */
-.faq-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
 /* Espacement des sections */
 .faq-section {
   margin-bottom: 40px;
@@ -276,6 +269,9 @@ figcaption {
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Séparation pour la section Besoin d'aide */
@@ -285,6 +281,12 @@ figcaption {
 }
 
 /* Style des titres */
+h1 {
+  font-size: 2em;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
 .faq-section h2 {
   color: #2c3e50;
   font-size: 1.5em;
@@ -320,7 +322,7 @@ figcaption {
 /* Formulaire d'aide */
 .help-form {
   margin-left: 20px;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .help-form label {
@@ -359,6 +361,6 @@ body {
   min-height: 100vh;
 }
 
-.faq-container {
+.faq-section {
   flex-grow: 1;
 }
