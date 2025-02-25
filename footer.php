@@ -19,7 +19,7 @@
     <div class="footer-bottom">  <!-- derniere ligne du footer pour renvoyer vers les info importantes  -->
         <a href="CGU.php">CGU</a> <!-- remplacer # lors de la création de la page -->
         <a href="mentions.php">Mentions légales</a>  <!-- remplacer # lors de la création de la page -->
-        <a href="#">Politiques des cookies</a> <!-- remplacer # lors de la création de la page -->
+        <a href="politiquesCookies.php">Politiques des cookies</a> <!-- remplacer # lors de la création de la page -->
         
     </div>
 </footer>
