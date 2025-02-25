@@ -319,12 +319,13 @@ h1 {
 
 /* Formulaire d'aide */
 .help-form {
-  max-width: 900px; /* Même largeur que les autres sections */
-  margin: 0 auto 60px; /* Centre la section et ajoute un espace avec le footer */
   background-color: #e6f7ff;
   border-left: 5px solid #008000;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 60px; /* Augmente l'écart entre cette section et le footer */
   padding-bottom: 30px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ccc; /* Ligne de séparation */
 }
 
 .help-form label {
