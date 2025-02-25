@@ -13,11 +13,7 @@
   <div class="content">
     <div class="landing">
       <div class="landing-text">
-        <input type="text" class="search-bar" placeholder="Rechercher">
         <h2>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
-
-        <!-- Conteneur de la FAQ -->
-        <div class="faq-container">
           <div class="faq-item">
             <div class="faq-question">Comment puis-je m'inscrire ?</div>
             <div class="faq-answer">
