@@ -275,10 +275,11 @@ figcaption {
 .faq-question {
   cursor: pointer;
   font-size: 1.2em;
-  color: #008000;
+  color: green ;
   position: relative;
   padding-right: 30px;
 }
+
 
 /* Icône à droite de la question */
 .faq-question::after {
