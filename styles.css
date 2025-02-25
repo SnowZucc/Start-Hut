@@ -273,7 +273,7 @@ figcaption {
 
 /* Style de la question */
 .faq-question {
-  margin-left: 20px; /* Ajuste la marge pour plus d'espacement */
+  margin-left: 50px; /* Ajuste la marge pour plus d'espacement */
   color: #008000; /* Assure que les questions restent en vert */
   font-weight: bold;
   cursor: pointer;
