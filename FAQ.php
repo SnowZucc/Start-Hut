@@ -41,8 +41,6 @@
               <p>Vous pouvez contacter notre support technique via le formulaire de contact ou par téléphone au 07 45 45 67 89.</p>
             </div>
           </div>
-        </div>
-        <!-- Fin du conteneur FAQ -->
 
       </div> <!-- .landing-text -->
     </div> <!-- .landing -->
