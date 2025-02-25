@@ -10,7 +10,6 @@
 </head>
 <body>
   <?php include('header.php'); ?>
-  <div class="content">
       <div class="landing-text">
         <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h2>
           <div class="faq-item">
@@ -42,7 +41,6 @@
           </div>
 
       </div> <!-- .landing-text -->
-  </div> <!-- .content -->
 
   <script>
   // Attendre que le DOM soit complètement chargé
