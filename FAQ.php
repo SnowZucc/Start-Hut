@@ -12,7 +12,7 @@
   <?php include('header.php'); ?>
   <div class="content">
   <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
-
+  </div>
   <!-- Section Inscription et Gestion du Compte -->
   <div class="faq-section">
     <h2>Inscription et Gestion du Compte</h2>
@@ -101,8 +101,10 @@
 
   <!-- Section Besoin d'aide -->
   <div class="faq-section help-section">
+    <div class="content">
     <h2>Besoin d'aide ?</h2>
     <p>Vous ne trouvez pas votre question ? Contactez-nous directement :</p>
+    </div>
     <form action="contact_support.php" method="POST" class="help-form">
       <label for="name">Nom :</label>
       <input type="text" id="name" name="name" required>
@@ -126,7 +128,6 @@
     });
   });
   </script>
-  </div>
   <?php include('footer.php'); ?>
 </body>
 </html>
