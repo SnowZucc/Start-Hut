@@ -56,6 +56,49 @@
     </div>
   </div>
 
+  <!-- Section Paiements et Facturation -->
+  <div class="faq-section">
+      <h2>Paiements et Facturation</h2>
+      <div class="faq-item">
+        <div class="faq-question">Quels modes de paiement acceptez-vous ?</div>
+        <div class="faq-answer">
+          <p>Nous acceptons les paiements par carte bancaire, PayPal et virement bancaire.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Comment annuler mon abonnement ?</div>
+        <div class="faq-answer">
+          <p>Vous pouvez annuler votre abonnement via votre espace personnel ou en contactant notre support.</p>
+        </div>
+      </div>
+    </div>
+    
+  <!-- Section Gestion des Services -->
+  <div class="faq-section">
+      <h2>Gestion des Services</h2>
+      <div class="faq-item">
+        <div class="faq-question">Comment créer un projet ?</div>
+        <div class="faq-answer">
+          <p>Vous pouvez créer un projet en accédant à votre tableau de bord et en suivant les étapes indiquées.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Comment rejoindre un projet ?</div>
+        <div class="faq-answer">
+          <p>Recherchez un projet dans la section dédiée et postulez en fonction de vos compétences.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Existe-t-il une communauté ou un forum pour échanger ?</div>
+        <div class="faq-answer">
+          <p>Oui, vous pouvez rejoindre notre forum de discussion pour échanger avec d'autres utilisateurs.</p>
+        </div>
+      </div>
+    </div>
+
   <!-- Section Besoin d'aide -->
   <div class="faq-section help-section">
     <h2>Besoin d'aide ?</h2>
