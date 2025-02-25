@@ -1,36 +1,33 @@
-/* Style général */
+/* Reset des marges et paddings par défaut */
 * {
   margin: 0;
-  padding: 0;                   /* Pour enlever les marges et paddings par défaut */
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Style global */
 body {
-  width: auto;
   font-family: 'Open Sans', sans-serif;
-
-  /* Mettre le footer toujours en bas */
-  display: flex;                /* Active le modèle de boîte flexible */
-  flex-direction: column;       /* Organise les enfants (navbar, contenu, footer) en colonne */
-  min-height: 100vh;            /* Garantit que la hauteur minimale du corps est égale à 100% de la hauteur de la fenêtre visible */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: auto;
 }
-/* Style général */
 
-
-/* Navbar */
+/* NAVBAR */
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;       /* Centre tout le contenu */
-  padding: 10px ;
+  justify-content: center;
+  padding: 10px;
   background-color: white;
   border-bottom: 1px solid #ddd;
-  gap: 60px;                    /* Espacement entre logo, liens, et bouton connexion*/
-  margin-bottom: 30px;          /* Marge après la navbar */
+  gap: 60px;
+  margin-bottom: 30px;
 }
 
 .logo {
-  display: flex;                /* pour aligner avec le reste de navbar*/
+  display: flex;
 }
 
 .logo img {
@@ -43,8 +40,6 @@ body {
   display: flex;
   gap: 20px;
   margin: 0 20px; 
-  color: black;
-  text-decoration: none;
 }
 
 .nav-links li a {
@@ -52,199 +47,174 @@ body {
   color: black;
 }
 
-
 .auth-buttons {
   display: flex;
   gap: 10px;
-  color: black;
-
 }
-.auth-buttons .login {
+
+.auth-buttons .login,
+.auth-buttons .signup {
   text-decoration: none;
   padding: 10px;
-  color: black;
 }
 
 .auth-buttons .signup {
-  text-decoration: none;
   color: green;
   font-weight: bold;
-  padding: 10px;
 }
-/* Navbar */
-  
 
-/* Contenu de la page (centré) */
+/* CONTENU */
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* min-height: 20vh;                     /* pour ajuste la hauteur pour centrer le contenu sinon coller a la barre */
   text-align: center;
   padding-bottom: 100px;
 }
-/* Contenu de la page (centré) */
 
-                                                         /* FOOTER  */
+/* FOOTER */
 footer {
   background-color: black;
   color: white;
   text-align: center;
   width: 100%;
-  position : relative; /* bouge pas fixe en bas */
-  bottom : 0px; /* pour que le footer collé en bas */
+  position: relative;
   margin-top: auto;
-  
 }
 
-/* Conteneur des sections */
 .footer-container {
   flex: 1;
-  display: flex; /* pour organiser en ligne */
+  display: flex;
   justify-content: center;
-  gap: 100px; /* espace entre les sections */
-  padding-top: 15px;
-  padding-bottom: 15px;
+  gap: 100px;
+  padding: 15px 0;
 }
-/* titre de section */
+
 .footer-section h3 {
   font-size: 13px;
   font-weight: bold;
-  margin-bottom: 8px; /* espace en dessous du titre de la section */
+  margin-bottom: 8px;
 }
-/* Information de chaque section */
+
 .footer-section p {
   margin: 5px 0;
   font-size: 12px;
 }
 
-/* Barre footer */
 .footer-bottom {
   border-top: 1px solid gray;
   padding-top: 10px;
-  display: flex;/* pour organiser en ligne */
+  display: flex;
   justify-content: center;
-  gap: 50px; /* espace entre les elements */
+  gap: 50px;
 }
 
-.footer-bottom a { /* ligne : mentions/cgu/cookies du footer */ 
+.footer-bottom a {
   color: white;
-  text-decoration: none; 
-  font-size: 12px; /* ltaille */
-  padding-bottom: 10px;
+  text-decoration: none;
+  font-size: 12px;
 }
 
 .footer-bottom a:hover {
-  text-decoration: underline;  /* lors de la survole l'element devient souligner */
+  text-decoration: underline;
 }
 
-                                                          /* FOOTER  */
-
-                                                       /* LANDING PAGE */
-  /* Premiere section */                                              
+/* LANDING PAGE */
 .landing {
-  margin-top: 30px; /* espacement avec le header */     
-  display: flex; /* pour organiser en ligne */
-  background-color: #ffffff; 
-  border: 3px solid green;  /* bord de la premiere section  */
-  border-radius: 20px; /* contour des bords */
-  padding: 40px; /* Espacement intérieur */
-  width: 80%;  /* largeur prise sur la page */
-  max-width: 900px;  /* pour pas que la section prennent une place plus large */
+  margin-top: 30px;
+  display: flex;
+  background-color: #ffffff;
+  border: 3px solid green;
+  border-radius: 20px;
+  padding: 40px;
+  width: 80%;
+  max-width: 900px;
 }
 
 .landing-text {
-  flex: auto; 
-  color: black; 
-  text-align: left; /* Alignement du texte à gauche */
-  margin-right: 40px; /* Espacement entre le texte et l'image */
+  flex: auto;
+  color: black;
+  text-align: left;
+  margin-right: 40px;
 }
 
 .landing h1 {
-  font-size: 32px; /* taille de police du titre */
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 30px; /* sspacement sous le titre */
-  white-space: nowrap; /* empeche START-HUT ne soit couper en 2 et de passer à la ligne */
+  margin-bottom: 30px;
+  white-space: nowrap;
 }
 
 .landing p {
-  font-size: 20px; /* Taille de police du texte */
-  margin-bottom: 20px; /* espacement sous le paragraphe */
-  line-height: 1.5; /* espacement entre ligne  */
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .highlight {
   font-weight: bold;
-  color: green; /* Couleur verte pour le highlight */
+  color: green;
 }
 
 .btn {
-  background-color: black; /* Bouton noir */
+  background-color: black;
   color: white;
-  padding: 12px 25px; /* Taille du bouton */
-  font-size: 16px; /* Taille de police du bouton */
+  padding: 12px 25px;
+  font-size: 16px;
   border: none;
   border-radius: 30px;
-  cursor: pointer; /* quand on arrive sur le bouton le curseur change de forme  */
-  margin-top: 20px; /* Espacement au-dessus du bouton */
-  transition: background-color 0.3s ease; /* pour l'animation hover en bas s'acctive en 3scd */
-  margin-left: 95px; 
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  margin-left: 95px;
 }
 
 .btn:hover {
-  background-color: green; /* Si le bouton est selectionner il change en vert */
+  background-color: green;
 }
 
 .landing-image {
   display: flex;
-  justify-content: flex-end; /* Pour mettre  l'image à droie */
-  align-items: flex-start; /* Alignement en haut */
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .landing-image img {
-  width: 350px; /* Taille de l'image à modifier si on change l'image*/
+  width: 350px;
   height: auto;
-  border-radius: 40px; /* Bords arrondis pour l'image */
+  border-radius: 40px;
 }
-/* Premiere section */   
 
-                                               /* LANDING PAGE */
-
-                                               /* ANNONCES */
-/* Barre de recherche */
-.search-bar {
-  margin-bottom: 30px;
-  border-radius: 10px;
-  width: 400px;
-  height: 30px; 
-  padding-left: 20px;
-  border: 1px solid #ddd;
-}
-/* Barre de recherche */
-
-/* Dropdown */
+/* ANNONCES */
+.search-bar,
 .dropdown {
-  margin-bottom: 60px;
   border-radius: 10px;
-  width: 160px;
-  height: 30px;
-  padding-left: 5px;
   border: 1px solid #ddd;
   background-color: transparent;
 }
-/* Dropdown */
 
+.search-bar {
+  margin-bottom: 30px;
+  width: 400px;
+  height: 30px;
+  padding-left: 20px;
+}
 
+.dropdown {
+  margin-bottom: 60px;
+  width: 160px;
+  height: 30px;
+  padding-left: 5px;
+}
 
 /* Grille des annonces */
 .grid {
-  display: grid;                          /* Pour que ce soit en grille */
-  grid-template-columns: repeat(3, 1fr);  /* 3 images sur chaque ligne */
-  gap: 50px;                              /* Espacement */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
 }
 
-/* Limiter la taille des images */
 .grid img {
   width: 100%;
   max-width: 300px;
@@ -262,37 +232,41 @@ footer {
 figcaption {
   margin-top: 5px;
 }
-/* Espacement des sections */
-.faq-section {
-  margin-bottom: 40px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  width: 95%;
-  margin-left: 70px;
-  margin-right: auto;
-}
 
-/* Séparation pour la section Besoin d'aide */
-.help-section {
-  background-color: #e6f7ff;
-  border-left: 5px solid #008000;
-}
-
-/* Style des titres */
+/* FAQ */
 h1 {
   font-size: 2em;
   margin: 20px 0;
   padding-left: 20px;
+  text-align: center;
 }
 
+.faq-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Section Besoin d'aide */
+.help-section {
+  background-color: #e6f7ff;
+  border-left: 5px solid #008000;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 60px;
+}
+
+/* Titres des sections FAQ */
 .faq-section h2 {
   color: #2c3e50;
   font-size: 1.5em;
   margin-bottom: 15px;
   border-bottom: 2px solid #ddd;
   padding-bottom: 5px;
+  text-align: center;
 }
 
 /* Style des questions */
@@ -305,6 +279,7 @@ h1 {
   font-size: 1.2em;
   color: #008000;
   font-weight: bold;
+  text-align: left;
   margin-left: 10px;
 }
 
@@ -321,12 +296,8 @@ h1 {
 
 /* Formulaire d'aide */
 .help-form {
-  background-color: #e6f7ff;
-  border-left: 5px solid #008000;
-  margin-left: 70px;
-  margin-bottom: 60px; /* Augmente l'écart entre cette section et le footer */
-  padding-bottom: 30px;
-  border-bottom: 2px solid #ccc; /* Ligne de séparation */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .help-form label {
@@ -358,6 +329,7 @@ h1 {
   background-color: #006400;
 }
 
+/* Empêcher le footer de cacher la dernière section */
 .faq-section {
   flex-grow: 1;
 }
