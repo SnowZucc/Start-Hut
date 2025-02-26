@@ -11,6 +11,15 @@
   <body>
     <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
+    <!-- Connexion a la DB -->
+    <?php
+    $conn = new mysqli("localhost", "root", "", "StartHut");
+    
+    // Récupérer les projets depuis la base de données
+    $sql = "SELECT * FROM Projets";
+    $result = $conn->query($sql);
+    ?>
+
     <div class="content">
       <input type="text" class="search-bar" placeholder="Recherchez par mot-clé, domaine ou compétence">
 
@@ -33,48 +42,19 @@
       </div>
 
       <div class="grid">
-        <figure>
-            <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-            <figcaption>
-              <h3>EcoCharge</h3>
-              <p>Rechargez vos appareils n'importe où grâce à nos batteries solaires compactes et durables.</p> 
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-            <figcaption>
-              <h3>SkillBoost</h3>
-              <p>Apprenez des compétences en forte demande grâce à des micro-cours interactifs et certifiants.</p> 
-            </figcaption>
-        </figure>            
-        <figure>
-            <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-            <figcaption>
-              <h3>FoodieLink</h3>
-              <p>Connectez-vous avec des cuisiniers amateurs et dégustez des repas faits maison près de chez vous.</p> 
-            </figcaption>
-        </figure>            
-        <figure>
-            <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-            <figcaption>
-              <h3>HomeSync</h3>
-              <p>Centralisez la gestion de votre maison connectée avec une seule application intuitive.</p> 
-            </figcaption>
-        </figure>            
-        <figure>
-            <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-            <figcaption>
-              <h3>EventEase</h3>
-              <p>Planifiez, organisez et gérez vos événements professionnels et privés en toute simplicité.</p> 
-            </figcaption>
-        </figure>            
-        <figure>
-            <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-            <figcaption>
-              <h3>TravelMatch</h3>
-              <p>Trouvez des compagnons de voyage partageant vos centres d'intérêt et votre style d’aventure.</p> 
-            </figcaption>
-        </figure>
+        <?php
+        // Afficher les annonces récupérées par le PHP en haut dans une boucle
+            while($row = $result->fetch_assoc()) {
+                echo "<figure>";
+                echo "<img src='https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg'>";
+                echo "<figcaption>";
+                echo "<h3>" . htmlspecialchars($row["annonce_titre"]) . "</h3>";
+                echo "<p>" . htmlspecialchars($row["annonce_description"]) . "</p>";
+                echo "</figcaption>";
+                echo "</figure>";
+            }
+        $conn->close();
+        ?>
       </div>
     </div>
     <?php include('footer.php'); ?> <!-- Inclusion du footer -->

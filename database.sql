@@ -136,7 +136,9 @@ INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
 VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'porteur');
 
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, postuleurs_a_l_annonce, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
-VALUES (1, 'Projet Alpha', 0, 'Principe du projet Alpha', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', 1, '2023-10-01 10:00:00', 'Titre de l\'annonce Alpha', 'Description de l\'annonce Alpha', 'developpeur', 'technologies', 3, 'ouvert');
+VALUES (1, 'Projet Alpha', 0, 'Principe du projet Alpha', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', 1, '2023-10-01 10:00:00', 'Annonce Projet Alpha', 'OMG cest lannonce du projet Alpha', 'developpeur', 'technologies', 3, 'ouvert');
+INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, postuleurs_a_l_annonce, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
+VALUES (1, 'Projet Beta', 0, 'Principe du projet Beta', 'Définition du marché Beta', 'Analyse de la demande Beta', 'Analyse de la concurrence Beta', 1, '2023-10-01 10:00:00', 'Annonce Projet Beta', 'OMG cest lannonce du projet Beta', 'developpeur', 'technologies', 3, 'ouvert');
 
 INSERT INTO ParticipantsProjets (id_projet, id_participant, role)
 VALUES (1, 1, 'chef');
@@ -148,7 +150,7 @@ INSERT INTO Abonnements (type, prix, duree)
 VALUES (1, 19.99, 30);
 
 INSERT INTO Documents (proprietaire, projet, lien, type)
-VALUES (1, 1, 'http://example.com/document1.pdf', 'pdf');
+VALUES (1, 1, 'https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg', 'image');
 
 INSERT INTO Competences (nom, domaine)
 VALUES ('Programmation', 'Informatique');
