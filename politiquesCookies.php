@@ -38,7 +38,7 @@
         <p>Vous pouvez gérer vos préférences en matière de cookies en modifiant les paramètres de votre navigateur ou en utilisant notre outil de gestion des cookies.</p>
         
         <h2>5. Plus d’informations</h2>
-        <p>Pour en savoir plus sur l’utilisation des cookies et vos droits, vous pouvez consulter notre <a href="mentions-legales.php">page des mentions légales</a>.</p>
+        <p>Pour en savoir plus sur l’utilisation des cookies et vos droits, vous pouvez consulter notre <a href="mentions.php">page des mentions légales</a>.</p>
         
         <div class="footer">© 2025 StartHut - Tous droits réservés.</div>
     </div>
