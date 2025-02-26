@@ -503,8 +503,6 @@ footer {
 }
 /* Dropdown */
 
-
-
 /* Grille des annonces */
 .grid {
   display: grid;                          /* Pour que ce soit en grille */
@@ -529,13 +527,17 @@ footer {
 
 figcaption {
   margin-top: 5px;
+  max-width: 310px;  /*10px de plus que les images */
 }
 /* Espacement des sections */
 .faq-section {
   margin-bottom: 40px;
   padding: 20px;
+<<<<<<< HEAD
 }
 
+=======
+>>>>>>> e62a99c (modif mes parties css)
 /* Profil */
                                                /* ANNONCES */
 
@@ -676,7 +678,8 @@ figcaption {
 
 
                                                 /*CONSULTER LES ABONNEMENT */
-.container {
+  
+  .containerabonnement {
     max-width: 1000px; /* largeur max */
     margin: 50px auto; /* centrer le conteneur */
     background: white;
@@ -688,7 +691,7 @@ figcaption {
   }
 
 
-h1 {
+  .containerabonnement h1 {
     font-size: 24px; /* taille textes */
     margin-bottom: 30px; /* espace aores le tetxte */
 }
@@ -720,7 +723,7 @@ h1 {
 
 .plan ul li {
     margin: 10px 0; /* espage entre les elments de la luste */
- }
+  }
 
 .price { /* parametre prix*/
     font-size: 20px;
@@ -753,6 +756,10 @@ button:hover {
 }
 
 
+                                                                                      
+                                                
+
+
                                                  /* CONSULTER LES ABONNEMENT */                                                                                           
 
 
@@ -767,5 +774,258 @@ button:hover {
   height: 30px; 
   padding-left: 20px;
   border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 95%;
+  margin-left: 70px;
+  margin-right: auto;
 }
-/* Noù */                                          
+
+/* Séparation pour la section Besoin d'aide */
+.help-section {
+  background-color: #e6f7ff;
+  border-left: 5px solid #008000;
+}
+
+/* Style des titres */
+h1 {
+  font-size: 2em;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.faq-section h2 {
+  color: #2c3e50;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Style des questions */
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #008000;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Cacher les réponses par défaut */
+.faq-answer {
+  display: none;
+  margin-left: 20px;
+}
+
+/* Afficher la réponse quand la question est active */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Formulaire d'aide */
+.help-form {
+  background-color: #e6f7ff;
+  border-left: 5px solid #008000;
+  margin-left: 70px;
+  margin-bottom: 60px; /* Augmente l'écart entre cette section et le footer */
+  padding-bottom: 30px;
+  border-bottom: 2px solid #ccc; /* Ligne de séparation */
+}
+
+.help-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.help-form input, 
+.help-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.help-form button {
+  margin-top: 15px;
+  background-color: #008000;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.help-form button:hover {
+  background-color: #006400;
+}
+
+.faq-section {
+  flex-grow: 1;
+}
+/* Noù */    
+
+/* PARTIE INSCRIPTION */
+
+/* Style des liens hypertextes */
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style du formulaire d'inscription */
+form.inscription {
+  width: 97%;
+  max-width: 570px;
+  background: white;
+  padding: 28px;
+  border: 1px solid black;
+  margin: 25px auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Groupement des champs pour un meilleur alignement */
+.form-group {
+  margin-bottom: 15px; 
+}
+
+/* Alignement des champs "Nom" et "Prénom" */
+.half-width {
+  width: 50%;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* Conteneur du choix du statut */
+.statut-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+/* Supprime tout espacement sous les labels de statut */
+.statut-option label {
+  margin-bottom: 0px;
+}
+
+.statut-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Barre d'inscription */
+.input-field {
+  width: 100%;
+  max-width: 430px;
+  padding: 9px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Réduction pour aligner correctement Nom et Prénom */
+.half-width .input-field {
+  max-width: 200px;
+}
+
+/* Style des labels des champs */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+/* Style des champs obligatoires */
+label .required {
+  color: red;
+}
+
+/* Conteneur de la case à cocher et son texte */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px; /* Garde la case proche du texte */
+  margin-top: 12px;
+  margin-left: 15px;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+/* Évite tout espace supplémentaire sous le texte */
+.checkbox-container label {
+  margin-bottom: 0;
+}
+
+/* Bouton pour valider l'inscription */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Changement de couleur du bouton au survol */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 280px;
+  margin: 2px auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnInscription:hover {
+  background-color: #004d00;
+}
+
+/* Centrer le "Déjà inscrit ?" */
+.already-registered {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Assurer le centrage du bouton s'inscrire */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Fin partie inscription */
