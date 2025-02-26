@@ -265,6 +265,19 @@ figcaption {
 .faq-section {
   margin-bottom: 40px;
   padding: 20px;
+/* Profil */
+                                               /* ANNONCES */
+
+                                        
+
+                                               /* PROFIL */
+  /* Nom */
+.nom {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  width: 400px;
+  height: 30px; 
+  padding-left: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;

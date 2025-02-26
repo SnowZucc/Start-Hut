@@ -22,7 +22,35 @@
          </div> 
          <div class="name">
              <input type="text" class="nom" placeholder="Votre mot de passe">
-         </div> 
+         </div>
+         <div class="grid">
+            <select class="dropdown">
+              <option value="" disabled selected>Statut</option>
+              <option value="volvo">Entrepreneur</option>
+              <option value="saab">En recherche d'emploi</option>
+              <option value="saab">Investisseur</option>
+            </select>
+            <select class="dropdown">
+              <option value="" disabled selected>Abonnement</option>
+              <option value="volvo">Formule gratuite</option>
+              <option value="saab">Formule suivie</option>
+              <option value="saab">Formule suivie +</option>
+            </select>
+            <select class="dropdown">
+              <option value="" disabled selected>Pays</option>
+              <option value="volvo">France</option>
+              <option value="saab">Allemagne</option>
+              <option value="saab">Angleterre</option>
+              <option value="saab">Espagne</option>
+              <option value="saab">Japon</option>
+              <option value="saab">Etats-Unis</option>
+              <option value="saab">Chine</option>
+              <option value="saab">Russie</option>
+            </select>
+          </div>
+        
+        </div>
+           
     </div> 
 
     <?php include('footer.php'); ?>
