@@ -72,5 +72,28 @@
     </div>
     
     <?php include('footer.php'); ?>    
+
+    <!-- PArtie PHP : envoie de l'inscription à la DB -->
+    <?php
+    $conn = new mysqli("localhost", "root", "", "StartHut");
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {     // Si la méthode POST est invoquée (lorsque le bouton "S'inscrire" est cliqué)
+        $nom = $_POST['lastname'];
+        $prenom = $_POST['firstname'];
+        $email = $_POST['email'];
+        $mot_de_passe = $_POST['password'];
+        $statut = isset($_POST['statut']);      // BUG : ca met tout le temps porteur
+
+        $sql = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type) VALUES ('$nom', '$prenom', '$email', '$mot_de_passe', '$statut')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    $conn->close();
+    ?>
     </body>
 </html>

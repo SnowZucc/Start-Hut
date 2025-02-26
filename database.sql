@@ -7,7 +7,7 @@ CREATE TABLE Utilisateurs (
     prenom VARCHAR(255) NOT NULL ,
     email VARCHAR(255) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
-    type ENUM('porteur', 'utilisateur') NOT NULL
+    type ENUM('porteur', 'collaborateur') NOT NULL
 );
 
 CREATE TABLE Projets (
@@ -131,9 +131,9 @@ CREATE TABLE Messages (
 
 -- Exemples d'utilisation
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
-VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'utilisateur');
+VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'collaborateur');
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
-VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'utilisateur');
+VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'porteur');
 
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, postuleurs_a_l_annonce, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
 VALUES (1, 'Projet Alpha', 0, 'Principe du projet Alpha', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', 1, '2023-10-01 10:00:00', 'Titre de l\'annonce Alpha', 'Description de l\'annonce Alpha', 'developpeur', 'technologies', 3, 'ouvert');
