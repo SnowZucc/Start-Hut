@@ -530,7 +530,13 @@ footer {
 figcaption {
   margin-top: 5px;
 }
-/* Grille des annonces */
+/* Espacement des sections */
+.faq-section {
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+/* Profil */
                                                /* ANNONCES */
 
 
