@@ -275,8 +275,6 @@ footer {
 }
 /* Dropdown */
 
-
-
 /* Grille des annonces */
 .grid {
   display: grid;                          /* Pour que ce soit en grille */
@@ -301,6 +299,7 @@ footer {
 
 figcaption {
   margin-top: 5px;
+  max-width: 310px;  /*10px de plus que les images */
 }
 /* Profil */
                                                /* ANNONCES */
@@ -317,4 +316,164 @@ figcaption {
   padding-left: 20px;
   border: 1px solid #ddd;
 }
-/* Nom */                                          
+/* Noù */    
+
+/* PARTIE INSCRIPTION */
+
+/* Style des liens hypertextes */
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style du formulaire d'inscription */
+form.inscription {
+  width: 97%;
+  max-width: 570px;
+  background: white;
+  padding: 28px;
+  border: 1px solid black;
+  margin: 25px auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Groupement des champs pour un meilleur alignement */
+.form-group {
+  margin-bottom: 15px; 
+}
+
+/* Alignement des champs "Nom" et "Prénom" */
+.half-width {
+  width: 50%;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* Conteneur du choix du statut */
+.statut-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+/* Supprime tout espacement sous les labels de statut */
+.statut-option label {
+  margin-bottom: 0px;
+}
+
+.statut-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Barre d'inscription */
+.input-field {
+  width: 100%;
+  max-width: 430px;
+  padding: 9px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Réduction pour aligner correctement Nom et Prénom */
+.half-width .input-field {
+  max-width: 200px;
+}
+
+/* Style des labels des champs */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+/* Style des champs obligatoires */
+label .required {
+  color: red;
+}
+
+/* Conteneur de la case à cocher et son texte */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px; /* Garde la case proche du texte */
+  margin-top: 12px;
+  margin-left: 15px;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+/* Évite tout espace supplémentaire sous le texte */
+.checkbox-container label {
+  margin-bottom: 0;
+}
+
+/* Bouton pour valider l'inscription */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Changement de couleur du bouton au survol */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 280px;
+  margin: 2px auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnInscription:hover {
+  background-color: #004d00;
+}
+
+/* Centrer le "Déjà inscrit ?" */
+.already-registered {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Assurer le centrage du bouton s'inscrire */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Fin partie inscription */
