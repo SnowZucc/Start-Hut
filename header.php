@@ -1,7 +1,7 @@
 <div class="navbar-container">
     <nav class="navbar">
         <div class="logo">
-            <a href="index.php"><img src="logo.png" alt="Logo"></a>
+            <a href="index.php"><img src="src/img/logo.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
             <li><a href="annonces.php">Rejoindre un projet</a></li>

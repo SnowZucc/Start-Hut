@@ -22,7 +22,7 @@
                                                     tard ou yaura des info sur lentreprise, prq start-hut et comment sa marche  -->
                     </div>
                     <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
-                        <img src="landing.png" alt="Illustration">
+                        <img src="src/img/landing.png" alt="Illustration">
                     </div>
                 </div>  
                  <!-- partie annonce populaire -->
@@ -52,27 +52,27 @@
            <!-- Partie pourquoi nous chosir -->
            <div class="conteneur-pourquoinouschoisir">
     <div class="imagepourquoinouschoisir">
-        <img src="pourquoinouschoisir.png" alt="illustration">
+        <img src="src/img/pourquoinouschoisir.png" alt="illustration">
     </div>
     <div class="textepourquoinouschoisir">
         <h2>Lancez vous, c'est facile.</h2>
         <div class="liste-choix">
             <figure>
-                <img src="pourquoinouschoisir1.png" alt="Image 1">
+                <img src="src/img/pourquoinouschoisir1.png" alt="Image 1">
                 <figcaption>
                     <h3>RAISON 1</h3>
                     <p>Description </p>
                 </figcaption>
             </figure>
             <figure>
-                <img src="pourquoinouschoisir2.png" alt="Image 2">
+                <img src="src/img/pourquoinouschoisir2.png" alt="Image 2">
                 <figcaption>
                     <h3>RAISON 2</h3>
                     <p>Description </p>
                 </figcaption>
             </figure>
             <figure>
-                <img src="pourquoinouschosir3.png" alt="Image 3">
+                <img src="src/img/pourquoinouschosir3.png" alt="Image 3">
                 <figcaption>
                     <h3>RAISON 3</h3>
                     <p>Description </p>
