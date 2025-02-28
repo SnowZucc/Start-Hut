@@ -68,7 +68,6 @@ body {
 .auth-buttons .signup {
   text-decoration: none;
   color: green;
-  font-weight: bold;
   padding: 10px;
 }
 /* Navbar */
@@ -212,46 +211,275 @@ footer {
 
 /*Deuxieme section ANNONCES POPULAIRE*/
 .popular {
-  display: flex;                          /* pour aligner horizontalement */
-  gap: 50px;                              /* Espacement entre chaque annonce */
-  margin-top : 10px;
+  display: flex; /* Alignement horizontal */
+  gap: 20px; /* Espacement entre chaque annonce */
+  margin-top: 5px;
   align-items: center;
+  justify-content: center; /* Centrer les annonces */
 }
 
-
-.popular-centre {
-  border: 2px solid green;  /* bord de la premiere section  */
-  fill : black;
-  border-radius: 10%;
-  padding: 50px;
+.popular-annonce {
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 20px;
   height: 250px;
-
+  width: 200px; /* Taille uniforme pour toutes les annonces finalement */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* pour rendre fluide la transtion zoom et couleur ( voir hover) */
+  background-color: #f8f8f8; 
+  display: flex;
+  align-items: center; /* centre texte intérieur annonce horizon */
+  justify-content: center; /* centre texte intérieur annonce vertical  */
+  text-align: center;
 }
-.popular-center figure:hover {
-  zoom: 1;
-}
-.popular-cote {
-  border: 2px solid rgb(129, 169, 128);  /* bord de la premiere section  */
-  border-radius: 10%;
-  padding: 50px;
-  height: 200px;
 
+.popular-annonce:hover {
+  transform: scale(1.1); /* effet de zoom au survol */
+  background-color: #d1ffd1; /* changment de couleur au survol */
+  border-color: darkgreen;
 }
 
 .textepop h2 {
-  margin-top: 100px;
+  margin-top: 100px; /* espace avec section 1 */
+  margin-bottom: 20px; /* espace avec les annonces */
   margin-right: 1025px;
   line-height: 1.5; /* espacement entre ligne  */
   text-align: left; /* Alignement du texte à gauche */
   font-size: 22px; /* ltaille */
 }
 
-
 /*Deuxieme dection ANNONCES POPULAIRE*/
+
+/*Troisieme dection POURQUOI NOUS CHOISIR*/
+/* Conteneur principal */
+.conteneur-pourquoinouschoisir {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrage global */
+  gap: 120px; /* Espacement entre l'image et le texte */
+  padding: 20px;
+  width: 90%; /* Ajuster la largeur pour un bon rendu */
+  margin: auto; /* Centrer dans la page */
+  margin-bottom: 40px;
+}
+
+.imagepourquoinouschoisir {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
+  padding: 10px; /* Ajoute un espace intérieur pour voir le fond */
+  border-radius: 20px;
+}
+
+.imagepourquoinouschoisir img {
+  width: 90%; /* Laisse un peu d’espace pour voir le background */
+  max-width: 500px; /* Ajuste la taille max */
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Partie texte */
+.textepourquoinouschoisir {
+  flex: 1; /* Prend tout l'espace dispo à droite */
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.textepourquoinouschoisir h2 {
+  font-size: 22px;
+  margin-bottom: 40px;
+  margin-left: 150px;
+  color: #000000;
+}
+
+/* Liste des annonces */
+.liste-choix {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.liste-choix figure {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.liste-choix img {
+  width: 50px;
+  height: 50px;
+}
+
+.liste-choix figcaption h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.liste-choix figcaption p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #555;
+}
+
+
+/*Troisieme dection POURQUOI NOUS CHOISIR*/
 
                                                /* LANDING PAGE */
 
+                                              /* Style général pour la page CGU */
+
+.containerCGU {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: left;
+  line-height: 1.2;
+  color: #333;
+}
+
+.containerCGU h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+  color: #000000;
+}
+
+.containerCGU h2 {
+  font-size: 21px;
+  color: #1A702D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #a3a6a4;
+  padding-bottom: 5px;
+}
+
+.containerCGU p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Alignement du texte avec le logo */
+.containerCGU {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  margin-left: 175px; /* Ajuster selon l’alignement du logo */
+
+}
+                                    /* Style général pour la page CGU */
+                                              /* Mentions légales*/
+
+.containerMentions {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: left;
+  line-height: 1.2;
+  color: #333;
+}
+
+.containerMentions h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+  color: #000000;
+}
+
+.containerMentions h2 {
+  font-size: 21px;
+  color: #1A702D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #a3a6a4;
+  padding-bottom: 5px;
+}
+
+.containerMentions p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Alignement et structuration */
+.containerMentions {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  margin-left: 175px; /* Ajuster selon l’alignement du logo */
+}
+
+
+                                              /* Mentions légales*/
+                                              /*COOKIES*/
+.containerCookies {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  text-align: left;
+  line-height: 1.2;
+  color: #333;
+}
+
+.containerCookies h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 0px;
+  color: #000000;
+}
+
+.containerCookies h2 {
+  font-size: 21px;
+  color: #1A702D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #a3a6a4;
+  padding-bottom: 5px;
+}
+
+.containerCookies p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.containerCookies ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.containerCookies ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Alignement et structuration */
+.containerCookies {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  margin-left: 175px; /* Ajuster selon l’alignement du logo */
+}
+                                                  /*COOKIES*/
+                                           
+                                          
                                                /* ANNONCES */
+                                              
 /* Barre de recherche */
 .search-bar {
   margin-bottom: 30px;
@@ -274,8 +502,6 @@ footer {
   background-color: transparent;
 }
 /* Dropdown */
-
-
 
 /* Grille des annonces */
 .grid {
@@ -301,9 +527,233 @@ footer {
 
 figcaption {
   margin-top: 5px;
+  max-width: 310px;  /*10px de plus que les images */
 }
+/* Espacement des sections */
+.faq-section {
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
 /* Profil */
                                                /* ANNONCES */
+
+
+                                              /* ACCEDER A UNE SEULE ANNONCE */
+
+/* Conteneur principal de l'annonce */
+.containerAnnonce {
+  max-width: 1200px; /*  largeur maximale  */
+  margin: 50px auto; /* Centre l'annonce sur la page */
+  padding: 40px; /* Ajoute de l'espace autour */
+  background-color: #ffffff; /* Fond  */
+  border-radius: 10px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+
+/* Profil de l'annonceur */
+.profilAnnonceur {
+  display: flex; /* aligner les éléments horizontalement */
+  align-items: center; /* Alignement vertical centré */
+  gap: 20px; /* espacemnt  */
+  margin-bottom: 30px; /* ajoute de l'espace sous le profil */
+}
+
+/* Image de profil de l'annonceur */
+.profile-img {
+  width: 100px; /* taille fixe pour uniformiser les images */
+  height: 100px;
+  border-radius: 50%; /* rend l'image ronde */
+}
+
+/* Infos sur l'annonceur */
+.infoAnnonceur {
+  text-align: left; /* Alignement à gauche */
+}
+
+.infoAnnonceur h2 {
+  font-size: 22px; /*  taille du nom */
+  margin-bottom: 5px; /*  l'espace sous le titre */
+}
+
+/* Bouton de contact */
+.contact-btn {
+  background-color: #1A702D; 
+  color: white;
+  padding: 10px 10px; /* Taille*/
+  border: none;
+  border-radius: 7px; 
+
+  cursor: pointer; /* Change le curseur pour indiquer qu’il est cliquable */
+
+}
+
+.contact-btn:hover {
+  background-color: #145A23; /* change couleur  bouton au survol  */
+}
+
+/* Section du projet associé à l'annonce */
+.projetAnnonce {
+  text-align: left; /* Alignement */
+  margin-bottom: 30px;
+
+}
+
+.projetAnnonce h3 {
+  font-size: 20px; /* Titre taille */
+  margin-bottom: 15px; /* 
+  ’espace sous le titre */
+}
+
+/* Image du projet */
+.project-img {
+
+  width: 100%; /* pour que ca s'étire sur toute la largeur du conteneur */
+  max-height: 250px; /* empêche l'image d'être trop grande */
+  object-fit: cover; /* ajuste l’image pour qu’elle remplisse bien son espace */
+  border-radius: 10px; /
+}
+
+/* Titre de la description */
+.description-title {
+  font-weight: bold; /* titre en gras */
+  margin-top: 15px;
+}
+
+/* Contenu de la description */
+.description-content {
+  font-size: 16px; 
+  color: #444; /* couleur plus lisible je trouve */
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+/* Section des détails */
+.detailsAnnonce h3 {
+  font-size: 18px; 
+  text-align: left;
+}
+
+/* Contenu des détails */
+.details-content {
+  background-color: #f5f5f5; /* fond gris clair pour bien séparer la section */
+  padding: 20px; /* espace autour du texte */
+  margin-top: 12px;
+  border-radius: 10px; 
+
+  min-height: 120px; 
+}
+
+/* Boutons d'action */
+.actions {
+  display: flex; /* Organisation en ligne */
+  gap: 30px; /* spacement entre les boutons */
+  justify-content: center; /* entre les boutons */
+  margin-top: 30px;
+}
+
+/* Boutons "Postuler" et "Sauvegarder" */
+.postuler, .sauvegarder {
+  background-color: #1A702D; /* Même couleur que le bouton de contact pour garder une cohérence */
+  color: white;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none;
+  border-radius: 7px; 
+  cursor: pointer; /* indique que c'est un bouton cliquable */
+}
+
+/* Effet au survol des boutons */
+.postuler:hover, .sauvegarder:hover {
+  background-color: #145A23; /* assombrit le bouton pour un feedback visuel */
+}
+ 
+                                               /* ACCEDER A UNE SEULE ANNONCES */
+
+
+
+
+                                                /*CONSULTER LES ABONNEMENT */
+.container {
+    max-width: 1000px; /* largeur max */
+    margin: 50px auto; /* centrer le conteneur */
+    background: white;
+    padding: 20px; /* espage int */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ombre du conteneur */
+
+
+  }
+
+
+h1 {
+    font-size: 24px; /* taille textes */
+    margin-bottom: 30px; /* espace aores le tetxte */
+}
+
+.plans {
+    display: flex;
+    justify-content: space-around; /* pour disposer les 3 plan de maniere egale */
+}
+
+.plan {
+    background: #C7E4CD;
+    border-radius: 10px;
+    padding: 20px; /* espage int */
+    width: 30%;
+
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.plan h2 {
+    margin-bottom: 15px; /* espage sous le titre */
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.plan ul li {
+    margin: 10px 0; /* espage entre les elments de la luste */
+ }
+
+.price { /* parametre prix*/
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+button {
+    background: #4caf50;/* couleur */
+    color: white; /* texte */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #45a049;  /*bouton change de couleur lors de la survol */
+}
+
+.condition {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.condition a {
+    color: #2c7b2c;
+    text-decoration: none;
+}
+
+
+                                                 /* CONSULTER LES ABONNEMENT */                                                                                           
+
 
                                         
 
@@ -316,6 +766,99 @@ figcaption {
   height: 30px; 
   padding-left: 20px;
   border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 95%;
+  margin-left: 70px;
+  margin-right: auto;
+}
+
+/* Séparation pour la section Besoin d'aide */
+.help-section {
+  background-color: #e6f7ff;
+  border-left: 5px solid #008000;
+}
+
+/* Style des titres */
+h1 {
+  font-size: 2em;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.faq-section h2 {
+  color: #2c3e50;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Style des questions */
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #008000;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Cacher les réponses par défaut */
+.faq-answer {
+  display: none;
+  margin-left: 20px;
+}
+
+/* Afficher la réponse quand la question est active */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Formulaire d'aide */
+.help-form {
+  background-color: #e6f7ff;
+  border-left: 5px solid #008000;
+  margin-left: 70px;
+  margin-bottom: 60px; /* Augmente l'écart entre cette section et le footer */
+  padding-bottom: 30px;
+  border-bottom: 2px solid #ccc; /* Ligne de séparation */
+}
+
+.help-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.help-form input, 
+.help-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.help-form button {
+  margin-top: 15px;
+  background-color: #008000;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.help-form button:hover {
+  background-color: #006400;
+}
+
+.faq-section {
+  flex-grow: 1;
 }
 /* Nom */                                          
 
@@ -377,3 +920,165 @@ figcaption {
 figcaption {
   margin-top: 10px;
 }
+
+/* Noù */    
+
+/* PARTIE INSCRIPTION */
+
+/* Style des liens hypertextes */
+a {
+  color: green;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style du formulaire d'inscription */
+form.inscription {
+  width: 97%;
+  max-width: 570px;
+  background: white;
+  padding: 28px;
+  border: 1px solid black;
+  margin: 25px auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Groupement des champs pour un meilleur alignement */
+.form-group {
+  margin-bottom: 15px; 
+}
+
+/* Alignement des champs "Nom" et "Prénom" */
+.half-width {
+  width: 50%;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* Conteneur du choix du statut */
+.statut-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+/* Supprime tout espacement sous les labels de statut */
+.statut-option label {
+  margin-bottom: 0px;
+}
+
+.statut-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Barre d'inscription */
+.input-field {
+  width: 100%;
+  max-width: 430px;
+  padding: 9px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Réduction pour aligner correctement Nom et Prénom */
+.half-width .input-field {
+  max-width: 200px;
+}
+
+/* Style des labels des champs */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+/* Style des champs obligatoires */
+label .required {
+  color: red;
+}
+
+/* Conteneur de la case à cocher et son texte */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2px; /* Garde la case proche du texte */
+  margin-top: 12px;
+  margin-left: 15px;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+/* Évite tout espace supplémentaire sous le texte */
+.checkbox-container label {
+  margin-bottom: 0;
+}
+
+/* Bouton pour valider l'inscription */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Changement de couleur du bouton au survol */
+.btnInscription {
+  background-color: #006400;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 280px;
+  margin: 2px auto;
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnInscription:hover {
+  background-color: #004d00;
+}
+
+/* Centrer le "Déjà inscrit ?" */
+.already-registered {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Assurer le centrage du bouton s'inscrire */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Fin partie inscription */
