@@ -475,89 +475,195 @@
   
   
                                                   /*CONSULTER LES ABONNEMENT */
-    
-    .containerabonnement {
-      max-width: 1000px; /* largeur max */
-      margin: 50px auto; /* centrer le conteneur */
-      background: white;
-      padding: 20px; /* espage int */
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ombre du conteneur */
+
+.containerabonnement {
+  max-width: 1000px;
+  height: 640px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.containerabonnement h1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.plans {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.plan {
+  background: #C7E4CD;
+  border-radius: 10px;
+  padding: 25px;
+  height: 500px;
+  width: 32%;
+  text-align: center;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+.plan h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+.plan ul {
+  list-style: none;
+  padding: 0;
+}
+.plan ul li {
+  margin: 15px 0;
+  font-size: 16px;
+}
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+button {
+  background: #4caf50;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+button:hover {
+  background: #45a049;
+}
+.condition {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.condition a {
+  color: #2c7b2c;
+  text-decoration: none;
+}
+
+                                                   /* CONSULTER LES ABONNEMENT */   
+                                                   
+                                                   /* POSTER UNE ANNONCE */  
+/*Barre etapes pour poster une annonce*/
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+ 
+}
+
+.progress-step {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.progress-step span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.progress-step.active span {
+  background-color: green;
+}
+
+.progress-step.active {
+  color: black;
+}
+
+.progress-separator {
+  font-size: 20px;
+  color: #aaa;
+  margin: 0 10px;
+}
+
+/*Barre etapes pour poster une annonce*/
+
+
+.containerposter {
   
-  
-    }
-  
-  
-    .containerabonnement h1 {
-      font-size: 24px; /* taille textes */
-      margin-bottom: 30px; /* espace aores le tetxte */
-  }
-  
-  .plans {
-      display: flex;
-      justify-content: space-around; /* pour disposer les 3 plan de maniere egale */
-  }
-  
-  .plan {
-      background: #C7E4CD;
-      border-radius: 10px;
-      padding: 20px; /* espage int */
-      width: 30%;
-  
-      text-align: center;
-      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .plan h2 {
-      margin-bottom: 15px; /* espage sous le titre */
-  }
-  
-  .plan ul {
-      list-style: none;
-      padding: 0;
-  
-  }
-  
-  .plan ul li {
-      margin: 10px 0; /* espage entre les elments de la luste */
-    }
-  
-  .price { /* parametre prix*/
-      font-size: 20px;
-      font-weight: bold;
-      margin: 15px 0;
-  }
-  
-  button {
-      background: #4caf50;/* couleur */
-      color: white; /* texte */
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-  }
-  
-  button:hover {
-      background: #45a049;  /*bouton change de couleur lors de la survol */
-  }
-  
-  .condition {
-      font-size: 12px;
-      margin-top: 10px;
-  }
-  
-  .condition a {
-      color: #2c7b2c;
-      text-decoration: none;
-  }
-  
-  
-                                                                                        
-                                                  
-  
-  
-                                                   /* CONSULTER LES ABONNEMENT */                                                                                           
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.form-group label {
+  flex: 1;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  padding-right: 20px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+.form-group textarea {
+  height: 80px;
+}
+.file-input {
+  display: flex;
+  align-items: center;
+}
+.file-input input {
+  flex: 2;
+}
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.submit-btn:hover {
+  background-color: #333;
+}
+
+.back-btn,.next-btn {
+  margin-top: 20px;
+  background-color : black;
+  display: flex;
+  justify-content: space-between;
+}
+.next-btn:hover {
+  background-color: #333;
+}
+.back-btn:hover {
+  background-color: #333;
+}
+
+
+                                                  /* POSTER UNE ANNONCE */                                                                                          
   
 
 
