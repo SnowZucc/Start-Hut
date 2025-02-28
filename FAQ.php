@@ -6,11 +6,12 @@
   <title>FAQ Start-Hut</title>
   <meta name="description" content="FAQ – Tout ce qu'il faut savoir sur Start-Hut">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styleskhaleb.css">
 </head>
 <body>
   <?php include('header.php'); ?>
   <div class="content">
+  <div class="contentFAQ">  
   <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
   <!-- Section Inscription et Gestion du Compte -->
   <div class="faq-section">
@@ -116,6 +117,7 @@
         <button type="submit">Envoyer</button>
       </form>
     </div>
+  </div>
   </div>
 
   <script>
