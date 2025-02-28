@@ -149,7 +149,7 @@
   }
   
   /* Style des titres */
-  h1 {
+  .contentFAQ h1 {
     font-size: 2em;
     margin: 20px 0;
     padding-left: 20px;
