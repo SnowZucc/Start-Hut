@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/styles/stylesmeryem.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
