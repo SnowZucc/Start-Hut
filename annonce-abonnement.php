@@ -25,7 +25,9 @@
 
                  <div class="containerabonnement">  
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
-            <h1>Choisissez votre abonnement pour publier une annonce</h1>
+            <div class="texte-choix-abonnement">  
+            Choisissez votre abonnement pour publier votre annonce
+            </div>
             <div class="plans">
              <!-- Bloc représentant l'offre BASIC -->
             <div class="plan basic">
@@ -36,7 +38,7 @@
                     <li>Pas de mise en avant</li>
                 </ul>
                 <p class="price">0$</p> <!-- Affichage du prix de l'abonnement -->
-                <p class="condition">Offre gratuite pendant 1 mois puis passage au forfait standard ou premium. <a href="#">Offre soumise à conditions.</a></p>
+                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
                 <input type="radio" name="abonnement" value="basic" required>
             </div>
             <!-- Bloc représentant l'offre STANDARD -->

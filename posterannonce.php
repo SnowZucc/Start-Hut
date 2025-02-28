@@ -26,11 +26,13 @@
 
                  
             <div class="form-group">
-                <label for="titre">Titre *</label>
+                <label for="titre">Titre <span class="highlight2">*</span></label>
+                <small>Le titre de votre projet est le meilleur endroit pour inclure les mots-clés que les collaborateurs utiliseront pour rechercher un projet comme le vôtre</small>
                 <input type="text" id="titre" name="titre" maxlength="80" required>
             </div>
             <div class="form-group">
-                <label for="categorie">Catégorie *</label>
+                <label for="categorie">Catégorie <span class="highlight2">*</span></label>
+                <small>Choisissez la catégorie qui convient le mieux à votre projet</small>
                 <select id="categorie" name="categorie" required>
                     <option value="">Choisissez une catégorie</option>
                     <option value="tech">Technologie</option>
@@ -39,23 +41,31 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="competences">Compétences recherchées *</label>
-                <textarea id="competences" name="competences" required></textarea>
+                <label for="competences">Compétences recherchées <span class="highlight2">*</span> </label>
+                <small>Les compétences permettent aux collaborateurs captivés par votre projet de savoir s’ils peuvent en faire partie ou non</small>
+                <select id="compétences" name="compétences" required>
+                    <option value="">Choisissez une ou plusieurs compétences</option>
+                    <option value="Développement">Développement</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="business">Business</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="collaborateurs">Nombre de collaborateurs souhaités</label>
+                <small>Le nombre de collaborateurs permettra aux potentiels collaborateurs de savoir s’il y en a encore des places disponibles</small>
                 <input type="number" id="collaborateurs" name="collaborateurs" min="1" value="1">
             </div>
             <div class="form-group">
-                <label for="roles">Rôles à pourvoir *</label>
+                <label for="roles">Rôles à pourvoir <span class="highlight2">*</span></label>
                 <textarea id="roles" name="roles" required></textarea>
             </div>
             <div class="form-group">
-                <label for="remuneration">Rémunération *</label>
+                <label for="remuneration">Rémunération <span class="highlight2">*</span></label>
                 <input type="text" id="remuneration" name="remuneration" required>
             </div>
             <div class="form-group file-input">
                 <label for="video">Vidéo de présentation</label>
+                <small>Présentez brièvement votre projet pour permettre aux potentiels collaborateurs d’avoir une vue globale de votre projet</small>
                 <input type="file" id="video" name="video" accept="video/mp4">
             </div>
             <button type="submit" class="submit-btn">Sauvegarder & Continuer</button>
@@ -63,7 +73,7 @@
     </div>
             
 
-            
+        
 
              </div>
 
