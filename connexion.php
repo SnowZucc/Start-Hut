@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Connexion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+    <?php include('header.php'); ?>
+    
+    <div class="content">
+        <h1 class="connexion-title">CONNEXION</h1>
+        <p class="register-link">Pas encore de compte ? <a href="inscription.php">S’Inscrire</a></p>
+
+        <div class="form-container">
+            <form action="connexion.php" method="POST" class="connexion">
+                <div class="form-group">
+                    <label for="email">Adresse mail <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" class="input-field" placeholder="Votre adresse mail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" class="input-field" placeholder="Votre mot de passe" required>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" class="btnConnexion">Se connecter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <?php include('footer.php'); ?>
+</body>
+</html>
