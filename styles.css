@@ -496,7 +496,7 @@ footer {
   margin-bottom: 60px;
   border-radius: 10px;
   width: 160px;
-  height: 30px;
+  height: 40px;
   padding-left: 5px;
   border: 1px solid #ddd;
   background-color: transparent;
@@ -758,6 +758,97 @@ button:hover {
                                         
 
                                                /* PROFIL */
+
+                                              
+/* Conteneur principal */
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px; /* Espace entre la photo et les formulaires */
+}
+
+/* Conteneur de la photo de profil */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px; /* Largeur fixe pour la photo */
+}
+
+/* Photo de profil ronde et bien proportionnée */
+.profile-pic {
+  width: 180px; /* Taille agrandie */
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+/* Texte "Modifier la photo" */
+.edit-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #28a745;
+  cursor: pointer;
+}
+
+/* Cache l'input type file */
+.CV-input {
+  display: none;
+}
+
+/* Grille des formulaires */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes */
+  gap: 20px; /* Espacement entre les colonnes */
+  width: 100%;
+}
+
+/* Style des formulaires */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Champs de saisie */
+.input-field, .dropdown {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Bouton sauvegarde */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.save-button {
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
   /* Nom */
 .nom {
   margin-bottom: 30px;
@@ -860,68 +951,7 @@ h1 {
 .faq-section {
   flex-grow: 1;
 }
-/* Nom */                                          
-
-/* CV */
-/* Cache l'input type file */
-.CV-input {
-  display: none;
-}
-
-/* Style du label qui remplace l'input */
-.CV-label {
-  display: inline-block;
-  border-radius: 10px;
-  width: 150px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  background-color: #ffffff;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-}
-
-/* Style du bouton */
-.CV-button {
-  border-radius: 10px;
-  width: 120px;
-  height: 35px;
-  background-color: #ffffff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.CV-button:hover {
-  background-color: #ffffff;
-}
-
-.CV-label:hover {
-  background-color: #ffffff;
-}
-/* CV */
-
-/*Image*/
-.gride img {
-  width: 20%;
-  max-width: 250x;
-  height: auto;
-  border-radius: 20px;
-}
-
-.gride figure {
-  padding: 10px;
-  text-align: center;
-}
-
-figcaption {
-  margin-top: 10px;
-}
-
-/* Noù */    
+                                     
 
 /* PARTIE INSCRIPTION */
 

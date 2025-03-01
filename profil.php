@@ -3,76 +3,97 @@
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title></title>
+      <title>Mon Profil</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
-      <div class="content">
-            <div class="gride">
-              <figure>
-                <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-                <figcaption>
-                  <h3>Photo de profil </h3>
-                </figcaption>
-              </figure>
-            </div>
-         <div class="name">
-             <input type="text" class="nom" placeholder="Votre nom">
-         </div> 
-         <div class="name">
-             <input type="text" class="nom" placeholder="Votre prénom">
-         </div> 
-         <div class="name">
-             <input type="text" class="nom" placeholder="Adresse mail">
-         </div> 
-         <div class="name">
-             <input type="text" class="nom" placeholder="Votre mot de passe">
-         </div>
-         <div class="grid">
-            <select class="dropdown">
-              <option value="" disabled selected>Statut</option>
-              <option value="volvo">Entrepreneur</option>
-              <option value="saab">En recherche d'emploi</option>
-              <option value="saab">Investisseur</option>
-            </select>
-            <select class="dropdown">
-              <option value="" disabled selected>Abonnement</option>
-              <option value="volvo">Formule gratuite</option>
-              <option value="saab">Formule suivie</option>
-              <option value="saab">Formule suivie +</option>
-            </select>
-            <select class="dropdown">
-              <option value="" disabled selected>Pays</option>
-              <option value="volvo">France</option>
-              <option value="saab">Allemagne</option>
-              <option value="saab">Angleterre</option>
-              <option value="saab">Espagne</option>
-              <option value="saab">Japon</option>
-              <option value="saab">Etats-Unis</option>
-              <option value="saab">Chine</option>
-              <option value="saab">Russie</option>
-            </select>
-          </div>
-          <form method="post" enctype="multipart/form-data">
-            <label for="file-upload" class="CV CV-label">Sélectionner un fichier</label>
-            <input type="file" class="CV-input" id="file-upload" name="fichier">
-            <button type="submit" class="CV-button">Envoyer</button>
-          </form>
+    <?php include('header.php'); ?>  
+
+    <div class="content">
+    <div class="profile-section">
+        <!-- Profil (photo + bouton de modification) -->
+        <div class="profile-container">
+            <label for="file-upload">
+                <img src="default-profile.jpg" id="profile-pic" class="profile-pic" alt="Photo de profil">
+                <div class="edit-text">Modifier la photo</div>
+            </label>
+            <input type="file" id="file-upload" class="CV-input" accept="image/*">
         </div>
-           
-    </div> 
+
+        <!-- Grille des formulaires -->
+        <div class="form-grid">
+            <div class="form-box">
+                <label>Prénom</label>
+                <input type="text" class="input-field" placeholder="Votre pseudo">
+
+                <label>Nom</label>
+                <input type="text" class="input-field" placeholder="Votre nom">
+
+                <label>Date de naissance</label>
+                <input type="date" class="input-field">
+
+                <label>Adresse mail</label>
+                <input type="email" class="input-field" placeholder="Votre adresse mail">
+
+                <label>Mot de Passe</label>
+                <input type="password" class="input-field" placeholder="Votre mot de passe">
+                <small>Modifier votre mot de passe.</small>
+
+                <label>Statut</label>
+                <select class="dropdown">
+                    <option value="" disabled selected>Choisissez votre statut</option>
+                    <option value="entrepreneur">Entrepreneur</option>
+                    <option value="emploi">En recherche d'emploi</option>
+                    <option value="investisseur">Investisseur</option>
+                </select>
+
+                <label>CV</label>
+                <input type="file" class="input-field">
+                <small>Taille maximale : 30 200 ko - .pdf</small>
+            </div>
+
+            <div class="form-box">
+                <label>Abonnement</label>
+                <select class="dropdown">
+                    <option value="" disabled selected>Choisissez une formule</option>
+                    <option value="free">Formule gratuite</option>
+                    <option value="suivie">Formule suivie</option>
+                    <option value="suivie+">Formule suivie +</option>
+                </select>
+
+                <label>Documents</label>
+                <input type="file" class="input-field">
+                <small>Taille maximale : 30 200 ko - .pdf</small>
+
+                <label>Pays</label>
+                <input type="text" class="input-field" placeholder="Votre pays">
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">        
+        <button type="submit" class="save-button">Sauvegarder</button>
+    </div>
+  /div>
 
     <?php include('footer.php'); ?>
+    
+    <script>
+        document.getElementById("file-upload").addEventListener("change", function(event) {
+            let image = document.getElementById("profile-pic");
+            let file = event.target.files[0];
+
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    image.src = e.target.result; // Mise à jour de l'image
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
   </body>
 </html>
-
-    
-
-
-
-
-
-
