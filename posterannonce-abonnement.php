@@ -22,8 +22,11 @@
                     <div class="progress-separator">></div>
                     <div class="progress-step"><span>3</span> Publier</div>
                  </div>
+                 
+
 
                  <div class="containerabonnement">  
+                 
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
             <div class="texte-choix-abonnement">  
             Choisissez votre abonnement pour publier votre annonce
@@ -70,6 +73,7 @@
         </div>
     </div>
     <!-- Boutons de navigation -->
+     
     <div class="navigation-buttons">
                     <button type="button" class="back-btn" onclick="history.back()">Retour</button>
                     <button type="submit" class="next-btn">Continuer</button>
