@@ -10,7 +10,7 @@
             <li><a href="FAQ.php">FAQ</a></li>
         </ul>
         <div class="auth-buttons"> 
-            <a href="#" class="login">Connexion</a>
+            <a href="connexion.php" class="login">Connexion</a>
             <a href="inscription.php" class="signup" >Inscription</a>
             <a href="profil.php" class="signup">Mon profil</a>
         </div>

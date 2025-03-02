@@ -324,7 +324,9 @@ h1 {
 }
 /* Noù */    
 
+/* =================================== */
 /* PARTIE INSCRIPTION */
+/* =================================== */
 
 /* Style des liens hypertextes */
 a {
@@ -483,3 +485,130 @@ label .required {
 }
 
 /* Fin partie inscription */
+
+/* =================================== */
+/*  PARTIE CONNEXION */
+/* =================================== */
+
+/* Centrage et structure du contenu */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style du titre "CONNEXION" */
+.connexion-title {
+  text-align: center;
+  font-size: 26px; /* Légèrement plus grand */
+  font-weight: bold;
+  margin-bottom: 15px; /* Augmente l’espace sous "CONNEXION" */
+}
+
+/* Style du lien d'inscription */
+.register-link {
+  text-align: center;
+  margin-bottom: 10px; /* Augmente l’espace après "Pas encore de compte ?" */
+}
+
+/* Style du formulaire de connexion */
+form.connexion {
+  width: 97%;
+  max-width: 650px; /* Augmente la largeur du formulaire */
+  background: white;
+  padding: 45px; /* Augmente l'espace intérieur pour l'agrandir en longueur */
+  border: 1px solid black;
+  margin: 15px auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Augmente l'espacement entre les champs */
+}
+
+/* Espacement des champs */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style des champs de saisie */
+.input-field {
+  width: 100%;
+  max-width: 550px; /* Augmente encore plus la largeur */
+  padding: 14px; /* Augmente la hauteur des champs */
+  font-size: 17px; /* Augmente la taille du texte */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+}
+
+/* Style des labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 14px; /* Augmente l'espace sous le label */
+}
+
+/* Style des champs obligatoires */
+label .required {
+  color: red;
+}
+
+/* Alignement des options "Se souvenir de moi" et "Mot de passe oublié ?" */
+.form-options {
+  display: flex;
+  align-items: center; /* Assure un alignement vertical parfait */
+  justify-content: space-between; /* Sépare les éléments aux extrémités */
+  font-size: 15px;
+  margin-top: 5px; /* Ajuste l'espace au-dessus */
+  width: 100%;
+  max-width: 550px; /* Assure un bon alignement avec les champs */
+}
+
+/* Alignement de la checkbox "Se souvenir de moi" */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espace entre la checkbox et le texte */
+  margin-top: 14px; /* Ajoute un espacement de 10px sous le champ de mot de passe */
+}
+
+/* Ajustement de la checkbox "Se souvenir de moi" */
+.remember-me input {
+  margin-top: -20px; /* Remonte la checkbox de 20px */
+}
+
+
+/* Style du lien "mot de passe oublié ?" */
+.forgot-password {
+  color: green;
+  text-decoration: none;
+  align-self: center; /* Assure l'alignement vertical avec "Se souvenir de moi" */
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Style du bouton de connexion */
+.btnConnexion {
+  background-color: #006400;
+  color: white;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 350px;
+  margin: 15px auto 5px auto; /* Remonte le bouton et réduit l’espace en dessous */
+  display: block;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Effet de survol sur le bouton */
+.btnConnexion:hover {
+  background-color: #004d00;
+}
