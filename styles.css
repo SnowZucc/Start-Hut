@@ -235,6 +235,19 @@ h1 {
   padding-left: 20px;
 }
 
+/* Espacement des sections */
+.faq-section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 95%;
+  margin-left: 70px;
+  margin-right: auto;
+}
+
+
 .faq-section h2 {
   color: #2c3e50;
   font-size: 1.5em;
