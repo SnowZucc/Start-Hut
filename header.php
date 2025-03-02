@@ -1,11 +1,11 @@
 <div class="navbar-container">
     <nav class="navbar">
         <div class="logo">
-            <a href="index.php"><img src="logo.png" alt="Logo"></a>
+            <a href="index.php"><img src="src/img/logo.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
             <li><a href="annonces.php">Rejoindre un projet</a></li>
-            <li><a href="#">Poster une annonce</a></li>
+            <li><a href="posterannonce.php">Poster une annonce</a></li>
             <li><a href="abonnement.php">Abonnement</a></li>
             <li><a href="FAQ.php">FAQ</a></li>
         </ul>
