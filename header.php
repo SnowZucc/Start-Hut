@@ -13,6 +13,7 @@
             <a href="#" class="login">Connexion</a>
             <a href="inscription.php" class="signup" >Inscription</a>
             <a href="profil.php" class="signup">Mon profil</a>
+            <a href="monannonce.php" class="signup">Mes annonces</a>
         </div>
     </nav>
 

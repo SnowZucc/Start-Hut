@@ -864,6 +864,135 @@ button:hover {
   margin-right: auto;
 }
 
+                                                 /* PROFIL */                                                                                          
+
+
+                                        
+
+                                               /* Mes annonces */
+
+
+
+/* Style du conteneur principal */
+.content {
+  width: 80%;
+  margin: 30px auto;
+}
+
+/* Titre de la page */
+.page-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Conteneur de l'annonce */
+.annonce-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  background: white;
+  width: 200%;
+  max-width: 1000px;
+  position: relative;
+}
+
+/* Image de l'annonce */
+.annonce-image img {
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Informations de l'annonce */
+.annonce-info {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.annonce-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.annonce-description {
+  font-size: 14px;
+  color: #555;
+}
+
+/* État de l'annonce */
+/* NewDropdown */
+.newdropdown {
+  margin-bottom: 60px;
+  border-radius: 10px;
+  width: 80px;
+  height: 40px;
+  padding-left: 5px;
+  border: 1px solid #ddd;
+  background-color: transparent;
+}
+/* NewDropdown */
+
+.newinput-field {
+  width: 100%;
+  max-width: 700px;
+  padding: 9px;
+  font-size: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Conteneur des boutons */
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Boutons */
+.delete-button, .edit-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.delete-button {
+  background: #218838;
+  color: white;
+}
+
+.delete-button:hover {
+  background: #218838;
+}
+
+.edit-button {
+  background: lightgray;
+}
+
+.edit-button:hover {
+  background: gray;
+}
+
+
+
+
+                                                 /* Mes annonces */                                                                                          
+
+
+                                        
+
+                                               /* FAQ */
 /* Séparation pour la section Besoin d'aide */
 .help-section {
   background-color: #e6f7ff;
