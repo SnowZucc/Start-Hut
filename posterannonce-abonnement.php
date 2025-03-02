@@ -29,6 +29,8 @@
                  
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
             <div class="texte-choix-abonnement">  
+            <form action="posterannonce-publier.php" method="POST" enctype="multipart/form-data">
+
             Choisissez votre abonnement pour publier votre annonce
             </div>
             <div class="plans">

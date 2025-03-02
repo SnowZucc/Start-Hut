@@ -26,6 +26,11 @@
                 <h2>📝 Aperçu de votre annonce</h2>
                 <p>Vérifiez toutes les informations avant publication. Vous pouvez encore modifier votre annonce.</p>
                 </div>
+                <div class="navigation-buttons">
+                    <button type="button" class="back-btn" onclick="history.back()">Retour</button>
+                    <button type="submit" class="publish-btn">Publier l'annonce</button>
+                </div>
+            </div>
 
             </div>
 
