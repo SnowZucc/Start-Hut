@@ -3,25 +3,26 @@
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Startups en lancement</title>
-      <meta name="description" content="Découvrez les nouvelles startups innovantes prêtes à révolutionner leur domaine.">
+      <title>Start-Hut - Annonces</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
-    <!-- Connexion a la DB -->
     <?php
-    $conn = new mysqli("localhost", "root", "", "StartHut");
-    
-    // Récupérer les projets depuis la base de données
-    $sql = "SELECT * FROM Projets";
+    $conn = new mysqli("localhost", "root", "", "StartHut");      // Connexion a la DB
+
+    // Recherche par mots clés
+    $q = $_GET['q'] ?? '';      // Prend q= dans l'URL sinon une chaine vide. ?? = si vide, '' = chaine vide
+    $sql = "SELECT * FROM Projets WHERE annonce_titre LIKE '%$q%' OR annonce_description LIKE '%$q%'"; // Cherche dans les colonnes annonce_titre et annonce_description
     $result = $conn->query($sql);
     ?>
 
     <div class="content">
-      <input type="text" class="search-bar" placeholder="Recherchez par mot-clé, domaine ou compétence">
+      <form method="GET" action="annonces.php">     <!-- Soumet un GET à la même page... -->
+        <input type="text" name="q" class="search-bar" placeholder="Recherchez par mot-clé, domaine ou compétence">  <!-- ... avec q dans l'url -->
+      </form>
 
       <div class="grid">
         <select class="dropdown">
