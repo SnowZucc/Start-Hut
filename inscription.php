@@ -65,6 +65,7 @@
                 <div class="button-container">
                     <button type="submit" class="btnInscription">S'inscrire</button>
                 </div>
+                <div id="message-success" class="message success" style="display: none;">Inscription réussie !</div>
             </form>
         </div>
 
@@ -87,9 +88,7 @@
         $sql = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type) VALUES ('$nom', '$prenom', '$email', '$mot_de_passe', '$statut')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "<script>document.getElementById('message-success').style.display = 'block';</script>";
         }
     }
 
