@@ -11,10 +11,19 @@
             <li><a href="monannonce.php">Espace Projets</a></li>
         </ul>
         <div class="auth-buttons"> 
+<<<<<<< HEAD
             <a href="connexion.php" class="login">Connexion</a>
             <a href="inscription.php" class="signup" >Inscription</a>
             <a href="profil.php" class="signup">Mon profil</a>
            
+=======
+            <?php session_start(); if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
+                <a href="connexion.php" class="signup">Connexion</a>
+            <?php else : ?>                                 <!-- Sinon -->
+                <a href="profil.php" class="signup">Mon profil</a>
+                <a href="monannonce.php" class="signup">Mes annonces</a>
+            <?php endif; ?>
+>>>>>>> 6b4b8a336d4639bc56a98f3c1c156f236f214778
         </div>
     </nav>
 
