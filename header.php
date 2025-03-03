@@ -11,9 +11,10 @@
         </ul>
         <div class="auth-buttons"> 
             <a href="connexion.php" class="login">Connexion</a>
-            <a href="inscription.php" class="signup" >Inscription</a>
+            <a href="inscription.php" class="signup">Inscription</a>
             <a href="profil.php" class="signup">Mon profil</a>
             <a href="monannonce.php" class="signup">Mes annonces</a>
+            <a href="espace_projet.php">Espace projet</a>
         </div>
     </nav>
 

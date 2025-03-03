@@ -6,6 +6,7 @@
     <title>Connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="stylesguillaume.css?v=4">
 </head>
 
 <body>
