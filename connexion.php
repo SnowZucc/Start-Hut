@@ -56,10 +56,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="content">
         <h1 class="connexion-title">CONNEXION</h1>
-        <p class="register-link">Pas encore de compte ? <a href="inscription.php">S’Inscrire</a></p>
 
-        <?php if (!empty($error_message)): ?>
-            <div class="error-message"><?php echo $error_message; ?></div>
+        <?php if (!empty($error_message)): ?>    <!-- Si il y a une erreur -->
+            <div class="error-message"><?php echo $error_message; ?></div>  <!-- Affiche l'erreur -->
         <?php endif; ?>
 
         <div class="form-container">
@@ -85,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="button-container">
                     <button type="submit" class="btnConnexion">Se connecter</button>
                 </div>
+                <p class="register-link">Pas encore de compte ? <a href="inscription.php">S’Inscrire</a></p>
             </form>
         </div>
     </div>
