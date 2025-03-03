@@ -12,6 +12,17 @@
     <?php include('header.php'); ?>  
 
     <div class="content">
+
+    <!-- Affiche l'utilisateur connecté depuis le stockage session -->
+    <?php
+        session_start();
+        if (isset($_SESSION['user_id'])) {
+            echo "Connecté en tant que " . $_SESSION['user_email'];
+        } else {
+            echo "Non connecté";
+        }
+    ?> <br> <br> <br>
+
     <div class="profile-section">
         <!-- Profil (photo + bouton de modification) -->
         <div class="profile-container">

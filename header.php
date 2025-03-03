@@ -10,10 +10,12 @@
             <li><a href="FAQ.php">FAQ</a></li>
         </ul>
         <div class="auth-buttons"> 
-            <a href="connexion.php" class="login">Connexion</a>
-            <a href="inscription.php" class="signup" >Inscription</a>
-            <a href="profil.php" class="signup">Mon profil</a>
-            <a href="monannonce.php" class="signup">Mes annonces</a>
+            <?php session_start(); if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
+                <a href="connexion.php" class="signup">Connexion</a>
+            <?php else : ?>                                 <!-- Sinon -->
+                <a href="profil.php" class="signup">Mon profil</a>
+                <a href="monannonce.php" class="signup">Mes annonces</a>
+            <?php endif; ?>
         </div>
     </nav>
 
