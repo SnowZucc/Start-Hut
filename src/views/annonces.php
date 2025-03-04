@@ -6,9 +6,10 @@
       <title>Start-Hut - Annonces</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-louis.css">
   </head>
   <body>
-    <?php include('../../templates/header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
+    <?php include('../templates/header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
     <?php
     $conn = new mysqli("localhost", "root", "", "StartHut");      // Connexion a la DB
@@ -60,6 +61,6 @@
         ?>
       </div>
     </div>
-    <?php include('../../templates/footer.php'); ?> <!-- Inclusion du footer -->
+    <?php include('../templates/footer.php'); ?> <!-- Inclusion du footer -->
   </body>
 </html>
