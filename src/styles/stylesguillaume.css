@@ -61,13 +61,13 @@ a {
   }
   
   /* Barre d'inscription */
-  .input-field {
-    width: 100%;
-    max-width: 430px;
-    padding: 9px;
-    font-size: 15px;
+  .input-field-inscription {
+    width: 100; /* Ajout de 40px de chaque côté */
+    max-width: 550px;
+    padding: 14px;
+    font-size: 17px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 12px;
     display: block;
     margin: auto;
   }
@@ -189,7 +189,7 @@ a {
   /* Style du formulaire de connexion */
   form.connexion {
     width: 97%;
-    max-width: 650px; /* Augmente la largeur du formulaire */
+    max-width: 730px; /* Augmente la largeur du formulaire */
     background: white;
     padding: 45px; /* Augmente l'espace intérieur pour l'agrandir en longueur */
     border: 1px solid black;
@@ -207,9 +207,9 @@ a {
   }
   
   /* Style des champs de saisie */
-  .input-field {
+  .input-field-connexion {
     width: 100%;
-    max-width: 550px; /* Augmente encore plus la largeur */
+    max-width: 730px; /* Augmente encore plus la largeur */
     padding: 14px; /* Augmente la hauteur des champs */
     font-size: 17px; /* Augmente la taille du texte */
     border: 1px solid #ccc;
@@ -251,7 +251,7 @@ a {
   
   /* Ajustement de la checkbox "Se souvenir de moi" */
   .remember-me input {
-    margin-top: -20px; /* Remonte la checkbox de 20px */
+    margin-top: -13px; /* Remonte la checkbox de 20px */
   }
   
   
@@ -286,6 +286,20 @@ a {
   .btnConnexion:hover {
     background-color: #004d00;
   }
+
+  /* Centrage de "Mot de passe oublié ?" sous le bouton */
+.forgot-password-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Centrage de "Pas encore de compte ?" sous le formulaire */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
 /* ==================================== */
 /*  BARRE DE NAVIGATION SECONDAIRE */
 /* ==================================== */

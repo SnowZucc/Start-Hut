@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/styles/stylesmeryem.css">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="src/styles/stylesguillaume.css?v=4">  <!-- Ne pas supprimer cette ligne car sinon ça changera le style du Header !!!  -->
     </head>
     <body>
         <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->

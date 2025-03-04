@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Projet</title>
     <link rel="stylesheet" href="styles.css?v=4">
-    <link rel="stylesheet" href="stylesguillaume.css?v=4">
+    <link rel="stylesheet" href="src/styles/stylesguillaume.css?v=4">
 </head>
 <body>
 
