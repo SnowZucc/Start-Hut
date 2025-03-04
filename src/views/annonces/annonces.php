@@ -5,10 +5,10 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>Start-Hut - Annonces</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
   </head>
   <body>
-    <?php include('header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
+    <?php include('../../templates/header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
     <?php
     $conn = new mysqli("localhost", "root", "", "StartHut");      // Connexion a la DB
@@ -58,6 +58,6 @@
         ?>
       </div>
     </div>
-    <?php include('footer.php'); ?> <!-- Inclusion du footer -->
+    <?php include('../../templates/footer.php'); ?> <!-- Inclusion du footer -->
   </body>
 </html>

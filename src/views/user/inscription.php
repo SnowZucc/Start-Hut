@@ -5,12 +5,12 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>Inscription</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="styles.css?v=2">
-      <link rel="stylesheet" href="src/styles/stylesguillaume.css?v=4">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css?v=2">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css?v=4">
   </head>
 
     <body>
-    <?php include('header.php'); ?>
+    <?php include('../../templates/header.php'); ?>
     <div class="content">
         <h1 class="inscription-title">INSCRIPTION</h1>
 
@@ -31,17 +31,17 @@
 
                 <div class="form-group">
                     <label for="email">Adresse mail <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" class="input-field-inscription" placeholder="Veuillez saisir votre adresse mail" required>
+                    <input type="email" id="email" name="email" class="input-field" placeholder="Veuillez saisir votre adresse mail" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Mot de passe <span class="required">*</span></label>
-                    <input type="password" id="password" name="password" class="input-field-inscription" placeholder="Veuillez saisir votre mot de passe" required>
+                    <input type="password" id="password" name="password" class="input-field" placeholder="Veuillez saisir votre mot de passe" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="password_confirmation">Confirmer votre mot de passe <span class="required">*</span></label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" class="input-field-inscription" placeholder="Veuillez confirmer votre mot de passe" required>
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="input-field" placeholder="Veuillez confirmer votre mot de passe" required>
                 </div>
 
                 <div class="form-group">
@@ -60,7 +60,7 @@
 
                 <div class="checkbox-container">
                     <input type="checkbox" id="cgu" required>
-                    <label for="cgu">J'ai lu et j'accepte les <a href="#">Conditions Générales d’Utilisation</a></label>
+                    <label for="cgu">J'ai lu et j'accepte les <a href="../legal/CGU.php">Conditions Générales d’Utilisation</a></label>
                 </div>
 
                 <div class="button-container">
@@ -73,7 +73,7 @@
         <p class="already-registered">Déjà inscrit ? <a href="connexion.php">Se Connecter</a></p>
     </div>
     
-    <?php include('footer.php'); ?>    
+    <?php include('../../templates/footer.php'); ?>    
 
     <!-- PArtie PHP : envoie de l'inscription à la DB -->
     <?php

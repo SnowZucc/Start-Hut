@@ -6,10 +6,10 @@
   <title>FAQ Start-Hut</title>
   <meta name="description" content="FAQ – Tout ce qu'il faut savoir sur Start-Hut">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styleskhaleb.css">
+  <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-khaleb.css">
 </head>
 <body>
-  <?php include('header.php'); ?>
+  <?php include('../templates/header.php'); ?>
   <div class="content">
   <div class="contentFAQ">  
   <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
@@ -129,6 +129,6 @@
     });
   });
   </script>
-  <?php include('footer.php'); ?>
+  <?php include('../templates/footer.php'); ?>
 </body>
 </html>

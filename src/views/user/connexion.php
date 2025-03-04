@@ -42,16 +42,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Connexion</title>
-    <link rel="stylesheet" href="styles.css?v=2">
-    <link rel="stylesheet" href="src/styles/stylesguillaume.css?v=4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css?v=4">
 </head>
 <body>
-    <?php include('header.php'); ?>
+    <?php include('../../templates/header.php'); ?>
 
     <div class="content">
         <h1 class="connexion-title">CONNEXION</h1>
@@ -64,37 +65,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form action="connexion.php" method="POST" class="connexion">
                 <div class="form-group">
                     <label for="email">Adresse mail <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" class="input-field-connexion" placeholder="Votre adresse mail" required>
+                    <input type="email" id="email" name="email" class="input-field" placeholder="Votre adresse mail" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Mot de passe <span class="required">*</span></label>
-                    <input type="password" id="password" name="password" class="input-field-connexion" placeholder="Votre mot de passe" required>
+                    <input type="password" id="password" name="password" class="input-field" placeholder="Votre mot de passe" required>
                 </div>
 
-                <!-- Checkbox "Se souvenir de moi" -->
-                <div class="remember-me">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Se souvenir de moi</label>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
                 </div>
 
-                <!-- Bouton de connexion -->
                 <div class="button-container">
                     <button type="submit" class="btnConnexion">Se connecter</button>
                 </div>
                 <p class="register-link">Pas encore de compte ? <a href="inscription.php">S’Inscrire</a></p>
-
-                <!-- Mot de passe oublié sous le bouton -->
-                <div class="forgot-password-container">
-                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-                </div>
             </form>
         </div>
-
-        <!-- "Pas encore de compte ?" sous le carré -->
-        <p class="register-link">Pas encore de compte ? <a href="inscription.php">S’Inscrire</a></p>
     </div>
 
-    <?php include('footer.php'); ?>
+    <?php include('../../templates/footer.php'); ?>
 </body>
 </html>

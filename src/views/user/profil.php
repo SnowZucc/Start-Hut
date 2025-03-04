@@ -6,10 +6,10 @@
       <title>Mon Profil</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
   </head>
   <body>
-    <?php include('header.php'); ?>  
+    <?php include('../../templates/header.php'); ?>  
 
     <div class="content">
 
@@ -89,7 +89,7 @@
     </div>
   /div>
 
-    <?php include('footer.php'); ?>
+    <?php include('../../templates/footer.php'); ?>
     
     <script>
         document.getElementById("file-upload").addEventListener("change", function(event) {
