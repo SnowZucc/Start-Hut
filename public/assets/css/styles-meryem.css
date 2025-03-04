@@ -1,5 +1,3 @@
-
-  
                                                          /* LANDING PAGE */
     /* Premiere section */                                              
   .landing {
@@ -131,7 +129,7 @@
   }
   
   .imagepourquoinouschoisir img {
-      width: 90%; /* Laisse un peu d’espace pour voir le background */
+      width: 90%; /* Laisse un peu d'espace pour voir le background */
       max-width: 500px; /* Ajuste la taille max */
       height: auto;
       border-radius: 20px;
@@ -227,7 +225,7 @@
     max-width: 1100px;
     margin: auto;
     padding: 20px;
-    margin-left: 175px; /* Ajuster selon l’alignement du logo */
+    margin-left: 175px; /* Ajuster selon l'alignement du logo */
   
   }
                                       /* Style général pour la page CGU */
@@ -273,7 +271,7 @@
     max-width: 1100px;
     margin: auto;
     padding: 20px;
-    margin-left: 175px; /* Ajuster selon l’alignement du logo */
+    margin-left: 175px; /* Ajuster selon l'alignement du logo */
   }
   
   
@@ -293,7 +291,7 @@
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-left: 0px;
+    margin-bottom: 30px;
     color: #000000;
   }
   
@@ -301,35 +299,41 @@
     font-size: 21px;
     color: #1A702D;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-bottom: 1px solid #a3a6a4;
     padding-bottom: 5px;
   }
   
   .containerCookies p {
     font-size: 16px;
-    line-height: 1.2;
-    color: #333;
-    margin-bottom: 30px;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
   
   .containerCookies ul {
-    list-style: disc;
-    padding-left: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
   
   .containerCookies ul li {
-    font-size: 16px;
     margin-bottom: 10px;
+    line-height: 1.4;
   }
   
-  /* Alignement et structuration */
-  .containerCookies {
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-    margin-left: 175px; /* Ajuster selon l’alignement du logo */
+  .containerCookies a {
+    color: #1A702D;
+    text-decoration: none;
+  }
+  
+  .containerCookies a:hover {
+    text-decoration: underline;
+  }
+  
+  .containerCookies .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
   }
                                                     /*COOKIES*/
                                              
@@ -381,7 +385,7 @@
     border: none;
     border-radius: 7px; 
   
-    cursor: pointer; /* Change le curseur pour indiquer qu’il est cliquable */
+    cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
   
   }
   
@@ -399,7 +403,7 @@
   .projetAnnonce h3 {
     font-size: 20px; /* Titre taille */
     margin-bottom: 15px; /* 
-    ’espace sous le titre */
+    'espace sous le titre */
   }
   
   /* Image du projet */
@@ -407,7 +411,7 @@
   
     width: 100%; /* pour que ca s'étire sur toute la largeur du conteneur */
     max-height: 250px; /* empêche l'image d'être trop grande */
-    object-fit: cover; /* ajuste l’image pour qu’elle remplisse bien son espace */
+    object-fit: cover; /* ajuste l'image pour qu'elle remplisse bien son espace */
     border-radius: 10px; /
   }
   

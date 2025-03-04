@@ -5,16 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="src/styles/stylesmeryem.css">
-        <link rel="stylesheet" href="styles.css">
+         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     </head>
     <body>
-        <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
+        <?php include('../../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
         
              <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
              <div class="containerAnnonce">
         <div class="profilAnnonceur">
-            <img src="src/img/APRIL.png" alt="Photo de profil" class="profile-img">
+            <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Photo de profil" class="profile-img">
             <div class="infoAnnonceur">
                 <h2>Nom de l’annonceur</h2>
                 <p><span class="icon">📍</span> Pays | <span class="icon">💬</span> Langues</p>
@@ -24,7 +24,7 @@
         
         <div class="projetAnnonce">
             <h3>Nom du projet</h3>
-            <img src="src/img/APRIL.png" alt="Image du projet" class="project-img">
+            <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Image du projet" class="project-img">
             <p class="description-title">Description</p>
             <p class="description-content">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
         </div>
@@ -44,6 +44,6 @@
 
 
 
-        <?php include('footer.php'); ?>    
+        <?php include('../../templates/footer.php'); ?>    
     </body>
 </html>
