@@ -28,7 +28,7 @@
                 </ul>
                 
                 <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
-                <button>Choisir</button><!-- Boutton inscription qui renvoie vers linscription du coup -->
+               
             </div>
             <!-- Bloc représentant l'offre STANDARD -->
             <div class="plan standard">
@@ -42,7 +42,6 @@
                 </ul>
                 
                 <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
-                <button>Choisir</button><!-- bouton qui renvoie aussi a linscription ou connexion -->
             </div>
            <!-- Bloc représentant l'offre PREMIUM -->
             <div class="plan premium">
@@ -56,7 +55,6 @@
                 </ul>
                 
                 <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
-                <button>Choisir</button> <!-- bouton qui renvoie aussi a linscription ou connexion -->
             </div>
         </div>
     </div>
