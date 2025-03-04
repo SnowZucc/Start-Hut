@@ -1,3 +1,19 @@
+<?php
+session_start(); // Démarrer la session
+
+
+// Récupérer les informations de la session
+$abonnement = $_SESSION['abonnement'] ?? 'Non renseigné';
+$titre = $_SESSION['titre'] ?? 'Non renseigné';
+$categorie = $_SESSION['categorie'] ?? 'Non renseignée';
+$competences = $_SESSION['competences'] ?? 'Non renseignées';
+$collaborateurs = $_SESSION['collaborateurs'] ?? 'Non renseigné';
+$roles = $_SESSION['roles'] ?? 'Non renseignés';
+$remuneration = $_SESSION['remuneration'] ?? 'Non renseignée';
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,10 +41,23 @@
                  <div class="container-aperçu">
                 <h2>📝 Aperçu de votre annonce</h2>
                 <p>Vérifiez toutes les informations avant publication. Vous pouvez encore modifier votre annonce.</p>
+
+             <!-- utilisation des donnée recuperer de lautre session -->
+                <p><strong>Titre :</strong> <?php echo htmlspecialchars($titre); ?></p>
+                <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($categorie); ?></p>
+                <p><strong>Compétences :</strong> <?php echo htmlspecialchars($competences); ?></p>
+                <p><strong>Nombre de collaborateurs :</strong> <?php echo htmlspecialchars($collaborateurs); ?></p>
+                <p><strong>Rôles :</strong> <?php echo nl2br(htmlspecialchars($roles)); ?></p>
+                <p><strong>Rémunération :</strong> <?php echo htmlspecialchars($remuneration); ?></p>
+                <p><strong>✅ Abonnement choisi :</strong> <?php echo htmlspecialchars($abonnement); ?></p>
+
+
                 </div>
                 <div class="navigation-buttons">
-                    <button type="button" class="back-btn" onclick="history.back()">Retour</button>
-                    <button type="submit" class="publish-btn">Publier l'annonce</button>
+                <!-- meme probleme !!!!!! -->
+                <button type="button" class="back-btn" onclick="window.location.href='posterannonce-abonnement.php'">Retour</button>
+
+                    <button type="submit" class="next-btn">Continuer</button>
                 </div>
             </div>
 
@@ -36,6 +65,7 @@
 
 
 
-            <?php include('../../../templates/footer.php'); ?>    
+            <?php include('../../../templates/footer.php'); ?>   
+
     </body>
 </html>
