@@ -14,34 +14,49 @@
     <div class="content">
         <h2 class="page-title">Mes annonces</h2>
 
-        <div class="annonce-container">
-            <!-- Image de l'annonce -->
-            <div class="annonce-image">
-                <img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">
-                <figcaption>
-            </div>
+        <?php
+        $conn = new mysqli("localhost", "root", "", "StartHut");
+        
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
 
-            <!-- Informations de l'annonce -->
-            <div class="annonce-info">
+        $sql = "SELECT * FROM Projets";
+        $result = $conn->query($sql);
+
+        // Pour chaque annonce dans la db, on boucle et on affiche les informations de l'annonce
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {  // fetch_assoc() récupère les données sous forme de tableau associatif
+                echo '<div class="annonce-container">';
+                echo '<div class="annonce-image">';
+                echo '<img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">';
+                echo '</div>';
                 
-                <label></label>
-                <input type="text" class="newinput-field" placeholder="Description">
-            </div>
+                echo '<div class="annonce-info">';
+                echo '<h3>' . htmlspecialchars($row["annonce_titre"]) . '</h3>';
+                echo '<p>' . htmlspecialchars($row["annonce_description"]) . '</p>';
+                echo '<p>Catégorie: ' . htmlspecialchars($row["annonce_categorie"]) . '</p>';
+                echo '<p>Compétences recherchées: ' . htmlspecialchars($row["annonce_competences_recherchees"]) . '</p>';
+                echo '<p>Collaborateurs souhaités: ' . htmlspecialchars($row["annonce_collaborateurs_souhaites"]) . '</p>';
+                echo '</div>';
 
-            <!-- État de l'annonce -->
-                <select class="newdropdown">
-                    <option value="" disabled selected>État</option>
-                    <option value="entrepreneur">En cours de création </option>
-                    <option value="emploi">En attente</option>
-                    <option value="investisseur">Statut avancé</option>
-                </select>
-        </div>
+                echo '<div class="etat-annonce">';
+                echo '<p>État: ' . htmlspecialchars($row["annonce_etat"]) . '</p>';
+                echo '</div>';
 
-        <!-- Boutons -->
-        <div class="button-container">
-            <button class="delete-button">Supprimer</button>
-            <button class="edit-button">Modifier</button>
-        </div>
+                echo '<div class="button-container">';
+                echo '<button class="delete-button" data-id="' . $row["id"] . '">Supprimer</button>';
+                echo '<button class="edit-button" data-id="' . $row["id"] . '">Modifier</button>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo "<p>Aucune annonce</p>";
+        }
+        
+        $conn->close();
+        ?>
+
     </div>
 
   </body>
