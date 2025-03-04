@@ -29,8 +29,18 @@
                  
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
             <div class="texte-choix-abonnement">  
+                 
             <form action="posterannonce-publier.php" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="titre" value="<?php echo htmlspecialchars($_POST['titre']); ?>">
+    <input type="hidden" name="categorie" value="<?php echo htmlspecialchars($_POST['categorie']); ?>">
+    <input type="hidden" name="compétences" value="<?php echo htmlspecialchars($_POST['compétences']); ?>">
+    <input type="hidden" name="collaborateurs" value="<?php echo htmlspecialchars($_POST['collaborateurs']); ?>">
+    <input type="hidden" name="roles" value="<?php echo htmlspecialchars($_POST['roles']); ?>">
+    <input type="hidden" name="remuneration" value="<?php echo htmlspecialchars($_POST['remuneration']); ?>">
 
+    <!-- Et le reste de votre formulaire ici -->
+
+    
             Choisissez votre abonnement pour publier votre annonce
             </div>
             <div class="plans">
@@ -78,12 +88,21 @@
      
     <div class="navigation-buttons">
                     <button type="button" class="back-btn" onclick="history.back()">Retour</button>
-                    <button type="submit" class="next-btn">Continuer</button>
+                    <button type="submit" name="submit" class="next-btn">Continuer</button>
                 </div>
             </div>
 
 
 
-            <?php include('footer.php'); ?>    
+            <?php include('footer.php'); ?>   
+
+            <!--afin de verifier si les données sont bien transmises --> 
+             <?php if (isset($_POST['submit'])) {  
+    $titre = $_POST['titre'];  
+    $categorie = $_POST['categorie'];  
+    echo "Titre : " . $titre . "<br>";
+    echo "Catégorie : " . $categorie;
+       } ?>   
+
     </body>
 </html>

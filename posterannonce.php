@@ -23,7 +23,7 @@
                 </div>
                 <!-- Barre de progression  -->
                 <div class="containerposter">
-                <form action="annonce-abonnement.php" method="POST" enctype="multipart/form-data">
+                <form action="posterannonce-abonnement.php" method="POST" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="titre">Titre <span class="highlight2">*</span></label>
