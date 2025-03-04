@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_email'] = $user['email'];
             $_SESSION['user_type'] = $user['type'];
 
-            header("Location: index.php"); // Rediriger vers la page d'accueil
+            header("Location: ../../../public/index.php"); // Rediriger vers la page d'accueil
             exit;
         } else {
             $error_message = "Mot de passe incorrect";

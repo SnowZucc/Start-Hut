@@ -10,7 +10,9 @@
             <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
         </ul>
         <div class="auth-buttons"> 
-            <?php session_start(); if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
+            <?php         if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        } if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
                 <a href="/Start-Hut/src/views/user/connexion.php" class="signup">Connexion</a>
             <?php else : ?>                                 <!-- Sinon -->
                 <a href="/Start-Hut/src/views/user/profil.php" class="signup">Mon profil</a>
