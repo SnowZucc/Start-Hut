@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
   </head>
   <body>
-    <?php include('../../../templates/header.php'); ?>
+    <!-- <?php include('../../../templates/header.php'); ?> -->   <!-- Retiré car inclus dans espace projets -->
 
     <div class="content">
         <h2 class="page-title">Mes annonces</h2>

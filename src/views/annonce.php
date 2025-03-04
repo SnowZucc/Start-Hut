@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php                                                                                           // Ouverture du bloc PHP
-        include('../../templates/header.php');                                                          // Inclusion du header contenant la navigation
+        include('../templates/header.php');                                                          // Inclusion du header contenant la navigation
         
         $bdd = new PDO('mysql:host=localhost;dbname=StartHut;charset=utf8', 'root', '');              // Création objet PDO pour connexion MySQL
         
@@ -61,6 +61,6 @@
             </div>
         </div>
 
-        <?php include('../../templates/footer.php'); ?>    
+        <?php include('../templates/footer.php'); ?>    
     </body>
 </html>
