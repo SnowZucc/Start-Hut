@@ -6,10 +6,10 @@
       <title>Mes annonces</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
   </head>
   <body>
-    <?php include('header.php'); ?>
+    <?php include('../../../templates/header.php'); ?>
 
     <div class="content">
         <h2 class="page-title">Mes annonces</h2>

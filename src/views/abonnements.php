@@ -5,11 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="src/styles/stylesmeryem.css">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     </head>
     <body>
-        <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
+        <?php include('../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
         <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
         <div class="containerabonnement">  
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
@@ -62,6 +62,6 @@
     </div>
     </div>
     
-        <?php include('footer.php'); ?>    
+        <?php include('../templates/footer.php'); ?>    
     </body>
 </html>
