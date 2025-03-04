@@ -17,9 +17,9 @@
         </div>
     </div>
     <div class="footer-bottom">  <!-- derniere ligne du footer pour renvoyer vers les info importantes  -->
-        <a href="CGU.php">CGU</a> <!-- remplacer # lors de la création de la page -->
-        <a href="mentions.php">Mentions légales</a>  <!-- remplacer # lors de la création de la page -->
-        <a href="politiquesCookies.php">Politiques des cookies</a> <!-- remplacer # lors de la création de la page -->
+        <a href="/Start-Hut/src/views/legal/cgu.php">CGU</a> <!-- remplacer # lors de la création de la page -->
+        <a href="/Start-Hut/src/views/legal/mentions.php">Mentions légales</a>  <!-- remplacer # lors de la création de la page -->
+        <a href="/Start-Hut/src/views/legal/cookies.php">Politiques des cookies</a> <!-- remplacer # lors de la création de la page -->
         
     </div>
 </footer>

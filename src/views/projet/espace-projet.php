@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Projet</title>
-    <link rel="stylesheet" href="styles.css?v=4">
-    <link rel="stylesheet" href="stylesguillaume.css?v=4">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
 </head>
 <body>
 
-<?php include('header.php'); ?>
+<?php include('../../templates/header.php'); ?>
 
 <!-- Barre de navigation secondaire -->
 <nav class="sub-navbar">
@@ -22,9 +22,9 @@
 </nav>
 
 <!-- Inclusion automatique de la page Mes annonces par défaut -->
-<?php include('mes_annonces.php'); ?>
+<?php include('annonce/monannonce.php'); ?>
 
-<?php include('footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>
 
 </body>
 </html>
