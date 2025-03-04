@@ -9,40 +9,57 @@
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     </head>
     <body>
-        <?php include('../../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
+        <?php                                                                                           // Ouverture du bloc PHP
+        include('../../templates/header.php');                                                          // Inclusion du header contenant la navigation
         
-             <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
-             <div class="containerAnnonce">
-        <div class="profilAnnonceur">
-            <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Photo de profil" class="profile-img">
-            <div class="infoAnnonceur">
-                <h2>Nom de l’annonceur</h2>
-                <p><span class="icon">📍</span> Pays | <span class="icon">💬</span> Langues</p>
-                <button class="contact-btn">Contactez moi</button>
+        $bdd = new PDO('mysql:host=localhost;dbname=StartHut;charset=utf8', 'root', '');              // Création objet PDO pour connexion MySQL
+        
+        $id_annonce = isset($_GET['id']) ? (int)$_GET['id'] : 0;                                      // Récupère ID URL ou 0 si absent
+        
+        // Récupération des informations de l'annonce
+        $req = $bdd->prepare('SELECT p.*, u.nom, u.prenom FROM Projets p JOIN Utilisateurs u ON p.createur = u.id WHERE p.id = ?'); // Préparation de la requête SQL avec jointure
+        $req->execute([$id_annonce]);                                                                 // Exécute requête avec paramètre ID
+        $annonce = $req->fetch(PDO::FETCH_ASSOC);                                                    // Récupère résultat en tableau associatif
+        
+        if (!$annonce) {                                                                              // Si aucune annonce trouvée
+            echo "Annonce non trouvée";                                                              // Affiche message d'erreur
+            exit;                                                                                     // Arrête l'exécution du script
+        }
+        ?>                                                                                      
+        
+        <div class="content">
+            <div class="containerAnnonce">
+                <div class="profilAnnonceur">
+                    <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Photo de profil" class="profile-img">
+                    <div class="infoAnnonceur">
+                        <h2><?php echo htmlspecialchars($annonce['prenom'] . ' ' . $annonce['nom']); ?></h2>
+                        <p><span class="icon">📍</span> Pays | <span class="icon">💬</span> Langues</p>
+                        <button class="contact-btn">Contactez moi</button>
+                    </div>
+                </div>
+                
+                <div class="projetAnnonce">
+                    <h3><?php echo htmlspecialchars($annonce['annonce_titre']); ?></h3>
+                    <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Image du projet" class="project-img">
+                    <p class="description-title">Description</p>
+                    <p class="description-content"><?php echo htmlspecialchars($annonce['annonce_description']); ?></p>
+                </div>
+
+                <div class="detailsAnnonce">
+                    <h3>Détails</h3>
+                    <div class="details-content">
+                        <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($annonce['annonce_categorie']); ?></p>
+                        <p><strong>Compétences recherchées :</strong> <?php echo htmlspecialchars($annonce['annonce_competences_recherchees']); ?></p>
+                        <p><strong>Nombre de collaborateurs souhaités :</strong> <?php echo htmlspecialchars($annonce['annonce_collaborateurs_souhaites']); ?></p>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="postuler">Postuler</button>
+                    <button class="sauvegarder">Sauvegarder</button>
+                </div>
             </div>
         </div>
-        
-        <div class="projetAnnonce">
-            <h3>Nom du projet</h3>
-            <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Image du projet" class="project-img">
-            <p class="description-title">Description</p>
-            <p class="description-content">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
-        </div>
-
-        <div class="detailsAnnonce">
-            <h3>Détails</h3>
-            <div class="details-content">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</div>
-        </div>
-
-        <div class="actions">
-            <button class="postuler">Postuler</button>
-            <button class="sauvegarder">Sauvegarder</button>
-        </div>
-    </div>
-
-            </div>
-
-
 
         <?php include('../../templates/footer.php'); ?>    
     </body>

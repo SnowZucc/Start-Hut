@@ -46,6 +46,7 @@
         <?php
         // Afficher les annonces récupérées par le PHP en haut dans une boucle
             while($row = $result->fetch_assoc()) {
+                echo "<a href='annonce.php?id=" . $row["id"] . "' class='nav-links'>";
                 echo "<figure>";
                 echo "<img src='https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg'>";
                 echo "<figcaption>";
@@ -53,6 +54,7 @@
                 echo "<p>" . htmlspecialchars($row["annonce_description"]) . "</p>";
                 echo "</figcaption>";
                 echo "</figure>";
+                echo "</a>";
             }
         $conn->close();
         ?>
