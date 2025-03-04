@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="competences">Compétences recherchées <span class="highlight2">*</span> </label>
                     <small>Les compétences permettent aux collaborateurs captivés par votre projet de savoir s’ils peuvent en faire partie ou non</small>
-                    <select id="compétences" name="compétences" required>
+                    <select id="competences" name="competences" required>
                         <option value="">Choisissez une ou plusieurs compétences</option>
                         <option value="Développement">Développement</option>
                         <option value="Marketing">Marketing</option>
@@ -63,11 +63,7 @@
                     <label for="remuneration">Rémunération <span class="highlight2">*</span></label>
                     <input type="text" id="remuneration" name="remuneration" required>
                 </div>
-                <div class="form-group file-input">
-                    <label for="video">Vidéo de présentation</label>
-                    <small>Présentez brièvement votre projet pour permettre aux potentiels collaborateurs d’avoir une vue globale de votre projet</small>
-                    <input type="file" id="video" name="video" accept="video/mp4">
-                </div>
+            
                 <button type="submit" class="submit-btn">Sauvegarder & Continuer</button>
             </form>
         </div>
