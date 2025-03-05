@@ -41,7 +41,7 @@ $description = $_SESSION['description'] ?? 'Non renseignée';
                  </div>
                  <div class="container-aperçu">
                 <h2>📝 Aperçu de votre annonce</h2>
-                <p>Vérifiez toutes les informations avant publication. Vous pouvez encore modifier votre annonce.</p>
+                <h3 class="verfier">Vérifiez toutes les informations avant publication</h3>
 
              <!-- utilisation des donnée recuperer de lautre session -->
                 <p><strong>Titre :</strong> <?php echo htmlspecialchars($titre); ?></p>
@@ -56,10 +56,10 @@ $description = $_SESSION['description'] ?? 'Non renseignée';
 
                 </div>
                 <div class="navigation-buttons">
-                <!-- meme probleme !!!!!! -->
+            
                
 
-                    <button type="submit" class="next-btn">Continuer</button>
+                    <button type="submit" class="next-btn">Publier</button>
                 </div>
             </div>
 
