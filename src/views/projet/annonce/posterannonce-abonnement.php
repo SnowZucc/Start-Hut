@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li>Pas de mise en avant</li>
                 </ul>
                 <p class="price">0$</p> <!-- Affichage du prix de l'abonnement -->
-                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
+                
                 <input type="radio" name="abonnement" value="basic" required >
             </div>
             <!-- Bloc représentant l'offre STANDARD -->
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li>Mise en avant</li>
                 </ul>
                 <p class="price">9.99$/mois</p>
-                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
+                
                 <input type="radio" name="abonnement" value="standard">
             </div>
            <!-- Bloc représentant l'offre PREMIUM -->
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li>Documents d’étude de marché prédéfinis</li>
                 </ul>
                 <p class="price">19.99$/mois</p>
-                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
+                
                 <input type="radio" name="abonnement" value="premium">
             </div>
         </div>
