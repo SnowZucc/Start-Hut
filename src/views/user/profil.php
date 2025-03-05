@@ -7,89 +7,100 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-quentin.css">
   </head>
   <body>
     <?php include('../../templates/header.php'); ?>  
 
     <div class="content">
-
-    <!-- Affiche l'utilisateur connecté depuis le stockage session -->
-    <?php
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-        if (isset($_SESSION['user_id'])) {
-            echo "Connecté en tant que " . $_SESSION['user_email'];
-        } else {
-            echo "Non connecté";
-        }
-    ?> <br> <br> <br>
-
-    <div class="profile-section">
-        <!-- Profil (photo + bouton de modification) -->
-        <div class="profile-container">
-            <label for="file-upload">
-                <img src="default-profile.jpg" id="profile-pic" class="profile-pic" alt="Photo de profil">
-                <div class="edit-text">Modifier la photo</div>
-            </label>
-            <input type="file" id="file-upload" class="CV-input" accept="image/*">
+        <div class="profile-section">
+            <!-- Profil (photo + bouton de modification) -->
+            <div class="profile-container">
+                <label for="file-upload">
+                    <img src="default-profile.jpg" id="profile-pic" class="profile-pic" alt="Photo de profil">
+                    <div class="edit-text">Modifier la photo</div>
+                </label>
+                <input type="file" id="file-upload" class="CV-input" accept="image/*">
         </div>
 
-        <!-- Grille des formulaires -->
+        <!-- Grille des formulaires 1 -->
         <div class="form-grid">
             <div class="form-box">
                 <label>Prénom</label>
-                <input type="text" class="input-field" placeholder="Votre pseudo">
+                <input type="text" class="input-field" placeholder="Votre prénom">
 
                 <label>Nom</label>
                 <input type="text" class="input-field" placeholder="Votre nom">
 
-                <label>Date de naissance</label>
-                <input type="date" class="input-field">
-
-                <label>Adresse mail</label>
-                <input type="email" class="input-field" placeholder="Votre adresse mail">
-
-                <label>Mot de Passe</label>
-                <input type="password" class="input-field" placeholder="Votre mot de passe">
-                <small>Modifier votre mot de passe.</small>
-
                 <label>Statut</label>
                 <select class="dropdown">
                     <option value="" disabled selected>Choisissez votre statut</option>
+                    <option value="emploi">En recherche de projet</option>
                     <option value="entrepreneur">Entrepreneur</option>
-                    <option value="emploi">En recherche d'emploi</option>
-                    <option value="investisseur">Investisseur</option>
                 </select>
 
-                <label>CV</label>
+                <label>Votre CV</label>
                 <input type="file" class="input-field">
-                <small>Taille maximale : 30 200 ko - .pdf</small>
+
+                <label>Autres documents</label>
+                <input type="file" class="input-field">
             </div>
 
+            <!-- Grille des formulaires 2 -->
             <div class="form-box">
-                <label>Abonnement</label>
+                <!-- <label>Abonnement</label>
                 <select class="dropdown">
                     <option value="" disabled selected>Choisissez une formule</option>
                     <option value="free">Formule gratuite</option>
                     <option value="suivie">Formule suivie</option>
                     <option value="suivie+">Formule suivie +</option>
-                </select>
+                </select> -->
 
-                <label>Documents</label>
-                <input type="file" class="input-field">
-                <small>Taille maximale : 30 200 ko - .pdf</small>
+                <label>Ma description</label>
+                <textarea class="input-field description" placeholder="Décrivez-vous. Soyez inspiré." style="height: 150px; resize: none;"></textarea>
 
-                <label>Pays</label>
-                <input type="text" class="input-field" placeholder="Votre pays">
+                <label>Langues parlées</label>
+                <input type="text" class="input-field" placeholder="Vos langues">
+
+                <label>Langues parlées</label>
+                <input type="text" class="input-field" placeholder="Vos langues">
             </div>
+        </div> </div>
+        
+        <br> <br> <br> <br>
+        <!-- Grille des formulaires 3 -->
+        <div class="profile-section">
+            <!-- Profil (photo + bouton de modification) -->
+            <div class="profile-container">
         </div>
-    </div>
 
-    <div class="button-container">        
-        <button type="submit" class="save-button">Sauvegarder</button>
-    </div>
-  /div>
+        <!-- Grille des formulaires 4 -->
+            <div class="form-box">
+                <label>Adresse mail</label>
+                <input type="email" class="input-field" placeholder="
+                    <?php                                               //<!-- Affiche le mail depuis la session -->
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    if (isset($_SESSION['user_id'])) {
+                        echo $_SESSION['user_email'];
+                    } else {
+                        echo "Non connecté";
+                    }
+                    ?>
+                ">  
+            </div>
+
+            <div class="form-box">
+                <label>Mot de Passe</label>
+                <input type="password" class="input-field" placeholder="Nouveau mot de passe">  
+            </div>
+        </div> 
+
+        <div class="button-container">        
+            <button type="submit" class="save-button">Sauvegarder</button>
+        </div>
+  </div>
 
     <?php include('../../templates/footer.php'); ?>
     
