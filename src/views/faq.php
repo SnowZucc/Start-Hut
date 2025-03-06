@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-khaleb.css">
 </head>
 <body>
-  <?php include('../templates/header.php'); ?>
-  <div class="content">
-  <div class="contentFAQ">  
+  <?php include('../templates/header.php'); ?> 
+  <div class="content"> 
+  <div class="contentFAQ">
   <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
   <!-- Section Inscription et Gestion du Compte -->
   <div class="faq-section">
@@ -72,7 +72,7 @@
           <p>Vous pouvez annuler votre abonnement via votre espace personnel ou en contactant notre support.</p>
         </div>
       </div>
-    </div>
+  </div>
 
   <!-- Section Gestion des Services -->
   <div class="faq-section">
@@ -97,28 +97,45 @@
           <p>Oui, vous pouvez rejoindre notre forum de discussion pour échanger avec d'autres utilisateurs.</p>
         </div>
       </div>
-    </div>
   </div>
-  <!-- Section Besoin d'aide -->
-  <div class="content">
-    <div class="help-section">
-      <h2>Besoin d'aide ?</h2>
-      <p>Vous ne trouvez pas votre question ? Contactez-nous directement :</p>
-      <form action="contact_support.php" method="POST" class="help-form">
+   
+  <!-- Section Contactez-nous stylisée dans une box -->
+
+    <div class="contact-section">
+      <div class="contact-container">
+        <div class="contact-text">
+          <h2>Besoin d'aide ?</h2>
+          <p>Nous sommes là pour vous aider. Contactez-nous pour toute question ou assistance.</p>
+          <button id="open-help-modal" class="contact-button">Contactez-nous</button>
+        </div>
+        <div class="contact-image">
+          <img src="/Start-Hut/public/assets/img/image-aide.png" alt="image d'aide" >
+        </div>
+      </div>
+    </div>
+    </div>
+  </div> 
+
+  <!-- Fenêtre pop-up pour le formulaire d'aide -->
+  <div id="help-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Formulaire d'aide</h2>
+      <form action="#" method="POST" class="help-form">
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" required>
 
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="message">Votre question :</label>
+        <label for="message">Votre message :</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Envoyer</button>
+        <button type="submit" class="help-button">Envoyer</button>
       </form>
     </div>
   </div>
-  </div>
+ 
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -126,6 +143,23 @@
       question.addEventListener('click', function() {
         this.parentElement.classList.toggle('active');
       });
+    });
+    var modal = document.getElementById("help-modal");
+    var openModalBtn = document.getElementById("open-help-modal");
+    var closeModalBtn = document.querySelector(".close-modal");
+
+    openModalBtn.addEventListener("click", function() {
+      modal.style.display = "flex";
+    });
+
+    closeModalBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
     });
   });
   </script>

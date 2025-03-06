@@ -141,12 +141,6 @@
                                                             /* FOOTER  */
                                                             /* FAQ  */
 
-
-/* Séparation pour la section Besoin d'aide */
-.help-section {
-    background-color: #e6f7ff;
-    border-left: 5px solid #008000;
-  }
   
   /* Style des titres */
   .contentFAQ h1 {
@@ -163,8 +157,9 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     width: 95%;
-    margin-left: 70px;
+    margin-left: auto;
     margin-right: auto;
+    
   }
   
   
@@ -199,48 +194,165 @@
   .faq-item.active .faq-answer {
     display: block;
   }
-  
-  /* Formulaire d'aide */
-  .help-form {
-    background-color: #e6f7ff;
-    border-left: 5px solid #008000;
-    margin-left: 70px;
-    margin-bottom: 60px; /* Augmente l'écart entre cette section et le footer */
-    padding-bottom: 30px;
-    border-bottom: 2px solid #ccc; /* Ligne de séparation */
+
+
+.contact-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 128, 0, 0.3);
+  max-width: 1000px;
+  width: 90%;
+  padding: 40px;
+  gap: 30px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.contact-text {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.contact-text h2 {
+  color: #008000;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.contact-text p {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.contact-button {
+  background-color: #008000;
+  color: white;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 2px 4px 10px rgba(0, 128, 0, 0.3);
+}
+
+.contact-button:hover {
+  background-color: #006400;
+  transform: scale(1.05);
+}
+
+.contact-image {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  width: 280px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
   }
-  
-  .help-form label {
-    display: block;
-    font-weight: bold;
-    margin-top: 10px;
+  .contact-text {
+      padding-left: 0;
+      margin-bottom: 20px;
   }
-  
-  .help-form input, 
-  .help-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  .contact-image {
+      text-align: center;
+      display: flex;
+      justify-content: center;
   }
-  
-  .help-form button {
-    margin-top: 15px;
-    background-color: #008000;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  .contact-image img {
+      width: 220px;
   }
-  
-  .help-form button:hover {
-    background-color: #006400;
-  }
-  
-  .faq-section {
-    flex-grow: 1;
-  }
- 
-                                                                /* FAQ  */
+}
+/* ✅ Style du pop-up */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 10px 20px rgba(0, 128, 0, 0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.help-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-form label {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.help-form input,
+.help-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.help-button {
+  margin-top: 15px;
+  background-color: #008000;
+  color: white;
+  padding: 10px 15px;
+  margin-left:auto;
+  margin-right: auto;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.help-button:hover {
+  background-color: #006400;
+}
