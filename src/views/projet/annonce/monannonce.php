@@ -12,7 +12,7 @@
     <!-- <?php include('../../../templates/header.php'); ?> -->   <!-- Retiré car inclus dans espace projets -->
 
     <div class="content">
-        <h2 class="page-title">Mes annonces</h2>
+        <h2 class="page-title">Mon annonce</h2>
 
         <?php
         $conn = new mysqli("localhost", "root", "", "StartHut");
@@ -21,7 +21,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM Projets";
+        $sql = "SELECT * FROM Projets WHERE createur = '" . $_SESSION['user_id'] . "'";     // Requête qui demande les projets dont le créateur est l'utilisateur connecté
         $result = $conn->query($sql);
 
         // Pour chaque annonce dans la db, on boucle et on affiche les informations de l'annonce
