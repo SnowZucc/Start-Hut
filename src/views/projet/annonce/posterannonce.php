@@ -31,13 +31,19 @@
                     <input type="text" id="titre" name="titre" maxlength="80" required>
                 </div>
                 <div class="form-group">
+                    <label for="description">Description<span class="highlight2">*</span></label>
+                    <small>Decrivez votre project</small>
+                    <input type="text" id="description" name="description" maxlength="250" required>
+                </div>
+                <div class="form-group">
                     <label for="categorie">Catégorie <span class="highlight2">*</span></label>
                     <small>Choisissez la catégorie qui convient le mieux à votre projet</small>
                     <select id="categorie" name="categorie" required>
                         <option value="">Choisissez une catégorie</option>
-                        <option value="tech">Technologie</option>
-                        <option value="art">Art</option>
+                        <option value="technologie">Technologie</option>
+                        <option value="education">Education</option>
                         <option value="business">Business</option>
+                        <option value="autre">autre</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -45,9 +51,11 @@
                     <small>Les compétences permettent aux collaborateurs captivés par votre projet de savoir s’ils peuvent en faire partie ou non</small>
                     <select id="competences" name="competences" required>
                         <option value="">Choisissez une ou plusieurs compétences</option>
-                        <option value="Développement">Développement</option>
-                        <option value="Marketing">Marketing</option>
-                        <option value="business">Business</option>
+                        <option value="developpeur">Développement</option>
+                        <option value="designe">Designer</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="communication">Communication</option>
+                        <option value="autre">Autre</option>
                     </select>
                 </div>
                 <div class="form-group">

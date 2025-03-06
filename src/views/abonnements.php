@@ -27,7 +27,7 @@
                     <li>Pas de mise en avant</li>
                 </ul>
                 
-                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
+                
                
             </div>
             <!-- Bloc représentant l'offre STANDARD -->
@@ -41,7 +41,7 @@
                     <li>Mise en avant</li>
                 </ul>
                 
-                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
+                
             </div>
            <!-- Bloc représentant l'offre PREMIUM -->
             <div class="plan premium">
@@ -54,7 +54,7 @@
                     <li>Documents d’étude de marché prédéfinis</li>
                 </ul>
                 
-                <p class="condition"><a href="#">Offre soumise à conditions.</a></p>
+               
             </div>
         </div>
     </div>

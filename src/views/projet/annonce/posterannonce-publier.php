@@ -10,6 +10,7 @@ $competences = $_SESSION['competences'] ?? 'Non renseignées';
 $collaborateurs = $_SESSION['collaborateurs'] ?? 'Non renseigné';
 $roles = $_SESSION['roles'] ?? 'Non renseignés';
 $remuneration = $_SESSION['remuneration'] ?? 'Non renseignée';
+$description = $_SESSION['description'] ?? 'Non renseignée';
 ?>
 
 
@@ -40,10 +41,11 @@ $remuneration = $_SESSION['remuneration'] ?? 'Non renseignée';
                  </div>
                  <div class="container-aperçu">
                 <h2>📝 Aperçu de votre annonce</h2>
-                <p>Vérifiez toutes les informations avant publication. Vous pouvez encore modifier votre annonce.</p>
+                <h3 class="verfier">Vérifiez toutes les informations avant publication</h3>
 
              <!-- utilisation des donnée recuperer de lautre session -->
                 <p><strong>Titre :</strong> <?php echo htmlspecialchars($titre); ?></p>
+                <p><strong>Description :</strong> <?php echo htmlspecialchars($description); ?></p>
                 <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($categorie); ?></p>
                 <p><strong>Compétences :</strong> <?php echo htmlspecialchars($competences); ?></p>
                 <p><strong>Nombre de collaborateurs :</strong> <?php echo htmlspecialchars($collaborateurs); ?></p>
@@ -54,10 +56,10 @@ $remuneration = $_SESSION['remuneration'] ?? 'Non renseignée';
 
                 </div>
                 <div class="navigation-buttons">
-                <!-- meme probleme !!!!!! -->
-                <button type="button" class="back-btn" onclick="window.location.href='posterannonce-abonnement.php'">Retour</button>
+            
+               
 
-                    <button type="submit" class="next-btn">Continuer</button>
+                    <button type="submit" class="next-btn">Publier</button>
                 </div>
             </div>
 
