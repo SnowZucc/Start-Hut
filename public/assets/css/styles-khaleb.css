@@ -356,3 +356,104 @@
 .help-button:hover {
   background-color: #006400;
 }
+.team-member, .recruitment-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.15);
+  border: 1px solid #008000;
+  margin-top: 10px;
+}
+.team-member img, .recruitment-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 1px solid #008000;
+}
+.info p, .candidate-info p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+.actions {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  background: #008000;
+  color: white;
+  transition: 0.2s;
+}
+.actions button:hover {
+  background: #006400;
+}
+.remove {
+  background: #dc3545;
+}
+.remove:hover {
+  background: #a71d2a;
+}
+.accept {
+  background: #28a745;
+}
+.accept:hover {
+  background: #1e7e34;
+}
+.decline {
+  background: #ffc107;
+  color: black;
+}
+.decline:hover {
+  background: #d39e00;
+}
+.chat {
+  background: #17a2b8;
+}
+.chat:hover {
+  background: #117a8b;
+}
+.competence-filter {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #008000;
+  margin-bottom: 12px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .team-section, .recruitment-section {
+      width: 90%;
+  }
+}
+.team-section, .recruitment-section {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 128, 0, 0.2);
+  width: 48%;
+  border: 1px solid #008000;
+}
+.recrutement-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
