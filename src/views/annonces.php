@@ -12,7 +12,9 @@
     <?php include('../templates/header.php'); ?>         <!-- Rajoute le header par la magie de PHP  -->
 
     <?php
-    $conn = new mysqli("localhost", "root", "", "StartHut");      // Connexion a la DB
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);      // Connexion a la DB
 
     // Recherche par mots clés
     $q = $_GET['q'] ?? '';      // Prend q= dans l'URL sinon une chaine vide. ?? = si vide, '' = chaine vide
