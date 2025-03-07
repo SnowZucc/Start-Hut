@@ -15,7 +15,9 @@
         <h2 class="page-title">Mon annonce</h2>
 
         <?php
-        $conn = new mysqli("localhost", "root", "", "StartHut");
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

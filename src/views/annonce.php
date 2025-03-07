@@ -11,8 +11,9 @@
     <body>
         <?php                                                                                           // Ouverture du bloc PHP
         include('../templates/header.php');                                                          // Inclusion du header contenant la navigation
+        require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
         
-        $bdd = new PDO('mysql:host=localhost;dbname=StartHut;charset=utf8', 'root', '');              // Création objet PDO pour connexion MySQL
+        $bdd = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);              // Création objet PDO pour connexion MySQL
         
         $id_annonce = isset($_GET['id']) ? (int)$_GET['id'] : 0;                                      // Récupère ID URL ou 0 si absent
         
