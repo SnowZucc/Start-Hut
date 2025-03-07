@@ -60,7 +60,7 @@
 
                 <div class="checkbox-container">
                     <input type="checkbox" id="cgu" required>
-                    <label for="cgu">J'ai lu et j'accepte les <a href="../legal/CGU.php">Conditions Générales d’Utilisation</a></label>
+                    <label for="cgu">J'ai lu et j'accepte les <a href="../legal/CGU.php">Conditions Générales d'Utilisation</a></label>
                 </div>
 
                 <div class="button-container">
@@ -77,7 +77,9 @@
 
     <!-- PArtie PHP : envoie de l'inscription à la DB -->
     <?php
-    $conn = new mysqli("localhost", "root", "", "StartHut");
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {     // Si la méthode POST est invoquée (lorsque le bouton "S'inscrire" est cliqué)
         $nom = $_POST['lastname'];
