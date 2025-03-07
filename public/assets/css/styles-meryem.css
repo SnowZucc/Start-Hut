@@ -181,9 +181,14 @@
   
   /*Troisieme dection POURQUOI NOUS CHOISIR*/
   
+                                                 /* ==================================== */
                                                  /* LANDING PAGE */
-  
+                                                  /* ==================================== */
+
+
+                                                /* ==================================== */                                                 
                                                 /* Style général pour la page CGU */
+                                                /* ==================================== */                                               
   
   .containerCGU {
     max-width: 900px;
@@ -228,8 +233,16 @@
     margin-left: 175px; /* Ajuster selon l'alignement du logo */
   
   }
+
+                                         /* ==================================== */
                                       /* Style général pour la page CGU */
+                                       /* ==================================== */
+
+
+
+                                                 /* ==================================== */                                    
                                                 /* Mentions légales*/
+                                                 /* ==================================== */                                              
   
   .containerMentions {
     max-width: 900px;
@@ -274,9 +287,16 @@
     margin-left: 175px; /* Ajuster selon l'alignement du logo */
   }
   
-  
+                                                 /* ==================================== */
                                                 /* Mentions légales*/
+                                               /* ==================================== */
+
+
+
+
+                                                /* ==================================== */                                               
                                                 /*COOKIES*/
+                                                  /* ==================================== */                                             
   .containerCookies {
     max-width: 900px;
     margin: 50px auto;
@@ -335,11 +355,16 @@
     font-size: 14px;
     color: #666;
   }
+                                                 /* ==================================== */
                                                     /*COOKIES*/
+                                                /* ==================================== */                                                   
+
                                              
   
-  
+
+                                                 /* ==================================== */
                                                 /* ACCEDER A UNE SEULE ANNONCE */
+                                                  /* ==================================== */                                             
   
   /* Conteneur principal de l'annonce */
   .containerAnnonce {
@@ -469,12 +494,15 @@
     background-color: #145A23; /* assombrit le bouton pour un feedback visuel */
   }
    
+                                                 /* ==================================== */
                                                  /* ACCEDER A UNE SEULE ANNONCES */
+                                                /* ==================================== */                                                
   
   
   
-  
+                                                 /* ==================================== */
                                                   /*CONSULTER LES ABONNEMENT */
+                                                /* ==================================== */                                                 
 
 
 .containerabonnement {
@@ -573,10 +601,15 @@ button:hover {
   color: #2c7b2c;
   text-decoration: none;
 }
-
+                                                /* ==================================== */
                                                    /* CONSULTER LES ABONNEMENT */   
-                                                   
+                                                /* ==================================== */
+
+
+
+                                               /* ==================================== */                                                   
                                                    /* POSTER UNE ANNONCE */  
+                                                /* ==================================== */                                                  
 /* Barre étapes pour poster une annonce */
 .progress-container {
   display: flex;
@@ -804,8 +837,45 @@ button:hover {
 }
 /* Apercu avant de publier */
 
-
-                                                  /* POSTER UNE ANNONCE */                                                                                          
+                                                /* ==================================== */
+                                                  /* POSTER UNE ANNONCE */ 
+                                                  /* ==================================== */                                                                                         
   
 
+
+/* ==================================== */
+/*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
+/* ==================================== */
+
+/* Barre des menus secondaire */
+.sub-navbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background: white;
+  border-bottom: 2px solid #ddd;
+  width: 130%;
+}
+
+.sub-navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+}
+
+.sub-navbar li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.sub-navbar li a:hover {
+  color: green;
+}
+
+.sub-navbar li a.active {
+  color: green;
+  border-bottom: 3px solid green;
+}
 

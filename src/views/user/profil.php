@@ -10,7 +10,28 @@
       <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-quentin.css">
   </head>
   <body>
-    <?php include('../../templates/header.php'); ?>  
+    <?php 
+    include('../../templates/header.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+
+    // Connexion à la base de données
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Récupération des données de l'utilisateur
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+        $sql = "SELECT * FROM Utilisateurs WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+    }
+    ?> 
 
     <div class="content">
         <div class="profile-section">
@@ -27,10 +48,12 @@
         <div class="form-grid">
             <div class="form-box">
                 <label>Prénom</label>
-                <input type="text" class="input-field" placeholder="Votre prénom">
+                <input type="text" class="input-field" placeholder="Votre prénom" 
+                    value="<?php echo isset($user) ? htmlspecialchars($user['prenom']) : ''; ?>">
 
                 <label>Nom</label>
-                <input type="text" class="input-field" placeholder="Votre nom">
+                <input type="text" class="input-field" placeholder="Votre nom"
+                    value="<?php echo isset($user) ? htmlspecialchars($user['nom']) : ''; ?>">
 
                 <label>Statut</label>
                 <select class="dropdown">
@@ -77,18 +100,13 @@
         <!-- Grille des formulaires 4 -->
             <div class="form-box">
                 <label>Adresse mail</label>
-                <input type="email" class="input-field" placeholder="
-                    <?php                                               //<!-- Affiche le mail depuis la session -->
-                    if (session_status() === PHP_SESSION_NONE) {
-                        session_start();
-                    }
-                    if (isset($_SESSION['user_id'])) {
-                        echo $_SESSION['user_email'];
+                <input type="email" class="input-field" placeholder="<?php 
+                    if (isset($_SESSION['user_email'])) {
+                        echo htmlspecialchars($_SESSION['user_email']);
                     } else {
                         echo "Non connecté";
                     }
-                    ?>
-                ">  
+                ?>">  
             </div>
 
             <div class="form-box">
@@ -102,7 +120,10 @@
         </div>
   </div>
 
-    <?php include('../../templates/footer.php'); ?>
+    <?php 
+    $conn->close();
+    include('../../templates/footer.php'); 
+    ?>
     
     <script>
         document.getElementById("file-upload").addEventListener("change", function(event) {

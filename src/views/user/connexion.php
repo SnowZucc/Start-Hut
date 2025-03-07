@@ -1,9 +1,10 @@
 <?php
 session_start();
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 $error_message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $conn = new mysqli("localhost", "root", "", "StartHut");
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -84,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="button-container">
                     <button type="submit" class="btnConnexion">Se connecter</button>
                 </div>
-                <p class="register-link">Pas encore de compte ? <a href="inscription.php">S’Inscrire</a></p>
+                <p class="register-link">Pas encore de compte ? <a href="inscription.php">S'Inscrire</a></p>
             </form>
         </div>
     </div>
