@@ -19,7 +19,6 @@
         <li><a href="ressources.php" class="<?= basename($_SERVER['PHP_SELF']) == 'ressources.php' ? 'active' : '' ?>">Ressources</a></li>
         </ul>
     </nav>
-    <meta name="page-title" content="Gestion d'équipe et Recrutement">
     <div class="recrutement-container">
         <div class="team-section">
             <h2>Mon équipe</h2>
