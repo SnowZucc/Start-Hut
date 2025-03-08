@@ -40,7 +40,7 @@
                     <small>Choisissez la catégorie qui convient le mieux à votre projet</small>
                     <select id="categorie" name="categorie" required>
                         <option value="">Choisissez une catégorie</option>
-                        <option value="technologie">Technologie</option>
+                        <option value="technologies">Technologie</option>
                         <option value="education">Education</option>
                         <option value="business">Business</option>
                         <option value="autre">autre</option>
@@ -52,7 +52,7 @@
                     <select id="competences" name="competences" required>
                         <option value="">Choisissez une ou plusieurs compétences</option>
                         <option value="developpeur">Développement</option>
-                        <option value="designe">Designer</option>
+                        <option value="designer">Designer</option>
                         <option value="marketing">Marketing</option>
                         <option value="communication">Communication</option>
                         <option value="autre">Autre</option>
