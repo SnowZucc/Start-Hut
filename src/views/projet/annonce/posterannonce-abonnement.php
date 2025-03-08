@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['collaborateurs'] = $_POST['collaborateurs'] ?? '';
     $_SESSION['roles'] = $_POST['roles'] ?? '';
     $_SESSION['remuneration'] = $_POST['remuneration'] ?? '';
-    $_SESSION['description'] = $_POST['remuneration'] ?? '';
+    $_SESSION['description'] = $_POST['description'] ?? '';
   
   
   
