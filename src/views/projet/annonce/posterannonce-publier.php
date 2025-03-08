@@ -71,7 +71,7 @@ $roles = $_SESSION['roles'] ?? null;
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Récupérer les valeurs POST de la sessuin precendent
+        // Récupérer les valeurs POST de la sessuin
 
             $annonce_titre = $_SESSION['titre'] ?? 'A définir';
             $nom = $_SESSION['titre'] ?? 'Projet sans nom';
