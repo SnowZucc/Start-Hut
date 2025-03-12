@@ -92,11 +92,11 @@
             <!-- Carte 1 -->
             <div class="recrutement-card">
                 <div class="recrutement-avatar">
-                    <img src="https://img.freepik.com/vecteurs-libre/paysage-printemps-tente-montagnes_23-2148820229.jpg" alt="Avatar">
+                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Avatar Thomas">
                 </div>
                 <div class="recrutement-info">
-                    <h3>Nom</h3>
-                    <p>Spécialité | Présentation</p>
+                    <h3>Thomas Martin</h3>
+                    <p>Développeur Frontend | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus vel risus commodo.</p>
                 </div>
                 <div class="recrutement-actions">
                     <button class="btn-accepter">Accepter</button>
@@ -108,11 +108,43 @@
             <!-- Carte 2 -->
             <div class="recrutement-card">
                 <div class="recrutement-avatar">
-                    <img src="https://img.freepik.com/vecteurs-libre/paysage-printemps-tente-montagnes_23-2148820229.jpg" alt="Avatar">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Avatar Sophie">
                 </div>
                 <div class="recrutement-info">
-                    <h3>Nom</h3>
-                    <p>Spécialité | Présentation</p>
+                    <h3>Sophie Dubois</h3>
+                    <p>Designer UX/UI | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+                <div class="recrutement-actions">
+                    <button class="btn-accepter">Accepter</button>
+                    <button class="btn-refuser">Refuser</button>
+                    <button class="btn-chat">Chat</button>
+                </div>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="recrutement-card">
+                <div class="recrutement-avatar">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Avatar Lucas">
+                </div>
+                <div class="recrutement-info">
+                    <h3>Lucas Bernard</h3>
+                    <p>Chef de Projet | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+                </div>
+                <div class="recrutement-actions">
+                    <button class="btn-accepter">Accepter</button>
+                    <button class="btn-refuser">Refuser</button>
+                    <button class="btn-chat">Chat</button>
+                </div>
+            </div>
+
+            <!-- Carte 4 -->
+            <div class="recrutement-card">
+                <div class="recrutement-avatar">
+                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Avatar Emma">
+                </div>
+                <div class="recrutement-info">
+                    <h3>Emma Laurent</h3>
+                    <p>Marketing Digital | Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
                 </div>
                 <div class="recrutement-actions">
                     <button class="btn-accepter">Accepter</button>
