@@ -28,3 +28,28 @@
         <?php include('../../templates/footer.php'); ?>    
     </body>
 </html>
+
+<div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#">Guides & Articles</a></li>
+            <li><a href="#">Templates & Documents</a></li>
+            <li><a href="#">Vidéos & Webinaires</a></li>
+            <li><a href="#">Mentors & Expert</a></li>
+            <li><a href="#">Outils Recommandés</a></li>
+        </ul>
+    </aside>
+
+    <!-- Zone principale avec les cartes -->
+    <section class="content-area">
+        <div class="cards-container">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+</div>
