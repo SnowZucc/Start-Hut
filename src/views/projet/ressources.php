@@ -25,7 +25,7 @@
 
             </div>
 
-        <?php include('../../templates/footer.php'); ?>    
+       
     </body>
 </html>
 
@@ -52,4 +52,5 @@
             <div class="card"></div>
         </div>
     </section>
+    <?php include('../../templates/footer.php'); ?>    
 </div>
