@@ -19,7 +19,7 @@
                     L'outil le plus simple <br>   <!-- ici le br permet de sauter les lignes dans le paragraphe -->
                     pour <span class="highlight">transformer</span> vos idées en startups. <!-- permet de différencier le mot transformer du reste du texte -->
                     </p>      
-                    <button class="btnlanding">EN SAVOIR PLUS</button>      <!-- Bouton en savoir plus qui enverra vers une page qu'on fera plus
+                    <button class="btnlanding">COMMENCER</button>      <!-- Bouton en savoir plus qui enverra vers une page qu'on fera plus
                                                 tard ou yaura des info sur lentreprise, prq start-hut et comment sa marche  -->
                 </div>
                 <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
