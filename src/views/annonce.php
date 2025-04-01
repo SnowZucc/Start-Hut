@@ -9,7 +9,11 @@
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     </head>
     <body>
-        <?php                                                                                           // Ouverture du bloc PHP
+        <?php        
+        // // Affichage des erreurs PHP
+        // ini_set('display_errors', 1);
+        // error_reporting(E_ALL);       
+                                                                                   
         include('../templates/header.php');                                                          // Inclusion du header contenant la navigation
         require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
         
