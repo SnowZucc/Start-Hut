@@ -4,9 +4,9 @@
             <a href="/Start-Hut/public/index.php"><img src="/Start-Hut/public/assets/img/logo.png" alt="Logo"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="/Start-Hut/src/views/annonces.php">Rejoindre un projet</a></li>
+            <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
             <li><a href="/Start-Hut/src/views/projet/annonce/posterannonce.php">Poster une annonce</a></li>
-            <li><a href="/Start-Hut/src/views/abonnements.php">Abonnement</a></li>
+            <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
             <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
         </ul>
         <div class="auth-buttons"> 
