@@ -56,7 +56,8 @@
                 </div>
 
                 <div class="actions">
-                    <button class="postuler">Postuler</button>
+                <button class="postuler" onclick="window.location.href='postuler_annonce.php';">Postuler</button>
+                    
                     <button class="sauvegarder">Sauvegarder</button>
                 </div>
             </div>
