@@ -24,7 +24,7 @@
     </div>
 
     <div class="faq-item">
-      <div class="faq-question">Comment puis-je modifier ou supprimer mon compte ?</div>
+      <div class="faq-question">Commentt puis-je modifier ou supprimer mon compte ?</div>
       <div class="faq-answer">
         <p>Fournissez des instructions sur la gestion des paramètres personnels.</p>
       </div>
