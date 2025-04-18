@@ -1,0 +1,741 @@
+/* =================================== */
+/* PARTIE INSCRIPTION */
+/* =================================== */
+
+/* Style des liens hypertextes */
+a {
+    color: green;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style du formulaire d'inscription */
+  form.inscription {
+    width: 97%;
+    max-width: 570px;
+    background: white;
+    padding: 28px;
+    border: 1px solid black;
+    margin: 25px auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Groupement des champs pour un meilleur alignement */
+  .form-group {
+    margin-bottom: 15px; 
+  }
+  
+  /* Alignement des champs "Nom" et "Prénom" */
+  .half-width {
+    width: 50%;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Conteneur du choix du statut */
+  .statut-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+  }
+  
+  /* Supprime tout espacement sous les labels de statut */
+  .statut-option label {
+    margin-bottom: 0px;
+  }
+  
+  .statut-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Barre d'inscription */
+  .input-field {
+    width: 100%;
+    max-width: 430px;
+    padding: 9px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+  }
+  
+  /* Réduction pour aligner correctement Nom et Prénom */
+  .half-width .input-field {
+    max-width: 200px;
+  }
+  
+  /* Style des labels des champs */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 18px;
+  }
+  
+  /* Style des champs obligatoires */
+  label .required {
+    color: red;
+  }
+  
+  /* Conteneur de la case à cocher et son texte */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px; /* Garde la case proche du texte */
+    margin-top: 12px;
+    margin-left: 15px;
+  }
+  
+  .checkbox-container input {
+    margin-right: 10px;
+  }
+  
+  /* Évite tout espace supplémentaire sous le texte */
+  .checkbox-container label {
+    margin-bottom: 0;
+  }
+  
+  /* Bouton pour valider l'inscription */
+  .btnInscription {
+    background-color: #006400;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Changement de couleur du bouton au survol */
+  .btnInscription {
+    background-color: #006400;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+    max-width: 280px;
+    margin: 2px auto;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btnInscription:hover {
+    background-color: #004d00;
+  }
+  
+  /* Centrer le "Déjà inscrit ?" */
+  .already-registered {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Assurer le centrage du bouton s'inscrire */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  /* Fin partie inscription */
+  
+  /* =================================== */
+  /*  PARTIE CONNEXION */
+  /* =================================== */
+  
+  /* Centrage et structure du contenu */
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Style du titre "CONNEXION" */
+  .connexion-title {
+    text-align: center;
+    font-size: 26px; /* Légèrement plus grand */
+    font-weight: bold;
+    margin-bottom: 15px; /* Augmente l’espace sous "CONNEXION" */
+  }
+  
+  /* Style du lien d'inscription */
+  .register-link {
+    text-align: center;
+    margin-bottom: 10px; /* Augmente l’espace après "Pas encore de compte ?" */
+  }
+  
+  /* Style du formulaire de connexion */
+  form.connexion {
+    width: 97%;
+    max-width: 650px; /* Augmente la largeur du formulaire */
+    background: white;
+    padding: 45px; /* Augmente l'espace intérieur pour l'agrandir en longueur */
+    border: 1px solid black;
+    margin: 15px auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Augmente l'espacement entre les champs */
+  }
+  
+  /* Espacement des champs */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Style des champs de saisie */
+  .input-field {
+    width: 100%;
+    max-width: 550px; /* Augmente encore plus la largeur */
+    padding: 14px; /* Augmente la hauteur des champs */
+    font-size: 17px; /* Augmente la taille du texte */
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+  }
+  
+  /* Style des labels */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 14px; /* Augmente l'espace sous le label */
+  }
+  
+  /* Style des champs obligatoires */
+  label .required {
+    color: red;
+  }
+  
+  /* Alignement des options "Se souvenir de moi" et "Mot de passe oublié ?" */
+  .form-options {
+    display: flex;
+    align-items: center; /* Assure un alignement vertical parfait */
+    justify-content: space-between; /* Sépare les éléments aux extrémités */
+    font-size: 15px;
+    margin-top: 5px; /* Ajuste l'espace au-dessus */
+    width: 100%;
+    max-width: 550px; /* Assure un bon alignement avec les champs */
+  }
+  
+  /* Alignement de la checkbox "Se souvenir de moi" */
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espace entre la checkbox et le texte */
+    margin-top: 14px; /* Ajoute un espacement de 10px sous le champ de mot de passe */
+  }
+  
+  /* Ajustement de la checkbox "Se souvenir de moi" */
+  .remember-me input {
+    margin-top: -20px; /* Remonte la checkbox de 20px */
+  }
+  
+  
+  /* Style du lien "mot de passe oublié ?" */
+  .forgot-password {
+    color: green;
+    text-decoration: none;
+    align-self: center; /* Assure l'alignement vertical avec "Se souvenir de moi" */
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style du bouton de connexion */
+  .btnConnexion {
+    background-color: #006400;
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 350px;
+    margin: 15px auto 5px auto; /* Remonte le bouton et réduit l’espace en dessous */
+    display: block;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Effet de survol sur le bouton */
+  .btnConnexion:hover {
+    background-color: #004d00;
+  }
+/* ==================================== */
+/*  BARRE DE NAVIGATION SECONDAIRE */
+/* ==================================== */
+
+/* Barre des menus secondaire */
+.sub-navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: white;
+    border-bottom: 2px solid #ddd;
+}
+
+.sub-navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.sub-navbar li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.sub-navbar li a:hover {
+    color: green;
+}
+
+.sub-navbar li a.active {
+    color: green;
+    border-bottom: 3px solid green;
+}
+
+/* Style des annonces */
+.annonce-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 800px;
+    background-color: white;
+}
+
+.annonce-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.annonce-info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.annonce-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.annonce-description {
+    font-size: 16px;
+    color: #555;
+}
+
+.annonce-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-button, .edit-button {
+    padding: 8px 12px;
+    border: 2px solid black;
+    background: white;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-button:hover, .edit-button:hover {
+    background: #f0f0f0;
+}
+
+
+
+/* ==================================== */
+/* 🌍 CONTENU DES PAGES */
+/* ==================================== */
+
+.page-content {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.page-content h1 {
+    font-size: 28px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+/* ==================================== */
+/* BOUTON ESPACE PROJET NON SOULIGNÉ */
+/* ==================================== */
+.auth-buttons a[href="espace_projet.php"] {
+    text-decoration: none !important;
+}
+
+.auth-buttons a[href="espace_projet.php"]:hover {
+    text-decoration: none !important;
+}
+
+header {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #ddd !important;
+}
+
+/* ==================================== */
+/* NON MODIFICATION DU HEADER */
+/* ==================================== */
+
+header a {
+    text-decoration: none !important;
+    color: black !important;
+    font-weight: bold !important;
+}
+
+header a:hover {
+    text-decoration: underline !important;
+}
+
+body.espace-projet header {
+    background-color: white !important;
+    color: black !important;
+}
+
+
+
+/* ==================================== */
+/* MENU MES ANNONCES */
+/* ==================================== */
+
+/* Styles pour le menu de navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: white;
+    border-bottom: 2px solid #ddd;
+}
+
+.nav-links-annonces {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links-annonces li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav-links-annonces li a.active {
+    color: green;
+}
+
+.nav-links-annonces li a.active:hover {
+    text-decoration: none; /* Désactive le soulignement sur hover */
+}
+
+.btn-profil {
+    border: 2px solid green;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Section "Mes annonces" */
+.mes-annonces-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d582b;
+    margin-bottom: 20px;
+}
+
+.annonce-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.annonce-image {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.annonce-content {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.annonce-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.annonce-description {
+    font-size: 16px;
+    color: #333;
+}
+
+.annonce-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-supprimer, .btn-modifier {
+    border: 2px solid black;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.btn-supprimer:hover, .btn-modifier:hover {
+    background-color: red;
+}
+
+.delete-button {
+    background-color: red; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+/* ============================ */
+/*  Recrutement - Start-Hut */
+/* ============================ */
+
+.recrutement-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 40px auto;
+}
+
+/* ============================ */
+/*  Section Mon Équipe */
+/* ============================ */
+
+.mon-equipe {
+  width: 48%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.mon-equipe h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.equipe-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.equipe-card {
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.equipe-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.equipe-info {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.equipe-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.btn-info {
+  background: lightgray;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.equipe-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-modifier, .btn-retirer {
+  border: 2px solid black;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+}
+
+.btn-retirer:hover {
+  background: red;
+  color: white;
+}
+
+/* ============================ */
+/*  Section Recrutement en Cours */
+/* ============================ */
+
+.recrutement-en-cours {
+  width: 48%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.recrutement-en-cours h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.filtre-competence {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.filtre-competence select {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+/* ============================ */
+/*  Cartes des recrutements */
+/* ============================ */
+
+.recrutement-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recrutement-card {
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.recrutement-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.recrutement-info {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.recrutement-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.recrutement-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-accepter, .btn-refuser, .btn-chat {
+  border: 2px solid black;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  background: white;
+}
+
+.btn-accepter:hover {
+  background: green;
+  color: white;
+}
+
+.btn-refuser:hover {
+  background: red;
+  color: white;
+}
+
+.btn-chat:hover {
+  background: blue;
+  color: white;
+}

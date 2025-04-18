@@ -5,10 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../../../public/assets/css/styles-meryem.css">
+        <link rel="stylesheet" href="../../../public/assets/css/styles.css">
     </head>
     <body>
-        <?php include('header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
+        <?php include('../../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
         
              <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
              <div class="containerCookies">
@@ -37,8 +38,8 @@
         <h2>4. Gestion des cookies</h2>
         <p>Vous pouvez gérer vos préférences en matière de cookies en modifiant les paramètres de votre navigateur ou en utilisant notre outil de gestion des cookies.</p>
         
-        <h2>5. Plus d’informations</h2>
-        <p>Pour en savoir plus sur l’utilisation des cookies et vos droits, vous pouvez consulter notre <a href="mentions.php">page des mentions légales</a>.</p>
+        <h2>5. Plus d'informations</h2>
+        <p>Pour en savoir plus sur l'utilisation des cookies et vos droits, vous pouvez consulter notre <a href="mentions.php">page des mentions légales</a>.</p>
         
         <div class="footer">© 2025 StartHut - Tous droits réservés.</div>
     </div>
@@ -47,6 +48,6 @@
 
 
 
-        <?php include('footer.php'); ?>    
+        <?php include('../../templates/footer.php'); ?>    
     </body>
 </html>
