@@ -12,6 +12,9 @@
   </head>
   <body>
     <?php 
+    session_start(); 
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 
     include('../../templates/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
@@ -19,6 +22,7 @@
     // Connexion à la base de données
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     
+
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -33,7 +37,7 @@
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
     }
-    ?> 
+    ?>
 
     <div class="content">
         <div class="profile-section">
