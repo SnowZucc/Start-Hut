@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +12,7 @@
   </head>
   <body>
     <?php 
+
     include('../../templates/header.php');
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
@@ -35,90 +37,69 @@
 
     <div class="content">
         <div class="profile-section">
-            <!-- Profil (photo + bouton de modification) -->
+            <!-- Photo de profil -->
             <div class="profile-container">
                 <label for="file-upload">
                     <img src="default-profile.jpg" id="profile-pic" class="profile-pic" alt="Photo de profil">
                     <div class="edit-text">Modifier la photo</div>
                 </label>
                 <input type="file" id="file-upload" class="CV-input" accept="image/*">
+            </div>
+
+            <!-- Grille des formulaires -->
+            <div class="form-grid">
+                <!-- Colonne gauche -->
+                <div class="form-box">
+                    <label>Prénom</label>
+                    <input type="text" class="input-field" placeholder="Votre prénom" 
+                        value="<?php echo isset($user) ? htmlspecialchars($user['prenom']) : ''; ?>">
+
+                    <label>Nom</label>
+                    <input type="text" class="input-field" placeholder="Votre nom"
+                        value="<?php echo isset($user) ? htmlspecialchars($user['nom']) : ''; ?>">
+
+                    <label>Adresse mail</label>
+                    <input type="email" class="input-field" placeholder="<?php 
+                        if (isset($_SESSION['user_email'])) {
+                            echo htmlspecialchars($_SESSION['user_email']);
+                        } else {
+                            echo 'Non connecté';
+                        }
+                    ?>">
+
+                    <label>Mot de Passe</label>
+                    <input type="password" class="input-field" placeholder="Nouveau mot de passe">  
+
+                    <label>Statut</label>
+                    <select class="dropdown">
+                        <option value="" disabled selected>Choisissez votre statut</option>
+                        <option value="emploi">En recherche de projet</option>
+                        <option value="entrepreneur">Entrepreneur</option>
+                    </select>
+
+                    <label>Votre CV</label>
+                    <input type="file" class="input-field">
+                </div>
+
+                <!-- Colonne droite -->
+                <div class="form-box">
+                    <label>Autres documents</label>
+                    <input type="file" class="input-field">
+
+                    <label>Ma description</label>
+                    <textarea class="input-field description" placeholder="Décrivez-vous. Soyez inspiré." style="height: 150px; resize: none;"></textarea>
+
+                    <label>Langues parlées</label>
+                    <input type="text" class="input-field" placeholder="Vos langues">
+                </div>
+            </div>
+
+            <!-- Bouton -->
+            <div class="button-container">        
+                <button type="submit" class="save-button">Sauvegarder</button>
+            </div>
         </div>
-
-        <!-- Grille des formulaires 1 -->
-        <div class="form-grid">
-            <div class="form-box">
-                <label>Prénom</label>
-                <input type="text" class="input-field" placeholder="Votre prénom" 
-                    value="<?php echo isset($user) ? htmlspecialchars($user['prenom']) : ''; ?>">
-
-                <label>Nom</label>
-                <input type="text" class="input-field" placeholder="Votre nom"
-                    value="<?php echo isset($user) ? htmlspecialchars($user['nom']) : ''; ?>">
-
-                <label>Statut</label>
-                <select class="dropdown">
-                    <option value="" disabled selected>Choisissez votre statut</option>
-                    <option value="emploi">En recherche de projet</option>
-                    <option value="entrepreneur">Entrepreneur</option>
-                </select>
-
-                <label>Votre CV</label>
-                <input type="file" class="input-field">
-
-                <label>Autres documents</label>
-                <input type="file" class="input-field">
-            </div>
-
-            <!-- Grille des formulaires 2 -->
-            <div class="form-box">
-                <!-- <label>Abonnement</label>
-                <select class="dropdown">
-                    <option value="" disabled selected>Choisissez une formule</option>
-                    <option value="free">Formule gratuite</option>
-                    <option value="suivie">Formule suivie</option>
-                    <option value="suivie+">Formule suivie +</option>
-                </select> -->
-
-                <label>Ma description</label>
-                <textarea class="input-field description" placeholder="Décrivez-vous. Soyez inspiré." style="height: 150px; resize: none;"></textarea>
-
-                <label>Langues parlées</label>
-                <input type="text" class="input-field" placeholder="Vos langues">
-
-                <label>Langues parlées</label>
-                <input type="text" class="input-field" placeholder="Vos langues">
-            </div>
-        </div> </div>
-        
-        <br> <br> <br> <br>
-        <!-- Grille des formulaires 3 -->
-        <div class="profile-section">
-            <!-- Profil (photo + bouton de modification) -->
-            <div class="profile-container">
-        </div>
-
-        <!-- Grille des formulaires 4 -->
-            <div class="form-box">
-                <label>Adresse mail</label>
-                <input type="email" class="input-field" placeholder="<?php 
-                    if (isset($_SESSION['user_email'])) {
-                        echo htmlspecialchars($_SESSION['user_email']);
-                    } else {
-                        echo "Non connecté";
-                    }
-                ?>">  
-            </div>
-
-            <div class="form-box">
-                <label>Mot de Passe</label>
-                <input type="password" class="input-field" placeholder="Nouveau mot de passe">  
-            </div>
-        </div> 
-
-        <div class="button-container">        
-            <button type="submit" class="save-button">Sauvegarder</button>
-        </div>
-  </div>
+    </div>
 
     <?php 
     $conn->close();
