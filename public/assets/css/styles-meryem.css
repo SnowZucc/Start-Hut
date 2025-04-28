@@ -879,3 +879,39 @@ button:hover {
   border-bottom: 3px solid green;
 }
 
+/* ==================================== */
+/*  BARRE DE NAVIGATION outils */
+/* ==================================== */
+
+/* Barre des menus secondaire */
+.sub-navbar-outils {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: white;
+    border-bottom: 2px solid #ddd;
+}
+
+.sub-navbar-outils ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.sub-navbar-outils li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.sub-navbar-outils li a:hover {
+    color: green;
+}
+
+.sub-navbar-outils li a.active {
+    color: green;
+    border-bottom: 3px solid green;
+}
+
+

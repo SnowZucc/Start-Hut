@@ -22,6 +22,12 @@
                     </ul>
                 </nav>
 
+                <nav class="sub-navbar-outils">
+                    <ul>
+                    <li><a href="../../kanbanm.php" class="<?= basename($_SERVER['PHP_SELF']) == '../../kanbanm.php' ? 'active' : '' ?>">Kanban</a></li>
+                    </ul>
+                </nav>
+
 
             </div>
 
