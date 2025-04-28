@@ -40,8 +40,6 @@
         
         <h2>5. Plus d'informations</h2>
         <p>Pour en savoir plus sur l'utilisation des cookies et vos droits, vous pouvez consulter notre <a href="mentions.php">page des mentions légales</a>.</p>
-        
-        <div class="footer">© 2025 StartHut - Tous droits réservés.</div>
     </div>
 
             </div>

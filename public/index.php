@@ -19,7 +19,7 @@
                     L'outil le plus simple <br>   <!-- ici le br permet de sauter les lignes dans le paragraphe -->
                     pour <span class="highlight">transformer</span> vos idées en startups. <!-- permet de différencier le mot transformer du reste du texte -->
                     </p>      
-                    <button class="btnlanding">COMMENCER</button>      <!-- Bouton en savoir plus qui enverra vers une page qu'on fera plus
+                    <a href="../src/views/annonces.php" class="btnlanding">Voir tous les projets</a>   <!-- Bouton en savoir plus qui enverra vers une page qu'on fera plus
                                                 tard ou yaura des info sur lentreprise, prq start-hut et comment sa marche  -->
                 </div>
                 <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
@@ -28,7 +28,7 @@
             </div>  
             <!-- partie annonce populaire -->
             <div class ="textepop">  <!-- texte --> 
-                <h2>Nos annonces<br>
+                <h2>Projet<br>
                 <span class ="highlight"> populaires</span>  <!-- pour stylisée le mot populaire uniquement -->
                 </h2> 
             </div>
@@ -60,22 +60,22 @@
                         <figure>
                             <img src="assets/img/pourquoinouschoisir1.png" alt="Image 1">
                             <figcaption>
-                                <h3>RAISON 1</h3>
-                                <p>Description </p>
+                                <h3>Trouvez les bons talents</h3>
+                                <p>Accédez à une communauté de profils motivés et compétents pour construire votre équipe idéale.</p>
                             </figcaption>
                         </figure>
                         <figure>
                             <img src="assets/img/pourquoinouschoisir2.png" alt="Image 2">
                             <figcaption>
-                                <h3>RAISON 2</h3>
-                                <p>Description </p>
+                                <h3>Définissez votre vision</h3>
+                                <p>Donnez à votre projet une direction précise pour attirer les meilleurs profils. </p>
                             </figcaption>
                         </figure>
                         <figure>
                             <img src="assets/img/pourquoinouschosir3.png" alt="Image 3">
                             <figcaption>
-                                <h3>RAISON 3</h3>
-                                <p>Description </p>
+                                <h3>Bâtissez des collaborations solides</h3>
+                                <p>Travaillez avec des personnes de confiance pour faire avancer votre projet dans les meilleures conditions. </p>
                             </figcaption>
                         </figure>
                     </div>

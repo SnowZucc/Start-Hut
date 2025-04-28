@@ -27,7 +27,7 @@
   
   .landing p {
     font-size: 20px; /* Taille de police du texte */
-    margin-bottom: 20px; /* espacement sous le paragraphe */
+    margin-bottom: 50px; /* espacement sous le paragraphe */
     line-height: 1.5; /* espacement entre ligne  */
   }
   
@@ -43,15 +43,19 @@
     font-size: 16px; /* Taille de police du bouton */
     border: none;
     border-radius: 30px;
-    cursor: pointer; /* quand on arrive sur le bouton le curseur change de forme  */
-    margin-top: 20px; /* Espacement au-dessus du bouton */
-    transition: background-color 0.3s ease; /* pour l'animation hover en bas s'acctive en 3scd */
+    cursor: pointer; /* Curseur pointer */
+    margin-top: 100px; /* Espacement au-dessus */
     margin-left: 95px; 
-  }
-  
-  .btn:hover {
-    background-color: green; /* Si le bouton est selectionner il change en vert */
-  }
+    transition: background-color 0.3s ease; /* Animation au hover */
+    outline: none;
+    text-decoration: none;
+}
+
+
+.btnlanding:hover {
+    background-color: green; /* Au survol : bouton vert */
+}
+
   
   .landing-image {
     display: flex;
@@ -111,12 +115,12 @@
   /* Conteneur principal */
   .conteneur-pourquoinouschoisir {
       display: flex;
-      gap: 120px; /* Espacement entre l'image et le texte */
-      padding: 20px;
+      gap: 100px; /* Espacement entre l'image et le texte */
+      padding: 10px;
       width: 90%; /* Ajuster la largeur pour un bon rendu */
-      /* margin: auto; Centrer dans la page */
       margin-top: 70px;
       margin-bottom: -50px;
+      text-align: left; /* Alignement du texte à gauche */
   }
   
   .imagepourquoinouschoisir {
@@ -130,21 +134,22 @@
   
   .imagepourquoinouschoisir img {
       width: 90%; /* Laisse un peu d'espace pour voir le background */
-      max-width: 500px; /* Ajuste la taille max */
+      max-width: 800px; /* Ajuste la taille max */
       height: auto;
       border-radius: 20px;
   }
   
   /* Partie texte */
   .textepourquoinouschoisir {
-      /* flex: 1; Prend tout l'espace dispo à droite */
+
+    margin-right: 0px;
       margin-bottom: 30px;
   }
   
   .textepourquoinouschoisir h2 {
       font-size: 22px;
       margin-bottom: 40px;
-      margin-left: 150px;
+      margin-left: 100px;
       color: #000000;
   }
   
@@ -156,7 +161,7 @@
   }
   
   .liste-choix figure {
-      display: flex;
+      display:flex;
       align-items: center;
       gap: 20px;
   }
