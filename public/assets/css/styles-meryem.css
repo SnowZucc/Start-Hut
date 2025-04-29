@@ -1,17 +1,20 @@
                                                          /* LANDING PAGE */
     /* Premiere section */                                              
   .landing {
-    margin-top: 30px; /* espacement avec le header */     
+  
     display: flex; /* pour organiser en ligne */
     background-color: #ffffff; 
     border: 3px solid green;  /* bord de la premiere section  */
     border-radius: 20px; /* contour des bords */
-    padding: 40px; /* Espacement intérieur */
-    width: 80%;  /* largeur prise sur la page */
-    max-width: 900px;  /* pour pas que la section prennent une place plus large */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 5px auto;
+    padding: 40px;
+    max-width: 1000px;  /* pour pas que la section prennent une place plus large */
+    width: 80%;
   }
   
   .landing-text {
+    font-family: 'Poppins', sans-serif;
     flex: auto; 
     color: black; 
     text-align: left; /* Alignement du texte à gauche */
@@ -23,6 +26,7 @@
     font-weight: bold;
     margin-bottom: 30px; /* sspacement sous le titre */
     white-space: nowrap; /* empeche START-HUT ne soit couper en 2 et de passer à la ligne */
+    margin-left: -20px;
   }
   
   .landing p {
@@ -39,21 +43,20 @@
   .btnlanding {
     background-color: black; /* Bouton noir */
     color: white;
-    padding: 12px 25px; /* Taille du bouton */
-    font-size: 16px; /* Taille de police du bouton */
-    border: none;
+    padding: 12px 28px;
     border-radius: 30px;
-    cursor: pointer; /* Curseur pointer */
-    margin-top: 100px; /* Espacement au-dessus */
-    margin-left: 95px; 
-    transition: background-color 0.3s ease; /* Animation au hover */
-    outline: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
     text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 
 .btnlanding:hover {
-    background-color: green; /* Au survol : bouton vert */
+  background-color: green;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(40,167,69,0.2);
 }
 
   
@@ -72,44 +75,112 @@
   
   
   /*Deuxieme section ANNONCES POPULAIRE*/
-  .popular {
-    display: flex; /* Alignement horizontal */
-    gap: 20px; /* Espacement entre chaque annonce */
-    margin-top: 5px;
-    align-items: center;
-    justify-content: center; /* Centrer les annonces */
-  }
-  
-  .popular-annonce {
-    border: 2px solid green;
-    border-radius: 10px;
-    padding: 20px;
-    height: 250px;
-    width: 200px; /* Taille uniforme pour toutes les annonces finalement */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* pour rendre fluide la transtion zoom et couleur ( voir hover) */
-    background-color: #f8f8f8; 
-    display: flex;
-    align-items: center; /* centre texte intérieur annonce horizon */
-    justify-content: center; /* centre texte intérieur annonce vertical  */
-    text-align: center;
-  }
-  
-  .popular-annonce:hover {
-    transform: scale(1.1); /* effet de zoom au survol */
-    background-color: #d1ffd1; /* changment de couleur au survol */
-    border-color: darkgreen;
-  }
+/* Projet Populaires */
+:root {
+  --primary-color: green;
+  --primary-dark: rgb(6, 78, 6); 
+  --primary-light: #d1ffd1;
+  --secondary-color: #333333;
+  --text-color: #333333;
+  --light-gray: #f8f8f8;
+  --dark-gray: #555;
+}
+.highlight {
+  color:green;
+  font-weight: 600;
+}
+
+.project-card {
+  transition: all 0.3s ease;
+  border: 2px solid green;
+  background-color:  #f8f8f8;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-light);
+  border-color: var(--primary-dark);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-details {
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.icon-container {
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .icon-container {
+  background-color: white;
+  transform: scale(1.1);
+}
+
+i {
+  color: var(--primary-color);
+}
+
+.icon-arrow {
+  margin-left: 10px;
+  color: white;
+}
+
+
   
   .textepop h2 {
-    margin-top: 100px; /* espace avec section 1 */
+    margin-top: 60px; /* espace avec section 1 */
     margin-bottom: 20px; /* espace avec les annonces */
-    margin-right: 1025px;
+    font-weight: bold;
     line-height: 1.5; /* espacement entre ligne  */
     text-align: left; /* Alignement du texte à gauche */
-    font-size: 22px; /* ltaille */
+    font-size: 25px; /* ltaille */
   }
+
+  .btn-explorer {
+    display: inline-block;
+    background-color: #000000; /* bg-gray-800 */
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border-radius: 9999px; /* rounded-full */
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.btn-explorer:hover {
+    background-color: green; /* hover:bg-green-600 */
+    transform: translateY(-4px); /* hover:-translate-y-1 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* hover:shadow-lg */
+}
   
-  /*Deuxieme dection ANNONCES POPULAIRE*/
+  
+                                                      /*Deuxieme dection ANNONCES POPULAIRE*/
   
   /*Troisieme dection POURQUOI NOUS CHOISIR*/
   /* Conteneur principal */
