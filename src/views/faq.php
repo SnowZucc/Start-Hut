@@ -12,7 +12,8 @@
   <?php include('../templates/header.php'); ?> 
   <div class="content"> 
   <div class="contentFAQ">
-  <h1>FAQ – Tout ce qu'il faut savoir sur Start-Hut</h1>
+    <h1>Foire aux questions (FAQ)</h1>
+    <p>Bienvenue dans notre section FAQ ! Vous trouverez ici les réponses aux questions les plus fréquentes concernant Start-Hut.</p>
   <!-- Section Inscription et Gestion du Compte -->
   <div class="faq-section">
     <h2>Inscription et Gestion du Compte</h2>
@@ -135,7 +136,7 @@
       <div class="contact-container">
         <div class="contact-text">
           <h2>Besoin d'aide ?</h2>
-          <p>Nous sommes là pour vous aider. Contactez-nous pour toute question ou assistance.</p>
+          <p>Nous sommes là pour vous aider.</p>
           <button id="open-help-modal" class="contact-button">Contactez-nous</button>
         </div>
         <div class="contact-image">
@@ -152,13 +153,13 @@
       <span class="close-modal">&times;</span>
       <h2>Formulaire d'aide</h2>
       <form action="#" method="POST" class="help-form">
-        <label for="name">Nom :</label>
+        <label for="name">Nom <span style="color: red">*</span></label>
         <input type="text" id="name" name="name" required>
 
-        <label for="email">Email :</label>
+        <label for="email">Email <span style="color: red">*</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="message">Votre message :</label>
+        <label for="message">Votre message <span style="color: red">*</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
         <button type="submit" class="help-button">Envoyer</button>
@@ -174,8 +175,30 @@
     });
   });
   </script>
+  <script>
+  // Sélection des éléments
+  const openModalBtn = document.getElementById('open-help-modal');
+  const modal = document.getElementById('help-modal');
+  const closeModalBtn = document.querySelector('.close-modal');
 
+  // Ouvrir la modale
+  openModalBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+
+  // Fermer la modale
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Fermer si on clique en dehors de la modale
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
   </script>
+
   <?php include('../templates/footer.php'); ?>
 
 </body>
