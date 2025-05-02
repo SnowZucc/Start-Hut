@@ -1,21 +1,22 @@
+
 <?php
 // ressources.php
 include 'data.php';
 $type = $_GET['type'] ?? 'guides';
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ressources - Start-Hut</title>
-    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-fatma.css">
-</head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-fatma.css">
+       
+    </head>
 <body>
-    <?php include('../../templates/header.php'); ?>
-
+    <?php include('../../../templates/header.php'); ?>
     <div class="content">
         <!-- Barre de navigation secondaire -->
         <nav class="sub-navbar">
@@ -29,64 +30,40 @@ $type = $_GET['type'] ?? 'guides';
     </div>
 
     <div class="main-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <ul>
-                <li><a href="?type=guides" class="<?= $type == 'guides' ? 'active' : '' ?>">Guides & Articles</a></li>
-                <li><a href="?type=templates" class="<?= $type == 'templates' ? 'active' : '' ?>">Templates & Documents</a></li>
-                <li><a href="?type=videos" class="<?= $type == 'videos' ? 'active' : '' ?>">Vidéos & Webinaires</a></li>
-                <li><a href="?type=mentors" class="<?= $type == 'mentors' ? 'active' : '' ?>">Mentors & Experts</a></li>
-                <li><a href="?type=outils" class="<?= $type == 'outils' ? 'active' : '' ?>">Outils Recommandés</a></li>
-            </ul>
-        </aside>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#" class="active">Guides & Articles</a></li>
+      <li><a href="#">Templates & Documents</a></li>
+      <li><a href="#">Vidéos & Webinaires</a></li>
+      <li><a href="#">Mentors & Experts</a></li>
+      <li><a href="#">Outils Recommandés</a></li>
+    </ul>
+  </aside>
 
-        <!-- Zone principale -->
-        <section class="content-area">
-            <div class="cards-container">
-                <?php if ($type == 'guides'): ?>
-                    <?php foreach ($guides as $item): ?>
-                        <div class="card">
-                            <h3><?= $item['title'] ?></h3>
-                            <p><?= $item['excerpt'] ?></p>
-                            <a href="<?= $item['link'] ?>">Lire plus</a>
-                        </div>
-                    <?php endforeach; ?>
-
-                <?php elseif ($type == 'templates'): ?>
-                    <?php foreach ($templates as $item): ?>
-                        <div class="card">
-                            <h3><?= $item['title'] ?></h3>
-                            <a href="<?= $item['file'] ?>" download>Télécharger</a>
-                        </div>
-                    <?php endforeach; ?>
-
-                <?php elseif ($type == 'videos'): ?>
-                    <?php foreach ($videos as $item): ?>
-                        <div class="card video">
-                            <h3><?= $item['title'] ?></h3>
-                            <iframe src="<?= $item['url'] ?>" frameborder="0" allowfullscreen></iframe>
-                            <textarea placeholder="Votre commentaire..."></textarea>
-                        </div>
-                    <?php endforeach; ?>
-
-                <?php elseif ($type == 'mentors'): ?>
-                    <?php foreach ($mentors as $item): ?>
-                        <div class="card">
-                            <h3><?= $item['name'] ?></h3>
-                            <p>Spécialité : <?= $item['specialty'] ?></p>
-                            <a href="<?= $item['contact'] ?>">Contacter</a>
-                        </div>
-                    <?php endforeach; ?>
-
-                <?php elseif ($type == 'outils'): ?>
-                    <div class="card">
-                        <p>Section Outils Recommandés en cours de construction...</p>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </section>
+  <!-- Zone principale -->
+  <section class="content-area">
+    <div class="cards-container">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
     </div>
 
-    <?php include('../../templates/footer.php'); ?>
+    <!-- Texte explicatif invisible sur le site (juste pour dev, à supprimer ensuite) -->
+    <!--
+    “Espace de Consultation” (Affichage du contenu sélectionné)
+    ➜ Affichage dynamique :
+    - Si “Guides” → Articles sous format cartes avec aperçu et bouton “Lire plus”.
+    - Si “Templates” → Fichiers téléchargeables avec aperçu.
+    - Si “Vidéos” → Lecteur intégré avec section commentaires.
+    - Si “Mentors” → Liste avec profils, spécialités et bouton “Contacter”.
+    -->
+  </section>
+</div>
+
+    <?php include('../../../templates/footer.php'); ?>
 </body>
 </html>
