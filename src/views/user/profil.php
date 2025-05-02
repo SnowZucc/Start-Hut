@@ -1,47 +1,56 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Mon Profil</title>
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
-      <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-quentin.css">
-  </head>
-  <body>
-    <?php 
-    session_start(); 
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
+<head>
+    <meta charset="utf-8">
+    <title>Mon Profil</title>
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-quentin.css">
+</head>
+<body>
 
-    include('../../templates/header.php');
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+<?php 
+session_start(); 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-    // Connexion à la base de données
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    
+include('../../templates/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+// Connexion DB
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+
+    // Si formulaire envoyé
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $prenom = $_POST['prenom'] ?? '';
+        $nom = $_POST['nom'] ?? '';
+        $description = $_POST['description_profil'] ?? '';
+        $langues = $_POST['langues_parlees'] ?? '';
+
+        $sqlUpdate = "UPDATE Utilisateurs SET prenom = ?, nom = ?, description_profil = ?, langues_parlees = ? WHERE id = ?";
+        $stmtUpdate = $conn->prepare($sqlUpdate);
+        $stmtUpdate->bind_param("ssssi", $prenom, $nom, $description, $langues, $user_id);
+        $stmtUpdate->execute();
     }
 
-    // Récupération des données de l'utilisateur
-    if (isset($_SESSION['user_id'])) {
-        $user_id = $_SESSION['user_id'];
-        $sql = "SELECT u.*, d.lien FROM Utilisateurs u LEFT JOIN Documents d ON u.id = d.proprietaire AND d.type = 'image' WHERE u.id = ?"; // Cherche toutes les infos de l'utilisateur + la photo depuis le lien de la db
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-    }
-    ?>
+    // Récupération des données mises à jour
+    $sql = "SELECT * FROM Utilisateurs WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+}
+?>
 
-    <div class="content">
-        <div class="profile-section">
-            <!-- Photo de profil -->
+<div class="content">
+    <div class="profile-section">
+        <form method="POST" action="">
             <div class="profile-container">
                 <label for="file-upload">
                 <img src="<?php echo $user['lien'] ?? '/Start-Hut/public/assets/img/APRIL.png'; ?>" id="profile-pic" class="profile-pic" alt="Photo de profil">
@@ -50,80 +59,73 @@
                 <input type="file" id="file-upload" class="CV-input" accept="image/*">
             </div>
 
-            <!-- Grille des formulaires -->
             <div class="form-grid">
-                <!-- Colonne gauche -->
                 <div class="form-box">
                     <label>Prénom</label>
-                    <input type="text" class="input-field" placeholder="Votre prénom" 
-                        value="<?php echo isset($user) ? htmlspecialchars($user['prenom']) : ''; ?>">
+                    <input type="text" name="prenom" class="input-field" placeholder="Votre prénom" 
+                        value="<?php echo htmlspecialchars($user['prenom'] ?? ''); ?>">
 
                     <label>Nom</label>
-                    <input type="text" class="input-field" placeholder="Votre nom"
-                        value="<?php echo isset($user) ? htmlspecialchars($user['nom']) : ''; ?>">
+                    <input type="text" name="nom" class="input-field" placeholder="Votre nom"
+                        value="<?php echo htmlspecialchars($user['nom'] ?? ''); ?>">
 
                     <label>Adresse mail</label>
-                    <input type="email" class="input-field" placeholder="<?php 
-                        if (isset($_SESSION['user_email'])) {
-                            echo htmlspecialchars($_SESSION['user_email']);
-                        } else {
-                            echo 'Non connecté';
-                        }
-                    ?>">
+                    <input type="email" class="input-field" readonly
+                        value="<?php echo htmlspecialchars($_SESSION['user_email'] ?? 'Non connecté'); ?>">
 
                     <label>Mot de Passe</label>
                     <input type="password" class="input-field" placeholder="Nouveau mot de passe">  
 
                     <label>Statut</label>
-                    <select class="dropdown">
+                    <select class="dropdown" name="statut">
                         <option value="" disabled selected>Choisissez votre statut</option>
-                        <option value="emploi">En recherche de projet</option>
-                        <option value="entrepreneur">Entrepreneur</option>
+                        <option value="porteur" <?php echo isset($user['statut']) && $user['statut'] == 'emploi' ? 'selected' : ''; ?>>Porteur de projet</option>
+                        <option value="collaborateur" <?php echo isset($user['statut']) && $user['statut'] == 'entrepreneur' ? 'selected' : ''; ?>>Collaborateur</option>
                     </select>
 
                     <label>Votre CV</label>
                     <input type="file" class="input-field">
                 </div>
 
-                <!-- Colonne droite -->
                 <div class="form-box">
                     <label>Autres documents</label>
                     <input type="file" class="input-field">
 
                     <label>Ma description</label>
-                    <textarea class="input-field description" placeholder="Décrivez-vous. Soyez inspiré." style="height: 150px; resize: none;"></textarea>
+                    <textarea name="description_profil" class="input-field description" placeholder="Décrivez-vous. Soyez inspiré." style="height: 150px; resize: none;"><?php echo htmlspecialchars($user['description_profil'] ?? ''); ?></textarea>
 
                     <label>Langues parlées</label>
-                    <input type="text" class="input-field" placeholder="Vos langues">
+                    <input type="text" name="langues_parlees" class="input-field" placeholder="Vos langues"
+                        value="<?php echo htmlspecialchars($user['langues_parlees'] ?? ''); ?>">
                 </div>
             </div>
 
-            <!-- Bouton -->
             <div class="button-container">        
                 <button type="submit" class="save-button">Sauvegarder</button>
             </div>
-        </div>
+        </form>
     </div>
+</div>
 
-    <?php 
-    $conn->close();
-    include('../../templates/footer.php'); 
-    ?>
-    
-    <script>
-        document.getElementById("file-upload").addEventListener("change", function(event) {
-            let image = document.getElementById("profile-pic");
-            let file = event.target.files[0];
+<?php 
+$conn->close();
+include('../../templates/footer.php'); 
+?>
 
-            if (file) {
-                let reader = new FileReader();
-                reader.onload = function(e) {
-                    image.src = e.target.result; // Mise à jour de l'image
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
+<script>
+    document.getElementById("file-upload").addEventListener("change", function(event) {
+        let image = document.getElementById("profile-pic");
+        let file = event.target.files[0];
 
-  </body>
+        if (file) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                image.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+</body>
 </html>
