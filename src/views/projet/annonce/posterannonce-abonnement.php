@@ -2,7 +2,6 @@
 session_start(); // demarre la session
 
 
-
  if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['abonnement'])) {
     // dabord lutilisateur chosir l'abonnement
     $_SESSION['abonnement'] = $_POST['abonnement'];

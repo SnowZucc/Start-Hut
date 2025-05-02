@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: /Start-Hut/src/views/user/connexion.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
