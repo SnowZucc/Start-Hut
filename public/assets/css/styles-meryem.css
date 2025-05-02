@@ -879,3 +879,48 @@ button:hover {
   border-bottom: 3px solid green;
 }
 
+                            /* Boutons suivant et publier pour poster une annonce */  
+.back-btn {
+display: inline-block;
+padding: 8px 16px;
+font-size: 14px;
+color: #000;
+background-color: transparent;
+border: 2px solid #000;
+border-radius: 5px;
+text-decoration: none;
+text-align: center;
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+margin-top: 10px;
+}
+
+.back-btn:hover {
+background-color: #000;
+color: #fff;
+}
+
+.next-btn {
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+color: #fff;
+background-color: #28a745;
+border: none;
+border-radius: 5px;
+text-align: center;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+background-color: #218838;
+}
+
+.navigation-buttons {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+                                /* Boutons suivant et publier pour poster une annonce */  
