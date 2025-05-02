@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-fatma.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     </head>
     <body>
@@ -21,16 +21,36 @@
                     <li><a href="ressources.php" class="<?= basename($_SERVER['PHP_SELF']) == 'ressources.php' ? 'active' : '' ?>">Ressources</a></li>
                     </ul>
                 </nav>
-                <nav class="sub-navbar-outils">
-                    <ul>
-                    <li><a href="kanban.php" class="<?= basename($_SERVER['PHP_SELF']) == 'kanban.php' ? 'active' : '' ?>">Kanban</a></li>
-                    </ul>
-                </nav>
 
 
             </div>
 
-
-        <?php include('../../templates/footer.php'); ?>    
+       
     </body>
 </html>
+
+<div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#">Guides & Articles</a></li>
+            <li><a href="#">Templates & Documents</a></li>
+            <li><a href="#">Vidéos & Webinaires</a></li>
+            <li><a href="#">Mentors & Expert</a></li>
+            <li><a href="#">Outils Recommandés</a></li>
+        </ul>
+    </aside>
+
+    <!-- Zone principale avec les cartes -->
+    <section class="content-area">
+        <div class="cards-container">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+    <?php include('../../templates/footer.php'); ?>    
+</div>

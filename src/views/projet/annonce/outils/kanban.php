@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
-        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
-    </head>
-    <body>
-        <?php include('../../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
-        
-             <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutement - Start-Hut</title>
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
+</head>
+<body>
+
+<?php include('../../templates/header.php'); ?>
+
+
+   
+<div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
                 <!-- Barre de navigation secondaire -->
                 <nav class="sub-navbar">
                     <ul>
@@ -21,16 +23,22 @@
                     <li><a href="ressources.php" class="<?= basename($_SERVER['PHP_SELF']) == 'ressources.php' ? 'active' : '' ?>">Ressources</a></li>
                     </ul>
                 </nav>
-                <nav class="sub-navbar-outils">
+                <nav class="sub-navbar-outils"> <!-- Barre de navigation des outils collaboratifs -->
                     <ul>
                     <li><a href="kanban.php" class="<?= basename($_SERVER['PHP_SELF']) == 'kanban.php' ? 'active' : '' ?>">Kanban</a></li>
                     </ul>
                 </nav>
 
+                <div class = "Kanban-colonne">
+
+                </div>  
+
 
             </div>
 
 
-        <?php include('../../templates/footer.php'); ?>    
-    </body>
+
+<?php include('../../templates/footer.php'); ?>
+
+</body>
 </html>
