@@ -739,3 +739,108 @@ body.espace-projet header {
   background: blue;
   color: white;
 }
+
+/* ============================ */
+/*  Style Mes annonces */
+/* ============================ */
+
+/* Page et titre */
+.annonce-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+}
+
+.annonce-titre-global {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Carte d’annonce élargie */
+.annonce-box-large {
+  display: flex;
+  align-items: center; /* centre verticalement */
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1300px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  gap: 250px; /* ajusté pour l'espacement global */
+}
+
+/* Image à gauche */
+.annonce-left img {
+  width: 220px;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Texte au centre */
+.annonce-middle {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -225px; /* rapproché sans réduire le bloc */
+}
+
+
+.annonce-middle h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.annonce-description {
+  color: #555;
+  font-size: 17px;
+}
+
+/* État et boutons à droite */
+.annonce-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+  min-width: 150px;
+}
+
+.annonce-etat {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.annonce-buttons-right {
+  display: flex;
+  gap: 12px;
+}
+
+/* Boutons */
+.btn-supprimer,
+.btn-modifier {
+  padding: 10px 16px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-supprimer:hover {
+  background-color: red;
+  color: white;
+}
+
+.btn-modifier:hover {
+  background-color: green;
+  color: white;
+}
