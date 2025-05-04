@@ -48,15 +48,16 @@
                     <label>Statut <span class="required">*</span></label>
                     <div class="statut-container">
                         <div class="statut-option">
-                            <input type="checkbox" id="porteur" name="statut" value="porteur">
+                            <input type="radio" id="porteur" name="statut" value="porteur" required>
                             <label for="porteur">Porteur de projet</label>
                         </div>
                         <div class="statut-option">
-                            <input type="checkbox" id="collaborateur" name="statut" value="collaborateur">
+                            <input type="radio" id="collaborateur" name="statut" value="collaborateur">
                             <label for="collaborateur">Collaborateur</label>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="checkbox-container">
                     <input type="checkbox" id="cgu" required>
@@ -86,7 +87,8 @@
         $prenom = $_POST['firstname'];
         $email = $_POST['email'];
         $mot_de_passe = $_POST['password'];
-        $statut = isset($_POST['statut']);      // BUG : ca met tout le temps porteur
+        $statut = isset($_POST['statut']) ? $_POST['statut'] : '';  // BUG : ca met tout le temps porteur
+     
 
         $sql = "INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type) VALUES ('$nom', '$prenom', '$email', '$mot_de_passe', '$statut')";
 
