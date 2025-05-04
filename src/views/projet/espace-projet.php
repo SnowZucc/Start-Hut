@@ -11,7 +11,7 @@
 
 <?php include('../../templates/header.php'); ?>
 
-<!-- Barre de navigation secondaire -->
+<!-- Barre de navigation secondaire --> 
 <nav class="sub-navbar">
     <ul>
     <li><a href="projet.php" class="<?= basename($_SERVER['PHP_SELF']) == 'projet.php' ? 'active' : '' ?>">Projet</a></li>
