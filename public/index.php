@@ -44,7 +44,7 @@
   <div class="conteneur-collaborateur">
     <!-- Illustration à gauche -->
     <div class="image-collaborateur">
-      <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Illustration collaboration">
+      <img src="/Start-Hut/public/assets/img/pourquoinouschoisir.png" alt="Illustration collaboration">
     </div>
 
     <!-- Texte à droite -->

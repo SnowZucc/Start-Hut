@@ -31,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="progress-separator">></div>
                 <div class="progress-step"><span>3</span> Publier</div>
             </div>
-            
+             
             <!-- Barre de progression  -->
             <div class="containerposter">
                 <form action="posterannonce-abonnement.php" method="POST" enctype="multipart/form-data">

@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Redirection vers la page de publication
         header("Location: posterannonce-publier.php");
         exit();
-    }
+    } 
 }
 
 // Redirection si des données essentielles sont manquantes
