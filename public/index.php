@@ -8,9 +8,7 @@
         <link rel="stylesheet" href="assets/css/styles-meryem.css">
         <link rel="stylesheet" href="assets/css/styles.css">
        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-      
-        <link rel="stylesheet" href="assets/css/projects-populaires.css"> <!--  CSS pour la section "projets populaires" -->
+       
     </head>
     <body>
     <?php include('../src/templates/header.php'); ?>    
@@ -22,8 +20,17 @@
                 <h1>START-HUT</h1>
                 <p>L'outil le plus simple <br> pour <span class="highlight">transformer</span> vos idées en startups.</p>
                 <div class="boutons-collaborateur">
-                    <a href="../src/views/user/connexion.php" class="btn-collab">Publier un projet</a>
-                    <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                <?php        
+                 if (session_status() === PHP_SESSION_NONE) {
+                     session_start(); } 
+                if (!isset($_SESSION['user_id'])) : ?>    <!-- Si l'utilisateur n'est pas connecter et appuie sur le bouton publier un projet il est renvoyé vers connexion -->
+                        <a href="../src/views/user/connexion.php" class="btn-collab">Publier un projet</a>
+                        <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                 <?php else : ?>                                 <!-- Sinon il est renvoyer sur la page poster une annonce -->
+                        <a href="../src/views/projet/annonce/posterannonce.php" class="btn-collab">Publier un projet</a>
+                        <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                <?php endif; ?>
+                    
                 </div>
             </div>
             <div class="landing-image">
