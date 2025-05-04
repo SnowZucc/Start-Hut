@@ -40,24 +40,40 @@
     color: green; /* Couleur verte pour le highlight */
   }
   
-  .btnlanding {
-    background-color: black; /* Bouton noir */
+  .boutons-collaborateur {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .btn-collab {
+    background-color: #1e7a1e;
     color: white;
-    padding: 12px 28px;
+    padding: 12px 24px;
     border-radius: 30px;
-    font-weight: 500;
-    display: inline-block;
-    transition: all 0.3s ease;
+    font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-
-.btnlanding:hover {
-  background-color: green;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(40,167,69,0.2);
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-collab:hover {
+    background-color: #145214;
+  }
+  
+  .btn-projet {
+    border: 2px solid #1e7a1e;
+    color: #1e7a1e;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-projet:hover {
+    background-color: #f1fff1;
+  }
+  
 
   
   .landing-image {
@@ -73,114 +89,209 @@
   }
   /* Premiere section */   
   
-  
+
+
   /*Deuxieme section ANNONCES POPULAIRE*/
-/* Projet Populaires */
-:root {
-  --primary-color: green;
-  --primary-dark: rgb(6, 78, 6); 
-  --primary-light: #d1ffd1;
-  --secondary-color: #333333;
-  --text-color: #333333;
-  --light-gray: #f8f8f8;
-  --dark-gray: #555;
-}
-.highlight {
-  color:green;
-  font-weight: 600;
-}
-
-.project-card {
-  transition: all 0.3s ease;
-  border: 2px solid green;
-  background-color:  #f8f8f8;
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  background-color: var(--primary-light);
-  border-color: var(--primary-dark);
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background-color: var(--primary-color);
-  transform: scaleX(0);
-  transition: all 0.3s ease;
-  transform-origin: left;
-}
-
-.project-card:hover::before {
-  transform: scaleX(1);
-}
-
-.btn-details {
-  background-color: var(--primary-color);
-  transition: all 0.3s ease;
-}
-
-.btn-details:hover {
-  background-color: var(--primary-dark);
-  transform: scale(1.05);
-}
-
-.icon-container {
-  background-color: white;
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .icon-container {
-  background-color: white;
-  transform: scale(1.1);
-}
-
-i {
-  color: var(--primary-color);
-}
-
-.icon-arrow {
-  margin-left: 10px;
-  color: white;
-}
-
-
+  :root {
+    --primary-color: green;
+    --primary-dark: rgb(6, 78, 6);
+    --primary-light: #d1ffd1;
+    --text-color: #333;
+    --background: #f8f8f8;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+  }
   
   .textepop h2 {
-    margin-top: 60px; /* espace avec section 1 */
-    margin-bottom: 20px; /* espace avec les annonces */
+    font-size: 28px;
     font-weight: bold;
-    line-height: 1.5; /* espacement entre ligne  */
-    text-align: left; /* Alignement du texte à gauche */
-    font-size: 25px; /* ltaille */
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 1.5;
   }
-
-  .btn-explorer {
-    display: inline-block;
-    background-color: #000000; /* bg-gray-800 */
-    color: white;
-    font-weight: 500;
-    padding: 0.75rem 2rem; /* py-3 px-8 */
-    border-radius: 9999px; /* rounded-full */
+  
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Forcer 5 cartes sur une seule ligne */
+    gap: 20px;
+  }
+  
+  .project-card {
+    width: 200px;
+    min-height: 420px;
+    background-color: var(--background);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease;
-    transform: translateY(0);
+  }
+  
+  .project-card:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-dark);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .icon-container {
+    background-color: white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .project-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: var(--text-color);
+  }
+  
+  .project-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .btn-details {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-details:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+  }
+                                            
+
+  
+                                                 /*Deuxieme section ANNONCES POPULAIRE*/
+
+
+
+
+
+  
+                                                 /*CONTENEUR COLLABORATEUR */
+   
+.conteneur-collaborateur {
+  display: flex;
+  flex-direction: row; /* Texte à gauche, image à droite */
+  gap: 100px;
+  padding: 10px;
+  width: 90%;
+  margin: 70px auto -50px auto;
+  text-align: left;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.btn-explorer:hover {
-    background-color: green; /* hover:bg-green-600 */
-    transform: translateY(-4px); /* hover:-translate-y-1 */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* hover:shadow-lg */
+.texte-collaborateur {
+  flex: 1 1 500px;
+  order: 1;
 }
-  
-  
-                                                      /*Deuxieme dection ANNONCES POPULAIRE*/
+
+.image-collaborateur {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: flex-end; /* image alignée à droite */
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  order: 2;
+}
+
+.image-collaborateur img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.texte-collaborateur h2 {
+  font-size: 28px;
+  color: #1e7a1e;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.texte-collaborateur .soustitre {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.texte-collaborateur .description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.liste-arguments {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.liste-arguments li {
+  margin-bottom: 10px;
+}
+
+
+                                                 /*CONTENEUR COLLABORATEUR */
+
   
   /*Troisieme dection POURQUOI NOUS CHOISIR*/
   /* Conteneur principal */

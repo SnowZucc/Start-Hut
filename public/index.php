@@ -7,10 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/styles-meryem.css">
         <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+       
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-        <link rel="stylesheet" href="assets/css/projects-populaires.css"> <!-- Ton CSS pour la section "projets populaires" -->
+      
+        <link rel="stylesheet" href="assets/css/projects-populaires.css"> <!--  CSS pour la section "projets populaires" -->
     </head>
     <body>
     <?php include('../src/templates/header.php'); ?>    
@@ -21,81 +21,104 @@
             <div class="landing-text">
                 <h1>START-HUT</h1>
                 <p>L'outil le plus simple <br> pour <span class="highlight">transformer</span> vos idées en startups.</p>
-                <a href="../src/views/annonces.php" class="btnlanding">
-                    <span>Voir tous les projets</span>
-                    <i class="fas fa-arrow-right arrow-icon"></i>
-                </a>
+                <div class="boutons-collaborateur">
+                    <a href="../src/views/user/connexion.php" class="btn-collab">Publier un projet</a>
+                    <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                </div>
             </div>
             <div class="landing-image">
                 <img src="https://img.freepik.com/free-vector/business-team-discussing-ideas-startup_74855-4380.jpg?w=1380&t=st=1714579429~exp=1714580029~hmac=64a3984348efb08d9be17b07ed4e31ba3495af40fc0e6f2de1e62cf247741b5c" alt="Illustration de startups">
             </div>
         </section>
 
-        <!-- New Popular Projects Section -->
-        <section class="popular-section">
-            <div class="container mx-auto px-4 py-16">
-            <div class ="textepop"> <!-- texte --> <h2>Projet<br> <span class ="highlight"> populaires</span> <!-- pour stylisée le mot populaire uniquement --> </h2> </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mt-10">
-                    <!-- Project 1 -->
-                    <div class="project-card rounded-lg p-6 flex flex-col items-center text-center relative overflow-hidden">
-                        <div class="icon-container h-20 w-20 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                            <i class="fas fa-laptop-code text-4xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Lancer une app web</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">Plateforme web pour connecter des artisans locaux avec des clients à la recherche de services personnalisés et d'artisanat de qualité.</p>
-                        <a href="#" class="btn-details text-white font-medium py-2 px-5 rounded-full inline-block mt-auto">Voir détails</a>
+        <!-- Section Collaborateur -->
+<!-- Section Collaborateur -->
+<section class="section-collaborateur">
+  <div class="conteneur-collaborateur">
+    <!-- Illustration à gauche -->
+    <div class="image-collaborateur">
+      <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Illustration collaboration">
+    </div>
+
+    <!-- Texte à droite -->
+    <div class="texte-collaborateur">
+      <h2>Rejoignez l’aventure Start-Hut</h2>
+      <p class="soustitre">Vous avez des compétences à partager ?</p>
+      <p class="description">Mettez votre talent au service de projets innovants.<br>
+        👩‍💻 Développeurs, designers, marketeurs, ingénieurs...<br>
+        Participez à la création de startups ambitieuses en rejoignant des porteurs de projets motivés.</p>
+
+      <ul class="liste-arguments">
+        <li>🌱 Contribuez à des projets concrets dès aujourd’hui</li>
+        <li>🌍 Développez votre réseau et vos compétences</li>
+        <li>💼 Gagnez en visibilité auprès de recruteurs et investisseurs</li>
+      </ul>
+
+    
+    </div>
+  </div>
+</section>
+
+  <!-- Section populaire-->
+                <section class="popular-section">
+                <div class="container">
+                    <div class="textepop">
+                    <h2>Projet<br><span class="highlight">populaires</span></h2>
                     </div>
-                    
-                    <!-- Project 2 -->
-                    <div class="project-card rounded-lg p-6 flex flex-col items-center text-center relative overflow-hidden">
-                        <div class="icon-container h-20 w-20 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                            <i class="fas fa-chart-line text-4xl"></i>
+
+                    <div class="cards-wrapper">
+                    <!-- Carte 1 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/web.svg" alt="Icône App Web" width="30" height="30">
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Startup de service</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">Service innovant de conseils aux entreprises centré sur la transition écologique et l'optimisation des ressources énergétiques.</p>
-                        <a href="#" class="btn-details text-white font-medium py-2 px-5 rounded-full inline-block mt-auto">Voir détails</a>
+                        <h3>Lancer une app web</h3>
+                        <p>Plateforme web pour connecter des artisans locaux avec des clients à la recherche de services personnalisés et d'artisanat de qualité.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
                     </div>
-                    
-                    <!-- Project 3 -->
-                    <div class="project-card rounded-lg p-6 flex flex-col items-center text-center relative overflow-hidden">
-                        <div class="icon-container h-20 w-20 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                            <i class="fas fa-brain text-4xl"></i>
+
+                    <!-- Carte 2 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/service.svg" alt="Icône Service" width="30" height="30">
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">#IA Générative</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">Solution d'IA générative spécialisée dans la création de contenus pédagogiques adaptés aux besoins spécifiques des élèves.</p>
-                        <a href="#" class="btn-details text-white font-medium py-2 px-5 rounded-full inline-block mt-auto">Voir détails</a>
+                        <h3>Startup de service</h3>
+                        <p>Service innovant de conseils aux entreprises centré sur la transition écologique et l'optimisation des ressources énergétiques.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
                     </div>
-                    
-                    <!-- Project 4 -->
-                    <div class="project-card rounded-lg p-6 flex flex-col items-center text-center relative overflow-hidden">
-                        <div class="icon-container h-20 w-20 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                            <i class="fas fa-money-bill-wave text-4xl"></i>
+
+                    <!-- Carte 3 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/ai.svg" alt="Icône IA" width="30" height="30">
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Plateforme finance</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">Application de gestion financière intuitive permettant aux particuliers d'optimiser leur épargne et d'investir dans des projets durables.</p>
-                        <a href="#" class="btn-details text-white font-medium py-2 px-5 rounded-full inline-block mt-auto">Voir détails</a>
+                        <h3>#IA Générative</h3>
+                        <p>Solution d'IA générative spécialisée dans la création de contenus pédagogiques adaptés aux besoins spécifiques des élèves.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
                     </div>
-                    
-                    <!-- Project 5 -->
-                    <div class="project-card rounded-lg p-6 flex flex-col items-center text-center relative overflow-hidden">
-                        <div class="icon-container h-20 w-20 rounded-full flex items-center justify-center mb-4 shadow-sm">
-                            <i class="fas fa-dumbbell text-4xl"></i>
+
+                    <!-- Carte 4 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/finance.svg" alt="Icône Finance" width="30" height="30">
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Appli de fitness</h3>
-                        <p class="text-gray-600 mb-6 flex-grow">Solution fitness connectée qui crée des programmes d'entraînement personnalisés basés sur les objectifs et contraintes physiques de chaque utilisateur.</p>
-                        <a href="#" class="btn-details text-white font-medium py-2 px-5 rounded-full inline-block mt-auto">Voir détails</a>
+                        <h3>Plateforme finance</h3>
+                        <p>Application de gestion financière intuitive permettant aux particuliers d'optimiser leur épargne et d'investir dans des projets durables.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+
+                    <!-- Carte 5 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/fitness.svg" alt="Icône Fitness" width="30" height="30">
+                        </div>
+                        <h3>Appli de fitness</h3>
+                        <p>Solution fitness connectée qui crée des programmes d'entraînement personnalisés basés sur les objectifs et contraintes physiques de chaque utilisateur.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
                     </div>
                 </div>
-                
-                <div class="text-center mt-12">
-                <a href="../src/views/annonces.php" class="btn-explorer">
-                        Explorer tous les projets
-                        <i class="fas fa-arrow-right arrow-icon"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+                </section>
 
         <!-- Why Choose Us Section -->
         <section class="pourquoi-section">
