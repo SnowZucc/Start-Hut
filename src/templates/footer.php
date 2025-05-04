@@ -19,6 +19,7 @@
             <h3>Espace Client</h3>
             <p><a href="/Start-Hut/src/views/user/connexion.php">Connexion</a></p>
             <p><a href="/Start-Hut/src/views/user/profil.php">Mon profil</a></p>
+            <p><a href="/Start-Hut/src/views/contact.php">Contact</a></p>
         </div>
         <div class="footer-section">
             <h3>Mon projet</h3>
@@ -27,11 +28,18 @@
             <p><a href="/Start-Hut/src/views/projet/recrutement.php">Recrutement</a></p>
             <p><a href="/Start-Hut/src/views/projet/ressources.php">Ressources</a></p>
         </div>
+        <div class="footer-section">
+            <h3>Légales</h3>
+            <p><a href="/Start-Hut/src/views/legal/cgu.php">CGU</a></p>
+            <p><a href="/Start-Hut/src/views/legal/mentions.php">Mentions légales</a></p>
+            <p><a href="/Start-Hut/src/views/legal/cookies.php">Politiques des cookies</a></p>
+        </div>
     </div>
-    <div class="footer-bottom">  <!-- derniere ligne du footer pour renvoyer vers les info importantes  -->
-        <a href="/Start-Hut/src/views/legal/cgu.php">CGU</a>
-        <a href="/Start-Hut/src/views/legal/mentions.php">Mentions légales</a>
-        <a href="/Start-Hut/src/views/legal/cookies.php">Politiques des cookies</a>
-        
-    </div>
+    <div class="footer-bottom">
+   
+    
+    © 2025 StartHut - Tous droits réservés.
+</div>
+
+  
 </footer>

@@ -13,7 +13,7 @@
             <?php         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         } if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
-                <a href="/Start-Hut/src/views/user/connexion.php" class="signup">Connexion</a>
+                <a href="/Start-Hut/src/views/user/connexion.php" class="signup">Se connecter</a>
             <?php else : ?>                                 <!-- Sinon -->
                 <a href="/Start-Hut/src/views/projet/espace-projet.php" class="signup">Espace projet</a>
                 <a href="/Start-Hut/src/views/user/profil.php" class="signup">Mon profil</a>

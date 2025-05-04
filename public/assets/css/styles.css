@@ -85,60 +85,72 @@ body {
 }
 /* Contenu de la page (centré) */
 
-                                                         /* FOOTER  */
+
+                                               /*  FOOTER */
+/* FOOTER */
 footer {
-  background-color: black;
+  background-color: #000000; /* noir */
   color: white;
-  text-align: center;
   width: 100%;
-  position : relative; /* bouge pas fixe en bas */
-  bottom : 0px; /* pour que le footer collé en bas */
+  position: relative;
+  bottom: 0px;
   margin-top: auto;
+  font-family: Arial, sans-serif;
+
+  
   
 }
 
-/* Conteneur des sections */
+/* Conteneur principal en flex */
 .footer-container {
-  flex: 1;
-  display: flex; /* pour organiser en ligne */
+  display: flex;
   justify-content: center;
-  gap: 100px; /* espace entre les sections */
-  padding-top: 15px;
-  padding-bottom: 15px;
+  align-items: flex-start;
+  gap: 120px;
+  padding: 20px 0;
+  text-align: left;
 }
-/* titre de section */
+
+/* Titres des sections */
 .footer-section h3 {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
-  margin-bottom: 8px; /* espace en dessous du titre de la section */
+  margin-bottom: 12px;
 }
-/* Information de chaque section */
+
+/* Liens */
 .footer-section p {
-  margin: 5px 0;
-  font-size: 12px;
+  margin: 6px 0;
+  font-size: 14px;
 }
 
-/* Barre footer */
+/* Retirer soulignement */
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer-bottom {
-  border-top: 1px solid gray;
-  padding-top: 10px;
-  display: flex;/* pour organiser en ligne */
-  justify-content: center;
-  gap: 50px; /* espace entre les elements */
-}
-
-.footer-bottom a { /* ligne : mentions/cgu/cookies du footer */ 
+  background-color: #111111;
+  border-top: 1px solid #333;
   color: white;
-  text-decoration: none; 
-  font-size: 12px; /* ltaille */
-  padding-bottom: 10px;
-}
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  margin-top: auto;
+  font-family: Arial, sans-serif;
+  padding: 20px 0;
+  margin-left: auto;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
 
-.footer-bottom a:hover {
-  text-decoration: underline;  /* lors de la survole l'element devient souligner */
 }
+                                                /*  FOOTER */
 
-                                                          /* FOOTER  */
+
+
+
 
 
                                                /* Mes annonces */

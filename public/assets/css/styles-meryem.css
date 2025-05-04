@@ -1,17 +1,20 @@
                                                          /* LANDING PAGE */
     /* Premiere section */                                              
   .landing {
-    margin-top: 30px; /* espacement avec le header */     
+  
     display: flex; /* pour organiser en ligne */
     background-color: #ffffff; 
     border: 3px solid green;  /* bord de la premiere section  */
     border-radius: 20px; /* contour des bords */
-    padding: 40px; /* Espacement intérieur */
-    width: 80%;  /* largeur prise sur la page */
-    max-width: 900px;  /* pour pas que la section prennent une place plus large */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 5px auto;
+    padding: 40px;
+    max-width: 1000px;  /* pour pas que la section prennent une place plus large */
+    width: 80%;
   }
   
   .landing-text {
+    font-family: 'Poppins', sans-serif;
     flex: auto; 
     color: black; 
     text-align: left; /* Alignement du texte à gauche */
@@ -23,11 +26,12 @@
     font-weight: bold;
     margin-bottom: 30px; /* sspacement sous le titre */
     white-space: nowrap; /* empeche START-HUT ne soit couper en 2 et de passer à la ligne */
+    margin-left: -20px;
   }
   
   .landing p {
     font-size: 20px; /* Taille de police du texte */
-    margin-bottom: 20px; /* espacement sous le paragraphe */
+    margin-bottom: 50px; /* espacement sous le paragraphe */
     line-height: 1.5; /* espacement entre ligne  */
   }
   
@@ -36,22 +40,41 @@
     color: green; /* Couleur verte pour le highlight */
   }
   
-  .btnlanding {
-    background-color: black; /* Bouton noir */
-    color: white;
-    padding: 12px 25px; /* Taille du bouton */
-    font-size: 16px; /* Taille de police du bouton */
-    border: none;
-    border-radius: 30px;
-    cursor: pointer; /* quand on arrive sur le bouton le curseur change de forme  */
-    margin-top: 20px; /* Espacement au-dessus du bouton */
-    transition: background-color 0.3s ease; /* pour l'animation hover en bas s'acctive en 3scd */
-    margin-left: 95px; 
+  .boutons-collaborateur {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   
-  .btn:hover {
-    background-color: green; /* Si le bouton est selectionner il change en vert */
+  .btn-collab {
+    background-color: #1e7a1e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
+  
+  .btn-collab:hover {
+    background-color: #145214;
+  }
+  
+  .btn-projet {
+    border: 2px solid #1e7a1e;
+    color: #1e7a1e;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-projet:hover {
+    background-color: #f1fff1;
+  }
+  
+
   
   .landing-image {
     display: flex;
@@ -66,57 +89,220 @@
   }
   /* Premiere section */   
   
-  
+
+
   /*Deuxieme section ANNONCES POPULAIRE*/
-  .popular {
-    display: flex; /* Alignement horizontal */
-    gap: 20px; /* Espacement entre chaque annonce */
-    margin-top: 5px;
-    align-items: center;
-    justify-content: center; /* Centrer les annonces */
+  :root {
+    --primary-color: green;
+    --primary-dark: rgb(6, 78, 6);
+    --primary-light: #d1ffd1;
+    --text-color: #333;
+    --background: #f8f8f8;
   }
   
-  .popular-annonce {
-    border: 2px solid green;
-    border-radius: 10px;
-    padding: 20px;
-    height: 250px;
-    width: 200px; /* Taille uniforme pour toutes les annonces finalement */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* pour rendre fluide la transtion zoom et couleur ( voir hover) */
-    background-color: #f8f8f8; 
-    display: flex;
-    align-items: center; /* centre texte intérieur annonce horizon */
-    justify-content: center; /* centre texte intérieur annonce vertical  */
-    text-align: center;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
   }
   
-  .popular-annonce:hover {
-    transform: scale(1.1); /* effet de zoom au survol */
-    background-color: #d1ffd1; /* changment de couleur au survol */
-    border-color: darkgreen;
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
   }
   
   .textepop h2 {
-    margin-top: 100px; /* espace avec section 1 */
-    margin-bottom: 20px; /* espace avec les annonces */
-    margin-right: 1025px;
-    line-height: 1.5; /* espacement entre ligne  */
-    text-align: left; /* Alignement du texte à gauche */
-    font-size: 22px; /* ltaille */
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 1.5;
   }
   
-  /*Deuxieme dection ANNONCES POPULAIRE*/
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Forcer 5 cartes sur une seule ligne */
+    gap: 20px;
+  }
+  
+  .project-card {
+    width: 200px;
+    min-height: 420px;
+    background-color: var(--background);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-dark);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .icon-container {
+    background-color: white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .project-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: var(--text-color);
+  }
+  
+  .project-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .btn-details {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-details:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+  }
+                                            
+
+  
+                                                 /*Deuxieme section ANNONCES POPULAIRE*/
+
+
+
+
+
+  
+                                                 /*CONTENEUR COLLABORATEUR */
+   
+.conteneur-collaborateur {
+  display: flex;
+  flex-direction: row; /* Texte à gauche, image à droite */
+  gap: 100px;
+  padding: 10px;
+  width: 90%;
+  margin: 70px auto -50px auto;
+  text-align: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.texte-collaborateur {
+  flex: 1 1 500px;
+  order: 1;
+}
+
+.image-collaborateur {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: flex-end; /* image alignée à droite */
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  order: 2;
+}
+
+.image-collaborateur img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.texte-collaborateur h2 {
+  font-size: 28px;
+  color: #1e7a1e;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.texte-collaborateur .soustitre {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.texte-collaborateur .description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.liste-arguments {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.liste-arguments li {
+  margin-bottom: 10px;
+}
+
+
+                                                 /*CONTENEUR COLLABORATEUR */
+
   
   /*Troisieme dection POURQUOI NOUS CHOISIR*/
   /* Conteneur principal */
   .conteneur-pourquoinouschoisir {
       display: flex;
-      gap: 120px; /* Espacement entre l'image et le texte */
-      padding: 20px;
+      gap: 100px; /* Espacement entre l'image et le texte */
+      padding: 10px;
       width: 90%; /* Ajuster la largeur pour un bon rendu */
-      /* margin: auto; Centrer dans la page */
       margin-top: 70px;
       margin-bottom: -50px;
+      text-align: left; /* Alignement du texte à gauche */
   }
   
   .imagepourquoinouschoisir {
@@ -130,21 +316,22 @@
   
   .imagepourquoinouschoisir img {
       width: 90%; /* Laisse un peu d'espace pour voir le background */
-      max-width: 500px; /* Ajuste la taille max */
+      max-width: 800px; /* Ajuste la taille max */
       height: auto;
       border-radius: 20px;
   }
   
   /* Partie texte */
   .textepourquoinouschoisir {
-      /* flex: 1; Prend tout l'espace dispo à droite */
+
+    margin-right: 0px;
       margin-bottom: 30px;
   }
   
   .textepourquoinouschoisir h2 {
       font-size: 22px;
       margin-bottom: 40px;
-      margin-left: 150px;
+      margin-left: 100px;
       color: #000000;
   }
   
@@ -156,7 +343,7 @@
   }
   
   .liste-choix figure {
-      display: flex;
+      display:flex;
       align-items: center;
       gap: 20px;
   }
@@ -879,3 +1066,168 @@ button:hover {
   border-bottom: 3px solid green;
 }
 
+/* ==================================== */
+/*  BARRE DE NAVIGATION outils */
+/* ==================================== */
+
+/* Barre des menus secondaire */
+.sub-navbar-outils {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: white;
+    border-bottom: 2px solid #ddd;
+}
+
+.sub-navbar-outils ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.sub-navbar-outils li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.sub-navbar-outils li a:hover {
+    color: green;
+}
+
+.sub-navbar-outils li a.active {
+    color: green;
+    border-bottom: 3px solid green;
+}
+
+/* ==================================== */
+/*  BARRE DE NAVIGATION outils */
+/* ==================================== */
+
+/***** === Page Contact === *****/
+
+.contact-page {
+  padding: 20px 20px;
+ 
+
+}
+
+.map-contact {
+  margin-bottom: 40px;
+  width: 100vw;
+  max-width: 67%;
+  margin-left: 280px;
+  
+}
+
+.map-contact iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.form-section {
+  flex: 1 1 500px;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e7a1e;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section input,
+.form-section textarea {
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-section button {
+  background-color: #1e7a1e;
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #145214;
+}
+
+.info-section {
+  margin-top: 100px;
+  flex: 1 1 400px;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1e7a1e;
+}
+
+.info-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.info-section i {
+  color: #1e7a1e;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section,
+  .info-section {
+    width: 100%;
+  }
+
+  .info-section {
+    text-align: center;
+  }
+
+  .form-section h2 {
+    text-align: center;
+  }
+}
+
+                                         /* ==================================== */
+                                                  /*  PAGE CONTACT */
+                                        /* ==================================== */

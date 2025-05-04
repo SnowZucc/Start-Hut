@@ -129,6 +129,17 @@ CREATE TABLE Messages (
     FOREIGN KEY (id_destinataire) REFERENCES Utilisateurs(id)
 );
 
+CREATE TABLE Contacts (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255) NOT NULL,
+    prenom VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    sujet VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    date_envoi DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- Exemples d'utilisation
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
 VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'collaborateur');
