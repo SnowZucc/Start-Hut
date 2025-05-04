@@ -19,6 +19,7 @@
             <h3>Espace Client</h3>
             <p><a href="/Start-Hut/src/views/user/connexion.php">Connexion</a></p>
             <p><a href="/Start-Hut/src/views/user/profil.php">Mon profil</a></p>
+            <p><a href="/Start-Hut/src/views/contact.php">Contact</a></p>
         </div>
         <div class="footer-section">
             <h3>Mon projet</h3>

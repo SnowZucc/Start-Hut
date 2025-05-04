@@ -1101,4 +1101,133 @@ button:hover {
     border-bottom: 3px solid green;
 }
 
+/* ==================================== */
+/*  BARRE DE NAVIGATION outils */
+/* ==================================== */
 
+/***** === Page Contact === *****/
+
+.contact-page {
+  padding: 20px 20px;
+ 
+
+}
+
+.map-contact {
+  margin-bottom: 40px;
+  width: 100vw;
+  max-width: 67%;
+  margin-left: 280px;
+  
+}
+
+.map-contact iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.form-section {
+  flex: 1 1 500px;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e7a1e;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section input,
+.form-section textarea {
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-section button {
+  background-color: #1e7a1e;
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #145214;
+}
+
+.info-section {
+  margin-top: 100px;
+  flex: 1 1 400px;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1e7a1e;
+}
+
+.info-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.info-section i {
+  color: #1e7a1e;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section,
+  .info-section {
+    width: 100%;
+  }
+
+  .info-section {
+    text-align: center;
+  }
+
+  .form-section h2 {
+    text-align: center;
+  }
+}
+
+                                         /* ==================================== */
+                                                  /*  PAGE CONTACT */
+                                        /* ==================================== */
