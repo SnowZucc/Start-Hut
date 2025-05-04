@@ -553,134 +553,171 @@
                                                 /* ACCEDER A UNE SEULE ANNONCE */
                                                   /* ==================================== */                                             
   
-  /* Conteneur principal de l'annonce */
-  .containerAnnonce {
-    max-width: 1200px; /*  largeur maximale  */
-    margin: 50px auto; /* Centre l'annonce sur la page */
-    padding: 40px; /* Ajoute de l'espace autour */
-    background-color: #ffffff; /* Fond  */
-    border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-  }
-  
-  /* Profil de l'annonceur */
-  .profilAnnonceur {
-    display: flex; /* aligner les éléments horizontalement */
-    align-items: center; /* Alignement vertical centré */
-    gap: 20px; /* espacemnt  */
-    margin-bottom: 30px; /* ajoute de l'espace sous le profil */
-  }
-  
-  /* Image de profil de l'annonceur */
-  .profile-img {
-    width: 100px; /* taille fixe pour uniformiser les images */
-    height: 100px;
-    border-radius: 50%; /* rend l'image ronde */
-  }
-  
-  /* Infos sur l'annonceur */
-  .infoAnnonceur {
-    text-align: left; /* Alignement à gauche */
-  }
-  
-  .infoAnnonceur h2 {
-    font-size: 22px; /*  taille du nom */
-    margin-bottom: 5px; /*  l'espace sous le titre */
-  }
-  
-  /* Bouton de contact */
-  .contact-btn {
-    background-color: #1A702D; 
-    color: white;
-    padding: 10px 10px; /* Taille*/
-    border: none;
-    border-radius: 7px; 
-  
-    cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
-  
-  }
-  
-  .contact-btn:hover {
-    background-color: #145A23; /* change couleur  bouton au survol  */
-  }
-  
-  /* Section du projet associé à l'annonce */
-  .projetAnnonce {
-    text-align: left; /* Alignement */
-    margin-bottom: 30px;
-  
-  }
-  
-  .projetAnnonce h3 {
-    font-size: 20px; /* Titre taille */
-    margin-bottom: 15px; /* 
-    'espace sous le titre */
-  }
-  
-  /* Image du projet */
-  .project-img {
-  
-    width: 100%; /* pour que ca s'étire sur toute la largeur du conteneur */
-    max-height: 250px; /* empêche l'image d'être trop grande */
-    object-fit: cover; /* ajuste l'image pour qu'elle remplisse bien son espace */
-    border-radius: 10px; /
-  }
-  
-  /* Titre de la description */
-  .description-title {
-    font-weight: bold; /* titre en gras */
-    margin-top: 15px;
-  }
-  
-  /* Contenu de la description */
-  .description-content {
-    font-size: 16px; 
-    color: #444; /* couleur plus lisible je trouve */
-    margin-top: 6px;
-    margin-bottom: 20px;
-  }
-  
-  /* Section des détails */
-  .detailsAnnonce h3 {
-    font-size: 18px; 
-    text-align: left;
-  }
-  
-  /* Contenu des détails */
-  .details-content {
-    background-color: #f5f5f5; /* fond gris clair pour bien séparer la section */
-    padding: 20px; /* espace autour du texte */
-    margin-top: 12px;
-    border-radius: 10px; 
-  
-    min-height: 120px; 
-  }
-  
-  /* Boutons d'action */
-  .actions {
-    display: flex; /* Organisation en ligne */
-    gap: 30px; /* spacement entre les boutons */
-    justify-content: center; /* entre les boutons */
-    margin-top: 30px;
-  }
-  
-  /* Boutons "Postuler" et "Sauvegarder" */
-  .postuler, .sauvegarder {
-    background-color: #1A702D; /* Même couleur que le bouton de contact pour garder une cohérence */
-    color: white;
-    padding: 10px 20px; 
-    font-size: 16px; 
-    border: none;
-    border-radius: 7px; 
-    cursor: pointer; /* indique que c'est un bouton cliquable */
-  }
-  
-  /* Effet au survol des boutons */
-  .postuler:hover, .sauvegarder:hover {
-    background-color: #145A23; /* assombrit le bouton pour un feedback visuel */
-  }
-   
+.containerAnnonceFlex {
+  align-items: flex-start; /* Alignement en haut entre les 2 colonnes */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+  gap: 40px;
+}
+.annonceGauche {
+  flex: 1 1 60%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Aligne tout le texte à gauche */
+}
+
+.titreAnnonce {
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: left; /* Titre à gauche */
+}
+
+
+
+
+
+
+
+.visuelAnnonce {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.description-bloc, .details-bloc {
+  margin-bottom: 25px;
+}
+
+.description-bloc h3,
+.details-bloc h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.description-bloc p,
+.details-bloc p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+.roles-bloc, .remuneration-bloc {
+  margin-bottom: 25px;
+}
+
+.roles-bloc h3, .remuneration-bloc h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.roles-bloc p, .remuneration-bloc p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+.annonceDroite {
+  margin-top: 10px;
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ← CENTRAGE vertical du contenu dans la colonne */
+}
+
+.carteProfil {
+  background: #f7f7f7;
+  padding: 25px 20px;
+  border-radius: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* ombre plus douce */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* espace entre les éléments */
+}
+
+
+.profilImage {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #1A702D;
+}
+
+.carteProfil h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.carteProfil p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.btnContact {
+  background-color: #1A702D;
+  color: white;
+  padding: 8px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnContact:hover {
+  background-color: #145A23;
+}
+
+.actionsAnnonce {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+}
+
+.btnAction {
+  background-color: #1A702D;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnAction:hover {
+  background-color: #145A23;
+  transform: translateY(-2px);
+}
+
+.btnSecondaire {
+  background-color: transparent;
+  color: #1A702D;
+  border: 2px solid #1A702D;
+}
+
+.btnSecondaire:hover {
+  background-color: #1A702D;
+  color: white;
+}
+
+
                                                  /* ==================================== */
                                                  /* ACCEDER A UNE SEULE ANNONCES */
                                                 /* ==================================== */                                                
