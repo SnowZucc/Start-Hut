@@ -27,6 +27,7 @@ CREATE TABLE Projets (
     annonce_competences_recherchees ENUM ('developpeur', 'designer', 'marketing', 'communication', 'autre') NOT NULL,
     annonce_categorie ENUM ('technologies', 'education', 'business', 'autre') NOT NULL,
     annonce_collaborateurs_souhaites INT NOT NULL ,
+    annonce_remuneration DOUBLE NOT NULL CHECK (annonce_remuneration >= 0),
     annonce_etat ENUM ('ouvert', 'ferme') NOT NULL ,
 
     FOREIGN KEY (createur) REFERENCES Utilisateurs(id),
