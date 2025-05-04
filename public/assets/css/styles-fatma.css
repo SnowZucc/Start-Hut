@@ -1,7 +1,6 @@
 /* ==================================== */
-/*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
+/* BARRE DE NAVIGATION SECONDAIRE */
 /* ==================================== */
-
 /* Barre des menus secondaire */
 .sub-navbar {
     display: flex;
@@ -9,7 +8,6 @@
     padding: 10px 0;
     background: white;
     border-bottom: 2px solid #ddd;
-    width: 130%;
 }
 
 .sub-navbar ul {
@@ -33,4 +31,90 @@
     color: green;
     border-bottom: 3px solid green;
 }
+/* ==================================== */
+/* BARRE DE NAVIGATION SECONDAIRE */
+/* ==================================== */
+
+.ressources-page .main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.ressources-page .sidebar {
+    height: 100vh;
+    background: #f5f5f5;
+    padding: 30px 10px;
+    border-right: 2px solid #ddd;
+}
+.main-container {
+    display: flex;
+    height: calc(100vh - 140px); /* ajuste selon la hauteur de ton header + navbar */
+  }
+  
+  /* ================= */
+  /* SIDEBAR GAUCHE    */
+  /* ================= */
+  .sidebar {
+    width: 220px;
+    background: #f5f5f5;
+    padding: 30px 10px;
+    border-right: 2px solid #ddd;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar li {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 12px;
+    transition: all 0.2s;
+  }
+  
+  .sidebar a:hover,
+  .sidebar a.active {
+    background-color: #d6f1e3;
+    border-color: #1f9c6b;
+    color: #1f9c6b;
+  }
+  
+  /* ================= */
+  /* CONTENU CENTRAL   */
+  /* ================= */
+  .content-area {
+    flex-grow: 1;
+    padding: 40px;
+    background: #fff;
+  }
+  
+  /* Grille des cartes */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  /* Carte verte */
+  .card {
+    background: #e6f6e6;
+    height: 160px;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
 
