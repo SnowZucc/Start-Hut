@@ -41,7 +41,7 @@
                     <?php if ($user_type === 'porteur'): ?>
                         <a href="/Start-Hut/src/views/projet/espace-projet.php" class="signup">Espace projet</a>
                     <?php elseif ($user_type === 'collaborateur'): ?>
-                        <a href="/Start-Hut/src/views/collaborateur/dashboard.php" class="signup">Espace collaborateur</a>
+                        <a href="/Start-Hut/src/views/projet/espace-collaborateur.php" class="signup">Espace collaborateur</a>
                     <?php endif; ?>
                     <a href="/Start-Hut/src/views/user/profil.php" class="signup">Mon profil</a>
                 <?php endif; ?>
