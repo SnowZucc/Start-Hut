@@ -15,6 +15,7 @@
                 
 
                 <?php if ($user_type === 'porteur'): ?>
+                    <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
                     <li><a href="/Start-Hut/src/views/projet/annonce/posterannonce.php">Poster une annonce</a></li>
                     <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
                     <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
