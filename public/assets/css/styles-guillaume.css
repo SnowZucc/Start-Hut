@@ -620,12 +620,13 @@ body.espace-projet header {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  gap: 35px;
 }
 
 .equipe-actions {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 35px;
 }
 
 .btn-modifier, .btn-retirer {

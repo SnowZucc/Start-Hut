@@ -65,8 +65,10 @@ if ($porteur_id) {
                     <p>Rôle</p>
                     <button class="btn-info">Afficher Informations</button>
                 </div>
+                <div class="recrutement-actions">
+                        <button class="btn-chat">Chat</button>
+                </div>
                 <div class="equipe-actions">
-                    <button class="btn-modifier">Modifier Rôle</button>
                     <button class="btn-retirer">Retirer</button>
                 </div>
             </div>
@@ -81,8 +83,10 @@ if ($porteur_id) {
                     <p>Rôle</p>
                     <button class="btn-info">Afficher Informations</button>
                 </div>
+                <div class="recrutement-actions">
+                        <button class="btn-chat">Chat</button>
+                </div>
                 <div class="equipe-actions">
-                    <button class="btn-modifier">Modifier Rôle</button>
                     <button class="btn-retirer">Retirer</button>
                 </div>
             </div>
@@ -97,8 +101,10 @@ if ($porteur_id) {
                     <p>Rôle</p>
                     <button class="btn-info">Afficher Informations</button>
                 </div>
+                <div class="recrutement-actions">
+                        <button class="btn-chat">Chat</button>
+                </div>
                 <div class="equipe-actions">
-                    <button class="btn-modifier">Modifier Rôle</button>
                     <button class="btn-retirer">Retirer</button>
                 </div>
             </div>
