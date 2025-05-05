@@ -844,3 +844,56 @@ body.espace-projet header {
   background-color: green;
   color: white;
 }
+
+
+/* ==================================== */
+/*  Partie Ressource */
+/* ==================================== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+.consultation-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar button {
+  padding: 15px 10px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar button:hover {
+  background-color: #ddd;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.card {
+  height: 150px;
+  background-color: #eaf5eb;
+  border-radius: 10px;
+}
