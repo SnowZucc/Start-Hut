@@ -18,7 +18,7 @@
 
     // Recherche par mots clés
     $q = $_GET['q'] ?? '';      // Prend q= dans l'URL sinon une chaine vide. ?? = si vide, '' = chaine vide
-    $sql = "SELECT * FROM Projets WHERE annonce_titre LIKE '%$q%' OR annonce_description LIKE '%$q%'"; // Cherche dans les colonnes annonce_titre et annonce_description
+    $sql = "SELECT p.*, d.lien FROM Projets p LEFT JOIN Documents d ON p.id = d.projet AND d.type = 'image' WHERE p.annonce_titre LIKE '%$q%' OR p.annonce_description LIKE '%$q%'"; // Cherche dans les colonnes annonce_titre et annonce_description + l'image depuis documents
     $result = $conn->query($sql);
     ?>
 
@@ -51,7 +51,7 @@
             while($row = $result->fetch_assoc()) {
                 echo "<a href='annonce.php?id=" . $row["id"] . "' class='nav-links'>";
                 echo "<figure>";
-                echo "<img src='https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg'>";
+                echo "<img src='" . ($row["lien"] ?? 'https://vection-cms-prod.s3.eu-central-1.amazonaws.com/Adobe_Stock_525614074_8ab9bd18e3.jpeg') . "'>"; // Cherche l'image depuis le lien dans la db dans documents, sinon image par défaut
                 echo "<figcaption>";
                 echo "<h3>" . htmlspecialchars($row["annonce_titre"]) . "</h3>";
                 echo "<p>" . htmlspecialchars($row["annonce_description"]) . "</p>";
