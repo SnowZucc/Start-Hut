@@ -14,7 +14,7 @@
             <?php         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         } if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
-                <p><a href="/Start-Hut/public/index.php">Accueil</a></p>
+            <p><a href="/Start-Hut/public/index.php">Accueil</a></p>
             <p><a href="/Start-Hut/src/views/annonces.php">Annonces</a></p>
             
             <p><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></p>
@@ -32,6 +32,7 @@
             session_start();
         } if (!isset($_SESSION['user_id'])) : ?>    <!-- Si la session est définie -->
                 <p><a href="/Start-Hut/src/views/user/connexion.php">Connexion</a></p>
+                <p><a href="/Start-Hut/src/views/contact.php">Contact</a></p>
                 
             <?php else : ?>                                 <!-- Sinon -->
                 <p><a href="/Start-Hut/src/views/projet/espace-projet.php" >Espace projet</a></p>
