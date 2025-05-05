@@ -29,7 +29,7 @@ CREATE TABLE Projets (
     annonce_remuneration DOUBLE NOT NULL DEFAULT 0 CHECK (annonce_remuneration >= 0),
     annonce_etat ENUM ('ouvert', 'ferme') NOT NULL ,
 
-    FOREIGN KEY (createur) REFERENCES Utilisateurs(id),
+    FOREIGN KEY (createur) REFERENCES Utilisateurs(id)
 );
 
 CREATE TABLE ParticipantsProjets (      -- Table de liaison entre Utilisateurs et Projets
@@ -144,10 +144,10 @@ VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'colla
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
 VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'porteur');
 
-INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, postuleurs_a_l_annonce, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
-VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', 1, '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 'ouvert');
-INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, postuleurs_a_l_annonce, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
-VALUES (1, 'Junioro', 0, 'Application mobiles pour les junior entreprises', 'Définition du marché Beta', 'Analyse de la demande Beta', 'Analyse de la concurrence Beta', 1, '2023-10-01 10:00:00', 'Junioro', 'Application mobiles pour les junior entreprises', 'developpeur', 'technologies', 3, 'ouvert');
+INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
+VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 'ouvert');
+INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
+VALUES (1, 'Junioro', 0, 'Application mobiles pour les junior entreprises', 'Définition du marché Beta', 'Analyse de la demande Beta', 'Analyse de la concurrence Beta', '2023-10-01 10:00:00', 'Junioro', 'Application mobiles pour les junior entreprises', 'developpeur', 'technologies', 3, 'ouvert');
 
 INSERT INTO ParticipantsProjets (id_projet, id_participant, role)
 VALUES (1, 1, 'chef');
