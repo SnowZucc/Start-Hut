@@ -82,7 +82,7 @@
             <p><a href="/Start-Hut/src/views/projet/espace-projet.php">Espace projet</a></p>
             <p><a href="/Start-Hut/src/views/projet/espace-projet.php">Mes annonces</a></p>
             <p><a href="/Start-Hut/src/views/projet/recrutement.php">Recrutement</a></p>
-            <p><a href="/Start-Hut/src/views/projet/ressources.php">Ressources</a></p>
+            <p><a href="/Start-Hut/src/views/projet/ressource/ressources.php">Ressources</a></p>
             <?php endif; ?>
 
             <?php if ($user_type === 'collaborateur'): ?>
