@@ -87,12 +87,28 @@
         </div>
     </div>
 </div>
+            <?php
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            $user_type = $_SESSION['user_type'] ?? null;
+            ?>
 
-<!-- Boutons en bas -->
-<div class="actionsAnnonce">
-    <button class="btnAction" onclick="window.location.href='postuler_annonce.php';">Postuler</button>
-    <button class="btnAction btnSecondaire">Sauvegarder</button>
-</div>
+
+                <?php if ($user_type === 'porteur'): ?>
+               
+                <?php endif; ?>
+                <?php if ($user_type === 'collaborateur'): ?>
+                <div class="actionsAnnonce">
+                    <button class="btnAction" onclick="window.location.href='postuler_annonce.php';">Postuler</button>
+                    <button class="btnAction btnSecondaire">Sauvegarder</button>
+                </div> 
+                <?php endif; ?>
+
+                <!-- Boutons en bas -->
+             
+
+
 
         </div>
 
