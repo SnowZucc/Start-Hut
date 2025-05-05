@@ -6,7 +6,6 @@
   <title>FAQ Start-Hut</title>
   <meta name="description" content="FAQ – Tout ce qu'il faut savoir sur Start-Hut">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
   <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-khaleb.css">
 </head>
 <body>
