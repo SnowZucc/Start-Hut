@@ -100,8 +100,11 @@
                 <?php endif; ?>
                 <?php if ($user_type === 'collaborateur'): ?>
                 <div class="actionsAnnonce">
-                    <button class="btnAction" onclick="window.location.href='postuler_annonce.php';">Postuler</button>
-                    <button class="btnAction btnSecondaire">Sauvegarder</button>
+                    <form method="POST" action="postuler_annonce.php">
+                        <input type="hidden" name="id_projet" value="<?php echo $annonce['id']; ?>">
+                        <button type="submit" class="btnAction">Postuler</button>
+                     </form>
+                         <button class="btnAction btnSecondaire">Sauvegarder</button>
                 </div> 
                 <?php endif; ?>
 
@@ -111,6 +114,12 @@
 
 
         </div>
+        <?php if (isset($_GET['msg']) && $_GET['msg'] === 'success'): ?>
+    <p style="color: green; font-weight: bold;">Votre candidature a bien été envoyée.</p>
+<?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'already_postulated'): ?>
+    <p style="color: orange; font-weight: bold;">Vous avez déjà postulé à ce projet.</p>
+<?php endif; ?>
+
 
         <?php include('../templates/footer.php'); ?>    
     </body>

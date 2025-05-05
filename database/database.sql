@@ -34,6 +34,19 @@ CREATE TABLE Projets (
     FOREIGN KEY (createur) REFERENCES Utilisateurs(id)
 );
 
+
+CREATE TABLE Candidatures (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    utilisateur_id INT NOT NULL,
+    projet_id INT NOT NULL,
+    date_postulation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    statut ENUM('en attente', 'accepte', 'refuse') DEFAULT 'en attente',
+
+    FOREIGN KEY (utilisateur_id) REFERENCES Utilisateurs(id),
+    FOREIGN KEY (projet_id) REFERENCES Projets(id)
+);
+
+
 CREATE TABLE ParticipantsProjets (      -- Table de liaison entre Utilisateurs et Projets
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_projet INT NOT NULL UNIQUE,

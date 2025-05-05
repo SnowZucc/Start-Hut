@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ERROR); // Affiche uniquement les erreurs fatales
+ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
