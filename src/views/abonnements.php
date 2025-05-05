@@ -13,18 +13,18 @@
         <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
         <div class="containerabonnement">  
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
-        <h2>Toutes nos offres</h2>
-        <h1>Consultez nos abonnements et accédez à des fonctionnalités exclusives pour optimiser votre expérience.</h1>
+        <h2>Découvrez nos formules d’abonnement</h2>
+        <h1>Consultez nos offres et choisissez celle qui correspond le mieux à vos besoins. Chaque formule vous donne accès à des fonctionnalités spécifiques pour développer vos projets efficacement.</h1>
         <div class="plans">
              <!-- Bloc représentant l'offre BASIC -->
             <div class="plan basic">
                 <h2>Basic</h2>
-                <p class="price">0€</p> <!-- Affichage du prix de l'abonnement -->
+                <p class="price">Gratuit</p> <!-- Affichage du prix de l'abonnement -->
                 
                 <ul> <!-- avantage de loffre-->
-                    <li>Publier des projets</li>
+                    <li>Publier des projets librement</li>
                     <li>Visibilité standard</li>
-                    <li>Pas de mise en avant</li>
+                    <li>Aucune mise en avant</li>
                 </ul>
                 
                 
@@ -35,10 +35,10 @@
                 <h2>Standard</h2>
                 <p class="price">9.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
-                    <li>Avantages du forfait BASIC</li>
+                    <li>Tous les avantages du forfait Basic</li>
                     <li>Visibilité améliorée</li>
-                    <li>Suivi de base (barre d’avancement, outils collaboratifs de base)</li>
-                    <li>Mise en avant</li>
+                    <li>Suivi de projet (barre d’avancement, outils collaboratifs de base)</li>
+                    <li>Mise en avant de vos projets</li>
                 </ul>
                 
                 
@@ -48,10 +48,10 @@
                 <h2>Premium</h2>
                 <p class="price">19.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
-                    <li>Avantages du forfait STANDARD</li>
+                    <li>Tous les avantages du forfait Standard</li>
                     <li>Visibilité maximale</li>
-                    <li>Ressources pédagogiques</li>
-                    <li>Documents d’étude de marché prédéfinis</li>
+                    <li>Accès à des ressources pédagogiques exclusives</li>
+                    <li>Documents d’étude de marché préremplis et personnalisables</li>
                 </ul>
                 
                

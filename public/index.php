@@ -7,82 +7,162 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/styles-meryem.css">
         <link rel="stylesheet" href="assets/css/styles.css">
+       
+       
     </head>
     <body>
-        <?php include('../src/templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
-        
-        <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
-            <div class="landing"> 
-                <div class="landing-text">
-                    <h1>START-HUT</h1>                <!-- Titre 1 : start hut de la landing page -->
-                    <p>
-                    L'outil le plus simple <br>   <!-- ici le br permet de sauter les lignes dans le paragraphe -->
-                    pour <span class="highlight">transformer</span> vos idées en startups. <!-- permet de différencier le mot transformer du reste du texte -->
-                    </p>      
-                    <button class="btnlanding">COMMENCER</button>      <!-- Bouton en savoir plus qui enverra vers une page qu'on fera plus
-                                                tard ou yaura des info sur lentreprise, prq start-hut et comment sa marche  -->
+    <?php include('../src/templates/header.php'); ?>    
+
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="landing">
+            <div class="landing-text">
+                <h1>START-HUT</h1>
+                <p>L'outil le plus simple <br> pour <span class="highlight">transformer</span> vos idées en startups.</p>
+                <div class="boutons-collaborateur">
+                <?php        
+                 if (session_status() === PHP_SESSION_NONE) {
+                     session_start(); } 
+                if (!isset($_SESSION['user_id'])) : ?>    <!-- Si l'utilisateur n'est pas connecter et appuie sur le bouton publier un projet il est renvoyé vers connexion -->
+                        <a href="../src/views/user/connexion.php" class="btn-collab">Publier un projet</a>
+                        <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                 <?php else : ?>                                 <!-- Sinon il est renvoyer sur la page poster une annonce -->
+                        <a href="../src/views/projet/annonce/posterannonce.php" class="btn-collab">Publier un projet</a>
+                        <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                <?php endif; ?>
+                    
                 </div>
-                <div class="landing-image">   <!-- image temporaire si vous avez des idées de image send it to me-->
-                    <img src="assets/img/landing.png" alt="Illustration">
+            </div>
+            <div class="landing-image">
+                <img src="https://img.freepik.com/free-vector/business-team-discussing-ideas-startup_74855-4380.jpg?w=1380&t=st=1714579429~exp=1714580029~hmac=64a3984348efb08d9be17b07ed4e31ba3495af40fc0e6f2de1e62cf247741b5c" alt="Illustration de startups">
+            </div>
+        </section>
+
+        <!-- Section Collaborateur -->
+<!-- Section Collaborateur -->
+<section class="section-collaborateur">
+  <div class="conteneur-collaborateur">
+    <!-- Illustration à gauche -->
+    <div class="image-collaborateur">
+      <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Illustration collaboration">
+    </div>
+
+    <!-- Texte à droite -->
+    <div class="texte-collaborateur">
+      <h2>Rejoignez l’aventure Start-Hut</h2>
+      <p class="soustitre">Vous avez des compétences à partager ?</p>
+      <p class="description">Mettez votre talent au service de projets innovants.<br>
+        👩‍💻 Développeurs, designers, marketeurs, ingénieurs...<br>
+        Participez à la création de startups ambitieuses en rejoignant des porteurs de projets motivés.</p>
+
+      <ul class="liste-arguments">
+        <li>🌱 Contribuez à des projets concrets dès aujourd’hui</li>
+        <li>🌍 Développez votre réseau et vos compétences</li>
+        <li>💼 Gagnez en visibilité auprès de recruteurs et investisseurs</li>
+      </ul>
+
+    
+    </div>
+  </div>
+</section>
+
+  <!-- Section populaire-->
+                <section class="popular-section">
+                <div class="container">
+                    <div class="textepop">
+                    <h2>Projet<br><span class="highlight">populaires</span></h2>
+                    </div>
+
+                    <div class="cards-wrapper">
+                    <!-- Carte 1 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/web.svg" alt="Icône App Web" width="30" height="30">
+                        </div>
+                        <h3>Lancer une app web</h3>
+                        <p>Plateforme web pour connecter des artisans locaux avec des clients à la recherche de services personnalisés et d'artisanat de qualité.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+
+                    <!-- Carte 2 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/service.svg" alt="Icône Service" width="30" height="30">
+                        </div>
+                        <h3>Startup de service</h3>
+                        <p>Service innovant de conseils aux entreprises centré sur la transition écologique et l'optimisation des ressources énergétiques.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+
+                    <!-- Carte 3 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/ai.svg" alt="Icône IA" width="30" height="30">
+                        </div>
+                        <h3>#IA Générative</h3>
+                        <p>Solution d'IA générative spécialisée dans la création de contenus pédagogiques adaptés aux besoins spécifiques des élèves.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+
+                    <!-- Carte 4 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/finance.svg" alt="Icône Finance" width="30" height="30">
+                        </div>
+                        <h3>Plateforme finance</h3>
+                        <p>Application de gestion financière intuitive permettant aux particuliers d'optimiser leur épargne et d'investir dans des projets durables.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+
+                    <!-- Carte 5 -->
+                    <div class="project-card">
+                        <div class="icon-container">
+                        <img src="icons/fitness.svg" alt="Icône Fitness" width="30" height="30">
+                        </div>
+                        <h3>Appli de fitness</h3>
+                        <p>Solution fitness connectée qui crée des programmes d'entraînement personnalisés basés sur les objectifs et contraintes physiques de chaque utilisateur.</p>
+                        <a href="#" class="btn-details">Voir détails</a>
+                    </div>
+                    </div>
                 </div>
-            </div>  
-            <!-- partie annonce populaire -->
-            <div class ="textepop">  <!-- texte --> 
-                <h2>Nos annonces<br>
-                <span class ="highlight"> populaires</span>  <!-- pour stylisée le mot populaire uniquement -->
-                </h2> 
-            </div>
-            <div class ="popular">  <!-- les annonces (5 annonces pour le moment)-->
-                <figure class = "popular-annonce">
-                <h3>popular 1</h3>
-                </figure>
-                <figure class = "popular-annonce">
-                <h3>popular 2</h3>
-                </figure>
-                <figure class = "popular-annonce">
-                <h3>popular 3</h3>
-                </figure>
-                <figure class = "popular-annonce">
-                <h3>popular 4</h3>
-                </figure>
-                <figure class = "popular-annonce">
-                <h3>popular 5</h3>
-                </figure>
-            </div>
-            <!-- Partie pourquoi nous chosir -->
+                </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="pourquoi-section">
             <div class="conteneur-pourquoinouschoisir">
                 <div class="imagepourquoinouschoisir">
-                    <img src="assets/img/pourquoinouschoisir.png" alt="illustration">
+                    <img src="https://img.freepik.com/free-vector/business-team-brainstorm-idea-lightbulb-from-jigsaw-working-team-collaboration-enterprise-cooperation-colleagues-mutual-assistance-concept-pinkish-coral-bluevector-isolated-illustration_335657-1651.jpg?w=1380&t=st=1714579570~exp=1714580170~hmac=f57de609bdb0c839b777737ee9be8437e66a57705325e23927d6a38e111dbfcf" alt="Collaboration d'équipe">
                 </div>
                 <div class="textepourquoinouschoisir">
                     <h2>Lancez vous, c'est facile.</h2>
                     <div class="liste-choix">
                         <figure>
-                            <img src="assets/img/pourquoinouschoisir1.png" alt="Image 1">
+                            <img src="https://img.icons8.com/ios/50/27ae60/conference-call.png" alt="Talents">
                             <figcaption>
-                                <h3>RAISON 1</h3>
-                                <p>Description </p>
+                                <h3>Trouvez les bons talents</h3>
+                                <p>Accédez à une communauté de profils motivés et compétents pour construire votre équipe idéale.</p>
                             </figcaption>
                         </figure>
                         <figure>
-                            <img src="assets/img/pourquoinouschoisir2.png" alt="Image 2">
+                            <img src="https://img.icons8.com/ios/50/27ae60/idea.png" alt="Vision">
                             <figcaption>
-                                <h3>RAISON 2</h3>
-                                <p>Description </p>
+                                <h3>Définissez votre vision</h3>
+                                <p>Donnez à votre projet une direction précise pour attirer les meilleurs profils.</p>
                             </figcaption>
                         </figure>
                         <figure>
-                            <img src="assets/img/pourquoinouschosir3.png" alt="Image 3">
+                            <img src="https://img.icons8.com/ios/50/27ae60/handshake.png" alt="Collaboration">
                             <figcaption>
-                                <h3>RAISON 3</h3>
-                                <p>Description </p>
+                                <h3>Bâtissez des collaborations solides</h3>
+                                <p>Travaillez avec des personnes de confiance pour faire avancer votre projet dans les meilleures conditions.</p>
                             </figcaption>
                         </figure>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </div>
 
-        <?php include('../src/templates/footer.php'); ?>    
+    <?php include('../src/templates/footer.php'); ?>    
     </body>
 </html>

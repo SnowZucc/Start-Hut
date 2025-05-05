@@ -1,17 +1,20 @@
                                                          /* LANDING PAGE */
     /* Premiere section */                                              
   .landing {
-    margin-top: 30px; /* espacement avec le header */     
+  
     display: flex; /* pour organiser en ligne */
     background-color: #ffffff; 
     border: 3px solid green;  /* bord de la premiere section  */
     border-radius: 20px; /* contour des bords */
-    padding: 40px; /* Espacement intérieur */
-    width: 80%;  /* largeur prise sur la page */
-    max-width: 900px;  /* pour pas que la section prennent une place plus large */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 5px auto;
+    padding: 40px;
+    max-width: 1000px;  /* pour pas que la section prennent une place plus large */
+    width: 80%;
   }
   
   .landing-text {
+    font-family: 'Poppins', sans-serif;
     flex: auto; 
     color: black; 
     text-align: left; /* Alignement du texte à gauche */
@@ -23,11 +26,12 @@
     font-weight: bold;
     margin-bottom: 30px; /* sspacement sous le titre */
     white-space: nowrap; /* empeche START-HUT ne soit couper en 2 et de passer à la ligne */
+    margin-left: -20px;
   }
   
   .landing p {
     font-size: 20px; /* Taille de police du texte */
-    margin-bottom: 20px; /* espacement sous le paragraphe */
+    margin-bottom: 50px; /* espacement sous le paragraphe */
     line-height: 1.5; /* espacement entre ligne  */
   }
   
@@ -36,22 +40,41 @@
     color: green; /* Couleur verte pour le highlight */
   }
   
-  .btnlanding {
-    background-color: black; /* Bouton noir */
-    color: white;
-    padding: 12px 25px; /* Taille du bouton */
-    font-size: 16px; /* Taille de police du bouton */
-    border: none;
-    border-radius: 30px;
-    cursor: pointer; /* quand on arrive sur le bouton le curseur change de forme  */
-    margin-top: 20px; /* Espacement au-dessus du bouton */
-    transition: background-color 0.3s ease; /* pour l'animation hover en bas s'acctive en 3scd */
-    margin-left: 95px; 
+  .boutons-collaborateur {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   
-  .btn:hover {
-    background-color: green; /* Si le bouton est selectionner il change en vert */
+  .btn-collab {
+    background-color: #1e7a1e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
+  
+  .btn-collab:hover {
+    background-color: #145214;
+  }
+  
+  .btn-projet {
+    border: 2px solid #1e7a1e;
+    color: #1e7a1e;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-projet:hover {
+    background-color: #f1fff1;
+  }
+  
+
   
   .landing-image {
     display: flex;
@@ -66,57 +89,220 @@
   }
   /* Premiere section */   
   
-  
+
+
   /*Deuxieme section ANNONCES POPULAIRE*/
-  .popular {
-    display: flex; /* Alignement horizontal */
-    gap: 20px; /* Espacement entre chaque annonce */
-    margin-top: 5px;
-    align-items: center;
-    justify-content: center; /* Centrer les annonces */
+  :root {
+    --primary-color: green;
+    --primary-dark: rgb(6, 78, 6);
+    --primary-light: #d1ffd1;
+    --text-color: #333;
+    --background: #f8f8f8;
   }
   
-  .popular-annonce {
-    border: 2px solid green;
-    border-radius: 10px;
-    padding: 20px;
-    height: 250px;
-    width: 200px; /* Taille uniforme pour toutes les annonces finalement */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* pour rendre fluide la transtion zoom et couleur ( voir hover) */
-    background-color: #f8f8f8; 
-    display: flex;
-    align-items: center; /* centre texte intérieur annonce horizon */
-    justify-content: center; /* centre texte intérieur annonce vertical  */
-    text-align: center;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
   }
   
-  .popular-annonce:hover {
-    transform: scale(1.1); /* effet de zoom au survol */
-    background-color: #d1ffd1; /* changment de couleur au survol */
-    border-color: darkgreen;
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
   }
   
   .textepop h2 {
-    margin-top: 100px; /* espace avec section 1 */
-    margin-bottom: 20px; /* espace avec les annonces */
-    margin-right: 1025px;
-    line-height: 1.5; /* espacement entre ligne  */
-    text-align: left; /* Alignement du texte à gauche */
-    font-size: 22px; /* ltaille */
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 1.5;
   }
   
-  /*Deuxieme dection ANNONCES POPULAIRE*/
+  .highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Forcer 5 cartes sur une seule ligne */
+    gap: 20px;
+  }
+  
+  .project-card {
+    width: 200px;
+    min-height: 420px;
+    background-color: var(--background);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-dark);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .icon-container {
+    background-color: white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .project-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: var(--text-color);
+  }
+  
+  .project-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .btn-details {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-details:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+  }
+                                            
+
+  
+                                                 /*Deuxieme section ANNONCES POPULAIRE*/
+
+
+
+
+
+  
+                                                 /*CONTENEUR COLLABORATEUR */
+   
+.conteneur-collaborateur {
+  display: flex;
+  flex-direction: row; /* Texte à gauche, image à droite */
+  gap: 100px;
+  padding: 10px;
+  width: 90%;
+  margin: 70px auto -50px auto;
+  text-align: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.texte-collaborateur {
+  flex: 1 1 500px;
+  order: 1;
+}
+
+.image-collaborateur {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: flex-end; /* image alignée à droite */
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  order: 2;
+}
+
+.image-collaborateur img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.texte-collaborateur h2 {
+  font-size: 28px;
+  color: #1e7a1e;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.texte-collaborateur .soustitre {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.texte-collaborateur .description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.liste-arguments {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.liste-arguments li {
+  margin-bottom: 10px;
+}
+
+
+                                                 /*CONTENEUR COLLABORATEUR */
+
   
   /*Troisieme dection POURQUOI NOUS CHOISIR*/
   /* Conteneur principal */
   .conteneur-pourquoinouschoisir {
       display: flex;
-      gap: 120px; /* Espacement entre l'image et le texte */
-      padding: 20px;
+      gap: 100px; /* Espacement entre l'image et le texte */
+      padding: 10px;
       width: 90%; /* Ajuster la largeur pour un bon rendu */
-      /* margin: auto; Centrer dans la page */
       margin-top: 70px;
       margin-bottom: -50px;
+      text-align: left; /* Alignement du texte à gauche */
   }
   
   .imagepourquoinouschoisir {
@@ -130,21 +316,22 @@
   
   .imagepourquoinouschoisir img {
       width: 90%; /* Laisse un peu d'espace pour voir le background */
-      max-width: 500px; /* Ajuste la taille max */
+      max-width: 800px; /* Ajuste la taille max */
       height: auto;
       border-radius: 20px;
   }
   
   /* Partie texte */
   .textepourquoinouschoisir {
-      /* flex: 1; Prend tout l'espace dispo à droite */
+
+    margin-right: 0px;
       margin-bottom: 30px;
   }
   
   .textepourquoinouschoisir h2 {
       font-size: 22px;
       margin-bottom: 40px;
-      margin-left: 150px;
+      margin-left: 100px;
       color: #000000;
   }
   
@@ -156,7 +343,7 @@
   }
   
   .liste-choix figure {
-      display: flex;
+      display:flex;
       align-items: center;
       gap: 20px;
   }
@@ -366,134 +553,171 @@
                                                 /* ACCEDER A UNE SEULE ANNONCE */
                                                   /* ==================================== */                                             
   
-  /* Conteneur principal de l'annonce */
-  .containerAnnonce {
-    max-width: 1200px; /*  largeur maximale  */
-    margin: 50px auto; /* Centre l'annonce sur la page */
-    padding: 40px; /* Ajoute de l'espace autour */
-    background-color: #ffffff; /* Fond  */
-    border-radius: 10px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-  }
-  
-  /* Profil de l'annonceur */
-  .profilAnnonceur {
-    display: flex; /* aligner les éléments horizontalement */
-    align-items: center; /* Alignement vertical centré */
-    gap: 20px; /* espacemnt  */
-    margin-bottom: 30px; /* ajoute de l'espace sous le profil */
-  }
-  
-  /* Image de profil de l'annonceur */
-  .profile-img {
-    width: 100px; /* taille fixe pour uniformiser les images */
-    height: 100px;
-    border-radius: 50%; /* rend l'image ronde */
-  }
-  
-  /* Infos sur l'annonceur */
-  .infoAnnonceur {
-    text-align: left; /* Alignement à gauche */
-  }
-  
-  .infoAnnonceur h2 {
-    font-size: 22px; /*  taille du nom */
-    margin-bottom: 5px; /*  l'espace sous le titre */
-  }
-  
-  /* Bouton de contact */
-  .contact-btn {
-    background-color: #1A702D; 
-    color: white;
-    padding: 10px 10px; /* Taille*/
-    border: none;
-    border-radius: 7px; 
-  
-    cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
-  
-  }
-  
-  .contact-btn:hover {
-    background-color: #145A23; /* change couleur  bouton au survol  */
-  }
-  
-  /* Section du projet associé à l'annonce */
-  .projetAnnonce {
-    text-align: left; /* Alignement */
-    margin-bottom: 30px;
-  
-  }
-  
-  .projetAnnonce h3 {
-    font-size: 20px; /* Titre taille */
-    margin-bottom: 15px; /* 
-    'espace sous le titre */
-  }
-  
-  /* Image du projet */
-  .project-img {
-  
-    width: 100%; /* pour que ca s'étire sur toute la largeur du conteneur */
-    max-height: 250px; /* empêche l'image d'être trop grande */
-    object-fit: cover; /* ajuste l'image pour qu'elle remplisse bien son espace */
-    border-radius: 10px; /
-  }
-  
-  /* Titre de la description */
-  .description-title {
-    font-weight: bold; /* titre en gras */
-    margin-top: 15px;
-  }
-  
-  /* Contenu de la description */
-  .description-content {
-    font-size: 16px; 
-    color: #444; /* couleur plus lisible je trouve */
-    margin-top: 6px;
-    margin-bottom: 20px;
-  }
-  
-  /* Section des détails */
-  .detailsAnnonce h3 {
-    font-size: 18px; 
-    text-align: left;
-  }
-  
-  /* Contenu des détails */
-  .details-content {
-    background-color: #f5f5f5; /* fond gris clair pour bien séparer la section */
-    padding: 20px; /* espace autour du texte */
-    margin-top: 12px;
-    border-radius: 10px; 
-  
-    min-height: 120px; 
-  }
-  
-  /* Boutons d'action */
-  .actions {
-    display: flex; /* Organisation en ligne */
-    gap: 30px; /* spacement entre les boutons */
-    justify-content: center; /* entre les boutons */
-    margin-top: 30px;
-  }
-  
-  /* Boutons "Postuler" et "Sauvegarder" */
-  .postuler, .sauvegarder {
-    background-color: #1A702D; /* Même couleur que le bouton de contact pour garder une cohérence */
-    color: white;
-    padding: 10px 20px; 
-    font-size: 16px; 
-    border: none;
-    border-radius: 7px; 
-    cursor: pointer; /* indique que c'est un bouton cliquable */
-  }
-  
-  /* Effet au survol des boutons */
-  .postuler:hover, .sauvegarder:hover {
-    background-color: #145A23; /* assombrit le bouton pour un feedback visuel */
-  }
-   
+.containerAnnonceFlex {
+  align-items: flex-start; /* Alignement en haut entre les 2 colonnes */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+  gap: 40px;
+}
+.annonceGauche {
+  flex: 1 1 60%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Aligne tout le texte à gauche */
+}
+
+.titreAnnonce {
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-align: left; /* Titre à gauche */
+}
+
+
+
+
+
+
+
+.visuelAnnonce {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.description-bloc, .details-bloc {
+  margin-bottom: 25px;
+}
+
+.description-bloc h3,
+.details-bloc h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.description-bloc p,
+.details-bloc p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+.roles-bloc, .remuneration-bloc {
+  margin-bottom: 25px;
+}
+
+.roles-bloc h3, .remuneration-bloc h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.roles-bloc p, .remuneration-bloc p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+}
+
+
+.annonceDroite {
+  margin-top: 10px;
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* ← CENTRAGE vertical du contenu dans la colonne */
+}
+
+.carteProfil {
+  background: #f7f7f7;
+  padding: 25px 20px;
+  border-radius: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); /* ombre plus douce */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* espace entre les éléments */
+}
+
+
+.profilImage {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #1A702D;
+}
+
+.carteProfil h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.carteProfil p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.btnContact {
+  background-color: #1A702D;
+  color: white;
+  padding: 8px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnContact:hover {
+  background-color: #145A23;
+}
+
+.actionsAnnonce {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+}
+
+.btnAction {
+  background-color: #1A702D;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnAction:hover {
+  background-color: #145A23;
+  transform: translateY(-2px);
+}
+
+.btnSecondaire {
+  background-color: transparent;
+  color: #1A702D;
+  border: 2px solid #1A702D;
+}
+
+.btnSecondaire:hover {
+  background-color: #1A702D;
+  color: white;
+}
+
+
                                                  /* ==================================== */
                                                  /* ACCEDER A UNE SEULE ANNONCES */
                                                 /* ==================================== */                                                
@@ -843,9 +1067,9 @@ button:hover {
   
 
 
-/* ==================================== */
-/*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
-/* ==================================== */
+                                              /* ==================================== */
+                                              /*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
+                                              /* ==================================== */
 
 /* Barre des menus secondaire */
 .sub-navbar {
@@ -878,4 +1102,259 @@ button:hover {
   color: green;
   border-bottom: 3px solid green;
 }
+                                              /* ==================================== */
+                                              /*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
+                                              /* ==================================== */
 
+/* ==================================== */
+/*  BARRE DE NAVIGATION outils */
+/* ==================================== */
+
+/* Barre des menus secondaire */
+.sub-navbar-outils {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background: white;
+    border-bottom: 2px solid #ddd;
+}
+
+.sub-navbar-outils ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.sub-navbar-outils li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.sub-navbar-outils li a:hover {
+    color: green;
+}
+
+.sub-navbar-outils li a.active {
+    color: green;
+    border-bottom: 3px solid green;
+}
+
+/* ==================================== */
+/*  BARRE DE NAVIGATION outils */
+/* ==================================== */
+
+/***** === Page Contact === *****/
+
+.contact-page {
+  padding: 20px 20px;
+ 
+
+}
+
+.map-contact {
+  margin-bottom: 40px;
+  width: 100vw;
+  max-width: 67%;
+  margin-left: 280px;
+  
+}
+
+.map-contact iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.form-section {
+  flex: 1 1 500px;
+}
+
+.form-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e7a1e;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-section input,
+.form-section textarea {
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-section button {
+  background-color: #1e7a1e;
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-section button:hover {
+  background-color: #145214;
+}
+
+.info-section {
+  margin-top: 100px;
+  flex: 1 1 400px;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1e7a1e;
+}
+
+.info-section p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.info-section i {
+  color: #1e7a1e;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section,
+  .info-section {
+    width: 100%;
+  }
+
+  .info-section {
+    text-align: center;
+  }
+
+  .form-section h2 {
+    text-align: center;
+  }
+}
+
+                                         /* ==================================== */
+                                                  /*  PAGE CONTACT */
+                                        /* ==================================== */
+
+
+
+                                              /* ==================================== */
+                                              /*  BARRE DE NAVIGATION  POUR LES OUTILS COLLABORATIS */
+                                              /* ==================================== */  
+
+/* Barre des outils collaboratifs */
+.sub-navbar-outils {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background: white;
+  border-bottom: 2px solid #ddd;
+  width: 130%;
+}
+
+.sub-navbar-outils ul {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+}
+
+.sub-navbar-outils li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.sub-navbar-outils li a:hover {
+  color: green;
+}
+
+.sub-navbar-outils li a.active {
+  color: green;
+  border-bottom: 3px solid green;
+}                                         
+
+                                              /* ==================================== */
+                                              /*  BARRE DE NAVIGATION  POUR LES OUTILS COLLABORATIS */
+                                              /* ==================================== */  
+                            /* Boutons suivant et publier pour poster une annonce */  
+.back-btn {
+display: inline-block;
+padding: 8px 16px;
+font-size: 14px;
+color: #000;
+background-color: transparent;
+border: 2px solid #000;
+border-radius: 5px;
+text-decoration: none;
+text-align: center;
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+margin-top: 10px;
+}
+
+.back-btn:hover {
+background-color: #000;
+color: #fff;
+}
+
+.next-btn {
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+color: #fff;
+background-color: #28a745;
+border: none;
+border-radius: 5px;
+text-align: center;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+background-color: #218838;
+}
+
+.navigation-buttons {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+                                /* Boutons suivant et publier pour poster une annonce */  

@@ -34,37 +34,63 @@
         ?>                                                                                      
         
         <div class="content">
-            <div class="containerAnnonce">
-                <div class="profilAnnonceur">
-                    <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Photo de profil" class="profile-img">
-                    <div class="infoAnnonceur">
-                        <h2><?php echo htmlspecialchars($annonce['prenom'] . ' ' . $annonce['nom']); ?></h2>
-                        <p><span class="icon">📍</span> Pays | <span class="icon">💬</span> Langues</p>
-                        <button class="contact-btn">Contactez moi</button>
-                    </div>
-                </div>
-                
-                <div class="projetAnnonce">
-                    <h3><?php echo htmlspecialchars($annonce['annonce_titre']); ?></h3>
-                    <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Image du projet" class="project-img">
-                    <p class="description-title">Description</p>
-                    <p class="description-content"><?php echo htmlspecialchars($annonce['annonce_description']); ?></p>
-                </div>
+        <div class="containerAnnonceFlex">
+    <!-- Colonne gauche -->
+    <div class="annonceGauche">
+        <h1 class="titreAnnonce"><?php echo htmlspecialchars($annonce['annonce_titre']); ?></h1>
+        <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Image du projet" class="visuelAnnonce">
+        <div class="description-bloc">
+            <h3>Description</h3>
+            <p><?php echo htmlspecialchars($annonce['annonce_description']); ?></p>
+        </div>
+        <div class="details-bloc">
+            <h3>Détails</h3>
+            <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($annonce['annonce_categorie']); ?></p>
+            <p><strong>Compétences recherchées :</strong> <?php echo htmlspecialchars($annonce['annonce_competences_recherchees']); ?></p>
+            <p><strong>Nombre de collaborateurs :</strong> <?php echo htmlspecialchars($annonce['annonce_collaborateurs_souhaites']); ?></p>
+        </div>
+        <div class="roles-bloc">
+    <h3>Rôles à pourvoir</h3>
+    <p>
+        <?php 
+            echo isset($annonce['roles_pourvoir']) && !empty($annonce['roles_pourvoir']) 
+                ? nl2br(htmlspecialchars($annonce['roles_pourvoir'])) 
+                : "Non renseigné"; 
+        ?>
+    </p>
+</div>
 
-                <div class="detailsAnnonce">
-                    <h3>Détails</h3>
-                    <div class="details-content">
-                        <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($annonce['annonce_categorie']); ?></p>
-                        <p><strong>Compétences recherchées :</strong> <?php echo htmlspecialchars($annonce['annonce_competences_recherchees']); ?></p>
-                        <p><strong>Nombre de collaborateurs souhaités :</strong> <?php echo htmlspecialchars($annonce['annonce_collaborateurs_souhaites']); ?></p>
-                    </div>
-                </div>
+<div class="remuneration-bloc">
+    <h3>Rémunération</h3>
+    <p>
+        <?php 
+            echo isset($annonce['remuneration']) && !empty($annonce['remuneration']) 
+                ? htmlspecialchars($annonce['remuneration']) . ' €' 
+                : "Non renseignée"; 
+        ?>
+    </p>
+</div>
 
-                <div class="actions">
-                    <button class="postuler">Postuler</button>
-                    <button class="sauvegarder">Sauvegarder</button>
-                </div>
-            </div>
+
+    </div>
+
+    <!-- Colonne droite -->
+    <div class="annonceDroite">
+        <div class="carteProfil">
+            <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Photo de profil" class="profilImage">
+            <h2><?php echo htmlspecialchars($annonce['prenom'] . ' ' . $annonce['nom']); ?></h2>
+            <p><span>📍</span> Pays &nbsp;&nbsp; <span>💬</span> Langues</p>
+            <button class="btnContact">Contactez moi</button>
+        </div>
+    </div>
+</div>
+
+<!-- Boutons en bas -->
+<div class="actionsAnnonce">
+    <button class="btnAction" onclick="window.location.href='postuler_annonce.php';">Postuler</button>
+    <button class="btnAction btnSecondaire">Sauvegarder</button>
+</div>
+
         </div>
 
         <?php include('../templates/footer.php'); ?>    
