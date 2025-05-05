@@ -23,7 +23,10 @@
         $id_annonce = isset($_GET['id']) ? (int)$_GET['id'] : 0;                                      // Récupère ID URL ou 0 si absent
         
         // Récupération des informations de l'annonce
-        $req = $bdd->prepare('SELECT p.*, u.nom, u.prenom FROM Projets p JOIN Utilisateurs u ON p.createur = u.id WHERE p.id = ?'); // Préparation de la requête SQL avec jointure
+        $req = $bdd->prepare('SELECT p.*, u.nom, u.prenom, d.lien FROM Projets p 
+                     JOIN Utilisateurs u ON p.createur = u.id 
+                     LEFT JOIN Documents d ON p.id = d.projet AND d.type = "image"
+                     WHERE p.id = ?');                                                                   // Préparation de la requête SQL avec jointure. Infos projet + lien de l'image depuis documeents
         $req->execute([$id_annonce]);                                                                 // Exécute requête avec paramètre ID
         $annonce = $req->fetch(PDO::FETCH_ASSOC);                                                    // Récupère résultat en tableau associatif
         
@@ -38,7 +41,7 @@
     <!-- Colonne gauche -->
     <div class="annonceGauche">
         <h1 class="titreAnnonce"><?php echo htmlspecialchars($annonce['annonce_titre']); ?></h1>
-        <img src="/Start-Hut/public/assets/img/APRIL.png" alt="Image du projet" class="visuelAnnonce">
+        <img src="<?php echo $annonce['lien'] ?? 'https://vection-cms-prod.s3.eu-central-1.amazonaws.com/Adobe_Stock_525614074_8ab9bd18e3.jpeg'; ?>" alt="Image du projet" class="visuelAnnonce">
         <div class="description-bloc">
             <h3>Description</h3>
             <p><?php echo htmlspecialchars($annonce['annonce_description']); ?></p>
