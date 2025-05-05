@@ -15,7 +15,7 @@
 <!-- Barre de navigation secondaire --> 
 <nav class="sub-navbar">
     <ul>
-    <li><a href="historique.php" class="<?= basename($_SERVER['PHP_SELF']) == 'historique.php' ? 'active' : '' ?>">Historique</a></li>
+    <li><a href="historique.php" class="<?= basename($_SERVER['PHP_SELF']) == 'historique.php' ? 'active' : '' ?>">Mes candidatures</a></li>
     <li><a href="dashbord.php" class="<?= basename($_SERVER['PHP_SELF']) == 'dashbord.php' ? 'active' : '' ?>">Dashbord</a></li>
     </ul>
 </nav>
