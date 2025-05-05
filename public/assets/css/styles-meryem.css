@@ -1,6 +1,6 @@
                                                          /* LANDING PAGE */
     /* Premiere section */                                              
-  .landing {
+  .landing { 
   
     display: flex; /* pour organiser en ligne */
     background-color: #ffffff; 
@@ -379,7 +379,7 @@
   
   .containerCGU {
     max-width: 900px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 40px;
     background-color: #ffffff;
     text-align: left;
@@ -391,6 +391,7 @@
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 30px;
     margin-left: 0px;
     color: #000000;
   }
@@ -410,14 +411,16 @@
     color: #333;
     margin-bottom: 30px;
   }
-  
+
+
   /* Alignement du texte avec le logo */
   .containerCGU {
     width: 100%;
     max-width: 1100px;
     margin: auto;
-    padding: 20px;
-    margin-left: 175px; /* Ajuster selon l'alignement du logo */
+
+    margin-left: 0px; /* Ajuster selon l'alignement du logo */
+    margin-right: 0px;
   
   }
 
@@ -471,7 +474,8 @@
     max-width: 1100px;
     margin: auto;
     padding: 20px;
-    margin-left: 175px; /* Ajuster selon l'alignement du logo */
+    margin-left: 0px; /* Ajuster selon l'alignement du logo */
+    margin-right: 0px;
   }
   
                                                  /* ==================================== */
@@ -486,8 +490,8 @@
                                                   /* ==================================== */                                             
   .containerCookies {
     max-width: 900px;
-    margin: 50px auto;
-    padding: 40px;
+    margin-bottom: 0px ;
+    padding: 20px;
     background-color: #ffffff;
     text-align: left;
     line-height: 1.2;
