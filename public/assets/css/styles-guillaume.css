@@ -16,9 +16,8 @@ a {
   form.inscription {
     width: 97%;
     max-width: 570px;
-    background: white;
+    background: rgba(192, 187, 187, 0.106);
     padding: 28px;
-    border: 1px solid black;
     margin: 25px auto;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -190,9 +189,9 @@ a {
   form.connexion {
     width: 97%;
     max-width: 650px; /* Augmente la largeur du formulaire */
-    background: white;
+    background: rgba(192, 187, 187, 0.106);
     padding: 45px; /* Augmente l'espace intérieur pour l'agrandir en longueur */
-    border: 1px solid black;
+    
     margin: 15px auto;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
