@@ -8,45 +8,60 @@
 </head>
 <body>
 
-<?php 
-session_start(); 
+<?php
+session_start();
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include('../../templates/header.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+// Déconnexion si ?logout est présent
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: /Start-Hut/public/index.php"); // Redirige vers la page d’accueil
+    exit();
+}
 
-// Connexion DB
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+include('../../templates/header.php');
+
+// Connexion à la base de données
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connexion échouée : " . $conn->connect_error);
 }
+
+$user = [];
 
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
 
-    // Si formulaire envoyé
+    // Traitement du formulaire
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $prenom = $_POST['prenom'] ?? '';
         $nom = $_POST['nom'] ?? '';
         $description = $_POST['description_profil'] ?? '';
         $langues = $_POST['langues_parlees'] ?? '';
+        $type = $_POST['type'] ?? '';
 
-        $sqlUpdate = "UPDATE Utilisateurs SET prenom = ?, nom = ?, description_profil = ?, langues_parlees = ? WHERE id = ?";
+        $sqlUpdate = "UPDATE Utilisateurs SET prenom = ?, nom = ?, description_profil = ?, langues_parlees = ?, type = ? WHERE id = ?";
         $stmtUpdate = $conn->prepare($sqlUpdate);
-        $stmtUpdate->bind_param("ssssi", $prenom, $nom, $description, $langues, $user_id);
+        $stmtUpdate->bind_param("sssssi", $prenom, $nom, $description, $langues, $type, $user_id);
         $stmtUpdate->execute();
     }
 
-    // Récupération des données mises à jour
+    // Récupération des infos utilisateur
     $sql = "SELECT * FROM Utilisateurs WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
+} else {
+    header("Location: /Start-Hut/public/index.php");
+    exit();
 }
 ?>
+
 
 <div class="content">
     <div class="profile-section">
@@ -77,11 +92,12 @@ if (isset($_SESSION['user_id'])) {
                     <input type="password" class="input-field" placeholder="Nouveau mot de passe">  
 
                     <label>Statut</label>
-                    <select class="dropdown" name="statut">
-                        <option value="" disabled selected>Choisissez votre statut</option>
-                        <option value="porteur" <?php echo isset($user['statut']) && $user['statut'] == 'emploi' ? 'selected' : ''; ?>>Porteur de projet</option>
-                        <option value="collaborateur" <?php echo isset($user['statut']) && $user['statut'] == 'entrepreneur' ? 'selected' : ''; ?>>Collaborateur</option>
+                    <select class="dropdown" name="type">
+                        <option value="" disabled <?php echo empty($user['type']) ? 'selected' : ''; ?>>Choisissez votre statut</option>
+                        <option value="porteur" <?php echo isset($user['type']) && $user['type'] == 'porteur' ? 'selected' : ''; ?>>Porteur de projet</option>
+                        <option value="collaborateur" <?php echo isset($user['type']) && $user['type'] == 'collaborateur' ? 'selected' : ''; ?>>Collaborateur</option>
                     </select>
+
 
                     <label>Votre CV</label>
                     <input type="file" class="input-field">
@@ -103,6 +119,11 @@ if (isset($_SESSION['user_id'])) {
             <div class="button-container">        
                 <button type="submit" class="save-button">Sauvegarder</button>
             </div>
+            <div class="button-container">
+                <a href="profil.php?logout=true" class="logout-button">Déconnexion</a>
+            </div>
+
+
         </form>
     </div>
 </div>
