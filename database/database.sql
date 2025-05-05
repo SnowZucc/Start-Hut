@@ -20,19 +20,16 @@ CREATE TABLE Projets (
     analyse_de_la_demande TEXT ,
     analyse_de_la_concurrence TEXT ,
 
-    postuleurs_a_l_annonce INT,
     annonce_date_creation DATETIME NOT NULL ,
     annonce_titre VARCHAR(255) NOT NULL ,
     annonce_description TEXT NOT NULL ,
     annonce_competences_recherchees ENUM ('developpeur', 'designer', 'marketing', 'communication', 'autre') NOT NULL,
     annonce_categorie ENUM ('technologies', 'education', 'business', 'autre') NOT NULL,
     annonce_collaborateurs_souhaites INT NOT NULL ,
-    annonce_remuneration DOUBLE NOT NULL CHECK (annonce_remuneration >= 0),
+    annonce_remuneration DOUBLE NOT NULL DEFAULT 0 CHECK (annonce_remuneration >= 0),
     annonce_etat ENUM ('ouvert', 'ferme') NOT NULL ,
 
     FOREIGN KEY (createur) REFERENCES Utilisateurs(id),
-
-    FOREIGN KEY (postuleurs_a_l_annonce) REFERENCES Utilisateurs(id)
 );
 
 CREATE TABLE ParticipantsProjets (      -- Table de liaison entre Utilisateurs et Projets
