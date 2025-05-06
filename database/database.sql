@@ -154,15 +154,15 @@ CREATE TABLE Contacts (
 
 
 -- Exemples d'utilisation
-INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, type)
-VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'Je suis Jean', 'Francais', 'collaborateur');
-INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
-VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'Je suis Jean', 'Francais', 'porteur');
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
+VALUES ('Scénat', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'collaborateur');
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
+VALUES ('Scénat', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'porteur');
 
-INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
-VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 'ouvert');
-INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
-VALUES (1, 'Junioro', 0, 'Application mobiles pour les junior entreprises', 'Définition du marché Beta', 'Analyse de la demande Beta', 'Analyse de la concurrence Beta', '2023-10-01 10:00:00', 'Junioro', 'Application mobiles pour les junior entreprises', 'developpeur', 'technologies', 3, 'ouvert');
+INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
+VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 1500, 'ouvert');
+INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
+VALUES (1, 'Junioro', 0, 'Application mobiles pour les junior entreprises', 'Définition du marché Beta', 'Analyse de la demande Beta', 'Analyse de la concurrence Beta', '2023-10-01 10:00:00', 'Junioro', 'Application mobiles pour les junior entreprises', 'developpeur', 'technologies', 3, 1500, 'ouvert');
 
 INSERT INTO ParticipantsProjets (id_projet, id_participant, role)
 VALUES (1, 1, 'chef');
