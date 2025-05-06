@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
-    header("Location: /Start-Hut/public/index.php"); // Redirige vers la page d’accueil
+    header("Location: /Start-Hut/public/index.php"); // Redirige vers la page d'accueil
     exit();
 }
 
@@ -49,21 +49,18 @@ if (isset($_SESSION['user_id'])) {
         $stmtUpdate->execute();
     }
 
-    // Récupération des données de l'utilisateur
-    if (isset($_SESSION['user_id'])) {
-        $user_id = $_SESSION['user_id'];
-        $sql = "SELECT u.*, d.lien FROM Utilisateurs u LEFT JOIN Documents d ON u.id = d.proprietaire AND d.type = 'image' WHERE u.id = ?"; // Cherche toutes les infos de l'utilisateur + la photo depuis le lien de la db
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-        } else {
-            header("Location: /Start-Hut/public/index.php");
-            exit();
-        }
-    }
-    ?> 
+    // Récupération des infos utilisateur avec la photo
+    $sql = "SELECT u.*, d.lien FROM Utilisateurs u LEFT JOIN Documents d ON u.id = d.proprietaire AND d.type = 'image' WHERE u.id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+} else {
+    header("Location: /Start-Hut/public/index.php");
+    exit();
+}
+?>
 
 
 <div class="content">
@@ -71,7 +68,7 @@ if (isset($_SESSION['user_id'])) {
         <form method="POST" action="">
             <div class="profile-container">
                 <label for="file-upload">
-                <img src="<?php echo $user['lien'] ?? '/Start-Hut/public/assets/img/APRIL.png'; ?>" id="profile-pic" class="profile-pic" alt="Photo de profil">
+                    <img src="<?php echo $user['lien'] ?? '/Start-Hut/public/assets/img/APRIL.png'; ?>" id="profile-pic" class="profile-pic" alt="Photo de profil">
                     <div class="edit-text">Modifier la photo</div>
                 </label>
                 <input type="file" id="file-upload" class="CV-input" accept="image/*">
