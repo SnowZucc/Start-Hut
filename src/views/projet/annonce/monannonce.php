@@ -127,7 +127,7 @@ if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
         } else {
             echo '<div class="no-annonces">';
             echo '<p>Vous n\'avez pas encore publié d\'annonces.</p>';
-            echo '<a href="posterannonce.php" class="create-button">Créer une annonce</a>';
+            echo '<a href="annonce/posterannonce.php" class="create-button">Créer une annonce</a>';
             echo '</div>';
         }
         
