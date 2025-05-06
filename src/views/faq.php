@@ -152,9 +152,19 @@
     </div>
   </div> 
 
+  </div> <!-- Fin de la div content -->
+  <script>
+    // Sélectionner toutes les flèches
+    const toggles = document.querySelectorAll('.faq-item');
 
- 
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const item = toggle.closest('.faq-item');
+        item.classList.toggle('active');
+      });
+    });
 
+  </script>
 
   <?php include('../templates/footer.php'); ?>
 
