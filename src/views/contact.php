@@ -43,15 +43,24 @@
           <!-- Coordonnées START-HUT -->
           <div class="info-section">
             <h3>Vous avez des questions ?</h3>
+
             <p><strong>Général :</strong><br>
-              <i class="fas fa-phone"></i> +33 1 23 45 67 89<br>
-              <i class="fas fa-envelope"></i> contact@start-hut.fr</p>
+              <i class="fas fa-phone"></i> 
+              <a href="tel:+33123456789">+33 1 23 45 67 89</a><br>
+
+              <i class="fas fa-envelope"></i> 
+              <a href="mailto:contact@start-hut.fr">contact@start-hut.fr</a>
+            </p>
 
             <p><strong>Adresse :</strong><br>
-              START-HUT<br>
-              42 Avenue des Idées<br>
-              75000 Paris, France</p>
+              <a href="https://www.google.com/maps?q=42+Avenue+des+Idées,+75000+Paris" target="_blank">
+                START-HUT<br>
+                42 Avenue des Idées<br>
+                75000 Paris, France
+              </a>
+            </p>
           </div>
+
         </div>
       </section>
      
