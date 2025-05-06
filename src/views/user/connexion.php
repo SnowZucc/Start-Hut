@@ -49,8 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css?v=2">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css?v=4">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css?v=2">
+    
 </head>
 <body>
     <?php include('../../templates/header.php'); ?>
@@ -67,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group">
                     <label for="email">Adresse mail <span class="required">*</span></label>
                     <input type="email" id="email" name="email" class="input-field" placeholder="Votre adresse mail" required>
-                </div>
+                </div> 
 
                 <div class="form-group">
                     <label for="password">Mot de passe <span class="required">*</span></label>
