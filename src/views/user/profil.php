@@ -5,6 +5,7 @@
     <title>Mon Profil</title>
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-quentin.css">
+    <?php include('../../templates/head.php'); ?>
 </head>
 <body>
 

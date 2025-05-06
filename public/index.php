@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
+        <meta name="description" content="L'outil le plus simple pour transformer vos idées en startups.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/styles-meryem.css">
         <link rel="stylesheet" href="assets/css/styles.css">
-       
-       
+        <title>Start-Hut</title>
+        <?php include('../src/templates/head.php'); ?>
     </head>
+
     <body>
     <?php include('../src/templates/header.php'); ?>    
 

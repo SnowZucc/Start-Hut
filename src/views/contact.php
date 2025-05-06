@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact - Start-Hut</title>
+    <?php include('../templates/head.php'); ?>
   </head>
   <body>
     <?php include('../templates/header.php'); ?>

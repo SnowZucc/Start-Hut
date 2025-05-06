@@ -94,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
         <title>Publier votre annonce - Start-Hut</title>
+        <?php include('../../../templates/head.php'); ?>
     </head>
     <body>
         <?php include('../../../templates/header.php'); ?>

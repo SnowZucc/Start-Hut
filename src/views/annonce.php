@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+        <title>Annonce - Start-Hut</title>
+        <?php include('../templates/head.php'); ?>
     </head>
     <body>
         <?php        

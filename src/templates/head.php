@@ -1,0 +1,1 @@
+<link rel="icon" href="/Start-Hut/public/assets/img/favicon.ico" type="image/x-icon">
