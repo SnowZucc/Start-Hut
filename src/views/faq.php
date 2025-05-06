@@ -138,7 +138,10 @@
         <div class="contact-text">
           <h2>Besoin d'aide ?</h2>
           <p>Nous sommes là pour vous aider.</p>
-          <button id="open-help-modal" class="contact-button">Contactez-nous</button>
+          
+          <a class="contact-button" href="/Start-Hut/src/views/contact.php">Contactez-nous </a>
+        
+        
         </div>
         <div class="contact-image">
           <img src="/Start-Hut/public/assets/img/image-aide.png" alt="image d'aide" >
@@ -148,57 +151,9 @@
     </div>
   </div> 
 
-  <!-- Fenêtre pop-up pour le formulaire d'aide -->
-  <div id="help-modal" class="modal" style="display: none;">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h2>Formulaire d'aide</h2>
-      <form action="#" method="POST" class="help-form">
-        <label for="name">Nom <span style="color: red">*</span></label>
-        <input type="text" id="name" name="name" required>
 
-        <label for="email">Email <span style="color: red">*</label>
-        <input type="email" id="email" name="email" required>
+ 
 
-        <label for="message">Votre message <span style="color: red">*</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit" class="help-button">Envoyer</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-  document.querySelectorAll('.faq-bloc').forEach(header => {
-    header.addEventListener('click', () => {
-      const item = header.closest('.faq-item');
-      item.classList.toggle('active');
-    });
-  });
-  </script>
-  <script>
-  // Sélection des éléments
-  const openModalBtn = document.getElementById('open-help-modal');
-  const modal = document.getElementById('help-modal');
-  const closeModalBtn = document.querySelector('.close-modal');
-
-  // Ouvrir la modale
-  openModalBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-  });
-
-  // Fermer la modale
-  closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Fermer si on clique en dehors de la modale
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-  </script>
 
   <?php include('../templates/footer.php'); ?>
 
