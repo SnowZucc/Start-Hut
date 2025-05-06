@@ -13,6 +13,8 @@ $type = $_GET['type'] ?? 'guides';
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-fatma.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+        <title>Start-Hut</title>
+        <?php include('../../../templates/head.php'); ?>
         
        
     </head>

@@ -6,6 +6,7 @@
     <title>Recrutement - Start-Hut</title>
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+    <?php include('../../templates/head.php'); ?>
 </head>
 <body>
 

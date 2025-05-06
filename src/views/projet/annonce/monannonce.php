@@ -45,6 +45,7 @@ if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+      <?php include('../../../templates/head.php'); ?>
       <script>
       // Script pour la confirmation de suppression
       function confirmDelete(id) {
