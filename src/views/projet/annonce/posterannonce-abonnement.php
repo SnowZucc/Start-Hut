@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['categorie'] = $_POST['categorie'] ?? '';
         $_SESSION['competences'] = $_POST['competences'] ?? '';
         $_SESSION['collaborateurs'] = $_POST['collaborateurs'] ?? '';
-        $_SESSION['roles'] = $_POST['roles'] ?? '';
         $_SESSION['remuneration'] = $_POST['remuneration'] ?? '';
         $_SESSION['description'] = $_POST['description'] ?? '';
     } elseif (isset($_POST['abonnement'])) {

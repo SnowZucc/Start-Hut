@@ -52,16 +52,6 @@
             <p><strong>Compétences recherchées :</strong> <?php echo htmlspecialchars($annonce['annonce_competences_recherchees']); ?></p>
             <p><strong>Nombre de collaborateurs :</strong> <?php echo htmlspecialchars($annonce['annonce_collaborateurs_souhaites']); ?></p>
         </div>
-        <div class="roles-bloc">
-    <h3>Rôles à pourvoir</h3>
-    <p>
-        <?php 
-            echo isset($annonce['roles_pourvoir']) && !empty($annonce['roles_pourvoir']) 
-                ? nl2br(htmlspecialchars($annonce['roles_pourvoir'])) 
-                : "Non renseigné"; 
-        ?>
-    </p>
-</div>
 
 <div class="remuneration-bloc">
     <h3>Rémunération</h3>

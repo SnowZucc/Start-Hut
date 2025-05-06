@@ -74,10 +74,6 @@ if (!isset($_SESSION['user_id'])) {
                         <input type="number" id="collaborateurs" name="collaborateurs" min="1" value="<?php echo htmlspecialchars($_SESSION['collaborateurs'] ?? '1'); ?>">
                     </div>
                     <div class="form-group">
-                        <label for="roles">Rôles à pourvoir <span class="highlight2">*</span></label>
-                        <textarea id="roles" name="roles" required><?php echo htmlspecialchars($_SESSION['roles'] ?? ''); ?></textarea>
-                    </div>
-                    <div class="form-group">
                         <label for="remuneration">Rémunération <span class="highlight2">*</span></label>
                         <input type="text" id="remuneration" name="remuneration" required value="<?php echo htmlspecialchars($_SESSION['remuneration'] ?? ''); ?>">
                     </div>

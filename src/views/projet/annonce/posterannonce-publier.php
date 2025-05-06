@@ -56,29 +56,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $categorie = $_SESSION['categorie'];
     $competences = $_SESSION['competences'];
     $collaborateurs = $_SESSION['collaborateurs'] ?? 1;
-    $roles = $_SESSION['roles'];
     $remuneration = $_SESSION['remuneration'];
     $abonnement = $_SESSION['abonnement'];
     
     // Insertion dans la base de données
     $sql = "INSERT INTO Projets (createur, nom, annonce_titre, annonce_description, principe_du_projet, annonce_competences_recherchees, 
             annonce_categorie, annonce_collaborateurs_souhaites, 
-            annonce_date_creation, annonce_etat) 
+            annonce_date_creation, annonce_remuneration, annonce_etat) 
             VALUES ('$createur', '$nom', '$titre', '$description','$description', '$competences', 
-            '$categorie', '$collaborateurs', NOW(), 'ouvert')";
+            '$categorie', '$collaborateurs', NOW(), $remuneration, 'ouvert')";
     
     if ($conn->query($sql) === TRUE) {
-        // Afficher le message de succès via JavaScript
-        echo "<script>document.getElementById('message-success').style.display = 'block';</script>";
-        
         // Effacer les données de session utilisées pour l'annonce
         foreach($required_fields as $field) {
             unset($_SESSION[$field]);
         }
         unset($_SESSION['collaborateurs']);
         
-        // Rediriger vers la page des annonces avec un message de succès après un court délai
-        echo "<script>setTimeout(function(){ window.location.href = 'monannonce.php?success=1'; }, 2000);</script>";
+        // Redirection vers la page des annonces avec un message de succès
+        header("Location: /Start-Hut/src/views/projet/espace-projet.php?success=1");
+        exit();
     } else {
         $error = "Erreur lors de la publication: " . $conn->error;
     }
@@ -124,7 +121,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($annonce_categorie); ?></p>
                 <p><strong>Compétences :</strong> <?php echo htmlspecialchars($annonce_competences_recherchees); ?></p>
                 <p><strong>Nombre de collaborateurs :</strong> <?php echo htmlspecialchars($annonce_collaborateurs_souhaites); ?></p>
-                <p><strong>Rôles :</strong> <?php echo nl2br(htmlspecialchars($roles)); ?></p>
                 <p><strong>Rémunération :</strong> <?php echo htmlspecialchars($annonce_remuneration); ?></p>
                 <p><strong>✅ Abonnement choisi :</strong> <?php echo htmlspecialchars($annonce_abonnement); ?></p>
             </div>
