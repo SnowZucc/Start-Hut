@@ -7,8 +7,8 @@ CREATE TABLE Utilisateurs (
     prenom VARCHAR(255) NOT NULL ,
     email VARCHAR(255) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
-    description_profil VARCHAR(255) NOT NULL,
-    langues_parlees VARCHAR(255) NOT NULL,
+    description_profil VARCHAR(255),
+    langues_parlees VARCHAR(255),
     type ENUM('porteur', 'collaborateur') NOT NULL
 );
 
@@ -154,10 +154,10 @@ CREATE TABLE Contacts (
 
 
 -- Exemples d'utilisation
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, type)
+VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'Je suis Jean', 'Francais', 'collaborateur');
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
-VALUES ('Dupont', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'collaborateur');
-INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, type)
-VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'porteur');
+VALUES ('Dupont', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'Je suis Jean', 'Francais', 'porteur');
 
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_etat)
 VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 'ouvert');
