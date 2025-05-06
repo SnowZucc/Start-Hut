@@ -10,7 +10,8 @@ ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recrutement - Start-Hut</title>
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
-    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css"> 
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
+    <?php include('../../templates/head.php'); ?>
 </head>
 <?php
 include('../../templates/header.php');?>
