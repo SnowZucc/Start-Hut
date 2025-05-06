@@ -8,9 +8,10 @@ ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Projet</title>
+    <title>Espace Projet - Start-Hut</title>
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
+    <?php include('../../templates/head.php'); ?>
 </head>
 <body>
 

@@ -47,10 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Connexion</title>
+    <title>Connexion - Start-Hut</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css?v=4">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css?v=2">
+    <?php include('../../templates/head.php'); ?>
     
 </head>
 <body>

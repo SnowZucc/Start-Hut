@@ -64,6 +64,7 @@ if($missing_data) {
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
         <title>Choisir un abonnement - Start-Hut</title>
+        <?php include('../../../templates/head.php'); ?>
     </head>
     <body>
         <?php include('../../../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
