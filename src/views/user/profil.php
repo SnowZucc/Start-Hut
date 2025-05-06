@@ -58,6 +58,10 @@ if (isset($_SESSION['user_id'])) {
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
+        } else {
+            header("Location: /Start-Hut/public/index.php");
+            exit();
+        }
     }
     ?> 
 
