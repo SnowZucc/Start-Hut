@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Redirection si des données essentielles sont manquantes
-$required_fields = ['titre', 'description', 'categorie', 'competences', 'roles', 'remuneration'];
+$required_fields = ['titre', 'description', 'categorie', 'competences', 'remuneration']; // 'roles' a été retiré de cette liste
 $missing_data = false;
 foreach($required_fields as $field) {
     if(!isset($_SESSION[$field]) || empty($_SESSION[$field])) {

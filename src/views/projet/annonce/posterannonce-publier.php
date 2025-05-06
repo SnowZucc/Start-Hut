@@ -14,7 +14,7 @@ if(!isset($_SESSION['user_id'])) {
 
 // Vérification des données de session nécessaires
 $missing_data = false;
-$required_fields = ['titre', 'description', 'categorie', 'competences', 'roles', 'remuneration', 'abonnement'];
+$required_fields = ['titre', 'description', 'categorie', 'competences', 'remuneration', 'abonnement'];
 foreach($required_fields as $field) {
     if(!isset($_SESSION[$field]) || empty($_SESSION[$field])) {
         $missing_data = true;
