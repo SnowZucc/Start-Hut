@@ -47,17 +47,16 @@ CREATE TABLE Candidatures (
 );
 
 
-CREATE TABLE ParticipantsProjets (      -- Table de liaison entre Utilisateurs et Projets
+CREATE TABLE ParticipantsProjets (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    id_projet INT NOT NULL UNIQUE,
+    id_projet INT NOT NULL,
     id_participant INT NOT NULL,
-    role ENUM('chef', 'membre') NOT NULL UNIQUE,
-
-    UNIQUE (id_projet, id_participant),    -- Un utilisateur ne peut pas être deux fois dans le même projet
-
+    role ENUM('chef', 'membre') NOT NULL,
+    UNIQUE (id_projet, id_participant),
     FOREIGN KEY (id_projet) REFERENCES Projets(id),
     FOREIGN KEY (id_participant) REFERENCES Utilisateurs(id)
 );
+
 
 CREATE TABLE Taches (
     id INT PRIMARY KEY AUTO_INCREMENT,
