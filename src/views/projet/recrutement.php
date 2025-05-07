@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ERROR); // Affiche uniquement les erreurs fatales
+ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,43 +10,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recrutement - Start-Hut</title>
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
-    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
-    <?php include('../../templates/head.php'); ?>
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css"> 
 </head>
+<?php
+include('../../templates/header.php');?>
 <body>
 
-<?php include('../../templates/header.php'); ?>
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+session_start();
 
 $porteur_id = $_SESSION['user_id'] ?? null;
+$equipe = [];
 $candidatures = [];
 
 if ($porteur_id) {
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    $sql = "
+
+    // 1. Récupérer les membres de l'équipe
+    $stmt_equipe = $conn->prepare("
+        SELECT u.id AS id_utilisateur, p.id AS id_projet, u.nom, u.prenom, u.email
+
+        FROM ParticipantsProjets pp
+        JOIN Utilisateurs u ON pp.id_participant = u.id
+        JOIN Projets p ON pp.id_projet = p.id
+        WHERE p.createur = ?
+    ");
+    $stmt_equipe->bind_param("i", $porteur_id);
+    $stmt_equipe->execute();
+    $result_equipe = $stmt_equipe->get_result();
+    $equipe = $result_equipe->fetch_all(MYSQLI_ASSOC);
+    $stmt_equipe->close();
+
+    // 2. Récupérer les candidatures
+    $stmt = $conn->prepare("
         SELECT 
             u.nom, u.prenom, u.email,
             p.annonce_titre,
+            c.utilisateur_id, c.projet_id,
             c.statut, c.date_postulation
         FROM Candidatures c
         JOIN Utilisateurs u ON c.utilisateur_id = u.id
         JOIN Projets p ON c.projet_id = p.id
         WHERE p.createur = ?
         ORDER BY c.date_postulation DESC
-    ";
-    $stmt = $conn->prepare($sql);
+    ");
     $stmt->bind_param("i", $porteur_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $candidatures = $result->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
+
     $conn->close();
 }
 ?>
 
+
 <!-- Barre de navigation secondaire -->
+
 <nav class="sub-navbar">
     <ul>
     <li><a href="espace-projet.php" class="<?= basename($_SERVER['PHP_SELF']) == 'espace-projet.php' ? 'active' : '' ?>">Mes annonces</a></li>
@@ -54,62 +81,29 @@ if ($porteur_id) {
 <main class="recrutement-container">
     <!-- Section Mon Équipe -->
     <section class="mon-equipe">
-        <h2>Mon équipe</h2>
-        <div class="equipe-liste">
-            <!-- Carte 1 -->
-            <div class="equipe-card">
-                <div class="equipe-avatar">
-                    <img src="https://img.freepik.com/vecteurs-libre/paysage-printemps-tente-montagnes_23-2148820229.jpg" alt="Avatar">
-                </div>
-                <div class="equipe-info">
-                    <h3>Nom</h3>
-                    <p>Rôle</p>
-                    <button class="btn-info">Afficher Informations</button>
-                </div>
-                <div class="recrutement-actions">
-                        <button class="btn-chat">Chat</button>
-                </div>
-                <div class="equipe-actions">
-                    <button class="btn-retirer">Retirer</button>
-                </div>
+    <h2>Mon équipe</h2>
+<div class="equipe-liste">
+<?php if (empty($equipe)) : ?>
+    <p>Aucun membre pour le moment.</p>
+<?php else : ?>
+    <?php foreach ($equipe as $membre) : ?>
+        <div class="equipe-card">
+            <div class="equipe-avatar">
+                <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="Avatar">
             </div>
-
-            <!-- Carte 2 -->
-            <div class="equipe-card">
-                <div class="equipe-avatar">
-                    <img src="https://img.freepik.com/vecteurs-libre/paysage-printemps-tente-montagnes_23-2148820229.jpg" alt="Avatar">
-                </div>
-                <div class="equipe-info">
-                    <h3>Nom</h3>
-                    <p>Rôle</p>
-                    <button class="btn-info">Afficher Informations</button>
-                </div>
-                <div class="recrutement-actions">
-                        <button class="btn-chat">Chat</button>
-                </div>
-                <div class="equipe-actions">
-                    <button class="btn-retirer">Retirer</button>
-                </div>
+            <div class="equipe-info">
+                <h3><?= htmlspecialchars($membre['prenom'] . ' ' . $membre['nom']) ?></h3>
+                <p><?= htmlspecialchars($membre['email']) ?></p>
+                
             </div>
-
-            <!-- Carte 3 -->
-            <div class="equipe-card">
-                <div class="equipe-avatar">
-                    <img src="https://img.freepik.com/vecteurs-libre/paysage-printemps-tente-montagnes_23-2148820229.jpg" alt="Avatar">
-                </div>
-                <div class="equipe-info">
-                    <h3>Nom</h3>
-                    <p>Rôle</p>
-                    <button class="btn-info">Afficher Informations</button>
-                </div>
-                <div class="recrutement-actions">
-                        <button class="btn-chat">Chat</button>
-                </div>
-                <div class="equipe-actions">
-                    <button class="btn-retirer">Retirer</button>
-                </div>
+            <div class="recrutement-actions">
+                <button class="btn-chat">Chat</button>
             </div>
+     
         </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+</div>
     </section>
 
     <!-- Section Recrutement en cours -->
@@ -120,7 +114,8 @@ if ($porteur_id) {
         <p>Aucun collaborateur n’a encore postulé à vos annonces.</p>
     <?php else : ?>
         <div class="recrutement-liste">
-            <?php foreach ($candidatures as $candidat) : ?>
+        <?php foreach ($candidatures as $candidat) : ?>
+            <?php if ($candidat['statut'] === 'refuse') continue; ?>
                 <div class="recrutement-card">
                     <div class="recrutement-avatar">
                         <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="Avatar">
@@ -133,8 +128,19 @@ if ($porteur_id) {
                         <p><strong>Date de candidature :</strong> <?= htmlspecialchars($candidat['date_postulation']) ?></p>
                     </div>
                     <div class="recrutement-actions">
-                        <button class="btn-accepter">Accepter</button>
-                        <button class="btn-refuser">Refuser</button>
+                        <form action="traiter_candidature.php" method="POST" style="display:inline;">
+        <input type="hidden" name="utilisateur_id" value="<?= htmlspecialchars($candidat['utilisateur_id']) ?>">
+        <input type="hidden" name="projet_id" value="<?= htmlspecialchars($candidat['projet_id']) ?>">
+        <input type="hidden" name="action" value="accepter">
+        <button type="submit" class="btn-accepter">Accepter</button>
+    </form>
+                         <!-- Formulaire pour refuser -->
+    <form action="traiter_candidature.php" method="POST" style="display:inline;">
+        <input type="hidden" name="utilisateur_id" value="<?= $candidat['utilisateur_id'] ?>">
+        <input type="hidden" name="projet_id" value="<?= $candidat['projet_id'] ?>">
+        <input type="hidden" name="action" value="refuser">
+        <button type="submit" class="btn-refuser">Refuser</button>
+    </form>
                         <button class="btn-chat">Chat</button>
                     </div>
                 </div>
