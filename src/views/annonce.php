@@ -55,12 +55,12 @@
             <p><strong>Nombre de collaborateurs :</strong> <?php echo htmlspecialchars($annonce['annonce_collaborateurs_souhaites']); ?></p>
         </div>
 
-<div class="remuneration-bloc">
+        <div class="remuneration-bloc">
     <h3>Rémunération</h3>
     <p>
         <?php 
-            echo isset($annonce['remuneration']) && !empty($annonce['remuneration']) 
-                ? htmlspecialchars($annonce['remuneration']) . ' €' 
+            echo isset($annonce['annonce_remuneration']) && $annonce['annonce_remuneration'] > 0
+                ? htmlspecialchars($annonce['annonce_remuneration']) . ' €' 
                 : "Non renseignée"; 
         ?>
     </p>
