@@ -60,7 +60,7 @@
             <?php endif; ?>
 
             <?php if ($user_type === 'collaborateur'): ?>
-                <p><a href="/Start-Hut/src/views/projet/espace-collaborateur.php" >Espace collaborateur</a></p>
+                
                 <p><a href="/Start-Hut/src/views/user/profil.php" >Mon profil</a></p>
                 <p><a href="/Start-Hut/src/views/contact.php">Contact</a></p>  
 
@@ -87,7 +87,7 @@
 
             <?php if ($user_type === 'collaborateur'): ?>
             <h3>Mon projet</h3>
-            <p><a href="/Start-Hut/src/views/projet/espace-projet.php">Espace collaborateur</a></p>
+            <p><a href="/Start-Hut/src/views/projet/espace-collaborateur.php" >Espace collaborateur</a></p>
             <p><a href="/Start-Hut/src/views/projet/historique.php">Mes candidatures</a></p>
             <p><a href="/Start-Hut/src/views/projet/dashbord.php">Dashbord</a></p>
         
