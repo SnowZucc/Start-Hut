@@ -16,66 +16,76 @@
     <?php
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);      // Connexion a la DB
-    
-    // Recherche par mots clés
-    $q = $_GET['q'] ?? '';      // Prend q= dans l'URL sinon une chaine vide. ?? = si vide, '' = chaine vide
-    $categorie = $_GET['categorie'] ?? '';
-    $competence = $_GET['competence'] ?? '';
-    $remuneration = $_GET['remuneration'] ?? '';
-    $q = $_GET['q'] ?? '';
-    
-    $conditions = [];
-    $params = [];
-    
-    // Recherche par mot-clé
-    if (!empty($q)) {
-        $conditions[] = "(p.annonce_titre LIKE ? OR p.annonce_description LIKE ?)";
-        $params[] = "%$q%";
-        $params[] = "%$q%";
+// Connexion à la base de données avec les constantes définies dans config.php
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+// Récupération des valeurs des filtres depuis l'URL (méthode GET), sinon valeurs par défaut (chaîne vide)
+$q = $_GET['q'] ?? '';               // Mot-clé saisi dans la barre de recherche
+$categorie = $_GET['categorie'] ?? '';     // Filtre sur la catégorie (ex : business)
+$competence = $_GET['competence'] ?? '';   // Filtre sur les compétences recherchées (ex : développeur)
+$remuneration = $_GET['remuneration'] ?? '';// Filtre sur la rémunération (ex : 0-500)
+
+// Tableau pour stocker dynamiquement les conditions WHERE de la requête
+$conditions = [];
+
+// Tableau pour stocker les valeurs à associer aux ? de la requête préparée
+$params = [];
+
+// Si un mot-clé est saisi, on filtre sur le titre ou la description de l'annonce
+if (!empty($q)) {
+    $conditions[] = "(p.annonce_titre LIKE ? OR p.annonce_description LIKE ?)";
+    $params[] = "%$q%";  // Ajout du mot-clé avec les jokers % pour LIKE
+    $params[] = "%$q%";
+}
+
+// Si une catégorie est sélectionnée, on ajoute une condition sur la colonne annonce_categorie
+if (!empty($categorie)) {
+    $conditions[] = "p.annonce_categorie = ?";
+    $params[] = $categorie;
+}
+
+// Si une compétence est sélectionnée, on filtre sur la colonne annonce_competences_recherchees
+if (!empty($competence)) {
+    $conditions[] = "p.annonce_competences_recherchees = ?";
+    $params[] = $competence;
+}
+
+// Filtrage sur les tranches de rémunération
+if (!empty($remuneration)) {
+    if ($remuneration === "0-500") {
+        $conditions[] = "p.annonce_remuneration BETWEEN 0 AND 500";
+    } elseif ($remuneration === "500-1000") {
+        $conditions[] = "p.annonce_remuneration BETWEEN 500 AND 1000";
+    } elseif ($remuneration === "1000+") {
+        $conditions[] = "p.annonce_remuneration > 1000";
     }
-    
-    // Filtrage par catégorie
-    if (!empty($categorie)) {
-        $conditions[] = "p.annonce_categorie = ?";
-        $params[] = $categorie;
-    }
-    
-    // Filtrage par compétence
-    if (!empty($competence)) {
-        $conditions[] = "p.annonce_competences_recherchees = ?";
-        $params[] = $competence;
-    }
-    
-    // Filtrage par rémunération
-    if (!empty($remuneration)) {
-        if ($remuneration === "0-500") {
-            $conditions[] = "p.annonce_remuneration BETWEEN 0 AND 500";
-        } elseif ($remuneration === "500-1000") {
-            $conditions[] = "p.annonce_remuneration BETWEEN 500 AND 1000";
-        } elseif ($remuneration === "1000+") {
-            $conditions[] = "p.annonce_remuneration > 1000";
-        }
-    }
-    
-    // Construction dynamique de la requête
-    $sql = "SELECT p.*, d.lien 
-            FROM Projets p 
-            LEFT JOIN Documents d ON p.id = d.projet AND d.type = 'image'";
-    
-    if (!empty($conditions)) {
-        $sql .= " WHERE " . implode(" AND ", $conditions);
-    }
-    
-    $stmt = $conn->prepare($sql);
-    
-    if ($params) {
-        $types = str_repeat("s", count($params));
-        $stmt->bind_param($types, ...$params);
-    }
-    
-    $stmt->execute();
-    $result = $stmt->get_result();
+}
+
+// Construction de la requête SQL avec une jointure gauche sur les documents (pour récupérer une image associée)
+$sql = "SELECT p.*, d.lien 
+        FROM Projets p 
+        LEFT JOIN Documents d ON p.id = d.projet AND d.type = 'image'";
+
+// Si des conditions ont été ajoutées, on les concatène dans la requête avec AND
+if (!empty($conditions)) {
+    $sql .= " WHERE " . implode(" AND ", $conditions);
+}
+
+// Préparation sécurisée de la requête SQL
+$stmt = $conn->prepare($sql);
+
+// Si des paramètres ont été définis, on les associe à la requête avec bind_param
+if ($params) {
+    $types = str_repeat("s", count($params)); // Tous les paramètres sont de type string ici
+    $stmt->bind_param($types, ...$params);
+}
+
+// Exécution de la requête
+$stmt->execute();
+
+// Récupération du résultat de la requête dans un objet mysqli_result
+$result = $stmt->get_result();
+
     
     ?>
 
