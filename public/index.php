@@ -78,7 +78,7 @@
                     <!-- Carte 1 -->
                     <div class="project-card">
                         <div class="icon-container">
-                        <img src="icons/web.svg" alt="Icône App Web" width="30" height="30">
+                        <img src="/Start-Hut/public/assets/img/populaire4.png" alt="Icône App Web" width="45" height="45">
                         </div>
                         <h3>Lancer une app web</h3>
                         <p>Plateforme web pour connecter des artisans locaux avec des clients à la recherche de services personnalisés et d'artisanat de qualité.</p>
@@ -88,7 +88,7 @@
                     <!-- Carte 2 -->
                     <div class="project-card">
                         <div class="icon-container">
-                        <img src="icons/service.svg" alt="Icône Service" width="30" height="30">
+                        <img src="/Start-Hut/public/assets/img/populaire5.png" alt="Icône Service" width="45" height="45">
                         </div>
                         <h3>Startup de service</h3>
                         <p>Service innovant de conseils aux entreprises centré sur la transition écologique et l'optimisation des ressources énergétiques.</p>
@@ -98,7 +98,7 @@
                     <!-- Carte 3 -->
                     <div class="project-card">
                         <div class="icon-container">
-                        <img src="icons/ai.svg" alt="Icône IA" width="30" height="30">
+                        <img src="/Start-Hut/public/assets/img/populaire8.png" alt="Icône IA" width="45" height="45">
                         </div>
                         <h3>#IA Générative</h3>
                         <p>Solution d'IA générative spécialisée dans la création de contenus pédagogiques adaptés aux besoins spécifiques des élèves.</p>
@@ -108,7 +108,7 @@
                     <!-- Carte 4 -->
                     <div class="project-card">
                         <div class="icon-container">
-                        <img src="icons/finance.svg" alt="Icône Finance" width="30" height="30">
+                        <img src="/Start-Hut/public/assets/img/populaire1.png" alt="Icône Finance" width="45" height="45">
                         </div>
                         <h3>Plateforme finance</h3>
                         <p>Application de gestion financière intuitive permettant aux particuliers d'optimiser leur épargne et d'investir dans des projets durables.</p>
@@ -118,7 +118,7 @@
                     <!-- Carte 5 -->
                     <div class="project-card">
                         <div class="icon-container">
-                        <img src="icons/fitness.svg" alt="Icône Fitness" width="30" height="30">
+                        <img src="/Start-Hut/public/assets/img/populaire2.png" alt="Icône Fitness" width="45" height="45">
                         </div>
                         <h3>Appli de fitness</h3>
                         <p>Solution fitness connectée qui crée des programmes d'entraînement personnalisés basés sur les objectifs et contraintes physiques de chaque utilisateur.</p>
