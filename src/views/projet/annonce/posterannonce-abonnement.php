@@ -95,38 +95,42 @@ if($missing_data) {
              <!-- Bloc représentant l'offre BASIC -->
             <div class="plan basic">
                 <h2>BASIC</h2>
+                <p class="price">Gratuit</p>
+                <p class=""></p>
                 <ul> <!-- avantage de loffre-->
                     <li>Publier des projets</li>
                     <li>Visibilité standard</li>
                     <li>Pas de mise en avant</li>
                 </ul>
-                <p class="price">0$</p> <!-- Affichage du prix de l'abonnement -->
+  
                 
                 <input type="radio" name="abonnement" value="basic" required <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'basic') ? 'checked' : ''; ?>>
             </div>
             <!-- Bloc représentant l'offre STANDARD -->
             <div class="plan standard">
                 <h2>STANDARD</h2>
+                <p class="price">9.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
                     <li>Avantages du forfait BASIC</li>
                     <li>Visibilité améliorée</li>
                     <li>Suivi de base (barre d'avancement, outils collaboratifs de base)</li>
                     <li>Mise en avant</li>
                 </ul>
-                <p class="price">9.99$/mois</p>
+                
                 
                 <input type="radio" name="abonnement" value="standard" <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'standard') ? 'checked' : ''; ?>>
             </div>
            <!-- Bloc représentant l'offre PREMIUM -->
             <div class="plan premium">
                 <h2>PREMIUM</h2>
+                <p class="price">19.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
                     <li>Avantages du forfait STANDARD</li>
                     <li>Visibilité maximale</li>
                     <li>Ressources pédagogiques</li>
                     <li>Documents d'étude de marché prédéfinis</li>
                 </ul>
-                <p class="price">19.99$/mois</p>
+                
                 
                 <input type="radio" name="abonnement" value="premium" <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'premium') ? 'checked' : ''; ?>>
             </div>
@@ -135,8 +139,8 @@ if($missing_data) {
     <!-- Boutons de navigation -->
      
     <div class="navigation-buttons">
-                    <a href="posterannonce.php" class="back-btn">Retour</a>
-                    <button type="submit" class="next-btn">Continuer</button>
+                    <a href="posterannonce.php" class="back-btn2">Retour</a>
+                    <button type="submit" class="next-btn2">Continuer</button>
                 </div>
             </form>
             </div>
