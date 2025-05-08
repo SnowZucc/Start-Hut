@@ -1,8 +1,4 @@
-
- 
-                                           
-                                          
-                                               /* ANNONCES */
+/* ANNONCES */
                                               
 /* Barre de recherche */
 .search-bar {
@@ -53,9 +49,15 @@
     margin-top: 5px;
     max-width: 310px;  /*10px de plus que les images */
   }
+
+  /* Espace entre le titre et la description */
+  figcaption h3 {
+    margin-bottom: 10px;
+  }
+  
   /* Espacement des sections */
   .faq-section {
     margin-bottom: 40px;
     padding: 20px;
   }
-                                                 /* ANNONCES */  
+                                                 /* ANNONCES */
