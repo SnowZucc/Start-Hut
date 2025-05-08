@@ -19,44 +19,48 @@
         <h1>Consultez nos offres et choisissez celle qui correspond le mieux à vos besoins. Chaque formule vous donne accès à des fonctionnalités spécifiques pour développer vos projets efficacement.</h1>
         <div class="plans">
              <!-- Bloc représentant l'offre BASIC -->
-            <div class="plan basic">
-                <h2>Basic</h2>
-                <p class="price">Gratuit</p> <!-- Affichage du prix de l'abonnement -->
+             <div class="plan basic">
+                <h2>BASIC</h2>
+                
+                <p class="price">Gratuit</p>
                 
                 <ul> <!-- avantage de loffre-->
-                    <li>Publier des projets librement</li>
+                
+                    <li>Publier des projets</li>
                     <li>Visibilité standard</li>
-                    <li>Aucune mise en avant</li>
+                    <li>Pas de mise en avant</li>
+                    <li> Statistiques de projet non disponibles</li>
                 </ul>
-                
-                
+  
+                <p class=""></p>
                
             </div>
             <!-- Bloc représentant l'offre STANDARD -->
             <div class="plan standard">
-                <h2>Standard</h2>
+                <h2>STANDARD</h2>
                 <p class="price">9.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
-                    <li>Tous les avantages du forfait Basic</li>
+                    <li>Avantages du forfait BASIC</li>
                     <li>Visibilité améliorée</li>
-                    <li>Suivi de projet (barre d’avancement, outils collaboratifs de base)</li>
-                    <li>Mise en avant de vos projets</li>
+                    <li>Suivi de base (barre d'avancement, outils collaboratifs de base)</li>
+                    <li>Mise en avant</li>
                 </ul>
+                <p class=""></p>
                 
                 
             </div>
            <!-- Bloc représentant l'offre PREMIUM -->
             <div class="plan premium">
-                <h2>Premium</h2>
+            <h2>PREMIUM</h2>
                 <p class="price">19.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
-                    <li>Tous les avantages du forfait Standard</li>
+                    <li>Avantages du forfait STANDARD</li>
                     <li>Visibilité maximale</li>
-                    <li>Accès à des ressources pédagogiques exclusives</li>
-                    <li>Documents d’étude de marché préremplis et personnalisables</li>
+                    <li>Ressources pédagogiques</li>
+                    <li>Documents d'étude de marché prédéfinis</li>
                 </ul>
                 
-               
+                <p class="prie"></p>
             </div>
         </div>
     </div>
