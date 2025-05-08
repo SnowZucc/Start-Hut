@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,35 +17,100 @@
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);      // Connexion a la DB
-
+    
     // Recherche par mots clés
     $q = $_GET['q'] ?? '';      // Prend q= dans l'URL sinon une chaine vide. ?? = si vide, '' = chaine vide
-    $sql = "SELECT p.*, d.lien FROM Projets p LEFT JOIN Documents d ON p.id = d.projet AND d.type = 'image' WHERE p.annonce_titre LIKE '%$q%' OR p.annonce_description LIKE '%$q%'"; // Cherche dans les colonnes annonce_titre et annonce_description + l'image depuis documents
-    $result = $conn->query($sql);
+    $categorie = $_GET['categorie'] ?? '';
+    $competence = $_GET['competence'] ?? '';
+    $remuneration = $_GET['remuneration'] ?? '';
+    $q = $_GET['q'] ?? '';
+    
+    $conditions = [];
+    $params = [];
+    
+    // Recherche par mot-clé
+    if (!empty($q)) {
+        $conditions[] = "(p.annonce_titre LIKE ? OR p.annonce_description LIKE ?)";
+        $params[] = "%$q%";
+        $params[] = "%$q%";
+    }
+    
+    // Filtrage par catégorie
+    if (!empty($categorie)) {
+        $conditions[] = "p.annonce_categorie = ?";
+        $params[] = $categorie;
+    }
+    
+    // Filtrage par compétence
+    if (!empty($competence)) {
+        $conditions[] = "p.annonce_competences_recherchees = ?";
+        $params[] = $competence;
+    }
+    
+    // Filtrage par rémunération
+    if (!empty($remuneration)) {
+        if ($remuneration === "0-500") {
+            $conditions[] = "p.annonce_remuneration BETWEEN 0 AND 500";
+        } elseif ($remuneration === "500-1000") {
+            $conditions[] = "p.annonce_remuneration BETWEEN 500 AND 1000";
+        } elseif ($remuneration === "1000+") {
+            $conditions[] = "p.annonce_remuneration > 1000";
+        }
+    }
+    
+    // Construction dynamique de la requête
+    $sql = "SELECT p.*, d.lien 
+            FROM Projets p 
+            LEFT JOIN Documents d ON p.id = d.projet AND d.type = 'image'";
+    
+    if (!empty($conditions)) {
+        $sql .= " WHERE " . implode(" AND ", $conditions);
+    }
+    
+    $stmt = $conn->prepare($sql);
+    
+    if ($params) {
+        $types = str_repeat("s", count($params));
+        $stmt->bind_param($types, ...$params);
+    }
+    
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
     ?>
 
     <div class="content">
-      <form method="GET" action="annonces.php">     <!-- Soumet un GET à la même page... -->
-        <input type="text" name="q" class="search-bar" placeholder="Recherchez par mot-clé, domaine ou compétence">  <!-- ... avec q dans l'url -->
-      </form>
+    <form method="GET" action="annonces.php">
+  <div class="filtres-container">
+    <input type="text" name="q" class="dropdown" placeholder="Mot-clé" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>">
 
-      <div class="grid">
-        <select class="dropdown">
-          <option value="" disabled selected>Catégorie</option>
-          <option value="dev">Développement</option>
-          <option value="marketing">Marketing</option>
-        </select>
-        <select class="dropdown">
-          <option value="" disabled selected>Compétence</option>
-          <option value="dev">Développement</option>
-          <option value="marketing">Marketing</option>
-        </select>
-        <select class="dropdown">
-          <option value="" disabled selected>Rémunération</option>
-          <option value="dev">Développement</option>
-          <option value="marketing">Marketing</option>
-        </select>
-      </div>
+    <select name="categorie" class="dropdown">
+      <option value="">Catégorie</option>
+      <option value="technologies" <?= ($_GET['categorie'] ?? '') === 'technologies' ? 'selected' : '' ?>>Technologies</option>
+      <option value="education" <?= ($_GET['categorie'] ?? '') === 'education' ? 'selected' : '' ?>>Éducation</option>
+      <option value="business" <?= ($_GET['categorie'] ?? '') === 'business' ? 'selected' : '' ?>>Business</option>
+    </select>
+
+    <select name="competence" class="dropdown">
+      <option value="">Compétence</option>
+      <option value="developpeur" <?= ($_GET['competence'] ?? '') === 'developpeur' ? 'selected' : '' ?>>Développeur</option>
+      <option value="designer" <?= ($_GET['competence'] ?? '') === 'designer' ? 'selected' : '' ?>>Designer</option>
+      <option value="marketing" <?= ($_GET['competence'] ?? '') === 'marketing' ? 'selected' : '' ?>>Marketing</option>
+      <option value="communication" <?= ($_GET['competence'] ?? '') === 'communication' ? 'selected' : '' ?>>Communication</option>
+    </select>
+
+    <select name="remuneration" class="dropdown">
+      <option value="">Rémunération</option>
+      <option value="0-500" <?= ($_GET['remuneration'] ?? '') === '0-500' ? 'selected' : '' ?>>0 - 500 €</option>
+      <option value="500-1000" <?= ($_GET['remuneration'] ?? '') === '500-1000' ? 'selected' : '' ?>>500 - 1000 €</option>
+      <option value="1000+" <?= ($_GET['remuneration'] ?? '') === '1000+' ? 'selected' : '' ?>>1000 € et +</option>
+    </select>
+
+    <button type="submit" class="btn-filtrer">Filtrer</button>
+  </div>
+</form>
+
+
 
       <div class="grid">
         <?php
