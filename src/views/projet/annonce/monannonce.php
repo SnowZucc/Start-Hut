@@ -101,7 +101,7 @@ if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
                     echo '<img src="' . htmlspecialchars($img_row["lien"]) . '">';
                 } else {
                     // Image par défaut
-                    echo '<img src="https://wallsdesk.com/wp-content/uploads/2017/01/Mark-Zuckerberg-Wallpapers.jpg">';
+                    echo '<img src="https://vection-cms-prod.s3.eu-central-1.amazonaws.com/Adobe_Stock_525614074_8ab9bd18e3.jpeg">';
                 }
                 
                 echo '</div>';
