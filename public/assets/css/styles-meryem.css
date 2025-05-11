@@ -1,78 +1,103 @@
                                                          /* LANDING PAGE */
     /* Premiere section */                                              
-  .landing { 
+    .landing {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Alignement vertical centré */
+      background-color: #ffffff;
+      border: 3px solid green;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin: 30px auto;
+      padding: 40px;
+      max-width: 1100px;
+      gap: 40px;
+    }
+    
+   
+    
+    .landing-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .landing-image img {
+      max-width: 100%;
+      width: 330px;
+      height: auto;
+      border-radius: 20px;
+    }
+    
+    .boutons-collaborateur {
+      display: flex;
+      flex-wrap: nowrap; /* reste sur une seule ligne */
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .btn-collab,
+    .btn-projet {
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: 0.3s ease;
+    }
+    
+    .btn-collab {
+      background-color: #1e7a1e;
+      color: white;
+    }
+    
+    .btn-collab:hover {
+      background-color: #145214;
+    }
+    
+    .btn-projet {
+      border: 2px solid #1e7a1e;
+      color: #1e7a1e;
+      background-color: white;
+    }
+    
+    .btn-projet:hover {
+      background-color: #f0fff0;
+    }
+    
+
   
-    display: flex; /* pour organiser en ligne */
-    background-color: #ffffff; 
-    border: 3px solid green;  /* bord de la premiere section  */
-    border-radius: 20px; /* contour des bords */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin: 5px auto;
-    padding: 40px;
-    max-width: 1000px;  /* pour pas que la section prennent une place plus large */
-    width: 80%;
+  .cta-info a {
+    font-weight: bold;
+    color: #2e7d32;
+    text-decoration: underline;
   }
   
   .landing-text {
-    font-family: 'Poppins', sans-serif;
-    flex: auto; 
-    color: black; 
-    text-align: left; /* Alignement du texte à gauche */
-    margin-right: 40px; /* Espacement entre le texte et l'image */
-  }
-  
-  .landing h1 {
-    font-size: 32px; /* taille de police du titre */
-    font-weight: bold;
-    margin-bottom: 30px; /* sspacement sous le titre */
-    white-space: nowrap; /* empeche START-HUT ne soit couper en 2 et de passer à la ligne */
-    margin-left: -20px;
-  }
-  
-  .landing p {
-    font-size: 20px; /* Taille de police du texte */
-    margin-bottom: 50px; /* espacement sous le paragraphe */
-    line-height: 1.5; /* espacement entre ligne  */
-  }
-  
-  .highlight {
-    font-weight: bold;
-    color: green; /* Couleur verte pour le highlight */
-  }
-  
-  .boutons-collaborateur {
+    flex: 1;
+    color: black;
+    text-align: left;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
   }
   
-  .btn-collab {
-    background-color: #1e7a1e;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  .landing h1,
+  .landing p,
+  .landing .cta-info {
+    text-align: left; /* force l'alignement gauche */
+    margin-left: 0;
   }
   
-  .btn-collab:hover {
-    background-color: #145214;
+  .cta-info {
+    font-weight: bold;
+    color: #2a7d2e;
+    margin-bottom: 20px;
+    line-height: 1.6;
   }
-  
-  .btn-projet {
-    border: 2px solid #1e7a1e;
-    color: #1e7a1e;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-projet:hover {
-    background-color: #f1fff1;
-  }
+ 
   
 
   
