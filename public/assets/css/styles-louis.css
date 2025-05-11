@@ -72,9 +72,10 @@
   .grid img {
     width: 100%;
     max-width: 300px;
-    height: auto;
+    height: 200px; /* Fixed height for consistency */
     border-radius: 20px;
     border: 2px solid #000000;
+    object-position: center; /* Centers the image within the container */
   }
   
   .grid figure {
@@ -82,6 +83,9 @@
     border-radius: 15px;
     padding: 10px;
     text-align: center;
+    width: 100%;
+    max-width: 320px; /* Consistent width for the figure container */
+    margin: 0 auto;
   }
   
   figcaption {
