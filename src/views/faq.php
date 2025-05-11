@@ -14,6 +14,10 @@
   <?php include('../templates/header.php'); ?> 
   <div class="content"> 
   <div class="contentFAQ">
+    <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Rechercher une question..." onkeyup="afficherSuggestions()">
+    <div id="suggestions" class="suggestion-box"></div>
+    </div>
     <h1>Foire aux questions (FAQ)</h1>
     <p>Bienvenue dans notre section FAQ ! Vous trouverez ici les réponses aux questions les plus fréquentes concernant Start-Hut.</p>
   <!-- Section Inscription et Gestion du Compte -->
@@ -164,7 +168,67 @@
       });
     });
 
+  </script> 
+  <script>
+  function afficherSuggestions() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const items = document.querySelectorAll(".faq-item");
+  const suggestionsContainer = document.getElementById("suggestions");
+
+  suggestionsContainer.innerHTML = "";
+
+  if (input.trim() === "") return;
+
+  const suggestionsDéjàVues = new Set();
+
+  items.forEach((item) => {
+    const question = item.querySelector(".faq-question").textContent.toLowerCase();
+    const answer = item.querySelector(".faq-answer").textContent.toLowerCase();
+    const texteComplet = question + " " + answer;
+
+    if ((question.includes(input) || answer.includes(input)) && !suggestionsDéjàVues.has(texteComplet)) {
+      const clone = item.cloneNode(true);
+      clone.classList.add("suggestion-item");
+
+      // Masquer la réponse par défaut
+      const clonedAnswer = clone.querySelector(".faq-answer");
+      if (clonedAnswer) clonedAnswer.style.display = "none";
+
+      // 👉 Ajouter le toggle .active dynamiquement
+      clone.addEventListener("click", () => {
+        clone.classList.toggle("active");
+
+        // Afficher / masquer la réponse
+        if (clonedAnswer) {
+          const isVisible = clonedAnswer.style.display === "block";
+          clonedAnswer.style.display = isVisible ? "none" : "block";
+        }
+      });
+
+      suggestionsContainer.appendChild(clone);
+      suggestionsDéjàVues.add(texteComplet);
+    }
+  });
+
+  if (suggestionsContainer.innerHTML === "") {
+    suggestionsContainer.innerHTML = "<div class='suggestion-item'>Aucun résultat trouvé.</div>";
+  }
+}
   </script>
+  <script>
+    // Fermer la suggestion-box si on clique à l'extérieur
+    document.addEventListener('click', function(event) {
+      const searchInput = document.getElementById("searchInput");
+      const suggestions = document.getElementById("suggestions");
+
+      // Si le clic est en dehors de la boîte et du champ
+      if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
+        suggestions.innerHTML = "";
+      }
+    });
+  </script>
+
+
 
   <?php include('../templates/footer.php'); ?>
 
