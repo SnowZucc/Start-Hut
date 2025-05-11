@@ -978,14 +978,16 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 }
 
 /* Style des groupes de formulaires */
-.form-group {
+.form-group,
+.form-group2 {
   display: flex;
   flex-direction: column; /* Les éléments sont maintenant empilés verticalement */
   align-items: flex-start; /* Alignement à gauche */
   margin-bottom: 25px;
 }
 
-.form-group label {
+.form-group label
+.form-group2 label {
   font-weight: bold;
   color: rgb(0, 0, 0);
   font-size: 16px;
@@ -993,7 +995,8 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
   display: block;
 }
 
-.form-group small {
+.form-group small
+.form-group2 small {
   display: flex;
   display: block;
   font-size: 14px;
@@ -1004,7 +1007,10 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 
 .form-group input,
 .form-group select,
-.form-group textarea {
+.form-group textarea,
+.form-group2 input,
+.form-group2 select,
+.form-group2 textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -1016,6 +1022,9 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 .form-group textarea {
   height: 100px;
 }
+.form-group2 textarea {
+  height: 100px;
+}
 .highlight2 {
   font-weight: bold;
   color: red; /* Couleur verte pour le highlight */
@@ -1025,6 +1034,11 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
   width: auto;
   max-height: 30px;
   max-width: 50px;
+}
+.form-group2 input[type="number"] {
+  width: auto;
+  max-height: 30px;
+  max-width: 200px;
 }
 
 .file-input {
