@@ -266,6 +266,7 @@
     cursor: pointer;
     overflow-wrap: break-word;
     background-color: white;
+    overflow: visible;
   }
   
   .suggestion-item:last-child {
