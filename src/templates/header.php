@@ -19,17 +19,20 @@
                     <li><a href="/Start-Hut/src/views/projet/annonce/posterannonce.php">Poster une annonce</a></li>
                     <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
                     <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
+                    <li><a href="/Start-Hut/src/views/contact.php">Nous contacter</a></li>
                 <?php endif; ?>
                 <?php if ($user_type === 'collaborateur'): ?>
                     <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
                     <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
                     <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
+                    <li><a href="/Start-Hut/src/views/contact.php">Nous contacter</a></li>
                 <?php endif; ?>
 
                 <?php if (!isset($_SESSION['user_id'])): ?>
                     <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
                     <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
                     <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
+                    <li><a href="/Start-Hut/src/views/contact.php">Nous contatcer</a></li>
                 <?php endif; ?>
 
     
