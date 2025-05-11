@@ -44,10 +44,10 @@
                 <h2>STANDARD</h2>
                 <p class="price">9.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
-                    <li>Avantages du forfait BASIC</li>
-                    <li>Visibilité améliorée</li>
-                    <li>Suivi de base (barre d'avancement, outils collaboratifs de base)</li>
-                    <li>Mise en avant</li>
+                    <li>Tous les avantages du forfait Basic</li>
+                    <li>Mise en avant des publications</li>
+                    <li>Suivi de projet (barre d’avancement, outils collaboratifs de base)</li>
+                    <li>Mise en avant de vos projets</li>
                 </ul>
                 <p class=""></p>
                 
@@ -58,10 +58,10 @@
             <h2>PREMIUM</h2>
                 <p class="price">19.99€/mois</p>
                 <ul> <!-- avantage de loffre-->
-                    <li>Avantages du forfait STANDARD</li>
-                    <li>Visibilité maximale</li>
-                    <li>Ressources pédagogiques</li>
-                    <li>Documents d'étude de marché prédéfinis</li>
+                    <li>Tous les avantages du forfait Standard</li>
+                    <li>Permet aux publications d'apparaître en tête du site</li>
+                    <li>Accès à des ressources pédagogiques exclusives</li>
+                    <li>Documents d’étude de marché préremplis et personnalisables</li>
                 </ul>
                 
                 <p class="prie"></p>
