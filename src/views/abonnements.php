@@ -13,10 +13,14 @@
     <body>
         <?php include('../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
         <div class="content">                       <!-- on mets tout dans cette classe pour que les info soient centré -->
-        <div class="containerabonnement">  
+        
+        <div class="containerabonnementconsulter">
+        
             <!-- Si vous avez dautre idées pour le textes et les prix nhesitez pas -->
+        
         <h2>Découvrez nos formules d’abonnement</h2>
         <h1>Consultez nos offres et choisissez celle qui correspond le mieux à vos besoins. Chaque formule vous donne accès à des fonctionnalités spécifiques pour développer vos projets efficacement.</h1>
+       
         <div class="plans">
              <!-- Bloc représentant l'offre BASIC -->
              <div class="plan basic">
@@ -61,7 +65,8 @@
                 </ul>
                 
                 <p class="prie"></p>
-            </div>
+            
+        </div>
         </div>
     </div>
     </div>

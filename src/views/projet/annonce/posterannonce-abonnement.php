@@ -83,70 +83,69 @@ if($missing_data) {
                  
 
 
-                 <div class="containerabonnement">  
-                 <form action="posterannonce-abonnement.php" method="POST">
+        <div class="containerabonnementchoisir">
+        <form action="posterannonce-abonnement.php" method="POST">
 
                     
             <!-- Options d'abonnement -->
             <div class="texte-choix-abonnement">  
             Choisissez votre abonnement pour publier votre annonce
             </div>
+
             <div class="plans">
              <!-- Bloc représentant l'offre BASIC -->
-            <div class="plan basic">
+             <label class="plan basic">
+                <input type="radio" name="abonnement" value="basic" required 
+                    <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'basic') ? 'checked' : ''; ?>>
                 <h2>BASIC</h2>
                 <p class="price">Gratuit</p>
-                <p class=""></p>
-                <ul> <!-- avantage de loffre-->
+                <ul>
                     <li>Publier des projets</li>
                     <li>Visibilité standard</li>
                     <li>Pas de mise en avant</li>
                 </ul>
-  
-                
-                <input type="radio" name="abonnement" value="basic" required <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'basic') ? 'checked' : ''; ?>>
-            </div>
-            <!-- Bloc représentant l'offre STANDARD -->
-            <div class="plan standard">
+            </label>
+                <!-- Bloc représentant l'offre STANDARD -->
+            <label class="plan standard">
+                <input type="radio" name="abonnement" value="standard"
+                    <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'standard') ? 'checked' : ''; ?>>
                 <h2>STANDARD</h2>
                 <p class="price">9.99€/mois</p>
-                <ul> <!-- avantage de loffre-->
+                <ul>
                     <li>Avantages du forfait BASIC</li>
                     <li>Visibilité améliorée</li>
-                    <li>Suivi de base (barre d'avancement, outils collaboratifs de base)</li>
+                    <li>Suivi de base</li>
                     <li>Mise en avant</li>
                 </ul>
-                
-                
-                <input type="radio" name="abonnement" value="standard" <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'standard') ? 'checked' : ''; ?>>
-            </div>
+            </label>
+
+
            <!-- Bloc représentant l'offre PREMIUM -->
-            <div class="plan premium">
+           <label class="plan premium">
+                <input type="radio" name="abonnement" value="premium"
+                    <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'premium') ? 'checked' : ''; ?>>
                 <h2>PREMIUM</h2>
                 <p class="price">19.99€/mois</p>
-                <ul> <!-- avantage de loffre-->
+                <ul>
                     <li>Avantages du forfait STANDARD</li>
                     <li>Visibilité maximale</li>
                     <li>Ressources pédagogiques</li>
-                    <li>Documents d'étude de marché prédéfinis</li>
+                    <li>Documents d'étude de marché</li>
                 </ul>
-                
-                
-                <input type="radio" name="abonnement" value="premium" <?php echo (isset($_SESSION['abonnement']) && $_SESSION['abonnement'] == 'premium') ? 'checked' : ''; ?>>
-            </div>
+            </label>
         </div>
     </div>
+    
+    
     <!-- Boutons de navigation -->
      
     <div class="navigation-buttons">
                     <a href="posterannonce.php" class="back-btn2">Retour</a>
                     <button type="submit" class="next-btn2">Continuer</button>
-                </div>
+    </div>
             </form>
+            
             </div>
-
-
-
             <?php include('../../../templates/footer.php'); ?>    
     </body>
 </html>

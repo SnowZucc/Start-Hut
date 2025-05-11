@@ -729,11 +729,10 @@
   
   
                                                  /* ==================================== */
-                                                  /*CONSULTER LES ABONNEMENT */
+                                                  /*chosiri LES ABONNEMENT */
                                                 /* ==================================== */                                                 
 
-
-.containerabonnement {
+.containerabonnementchoisir {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -745,41 +744,114 @@
 }
 
 
+.containerabonnementchoisir h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  text-align: center;
+}
 
-.containerabonnement h1 {
+.containerabonnementchoisir h1 {
   font-size: 19px;
   margin-bottom: 30px;
   margin-top: 0px;
   text-align: center;
   font-weight: normal;
 }
-.containerabonnement h2 {
-  font-size: 20px;
-  margin-bottom: 30px;
-  margin-top: 0px;
-  text-align: center;
- 
+
+
+
+.containerabonnementchoisir .plans {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+margin-top: 10px;
+flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 }
 
-.plans {
+.containerabonnementchoisir .plan {
+  background: #f7fff8;
+  border-radius: 10px;
+  border: 2px solid rgb(98, 179, 98);
+  padding: 25px;
+  height: 400px;
+  width: 30%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
-  margin-top: 10px;
-  flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 }
 
-.plan {
+.containerabonnementchoisir .plan:hover {
+  border-color: rgb(7, 241, 7);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.containerabonnementchoisir .plan:has(input[type="radio"]:checked) {
+  border-color:  rgb(7, 241, 7);
+  background: #dff9e2;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+}
+
+.containerabonnementchoisir .plan input[type="radio"] {
+  display: none;
+}
+
+
+
+                                                /* ==================================== */
+                                                   /* chosir LES ABONNEMENT */   
+                                                /* ==================================== */
+
+
+                                                 /* ==================================== */
+                                                   /* consuluter un abonnement */   
+                                                /* ==================================== */
+
+
+.containerabonnementconsulter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1000px;
+  height: 640px;
+  margin: 20px auto;
+  background: white;
+  padding: 0px;
+}
+
+.containerabonnementconsulter .plans {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+margin-top: 10px;
+flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
+}
+
+.containerabonnementconsulter .plan {
   background: #f7fff8;
   border-radius: 10px;
   border: 2px solid rgb(69, 128, 69);
   padding: 25px;
   height: 500px;
   width: 32%;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.containerabonnementconsulter h1 {
+  font-size: 19px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  text-align: center;
+  font-weight: normal;
+}
+.containerabonnementconsulter h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+  text-align: center;
+  
 }
 
 .plan h2 {
@@ -808,29 +880,9 @@
   margin: 15px 0;
   text-align: center;
 }
-button {
-  background: black;
-  color: white;
-  padding: 8px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: auto; /* Cela garantit que le bouton est toujours au bas */
-  font-size: 16px;
-}
-button:hover {
-  background: green;
-}
-.condition {
-  font-size: 14px;
-  margin-top: 10px;
-}
-.condition a {
-  color: #2c7b2c;
-  text-decoration: none;
-}
+                                                
                                                 /* ==================================== */
-                                                   /* CONSULTER LES ABONNEMENT */   
+                                                   /* consulter un ABONNEMENT */   
                                                 /* ==================================== */
 
 
@@ -998,19 +1050,7 @@ button:hover {
 
 /* formulaire */
 
-/* choix abonnement */
-.back-btn,.next-btn {
-  margin-top: 20px;
-  background-color : black;
-  display: flex;
-  justify-content: space-between;
-}
-.next-btn:hover {
-  background-color: #333;
-}
-.back-btn:hover {
-  background-color: #333;
-}
+
 
 .texte-choix-abonnement  {
   font-size: 18px;
@@ -1064,6 +1104,96 @@ button:hover {
   color: #008000;
 }
 /* Apercu avant de publier */
+
+/* Boutons suivant et publier pour poster une annonce */  
+.back-btn {
+display: inline-block;
+padding: 8px 16px;
+font-size: 14px;
+color: #000;
+background-color: transparent;
+border: 2px solid #000;
+border-radius: 5px;
+text-decoration: none;
+text-align: center;
+cursor: pointer;
+transition: background-color 0.3s ease, color 0.3s ease;
+margin-top: -47.5px;
+margin-right: 720px;
+}
+
+.back-btn:hover {
+background-color: #000;
+color: #fff;
+}
+
+.next-btn {
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+color: #fff;
+background-color: #28a745;
+border: none;
+border-radius: 5px;
+text-align: center;
+cursor: pointer; 
+transition: background-color 0.3s ease;
+margin-left: 700px;
+}
+
+.next-btn:hover {
+background-color: #218838;
+}
+
+  /* Boutons suivant et publier abbonement pour poster une annonce */  
+
+.back-btn2 {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #000;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  margin-right: 910px;
+  }
+  
+  .back-btn2:hover {
+  background-color: #000;
+  color: #fff;
+  }
+  
+  .next-btn2 {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+  margin-left: 889px;
+  }
+  
+  .next-btn2:hover {
+  background-color: #218838;
+  }
+  
+.navigation-buttons {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+                                                            /* Boutons suivant et publier pour poster une annonce */  
+                            
 
                                                 /* ==================================== */
                                                   /* POSTER UNE ANNONCE */ 
@@ -1317,92 +1447,4 @@ button:hover {
                                               /* ==================================== */
                                               /*  BARRE DE NAVIGATION  POUR LES OUTILS COLLABORATIS */
                                               /* ==================================== */  
-                            /* Boutons suivant et publier pour poster une annonce */  
-.back-btn {
-display: inline-block;
-padding: 8px 16px;
-font-size: 14px;
-color: #000;
-background-color: transparent;
-border: 2px solid #000;
-border-radius: 5px;
-text-decoration: none;
-text-align: center;
-cursor: pointer;
-transition: background-color 0.3s ease, color 0.3s ease;
-margin-top: -47.5px;
-margin-right: 720px;
-}
-
-.back-btn:hover {
-background-color: #000;
-color: #fff;
-}
-
-.next-btn {
-display: inline-block;
-padding: 10px 20px;
-font-size: 16px;
-color: #fff;
-background-color: #28a745;
-border: none;
-border-radius: 5px;
-text-align: center;
-cursor: pointer; 
-transition: background-color 0.3s ease;
-margin-left: 700px;
-}
-
-.next-btn:hover {
-background-color: #218838;
-}
-
- /* Boutons suivant et publier abbonement pour poster une annonce */  
-
-.back-btn2 {
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 14px;
-  color: #000;
-  background-color: transparent;
-  border: 2px solid #000;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-top: -47.5px;
-  margin-right: 910px;
-  }
-  
-  .back-btn2:hover {
-  background-color: #000;
-  color: #fff;
-  }
-  
-  .next-btn2 {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #28a745;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer; 
-  transition: background-color 0.3s ease;
-  margin-top: -52.5px;
-  margin-left: 889px;
-  }
-  
-  .next-btn2:hover {
-  background-color: #218838;
-  }
-  
-.navigation-buttons {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 10px;
-}
-                                /* Boutons suivant et publier pour poster une annonce */  
+ 
