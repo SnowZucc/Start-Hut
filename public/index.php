@@ -17,14 +17,9 @@
     <div class="content">
         <!-- Hero Section -->
         <section class="landing">
-         
             <div class="landing-text">
                 <h1>START-HUT</h1>
                 <p>L'outil le plus simple <br> pour <span class="highlight">transformer</span> vos idées en startups.</p>
-                <p class="cta-info">
-                    🚀 <strong>Se connecter est requis</strong> pour publier un projet.<br>
-                    🔍 Tout le monde peut consulter les projets disponibles.
-                </p>
                 <div class="boutons-collaborateur">
                 <?php        
                  if (session_status() === PHP_SESSION_NONE) {
@@ -38,7 +33,6 @@
                 <?php endif; ?>
                     
                 </div>
-
             </div>
             <div class="landing-image">
                 <img src="https://img.freepik.com/free-vector/business-team-discussing-ideas-startup_74855-4380.jpg?w=1380&t=st=1714579429~exp=1714580029~hmac=64a3984348efb08d9be17b07ed4e31ba3495af40fc0e6f2de1e62cf247741b5c" alt="Illustration de startups">
