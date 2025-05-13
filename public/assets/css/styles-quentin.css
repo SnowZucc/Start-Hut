@@ -207,3 +207,83 @@ form {
         font-size: 14px;
     }
 }
+.logout-button:hover {
+    background-color: #218838;
+}
+
+
+                                                   /* PROFIL */                                                                                          
+  
+  
+                                                   /* PROFIL */           
+
+                                                     /* Modifier annonces */  
+.annonce-edit-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.annonce-edit-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.annonce-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.annonce-form-group label {
+    font-weight: 500;
+}
+
+.input-field,
+.dropdown,
+.description {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.description {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.annonce-button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
+
+.annuler-lien {
+    color: #6c63ff;
+    text-decoration: none;
+    align-self: center;
+}
+
+
+                                                       /* Modifier annonces */  
