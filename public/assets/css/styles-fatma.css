@@ -192,5 +192,79 @@ body.espace-projet header {
   .btn-details:hover {
     background-color: #145214;
   }
-  
+  /* =================== */
+/* RENDRE LA PAGE RESPONSIVE */
+/* =================== */
+
+@media (max-width: 1024px) {
+  /* Adaptation pour les tablettes et petits écrans */
+
+
+
+  .main-container {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .sidebar {
+      width: 100%;
+      padding: 20px 10px;
+      border-right: none;
+      border-bottom: 2px solid #ddd;
+  }
+
+  .content-area {
+      padding: 20px;
+  }
+
+  /* Cartes en une seule colonne pour les tablettes et plus petits écrans */
+  .cards-container {
+      grid-template-columns: 1fr 1fr; /* 2 colonnes */
+  }
+
+  .card {
+      width: 100%; /* S'étend sur toute la largeur disponible */
+      height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Adaptation pour les smartphones */
+
+
+  .main-container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      padding: 15px;
+      border-bottom: 2px solid #ddd;
+  }
+
+  .content-area {
+      padding: 15px;
+  }
+
+  /* Cartes en une seule colonne sur mobile */
+  .cards-container {
+      grid-template-columns: 1fr; /* 1 colonne pour mobile */
+  }
+
+  .card {
+      padding: 15px;
+  }
+
+  .card h3 {
+      font-size: 16px;
+  }
+
+  .card p {
+      font-size: 14px;
+  }
+
+  .btn-details {
+      padding: 10px 20px;
+  }
+}
 
