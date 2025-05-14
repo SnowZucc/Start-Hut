@@ -267,4 +267,56 @@ body.espace-projet header {
       padding: 10px 20px;
   }
 }
+/* partie projet dans espace projet (description du projet) */
+/* DESCRIPTION PROJET  */
+.projet-description {
+  width: 75%;              /* ✅ Largeur contrôlée mais pas bloquée */
+  margin: 40px auto;       /* ✅ Centre horizontalement */
+  padding: 60px 40px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  ;
+}
 
+
+.projet-description .container {
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.projet-description h1 {
+  font-size: 1.5rem;
+  color: #1a202c;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.projet-description h3 {
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-left: 4px solid #38a169;
+  padding-left: 12px;
+}
+
+.projet-description .intro {
+  font-size: 1.125rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.projet-description p {
+  font-size: 1.05rem;
+  color: #2d3748;
+  line-height: 1.7;
+}
+
+
+
+/* partie projet dans espace projet (description du projet) */

@@ -71,6 +71,87 @@ body {
   padding: 10px;
 }
 /* Navbar */
+/* Navbar responsive pour les tablettes et mobiles */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 10px 20px; /* Réduit le padding sur les petits écrans */
+    gap: 30px; /* Réduit l'espace entre les éléments */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Empile les liens */
+    gap: 10px;
+    align-items: flex-start; /* Aligne les liens à gauche */
+  }
+
+  .nav-links li {
+    padding: 5px 0; /* Ajoute un peu d'espace entre les liens */
+  }
+
+  .auth-buttons {
+    flex-direction: column; /* Empile les boutons */
+    gap: 8px; /* Moins d'espace entre les boutons */
+  }
+
+  .auth-buttons .signup {
+    padding: 8px 16px; /* Ajuste la taille des boutons pour les petits écrans */
+  }
+}
+
+/* Navbar responsive pour les très petits écrans (mobiles) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px; /* Plus d'espace entre les éléments */
+  }
+
+  .nav-links {
+    gap: 8px;
+    font-size: 14px; /* Réduit la taille des liens */
+  }
+
+  .auth-buttons {
+    gap: 6px;
+  }
+
+  .header-profile-pic {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Barre de navigation active */
+.sub-navbar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background: white;
+  border-bottom: 2px solid #ddd;
+}
+
+.sub-navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+}
+
+.sub-navbar li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.sub-navbar li a:hover {
+  color: green;
+}
+
+.sub-navbar li a.active {
+  color: green;
+  border-bottom: 3px solid green;
+}
   
 
 /* Contenu de la page (centré) */

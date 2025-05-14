@@ -1,7 +1,35 @@
+
 <?php
-error_reporting(E_ERROR); // Affiche uniquement les erreurs fatales
-ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+session_start();
+
+$porteur_id = $_SESSION['user_id'] ?? null;
+$projet = null;
+
+if ($porteur_id) {
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    if ($conn->connect_error) {
+        die("Connexion échouée : " . $conn->connect_error);
+    }
+
+    // Préparation de la requête : on suppose qu’on veut récupérer le projet du porteur connecté
+    $stmt = $conn->prepare("
+        SELECT annonce_description, annonce_titre, principe_du_projet
+        FROM Projets
+        WHERE createur = ?
+        LIMIT 1
+    ");
+    $stmt->bind_param("i", $porteur_id);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    $projet = $result->fetch_assoc();
+
+    $stmt->close();
+    $conn->close();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,8 +54,22 @@ ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
     <li><a href="ressource/ressources.php" class="<?= basename($_SERVER['PHP_SELF']) == 'ressources.php' ? 'active' : '' ?>">Ressources</a></li>
     </ul>
 </nav>
+<section class="projet-description">
+    <div class="container">
+        <?php if ($projet): ?>
+            <h1><?= htmlspecialchars($projet['annonce_titre']) ?></h1>
+            
+            
+            <h3>Principe du projet</h3>
+            <p class="intro"><?= nl2br(htmlspecialchars($projet['annonce_description'])) ?></p>
+        <?php else: ?>
+            <p class="intro">Aucun projet trouvé pour votre compte.</p>
+        <?php endif; ?>
+    </div>
+</section>
 
-<!-- Inclusion automatique de la page Mes annonces par défaut -->
+
+
 
 
 <?php include('../../templates/footer.php'); ?>
