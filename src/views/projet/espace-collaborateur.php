@@ -1,3 +1,7 @@
+<!-- Inclusion automatique de la page Mes candidatures par défaut -->
+ <?php
+$page = $_GET['view'] ?? 'historique';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,17 +15,27 @@
 <body>
 
 <?php include('../../templates/header.php'); ?>
-
 <!-- Barre de navigation secondaire --> 
 <nav class="sub-navbar">
     <ul>
-    <li><a href="historique.php" class="<?= basename($_SERVER['PHP_SELF']) == 'historique.php' ? 'active' : '' ?>">Mes candidatures</a></li>
-    <li><a href="dashbord.php" class="<?= basename($_SERVER['PHP_SELF']) == 'dashbord.php' ? 'active' : '' ?>">Dashbord</a></li>
+        <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=historique" class="<?= $page == 'historique' ? 'active' : '' ?>">Mes candidatures</a></li>
+    <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=dashbord" class="<?= $page == 'dashbord' ? 'active' : '' ?>">Dashbord</a></li>
+    <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox" class="<?= $page == 'Hutbox' ? 'active' : '' ?>">Hutbox</a></li>
+
     </ul>
 </nav>
 
-<!-- Inclusion automatique de la page Mes annonces par défaut -->
-<?php include('historique.php'); ?>
+<?php 
+if ($page === 'historique') {
+    include('historique.php');
+} elseif ($page === 'dashbord') {
+    include('dashbord.php');
+} elseif ($page === 'Hutbox') {
+    include('Hutbox.php');
+} else {
+    echo "<p style='color:red;'>Erreur : vue inconnue</p>";
+}
+?>
 
 <?php include('../../templates/footer.php'); ?>
 
