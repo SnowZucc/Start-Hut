@@ -1432,6 +1432,10 @@ gap: 10px;
 /*  BARRE DE NAVIGATION outils */
 /* ==================================== */
 
+/* ==================================== */
+/*  Page contact */
+/* ==================================== */
+
 /***** === Page Contact === *****/
 
 .contact-page {
@@ -1535,25 +1539,66 @@ gap: 10px;
   margin-right: 8px;
 }
 
-@media screen and (max-width: 900px) {
+
+/***** === Responsive === *****/
+
+
+@media screen and (max-width: 992px) {
   .contact-container {
     flex-direction: column;
     align-items: center;
+    gap: 40px;
+    padding: 0 20px;
   }
 
   .form-section,
   .info-section {
     width: 100%;
+    max-width: 500px;
   }
 
   .info-section {
+    margin-top: 0;
+  }
+
+  .map-contact {
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+  }
+
+  .map-contact iframe {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-section h2,
+  .info-section h3 {
+    font-size: 22px;
     text-align: center;
   }
 
-  .form-section h2 {
+  .form-section form,
+  .info-section {
+    padding: 0 10px;
+  }
+
+  .info-section p {
+    font-size: 15px;
     text-align: center;
   }
+
+  .form-section input,
+  .form-section textarea {
+    font-size: 15px;
+  }
+
+  .form-section button {
+    font-size: 15px;
+  }
 }
+/***** === Responsive === *****/
 
                                          /* ==================================== */
                                                   /*  PAGE CONTACT */
