@@ -998,6 +998,27 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
   margin: 15px 0;
   text-align: center;
 }
+/* rendre responsive tarification */
+
+@media screen and (max-width: 992px) {
+  .containerabonnementconsulter .plans {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .containerabonnementconsulter .plan {
+    width: 90%;
+    height: auto;
+  }
+
+  .containerabonnementconsulter {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+/* rendre responsive tarification */
                                                 
                                                 /* ==================================== */
                                                    /* consulter un ABONNEMENT */   
