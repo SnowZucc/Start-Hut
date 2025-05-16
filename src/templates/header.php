@@ -32,7 +32,7 @@
                     <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
                     <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
                     <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
-                    <li><a href="/Start-Hut/src/views/contact.php">Nous contatcer</a></li>
+                    <li><a href="/Start-Hut/src/views/contact.php">Nous contacter</a></li>
                 <?php endif; ?>
 
     
@@ -97,4 +97,3 @@
     justify-content: center;
 }
 </style>
-
