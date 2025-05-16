@@ -392,6 +392,84 @@
   
   
   /*Troisieme dection POURQUOI NOUS CHOISIR*/
+
+   /*Landing page responsive */
+
+  @media screen and (max-width: 992px) {
+  /* SECTION 1 – .landing */
+  .landing {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .landing-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .landing h1,
+  .landing p,
+  .landing .cta-info {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .boutons-collaborateur {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* SECTION 2 – .cards-wrapper */
+  .cards-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* SECTION 3 – .conteneur-collaborateur */
+  .conteneur-collaborateur {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .texte-collaborateur {
+    order: 2;
+    text-align: center;
+  }
+
+  .image-collaborateur {
+    order: 1;
+    justify-content: center;
+  }
+
+  /* SECTION 4 – .conteneur-pourquoinouschoisir */
+  .conteneur-pourquoinouschoisir {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .textepourquoinouschoisir h2 {
+    margin-left: 0;
+  }
+
+  .imagepourquoinouschoisir {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+/*Landing page responsive */
   
                                                  /* ==================================== */
                                                  /* LANDING PAGE */
