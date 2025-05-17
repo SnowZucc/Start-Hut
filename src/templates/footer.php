@@ -1,5 +1,5 @@
 <!-- Style pour retirer le soulignage et l'effet bleu des liens -->
-<style>
+ <style>
     footer a {
         text-decoration: none;
         color: inherit;
