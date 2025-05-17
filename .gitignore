@@ -1,2 +1,4 @@
 .timetracker
 config/config.php
+# SpecStory explanation file
+.specstory/.what-is-this.md
