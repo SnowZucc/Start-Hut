@@ -53,11 +53,11 @@
             </p>
 
             <p><strong>Adresse :</strong><br>
-              <a href="https://www.google.com/maps?q=42+Avenue+des+Idées,+75000+Paris" target="_blank">
+              <p>
                 START-HUT<br>
-                42 Avenue des Idées<br>
-                75000 Paris, France
-              </a>
+                28 Rue Notre Dame des Champs <br>
+                75006 Paris, France
+        </p>
             </p>
           </div>
 

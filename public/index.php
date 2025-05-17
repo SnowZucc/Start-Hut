@@ -25,8 +25,8 @@
                  if (session_status() === PHP_SESSION_NONE) {
                      session_start(); } 
                 if (!isset($_SESSION['user_id'])) : ?>    <!-- Si l'utilisateur n'est pas connecter et appuie sur le bouton publier un projet il est renvoyé vers connexion -->
-                        <a href="../src/views/user/connexion.php" class="btn-collab">Publier un projet</a>
-                        <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>
+                        <a href="../src/views/annonces.php" class="btn-collab">Trouver un projet</a>
+                        <a href="../src/views/user/connexion.php" class="btn-projet">Me connecter pour publier</a>
                  <?php else : ?>                                 <!-- Sinon il est renvoyer sur la page poster une annonce -->
                         <a href="../src/views/projet/annonce/posterannonce.php" class="btn-collab">Publier un projet</a>
                         <a href="../src/views/annonces.php" class="btn-projet">Trouver un projet</a>

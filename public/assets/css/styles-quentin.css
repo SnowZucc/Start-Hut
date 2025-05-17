@@ -1,120 +1,81 @@
-                                               /* PROFIL */
-
-                                              
-/* Conteneur principal */
+/* ===================== STYLES GÉNÉRAUX ===================== */
 .profile-section {
     display: flex;
     align-items: flex-start;
-    gap: 40px; /* Espace entre la photo et les formulaires */
-  }
-  
-  /* Conteneur de la photo de profil */
-  .profile-container {
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 220px; /* Largeur fixe pour la photo */
-  }
-  
-  /* Photo de profil ronde et bien proportionnée */
-  .profile-pic {
-    width: 180px; /* Taille agrandie */
+    width: 220px;
+}
+
+.profile-pic {
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
     border: 3px solid #ddd;
     transition: transform 0.3s ease;
-  }
-  
-  .profile-pic:hover {
+}
+
+.profile-pic:hover {
     transform: scale(1.1);
-  }
-  
-  /* Texte "Modifier la photo" */
-  .edit-text {
+}
+
+.edit-text {
     text-align: center;
     margin-top: 10px;
     font-size: 14px;
     color: #218b3a;
     cursor: pointer;
-  }
-  
-  /* Grille des formulaires */
-  .form-grid {
+}
+
+.form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes */
-    gap: 20px; /* Espacement entre les colonnes */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     width: 100%;
-  }
-  
-  /* Style des formulaires */
-  .form-box {
+}
+
+.form-box {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
-  }
+}
 
-  /* Champs de saisie */
-  .input-field, .dropdown {
+.input-field, .dropdown {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 15px;                  /* Espace en dessous des champs de saisie */
-  }
+    margin-bottom: 15px;
+}
 
-  .description {
+.description {
     min-height: 220px;
-    border-radius: 10px;                 /* Styles pour la case description */
+    border-radius: 10px;
     background-color: #f9f9f9;
-    margin-bottom: 15px;                 /* Espace en dessous de la case description */
-    }
+    margin-bottom: 15px;
+}
 
-  /* Cache l'input type file */
-  .CV-input {
+.CV-input {
     display: none;
-  }
-  
-  /* Bouton sauvegarde */
-  .button-container {
+}
+
+.button-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-  }
-  
-  .save-button {
-    padding: 12px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .save-button:hover {
-    background-color: #218838;
-  }
-  
-    /* Nom */
-  .nom {
-    margin-bottom: 30px;
-    border-radius: 10px;
-    width: 400px;
-    height: 30px; 
-    padding-left: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    width: 95%;
-    margin-left: 70px;
-    margin-right: auto;
-  }
+}
 
-
-  .logout-button {
+.save-button,
+.logout-button {
     padding: 12px 20px;
     background-color: #28a745;
     color: white;
@@ -123,11 +84,147 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+.save-button:hover,
 .logout-button:hover {
     background-color: #218838;
 }
 
+.nom {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: 95%;
+    height: 30px;
+    padding-left: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin-left: 70px;
+    margin-right: auto;
+}
 
-                                                   /* PROFIL */                                                                                          
-  
-  
+/* ===================== MODIFIER ANNONCES ===================== */
+
+/* Champ textarea de description */
+textarea.description {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* Responsive ajustement du champ description */
+@media (max-width: 768px) {
+    textarea.description {
+        min-height: 100px;
+        font-size: 0.95rem;
+    }
+}
+
+.annonce-edit-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.annonce-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.annonce-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    flex: 2;
+}
+
+.annonce-form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.annuler-lien {
+    margin-left: 15px;
+    color: #666;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+/* ===================== RESPONSIVE : TABLETTE ===================== */
+@media screen and (max-width: 1023px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .annonce-edit-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .nom {
+        margin-left: 0;
+    }
+}
+
+/* ===================== RESPONSIVE : MOBILE ===================== */
+@media screen and (max-width: 767px) {
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+
+    .edit-text {
+        font-size: 13px;
+    }
+
+    .save-button,
+    .logout-button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .annonce-edit-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .annonce-image {
+        max-width: 300px;
+    }
+
+    .input-field,
+    .dropdown,
+    .description {
+        font-size: 14px;
+    }
+
+    .annuler-lien {
+        font-size: 14px;
+    }
+}

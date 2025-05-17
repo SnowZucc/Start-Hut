@@ -121,7 +121,7 @@ if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 
                 echo '<div class="button-container">';
                 echo '<button class="delete-button" onclick="confirmDelete(' . $row["id"] . ')">Supprimer</button>';
-                echo '<a href="posterannonce.php?edit=' . $row["id"] . '" class="edit-button">Modifier</a>';
+                echo '<a href="/Start-Hut/src/views/projet/annonce/modifier_annonces.php?edit=' . $row["id"] . '" class="edit-button">Modifier</a>';
                 echo '</div>';
                 echo '</div>';
             }

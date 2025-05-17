@@ -90,15 +90,44 @@
                 <?php if ($user_type === 'porteur'): ?>
                
                 <?php endif; ?>
+                <?php
+                $from_hutbox = isset($_GET['from']) && $_GET['from'] === 'hutbox';
+                ?>
+
                 <?php if ($user_type === 'collaborateur'): ?>
                 <div class="actionsAnnonce">
+                    <?php if ($from_hutbox): ?>
+                    <!-- Bouton Retour -->
+                        <a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox" class="btnAction btnSecondaire" style="margin-left: 10px;">Retour</a>
+                    <?php endif; ?>
                     <form method="POST" action="postuler_annonce.php">
-                        <input type="hidden" name="id_projet" value="<?php echo $annonce['id']; ?>">
+                        <input type="hidden" name="id_projet" value="<?= $annonce['id'] ?>">
+                        <?php if ($from_hutbox): ?>
+                            <input type="hidden" name="from" value="hutbox">
+                        <?php endif; ?>
                         <button type="submit" class="btnAction">Postuler</button>
-                     </form>
-                         <button class="btnAction btnSecondaire">Sauvegarder</button>
-                </div> 
+                    </form>
+                    <?php if ($from_hutbox): ?>
+
+                        <!-- Bouton Supprimer des favoris -->
+                        <form method="POST" action="/Start-Hut/src/views/supprimer_sauvegarde.php" style="display: inline;">
+                            <input type="hidden" name="id_projet" value="<?= $annonce['id'] ?>">
+                            <button  type="submit" class="btnSupprimer">Supprimer</button>
+                        </form>
+
+                    <?php endif; ?>
+
+
+                    <?php if (!$from_hutbox): ?>
+                    <form method="POST" action="sauvegarder_annonces.php" style="display: inline;">
+                        <input type="hidden" name="id_projet" value="<?= $annonce['id'] ?>">
+                        <button type="submit" class="btnAction btnSecondaire">Sauvegarder</button>
+                    </form>
+                    <?php endif; ?>
+                </div>
                 <?php endif; ?>
+
+
 
                 <!-- Boutons en bas -->
              
@@ -107,12 +136,53 @@
 
         </div>
         <?php if (isset($_GET['msg']) && $_GET['msg'] === 'success'): ?>
-    <p style="color: green; font-weight: bold;">Votre candidature a bien été envoyée.</p>
-<?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'already_postulated'): ?>
-    <p style="color: orange; font-weight: bold;">Vous avez déjà postulé à ce projet.</p>
-<?php endif; ?>
+            <p id="msg-envoye" style="color: green; font-weight: bold;">Votre candidature a bien été envoyée.</p>
+        <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'already_postulated'): ?>
+            <p id="msg-postule" style="color: orange; font-weight: bold;">Vous avez déjà postulé à ce projet.</p>
+        <?php endif; ?>
+ 
+        <?php if (isset($_GET['msg']) && in_array($_GET['msg'], ['saved', 'already'])): ?>
+            <p id="msg-sauvegarde" style="color: <?= $_GET['msg'] === 'saved' ? 'green' : 'orange' ?>; font-weight: bold;">
+                <?= $_GET['msg'] === 'saved' ? 'Annonce sauvegardée avec succès.' : 'Annonce déjà sauvegardée.' ?>
+            </p>
+        <?php endif; ?>
+
+        <script>
+            const msg = document.getElementById("msg-sauvegarde");
+            if (msg) {
+                setTimeout(() => {
+                    msg.style.transition = "opacity 0.5s";
+                    msg.style.opacity = 0;
+                    setTimeout(() => msg.remove(), 500); // suppression totale après fondu
+                }, 3000); // disparition après 3 secondes
+            }
+        </script>
+        
+        <script>
+        // Sauvegarde la position de scroll avant de soumettre le formulaire
+        const form = document.querySelector("form[action='sauvegarder_annonces.php']");
+        if (form) {
+            form.addEventListener("submit", function () {
+            sessionStorage.setItem("scrollTop", window.scrollY);
+            });
+        }
+
+        // Après rechargement, restaure la position
+        window.addEventListener("load", function () {
+            const scrollTop = sessionStorage.getItem("scrollTop");
+            if (scrollTop !== null) {
+            window.scrollTo({ top: parseInt(scrollTop), behavior: "instant" });
+            sessionStorage.removeItem("scrollTop");
+            }
+        });
+        </script>
 
 
-        <?php include('../templates/footer.php'); ?>    
+
+
+
+        <?php include('../templates/footer.php'); ?> 
+
+  
     </body>
 </html>

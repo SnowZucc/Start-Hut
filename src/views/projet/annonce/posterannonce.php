@@ -74,9 +74,9 @@ if (!isset($_SESSION['user_id'])) {
                         <small>Le nombre de collaborateurs permettra aux potentiels collaborateurs de savoir s'il y a encore des places disponibles</small>
                         <input type="number" id="collaborateurs" name="collaborateurs" min="1" value="<?php echo htmlspecialchars($_SESSION['collaborateurs'] ?? '1'); ?>">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group2">
                         <label for="remuneration">Rémunération <span class="highlight2">*</span></label>
-                        <input type="text" id="remuneration" name="remuneration" required value="<?php echo htmlspecialchars($_SESSION['remuneration'] ?? ''); ?>">
+                        <input type="number" id="remuneration" name="remuneration" required value="<?php echo htmlspecialchars($_SESSION['remuneration'] ?? ''); ?>">
                     </div>
                 
                     <button type="submit" class="submit-btn">Sauvegarder & Continuer</button>

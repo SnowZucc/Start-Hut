@@ -150,6 +150,20 @@ CREATE TABLE Contacts (
     message TEXT NOT NULL,
     date_envoi DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE Annonces_Sauvegardees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_utilisateur INT NOT NULL,
+    id_projet INT NOT NULL,
+    date_sauvegarde DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    UNIQUE(id_utilisateur, id_projet), -- Empêche un doublon
+
+    FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id)
+        ON DELETE CASCADE,
+    FOREIGN KEY (id_projet) REFERENCES Projets(id)
+        ON DELETE CASCADE
+);
+
 
 
 -- Exemples d'utilisation

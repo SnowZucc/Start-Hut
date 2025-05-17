@@ -92,12 +92,6 @@ if (isset($_SESSION['user_id'])) {
                     <label>Mot de Passe</label>
                     <input type="password" class="input-field" placeholder="Nouveau mot de passe">  
 
-                    <label>Statut</label>
-                    <select class="dropdown" name="type">
-                        <option value="" disabled <?php echo empty($user['type']) ? 'selected' : ''; ?>>Choisissez votre statut</option>
-                        <option value="porteur" <?php echo isset($user['type']) && $user['type'] == 'porteur' ? 'selected' : ''; ?>>Porteur de projet</option>
-                        <option value="collaborateur" <?php echo isset($user['type']) && $user['type'] == 'collaborateur' ? 'selected' : ''; ?>>Collaborateur</option>
-                    </select>
 
 
                     <label>Votre CV</label>

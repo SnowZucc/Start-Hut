@@ -92,7 +92,7 @@ $result = $stmt->get_result();
     <div class="content">
     <form method="GET" action="annonces.php">
   <div class="filtres-container">
-    <input type="text" name="q" class="dropdown" placeholder="Mot-clé" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>">
+    <input type="text" name="q" class="dropdown" placeholder="Rechercher" value="<?= htmlspecialchars($_GET['q'] ?? '') ?>">
 
     <select name="categorie" class="dropdown">
       <option value="">Catégorie</option>
