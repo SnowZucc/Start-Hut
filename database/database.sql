@@ -133,7 +133,7 @@ CREATE TABLE Messages_forum (
 CREATE TABLE Messages (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_expediteur INT NOT NULL ,
-    id_destinataire INT NOT NULL ,
+    id_destinataire INT ,
     contenu TEXT NOT NULL ,
     date DATETIME NOT NULL ,
 

@@ -15,7 +15,7 @@ if (!$user_id) return;
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 // ---------------------
-// Récupération des contacts avec qui j’ai déjà discuté
+// Récupération des contacts avec qui j'ai déjà discuté
 // ---------------------
 $stmt = $conn->prepare("
     SELECT DISTINCT u.id, u.nom, u.prenom
@@ -31,12 +31,31 @@ $contacts = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 
 // ---------------------
+// Récupération des messages généraux (sans destinataire)
+// ---------------------
+$messages_generaux = [];
+$stmt = $conn->prepare("
+    SELECT m.contenu, m.date, m.id_expediteur, u.prenom, u.nom
+    FROM Messages m
+    JOIN Utilisateurs u ON m.id_expediteur = u.id
+    WHERE m.id_destinataire IS NULL
+    ORDER BY m.date DESC
+    LIMIT 50
+");
+$stmt->execute();
+$messages_generaux = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
+
+// ---------------------
 // Récupération des messages si un contact est sélectionné
 // ---------------------
 $contact_id = $_GET['contact'] ?? null;
 $messages = [];
 
-if ($contact_id) {
+// Si on a sélectionné le mode "général", on garde les messages déjà récupérés
+$mode_general = isset($_GET['mode']) && $_GET['mode'] === 'general';
+
+if ($contact_id && !$mode_general) {
     $stmt = $conn->prepare("
         SELECT contenu, date, id_expediteur
         FROM Messages
@@ -71,7 +90,7 @@ $conn->close();
     <form id="form-nouveau-message">
       <!-- Champ d'autocomplétion pour rechercher un utilisateur -->
       <input type="text" id="autocomplete-destinataire" placeholder="Nom ou prénom..." required>
-      <!-- Champ caché pour stocker l’ID réel du destinataire -->
+      <!-- Champ caché pour stocker l'ID réel du destinataire -->
       <input type="hidden" name="destinataire_id" id="destinataire-id">
 
       <!-- Zone pour écrire le message -->
@@ -84,24 +103,55 @@ $conn->close();
     <!-- Message de confirmation après envoi -->
     <div id="confirmation-message" style="display:none; color:green; font-size:13px;">✅ Message envoyé</div>
   </div>
+  
+  <!-- Onglet de messagerie générale -->
+  <div class="contact-card <?= $mode_general ? 'active-contact' : '' ?>" onclick="window.location.href='?mode=general'">
+    <i class="fa fa-globe"></i>
+    <div class="contact-name">Messagerie générale</div>
+  </div>
+  
   <!-- Liste des contacts -->
   <?php foreach ($contacts as $contact): ?>
     <?php
-      // Si c’est le contact actuellement sélectionné, on applique une classe spéciale
-      $isActive = ($contact_id == $contact['id']) ? 'active-contact' : '';
+      // Si c'est le contact actuellement sélectionné, on applique une classe spéciale
+      $isActive = ($contact_id == $contact['id'] && !$mode_general) ? 'active-contact' : '';
     ?>
     <div class="contact-card <?= $isActive ?>" onclick="window.location.href='?contact=<?= $contact['id'] ?>'">
       <i class="fa fa-comments"></i>
       <div class="contact-name"><?= htmlspecialchars($contact['prenom'] . ' ' . $contact['nom']) ?></div>
     </div>
   <?php endforeach; ?>
-  <!-- Si un contact est sélectionné -->
-  <?php if ($contact_id): ?>
+  
+  <!-- Affichage des messages généraux si le mode général est activé -->
+  <?php if ($mode_general): ?>
+    <hr>
+    <div class="message-thread">
+      <?php if (count($messages_generaux) > 0): ?>
+        <?php foreach ($messages_generaux as $msg): ?>
+          <div class="message-general">
+            <strong><?= htmlspecialchars($msg['prenom'] . ' ' . $msg['nom']) ?></strong> 
+            <small class="message-date"><?= htmlspecialchars($msg['date']) ?></small>
+            <div class="message-content"><?= nl2br(htmlspecialchars($msg['contenu'])) ?></div>
+          </div>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <p style="text-align: center; color: #888;">Aucun message dans la messagerie générale.</p>
+      <?php endif; ?>
+    </div>
+
+    <!-- Formulaire pour envoyer un message général -->
+    <form action="/Start-Hut/src/templates/envoyer_message_general.php" method="POST">
+      <textarea name="contenu" required style="width:100%; height:60px;" placeholder="Écrivez un message visible par tous..."></textarea><br>
+      <button type="submit" style="width:100%;">Envoyer à tous</button>
+    </form>
+  
+  <!-- Sinon, si un contact est sélectionné -->
+  <?php elseif ($contact_id): ?>
     <hr>
     <div class="message-thread">
       <?php if (count($messages) > 0): ?>
         <?php foreach ($messages as $msg): ?>
-          <!-- Affichage des messages alignés à gauche ou droite selon l’expéditeur -->
+          <!-- Affichage des messages alignés à gauche ou droite selon l'expéditeur -->
           <div style="text-align:<?= $msg['id_expediteur'] == $user_id ? 'right' : 'left' ?>; margin:5px 0;">
             <small><?= htmlspecialchars($msg['date']) ?></small><br>
             <?= nl2br(htmlspecialchars($msg['contenu'])) ?>
@@ -135,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
   });
 
-  // Afficher ou cacher le formulaire d’envoi
+  // Afficher ou cacher le formulaire d'envoi
   toggleForm.addEventListener('click', () => {
     formBloc.style.display = formBloc.style.display === 'block' ? 'none' : 'block';
   });
@@ -170,10 +220,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Si un contact est sélectionné → afficher automatiquement la messagerie
+  // Si un contact est sélectionné ou mode général → afficher automatiquement la messagerie
   const url = new URL(window.location.href);
   const contact = url.searchParams.get("contact");
-  if (contact) {
+  const mode = url.searchParams.get("mode");
+  if (contact || mode === 'general') {
     modal.style.display = 'block';
   }
 
@@ -214,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 300);
   });
 
-  // Quand l’utilisateur choisit un nom dans la liste, on met son ID dans le champ caché
+  // Quand l'utilisateur choisit un nom dans la liste, on met son ID dans le champ caché
   input.addEventListener('change', function () {
     const options = document.querySelectorAll(`#suggestions-destinataires option`);
     const match = Array.from(options).find(opt => opt.value === input.value);
