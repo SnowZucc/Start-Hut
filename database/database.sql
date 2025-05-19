@@ -188,6 +188,7 @@ VALUES (1, 19.99, 30);
 
 INSERT INTO Documents (proprietaire, projet, lien, type)
 VALUES (1, 1, 'https://i.etsystatic.com/10914225/r/il/219147/2049245914/il_1588xN.2049245914_60h3.jpg', 'image');
+INSERT INTO Documents (proprietaire, projet, lien, type)
 VALUES (2, 2, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
 
 INSERT INTO Competences (nom, domaine)
