@@ -172,9 +172,7 @@ VALUES ('Scénat', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'Je s
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
 VALUES ('Echtebez', 'Philippe', 'jean.dupont2@example.com', 'motdepassehash123', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'porteur');
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
-VALUES ('Admin', 'Admin', 'admin@admin.com', 'admin@admin.com', 'Je suis admin', 'Francais', 'admin');
-INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
-VALUES ('Alexandre', 'Louis', 'louis.alexandre@tutanota.com', 'louis.alexandre@tutanota.com', 'Je suis Louis, créateur de projets depuis 1999', 'Francais', 'porteur');
+VALUES ('Alexandre', 'Louis', 'louis.alexandre@tutanota.com', 'louis.alexandre@tutanota.com', 'Je suis Louis, créateur de projets depuis 1999', 'Francais', 'admin');
 
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
 VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 1500, 'ouvert');
