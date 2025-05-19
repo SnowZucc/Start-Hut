@@ -13,6 +13,12 @@
 
             <ul class="nav-links">
                 
+                <?php if ($user_type === 'admin'): ?>
+                    <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
+                    <li><a href="/Start-Hut/src/views/abonnements.php">Tarification</a></li>
+                    <li><a href="/Start-Hut/src/views/faq.php">FAQ</a></li>
+                    <li><a href="/Start-Hut/src/views/contact.php">Nous contacter</a></li>
+                <?php endif; ?>
 
                 <?php if ($user_type === 'porteur'): ?>
                     <li><a href="/Start-Hut/src/views/annonces.php">Annonces</a></li>
@@ -42,7 +48,9 @@
                 <?php if (!isset($_SESSION['user_id'])): ?>
                     <a href="/Start-Hut/src/views/user/connexion.php" class="signup">Se connecter</a>
                 <?php else: ?>
-                    <?php if ($user_type === 'porteur'): ?>
+                    <?php if ($user_type === 'admin'): ?>
+                        <a href="/Start-Hut/src/views/admin.php" class="signup">Panneau admin</a>
+                    <?php elseif ($user_type === 'porteur'): ?>
                         <a href="/Start-Hut/src/views/projet/espace-projet.php" class="signup">Espace projet</a>
                     <?php elseif ($user_type === 'collaborateur'): ?>
                         <a href="/Start-Hut/src/views/projet/espace-collaborateur.php" class="signup">Espace collaborateur</a>
