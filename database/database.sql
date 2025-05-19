@@ -9,7 +9,7 @@ CREATE TABLE Utilisateurs (
     mot_de_passe VARCHAR(255) NOT NULL,
     description_profil VARCHAR(255),
     langues_parlees VARCHAR(255),
-    type ENUM('porteur', 'collaborateur') NOT NULL
+    type ENUM('porteur', 'collaborateur', 'admin') NOT NULL
 );
 
 CREATE TABLE Projets (
@@ -170,7 +170,11 @@ CREATE TABLE Annonces_Sauvegardees (
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
 VALUES ('Scénat', 'Jean', 'jean.dupont@example.com', 'motdepassehash123', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'collaborateur');
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
-VALUES ('Scénat', 'Jean', 'jean.dupont2@example.com', 'motdepassehash123', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'porteur');
+VALUES ('Echtebez', 'Philippe', 'jean.dupont2@example.com', 'motdepassehash123', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'porteur');
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
+VALUES ('Admin', 'Admin', 'admin@admin.com', 'admin@admin.com', 'Je suis admin', 'Francais', 'admin');
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
+VALUES ('Alexandre', 'Louis', 'louis.alexandre@tutanota.com', 'louis.alexandre@tutanota.com', 'Je suis Louis, créateur de projets depuis 1999', 'Francais', 'porteur');
 
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
 VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 1500, 'ouvert');
@@ -186,10 +190,16 @@ VALUES (1, 'Tâche 1', 'haute', 'à faire');
 INSERT INTO Abonnements (type, prix, duree)
 VALUES (1, 19.99, 30);
 
-INSERT INTO Documents (proprietaire, projet, lien, type)
-VALUES (1, 1, 'https://i.etsystatic.com/10914225/r/il/219147/2049245914/il_1588xN.2049245914_60h3.jpg', 'image');
-INSERT INTO Documents (proprietaire, projet, lien, type)
-VALUES (2, 2, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+-- Images pour les utilisateurs
+
+INSERT INTO Documents (proprietaire, lien, type)
+VALUES (1, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+VALUES (2, 'https://i.etsystatic.com/10914225/r/il/219147/2049245914/il_1588xN.2049245914_60h3.jpg', 'image');
+
+-- Images pour les projets
+INSERT INTO Documents (projet, lien, type)
+VALUES (1, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+VALUES (2, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
 
 INSERT INTO Competences (nom, domaine)
 VALUES ('Programmation', 'Informatique');
