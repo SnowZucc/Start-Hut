@@ -1,20 +1,25 @@
 <?php
+// Afficher les erreurs pour le débogage
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Démarrer la session
 session_start();
 
 // Inclure le fichier de configuration
 require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
-// Vérification de la soumission du formulaire
+// Vérifier si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Récupérer les données du formulaire
-    $lastname = $_POST['lastname'] ?? null;
-    $firstname = $_POST['firstname'] ?? null;
+    $nom = $_POST['lastname'] ?? null;
+    $prenom = $_POST['firstname'] ?? null;
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
 
     // Vérifier que tous les champs sont remplis
-    if ($lastname && $firstname && $email && $password) {
+    if ($nom && $prenom && $email && $password) {
         // Connexion à la base de données
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -23,18 +28,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die("Erreur de connexion : " . $conn->connect_error);
         }
 
-        // Hacher le mot de passe pour la sécurité
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        // Vérifier si l'email existe déjà
+        $stmt = $conn->prepare("SELECT id FROM Utilisateurs WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
 
-        // Préparer la requête d'insertion
-        $stmt = $conn->prepare("INSERT INTO users (lastname, firstname, email, password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $lastname, $firstname, $email, $hashed_password);
-
-        // Exécuter la requête et vérifier si l'inscription est réussie
-        if ($stmt->execute()) {
-            echo "<div id='successMessage' class='confirmation'>Inscription réussie !</div>";
+        if ($stmt->num_rows > 0) {
+            echo "<div id='errorMessage' class='confirmation error'>Cet email est déjà enregistré.</div>";
         } else {
-            echo "<div id='errorMessage' class='confirmation error'>Erreur lors de l'inscription.</div>";
+            // Hacher le mot de passe
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+            // Valeurs par défaut pour les autres colonnes
+            $description_profil = "Nouvel utilisateur";
+            $langues_parlees = "Français";
+            $type = "collaborateur";
+
+            // Préparer la requête d'insertion avec les 7 colonnes
+            $stmt = $conn->prepare("INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            
+            // Lier les paramètres (7 strings)
+            $stmt->bind_param("sssssss", $nom, $prenom, $email, $hashed_password, $description_profil, $langues_parlees, $type);
+
+            // Exécuter la requête
+            if ($stmt->execute()) {
+                echo "<div id='successMessage' class='confirmation'>Inscription réussie !</div>";
+            } else {
+                echo "<div id='errorMessage' class='confirmation error'>Erreur lors de l'inscription.</div>";
+            }
         }
 
         // Fermer la requête et la connexion
@@ -45,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
