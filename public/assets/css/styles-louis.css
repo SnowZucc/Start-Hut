@@ -103,4 +103,31 @@
     margin-bottom: 40px;
     padding: 20px;
   }
+
+/* Annonces responsives sur téléphone */
+
+@media screen and (max-width: 768px) {  /* Résolution minimale pour les téléphones */
+  .grid {
+    grid-template-columns: 1fr; /* 1 annonce par ligne sur mobile */
+    gap: 30px; /* Espacement réduit */
+  }
+  
+  .grid figure {
+    max-width: 100%; /* Largeur adaptée au conteneur */
+  }
+  
+  .grid img {
+    max-width: 100%; /* Images adaptées au conteneur */
+  }
+  
+  figcaption {
+    max-width: 100%; /* Texte adapté au conteneur */
+  }
+  
+  /* Ajustement des filtres sur mobile */
+  .dropdown {
+    width: 100%;
+    max-width: 300px;
+  }
+}
                                                  /* ANNONCES */
