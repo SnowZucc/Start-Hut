@@ -152,7 +152,8 @@ $conn->close();
       <?php if (count($messages) > 0): ?>
         <?php foreach ($messages as $msg): ?>
           <!-- Affichage des messages alignés à gauche ou droite selon l'expéditeur -->
-          <div style="text-align:<?= $msg['id_expediteur'] == $user_id ? 'right' : 'left' ?>; margin:5px 0;">
+          <div class="message-prive <?= $msg['id_expediteur'] == $user_id ? 'from-me' : 'from-them' ?>">
+
             <small><?= htmlspecialchars($msg['date']) ?></small><br>
             <?= nl2br(htmlspecialchars($msg['contenu'])) ?>
           </div>
