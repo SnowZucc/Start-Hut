@@ -1,3 +1,51 @@
+<?php
+// Démarrer la session
+session_start();
+
+// Inclure le fichier de configuration
+require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
+
+// Vérification de la soumission du formulaire
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Récupérer les données du formulaire
+    $lastname = $_POST['lastname'] ?? null;
+    $firstname = $_POST['firstname'] ?? null;
+    $email = $_POST['email'] ?? null;
+    $password = $_POST['password'] ?? null;
+
+    // Vérifier que tous les champs sont remplis
+    if ($lastname && $firstname && $email && $password) {
+        // Connexion à la base de données
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+        // Vérifier la connexion
+        if ($conn->connect_error) {
+            die("Erreur de connexion : " . $conn->connect_error);
+        }
+
+        // Hacher le mot de passe pour la sécurité
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+        // Préparer la requête d'insertion
+        $stmt = $conn->prepare("INSERT INTO users (lastname, firstname, email, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $lastname, $firstname, $email, $hashed_password);
+
+        // Exécuter la requête et vérifier si l'inscription est réussie
+        if ($stmt->execute()) {
+            echo "<div id='successMessage' class='confirmation'>Inscription réussie !</div>";
+        } else {
+            echo "<div id='errorMessage' class='confirmation error'>Erreur lors de l'inscription.</div>";
+        }
+
+        // Fermer la requête et la connexion
+        $stmt->close();
+        $conn->close();
+    } else {
+        echo "<div id='errorMessage' class='confirmation error'>Veuillez remplir tous les champs.</div>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>

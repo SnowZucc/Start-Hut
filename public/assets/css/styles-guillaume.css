@@ -844,3 +844,26 @@ body.espace-projet header {
   background-color: green;
   color: white;
 }
+
+/* Style du message de confirmation */
+.confirmation {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Style du message d'erreur */
+.confirmation.error {
+    background-color: #f44336;
+}
