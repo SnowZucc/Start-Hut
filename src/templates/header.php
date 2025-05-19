@@ -50,25 +50,33 @@
                     <a href="/Start-Hut/src/views/user/profil.php" class="signup">Mon profil</a>
                     
                     <?php
+                    // Modifs au fonctionnement du header pour régler le problème de session already closed
                     // Récupération de l'image de profil
-                    require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
-                    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-                    if ($conn->connect_error) {
-                        die("Connexion échouée : " . $conn->connect_error);
-                    }
+                    // On s'assure que $conn est disponible et est la connexion principale
+                    // Ne pas redéclarer require_once pour config.php si déjà fait par le script appelant
+                    // Ne pas créer une nouvelle connexion $conn ici si elle existe déjà
                     
-                    $user_id = $_SESSION['user_id'];
-                    $sql = "SELECT d.lien FROM Documents d WHERE d.proprietaire = ? AND d.type = 'image'";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param("i", $user_id);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-                    $user_image = $result->fetch_assoc();
-                    $conn->close();
+                    $user_image_lien = '/Start-Hut/public/assets/img/APRIL.png'; // Image par défaut
+                    if (isset($conn) && $conn instanceof mysqli && !$conn->connect_error && isset($_SESSION['user_id'])) {
+                        $user_id_header = $_SESSION['user_id'];
+                        $sql_header = "SELECT d.lien FROM Documents d WHERE d.proprietaire = ? AND d.type = 'image' LIMIT 1";
+                        $stmt_header = $conn->prepare($sql_header);
+                        if ($stmt_header) {
+                            $stmt_header->bind_param("i", $user_id_header);
+                            $stmt_header->execute();
+                            $result_header = $stmt_header->get_result();
+                            if ($user_image_assoc = $result_header->fetch_assoc()) {
+                                if (!empty($user_image_assoc['lien'])) {
+                                    $user_image_lien = $user_image_assoc['lien'];
+                                }
+                            }
+                            $stmt_header->close();
+                        } // Ne pas faire $conn->close() ici finalement
+                    }
                     ?>
                     
                     <a href="/Start-Hut/src/views/user/profil.php" class="profile-image-link">
-                        <img src="<?php echo $user_image['lien'] ?? '/Start-Hut/public/assets/img/APRIL.png'; ?>" class="header-profile-pic" alt="Photo de profil">
+                        <img src="<?php echo htmlspecialchars($user_image_lien); ?>" class="header-profile-pic" alt="Photo de profil">
                     </a>
                 <?php endif; ?>
             </div>
