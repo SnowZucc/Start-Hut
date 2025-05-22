@@ -972,3 +972,56 @@ body.espace-projet header {
         max-width: 100%;
     }
 }
+
+
+/* ============================ */
+/*  Message de confirmation postuler à une annonce */
+/* ============================ */
+
+/* ✅ Message de confirmation ou alerte */
+.message-flash {
+  position: fixed;
+  top: 120px; /* juste sous le header */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 9999;
+  color: white;
+  background-color: #28a745; /* par défaut vert succès */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeOut 5s ease forwards;
+  opacity: 1;
+}
+
+/* Couleurs spécifiques */
+.message-success {
+  background-color: #28a745;
+}
+
+.message-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Animation de disparition */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/* ✅ Rouge : erreur */
+.message-error {
+  background-color: #dc3545;
+}
+
+/* ✅ Disparition automatique */
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
