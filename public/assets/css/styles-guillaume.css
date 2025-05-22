@@ -845,25 +845,130 @@ body.espace-projet header {
   color: white;
 }
 
-/* Style du message de confirmation */
+/* ============================ */
+/*  Messages de confirmation lors de l'inscription */
+/* ============================ */
 .confirmation {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  font-size: 16px;
+  color: white; /* texte blanc */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Style du message d'erreur */
+/* ✅ Message de succès (vert) */
+.confirmation.success {
+  background-color: #006400; /* vert foncé */
+}
+
+/* ✅ Message d'erreur (rouge) */
 .confirmation.error {
-    background-color: #f44336;
+  background-color: #b00020; /* rouge vif foncé */
+}
+
+/* ============================ */
+/*  Rendre responsive la page ressource */
+/* ============================ */
+
+/* Mise en page principale */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1 1 200px;
+    min-width: 200px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Zone principale */
+.content-area {
+    flex: 3 1 600px;
+}
+
+/* Cartes */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1 1 300px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.btn-details {
+    margin-top: auto;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-details:hover {
+    background-color: darkgreen;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
 }
