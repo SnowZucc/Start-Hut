@@ -1025,3 +1025,36 @@ body.espace-projet header {
   80%  { opacity: 1; }
   100% { opacity: 0; display: none; }
 }
+
+/* ==================================== */
+/*  Mes canidatures */
+/* ==================================== */
+
+.mes-candidatures-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.mes-candidatures-container h2 {
+    text-align: center;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.candidature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.candidature-item {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
