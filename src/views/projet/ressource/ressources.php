@@ -28,7 +28,7 @@ $type = $_GET['type'] ?? 'guides'; // Détermine le type de contenu à afficher 
     <li><a href="../projet.php" class="<?= basename($_SERVER['PHP_SELF']) == 'projet.php' ? 'active' : '' ?>">Projet</a></li>
     <li><a href="../ressource/ressources.php" class="<?= basename($_SERVER['PHP_SELF']) == 'ressources.php' ? 'active' : '' ?>">Ressources</a></li>
     </ul>
-</nav>
+    </nav>
 
     <div class="main-container">
         <!-- Sidebar -->
