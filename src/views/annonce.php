@@ -89,7 +89,7 @@
     <form id="chatForm">
         <input type="hidden" name="utilisateur_id" id="chatUserId">
         <textarea name="message" id="chatMessageInput" rows="3" style="width:80%; border-radius:10px;margin-top:20px" placeholder=" Votre message..." required></textarea>
-        <button type="submit" style="color:clack; background:green">Envoyer</button>
+        <button type="submit" style="color:black; background:#2ecc71">Envoyer</button>
     </form>
     </div>
     <script>
@@ -117,24 +117,56 @@
     }
 
     function loadChatMessages(utilisateurId) {
-        fetch('projet/chat_api.php?utilisateur_id=' + utilisateurId)
-            .then(response => response.json())
-            .then(data => {
-                const chatBox = document.getElementById('chatMessages');
-                chatBox.innerHTML = '';
-                if (data.length === 0) {
-                    chatBox.innerHTML = '<p>Aucun message pour l’instant.</p>';
-                } else {
-                    data.forEach(msg => {
-                        const msgElem = document.createElement('div');
-                        msgElem.style.marginBottom = '10px';
-                        msgElem.innerHTML = `<strong>${msg.prenom} ${msg.nom}</strong> <small>${msg.date}</small><br>${msg.contenu}<hr>`;
-                        chatBox.appendChild(msgElem);
-                    });
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                }
-            });
-    }
+    fetch('projet/chat_api.php?utilisateur_id=' + utilisateurId)
+        .then(response => response.json())
+        .then(data => {
+            const chatBox = document.getElementById('chatMessages');
+            chatBox.innerHTML = '';
+
+            const currentUserId = <?= json_encode($_SESSION['user_id']) ?>;
+
+            if (data.length === 0) {
+                chatBox.innerHTML = '<p>Aucun message pour l’instant.</p>';
+            } else {
+                data.forEach(msg => {
+                    const isMine = (parseInt(msg.id_expediteur) === parseInt(currentUserId));
+
+                    const msgElem = document.createElement('div');
+                    msgElem.style.marginBottom = '10px';
+                    msgElem.style.padding = '8px 12px';
+                    msgElem.style.borderRadius = '12px';
+                    msgElem.style.maxWidth = '70%';
+                    msgElem.style.wordWrap = 'break-word';
+
+                    if (isMine) {
+                        // Style pour l’expéditeur (toi)
+                        msgElem.style.backgroundColor = '#2ecc71';
+                        msgElem.style.color = 'white';
+                        msgElem.style.alignSelf = 'flex-end';
+                        msgElem.innerHTML = `
+                            <strong style="color:#d4f4df;">${msg.prenom} ${msg.nom}</strong>
+                            <small style="color:#d4f4df;">${msg.date}</small>
+                            <div>${msg.contenu}</div>
+                        `;
+                    } else {
+                        // Style pour l’autre
+                        msgElem.style.backgroundColor = '#ecf0f1';
+                        msgElem.style.color = '#2c3e50';
+                        msgElem.style.alignSelf = 'flex-start';
+                        msgElem.innerHTML = `
+                            <strong>${msg.prenom} ${msg.nom}</strong>
+                            <small>${msg.date}</small>
+                            <div>${msg.contenu}</div>
+                        `;
+                    }
+
+                    chatBox.appendChild(msgElem);
+                });
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        });
+}
+
 
     document.getElementById('chatForm').addEventListener('submit', function(e) {
         e.preventDefault();
