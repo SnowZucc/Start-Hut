@@ -96,13 +96,6 @@
 
                 <?php if ($user_type === 'collaborateur'): ?>
                 <div class="actionsAnnonce">
-                    <?php if ($from_hutbox): ?>
-                    <!-- Bouton Retour -->
-                        <a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox" class="btnAction btnSecondaire" style="margin-left: 10px;">Retour</a>
-                    <?php endif; ?>
-                    <?php if (!$from_hutbox): ?>
-                        <a href="/Start-Hut/src/views/annonces.php" class="btnAction btnSecondaire" style="margin-left: 10px;">Retour</a>
-                    <?php endif; ?>
                     <form method="POST" action="postuler_annonce.php">
                         <input type="hidden" name="id_projet" value="<?= $annonce['id'] ?>">
                         <?php if ($from_hutbox): ?>
@@ -128,8 +121,28 @@
                     </form>
                     <?php endif; ?>
                 </div>
-                <?php endif; ?>
+            <?php endif; ?>
+            <?php
+                $from_page = $_GET['from'] ?? 'annonces';  // valeur par défaut : annonces
 
+                // Par défaut, retour = annonces.php
+                $return_link = '/Start-Hut/src/views/annonces.php';
+
+                // Si on vient d'index, on retourne vers index.php
+                if ($from_page === 'index') {
+                    $return_link = '/Start-Hut/public/index.php';
+                }
+
+                // Si collaborateur et depuis hutbox → espace collaborateur
+                if ($user_type === 'collaborateur' && $from_page === 'hutbox') {
+                    $return_link = '/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox';
+                }
+                ?>
+                <div style="margin: 20px;">
+                    <a href="<?= $return_link ?>" class="btnAction btnSecondaire">← Retour</a>
+                </div>
+
+        
 
 
                 <!-- Boutons en bas -->

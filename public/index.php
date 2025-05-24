@@ -112,7 +112,7 @@ ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
                             </div>
                             <h3><?= htmlspecialchars($annonce['annonce_titre']) ?></h3>
                             <p><?= htmlspecialchars($annonce['annonce_description']) ?></p>
-                            <a href="/Start-Hut/src/views/projet/details.php?id=<?= $annonce['id'] ?>" class="btn-details">Voir détails</a>
+                            <a href="/Start-Hut/src/views/annonce.php?id=<?= $annonce['id'] ?>&from=index" class="btn-details">Voir détails</a>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
