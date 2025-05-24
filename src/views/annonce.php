@@ -100,6 +100,9 @@
                     <!-- Bouton Retour -->
                         <a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox" class="btnAction btnSecondaire" style="margin-left: 10px;">Retour</a>
                     <?php endif; ?>
+                    <?php if (!$from_hutbox): ?>
+                        <a href="/Start-Hut/src/views/annonces.php" class="btnAction btnSecondaire" style="margin-left: 10px;">Retour</a>
+                    <?php endif; ?>
                     <form method="POST" action="postuler_annonce.php">
                         <input type="hidden" name="id_projet" value="<?= $annonce['id'] ?>">
                         <?php if ($from_hutbox): ?>
@@ -148,24 +151,34 @@
         <?php endif; ?>
 
         <script>
-            const msg = document.getElementById("msg-sauvegarde");
-            if (msg) {
+        // Cible tous les messages affichés
+        ['msg-envoye', 'msg-postule', 'msg-sauvegarde'].forEach(function(id) {
+            const msgElement = document.getElementById(id);
+            if (msgElement) {
                 setTimeout(() => {
-                    msg.style.transition = "opacity 0.5s";
-                    msg.style.opacity = 0;
-                    setTimeout(() => msg.remove(), 500); // suppression totale après fondu
-                }, 3000); // disparition après 3 secondes
+                    msgElement.style.transition = "opacity 0.5s";
+                    msgElement.style.opacity = 0;
+                    setTimeout(() => msgElement.remove(), 500); // suppression après fondu
+                }, 4000); // disparition après 4 secondes
             }
+        });
         </script>
         
         <script>
         // Sauvegarde la position de scroll avant de soumettre le formulaire
-        const form = document.querySelector("form[action='sauvegarder_annonces.php']");
-        if (form) {
-            form.addEventListener("submit", function () {
-            sessionStorage.setItem("scrollTop", window.scrollY);
-            });
-        }
+        const formsToTrack = [
+            "form[action='sauvegarder_annonces.php']",
+            "form[action='postuler_annonce.php']"
+        ];
+
+        formsToTrack.forEach(selector => {
+            const form = document.querySelector(selector);
+            if (form) {
+                form.addEventListener("submit", function () {
+                    sessionStorage.setItem("scrollTop", window.scrollY);
+                });
+            }
+        });
 
         // Après rechargement, restaure la position
         window.addEventListener("load", function () {
