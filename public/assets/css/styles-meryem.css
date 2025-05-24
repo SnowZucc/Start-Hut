@@ -851,7 +851,7 @@
                                                 /* ==================================== */                                                 
 
 .containerabonnementchoisir {
-  display: flex;
+ display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 1000px;
@@ -870,7 +870,7 @@
 }
 
 .containerabonnementchoisir h1 {
-  font-size: 19px;
+    font-size: 19px;
   margin-bottom: 30px;
   margin-top: 0px;
   text-align: center;
@@ -888,12 +888,12 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 }
 
 .containerabonnementchoisir .plan {
-  background: #f7fff8;
+   background: #f7fff8;
   border-radius: 10px;
-  border: 2px solid rgb(98, 179, 98);
-  padding: 25px;
-  height: 400px;
-  width: 30%;
+  border: 2px solid rgb(69, 128, 69);
+  padding: 45px;
+  height: 500px;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1018,7 +1018,28 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
   }
 }
 
+
+@media screen and (max-width: 992px) {
+  .containerabonnementchoisir .plans {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .containerabonnementchoisir .plan {
+    width: 90%;
+    height: auto;
+  }
+
+  .containerabonnementchoisir {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+
 /* rendre responsive tarification */
+
                                                 
                                                 /* ==================================== */
                                                    /* consulter un ABONNEMENT */   
@@ -1141,7 +1162,7 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 }
 .highlight2 {
   font-weight: bold;
-  color: red; /* Couleur verte pour le highlight */
+  color: red; 
 }
 
 .form-group input[type="number"] {
@@ -1188,6 +1209,53 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
   outline: none;
 }
 
+/* Formulaire responsive*/
+
+@media (max-width: 768px) {
+  .containerposter {
+    padding: 20px;
+    margin: 10px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .form-group,
+  .form-group2 {
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .form-group2 input,
+  .form-group2 select,
+  .form-group2 textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .form-group input[type="number"],
+  .form-group2 input[type="number"] {
+    max-width: 100%;
+  }
+
+  .submit-btn {
+    font-size: 18px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .progress-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .progress-step, .progress-separator {
+    font-size: 14px;
+  }
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -1204,7 +1272,7 @@ flex-grow: 1; /* Cela permet de pousser le bouton vers le bas */
 /* formulaire */
 
 
-
+/* choix abonnement */
 .texte-choix-abonnement  {
   font-size: 18px;
   margin-bottom: 30px;
@@ -1301,7 +1369,6 @@ background-color: #218838;
   /* Boutons suivant et publier abbonement pour poster une annonce */  
 
 .back-btn2 {
-  display: inline-block;
   padding: 8px 16px;
   font-size: 14px;
   color: #000;
@@ -1312,8 +1379,8 @@ background-color: #218838;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  
-  margin-right: 910px;
+  margin-right: 820px;
+  margin-top: -70.5px;
   }
   
   .back-btn2:hover {
@@ -1322,7 +1389,7 @@ background-color: #218838;
   }
   
   .next-btn2 {
-  display: inline-block;
+  
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -1332,31 +1399,57 @@ background-color: #218838;
   text-align: center;
   cursor: pointer; 
   transition: background-color 0.3s ease;
-  margin-left: 889px;
+  margin-left: 800px;
+  margin-top: -48.5px;
   }
   
   .next-btn2:hover {
   background-color: #218838;
   }
   
+
 .navigation-buttons {
 display: flex;
 flex-direction: column;
 align-items: center;
 gap: 10px;
 }
-                                                            /* Boutons suivant et publier pour poster une annonce */  
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .next-btn,
+  .back-btn,
+  .next-btn2,
+  .back-btn2 {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+  }
+
+  .back-btn2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .next-btn2 {
+    margin-top: 10px;
+  }
+}
+/* Boutons suivant et publier pour poster une annonce */  
                             
 
-                                                /* ==================================== */
-                                                  /* POSTER UNE ANNONCE */ 
-                                                  /* ==================================== */                                                                                         
+                                /* ==================================== */
+                                  /* POSTER UNE ANNONCE */ 
+                                  /* ==================================== */                                                                                         
   
 
 
-                                              /* ==================================== */
-                                              /*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
-                                              /* ==================================== */
+                                  /* ==================================== */
+                                  /*  BARRE DE NAVIGATION SECONDAIRE DE L'ESPACE PROJET*/
+                                  /* ==================================== */
 
 /* Barre des menus secondaire */
 .sub-navbar {
