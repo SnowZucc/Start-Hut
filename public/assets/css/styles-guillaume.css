@@ -844,3 +844,6 @@ body.espace-projet header {
   background-color: green;
   color: white;
 }
+#chatHeader {
+    cursor: move;
+}
