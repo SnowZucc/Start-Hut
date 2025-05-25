@@ -285,40 +285,6 @@ a {
   .btnConnexion:hover {
     background-color: #004d00;
   }
-/* ==================================== */
-/*  BARRE DE NAVIGATION SECONDAIRE */
-/* ==================================== */
-
-/* Barre des menus secondaire */
-.sub-navbar {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    background: white;
-    border-bottom: 2px solid #ddd;
-}
-
-.sub-navbar ul {
-    display: flex;
-    list-style: none;
-    gap: 60px;
-}
-
-.sub-navbar li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.sub-navbar li a:hover {
-    color: green;
-}
-
-.sub-navbar li a.active {
-    color: green;
-    border-bottom: 3px solid green;
-}
 
 /* Style des annonces */
 .annonce-container {
@@ -434,6 +400,7 @@ body.espace-projet header {
 /* ==================================== */
 
 /* Styles pour le menu de navigation */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -846,4 +813,115 @@ body.espace-projet header {
 }
 #chatHeader {
     cursor: move;
+
+/* ============================ */
+/*  Messages de confirmation lors de l'inscription */
+/* ============================ */
+.confirmation {
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  font-size: 16px;
+  color: white; /* texte blanc */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Message de succès (vert) */
+.confirmation.success {
+  background-color: #006400; /* vert foncé */
+}
+
+/* ✅ Message d'erreur (rouge) */
+.confirmation.error {
+  background-color: #b00020; /* rouge vif foncé */
+}
+
+
+/* ============================ */
+/*  Message de confirmation postuler à une annonce */
+/* ============================ */
+
+/* ✅ Message de confirmation ou alerte */
+.message-flash {
+  position: fixed;
+  top: 120px; /* juste sous le header */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 9999;
+  color: white;
+  background-color: #28a745; /* par défaut vert succès */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeOut 5s ease forwards;
+  opacity: 1;
+}
+
+/* Couleurs spécifiques */
+.message-success {
+  background-color: #28a745;
+}
+
+.message-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Animation de disparition */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+/* ✅ Rouge : erreur */
+.message-error {
+  background-color: #dc3545;
+}
+
+/* ✅ Disparition automatique */
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+/* ==================================== */
+/*  Mes canidatures */
+/* ==================================== */
+
+.mes-candidatures-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.mes-candidatures-container h2 {
+    text-align: center;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.candidature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.candidature-item {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
 }

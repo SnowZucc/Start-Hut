@@ -5,19 +5,48 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
+         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
+         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-guillaume.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
         <title>Annonce - Start-Hut</title>
         <?php include('../templates/head.php'); ?>
        
     </head>
     <body>
-        <?php
+
+        <?php        
         // // Affichage des erreurs PHP
         // ini_set('display_errors', 1);
-        // error_reporting(E_ALL);
+        // error_reporting(E_ALL);       
+                                                                                   
+        include('../templates/header.php'); 
+        
+        // Message flash de confirmation ou d'erreur
 
-        include('../templates/header.php');
+        if (isset($_GET['msg'])) {
+            $class = '';
+            $text = '';
+
+            if ($_GET['msg'] === 'success') {
+                $class = 'message-success';
+                $text = 'Votre candidature a bien été envoyée.';
+            } elseif ($_GET['msg'] === 'already_postulated') {
+                $class = 'message-warning';
+                $text = 'Vous avez déjà postulé à ce projet.';
+            } elseif ($_GET['msg'] === 'saved') {
+                $class = 'message-success';
+                $text = 'Annonce sauvegardée avec succès.';
+            } elseif ($_GET['msg'] === 'already') {
+                $class = 'message-warning';
+                $text = 'Annonce déjà sauvegardée.';
+            }
+
+            if ($class && $text) {
+                echo "<div class='message-flash $class'>$text</div>";
+            }
+        }
+
+        // Inclusion du header contenant la navigation
         require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
 
         $bdd = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
@@ -303,17 +332,15 @@ function dragElement(elmnt) {
 
         </div>
         <?php if (isset($_GET['msg']) && $_GET['msg'] === 'success'): ?>
-            <p id="msg-envoye" style="color: green; font-weight: bold;">Votre candidature a bien été envoyée.</p>
+            <div class="message-flash message-success">Votre candidature a bien été envoyée.</div>
         <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'already_postulated'): ?>
-            <p id="msg-postule" style="color: orange; font-weight: bold;">Vous avez déjà postulé à ce projet.</p>
-        <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'message_sent'): ?>
-            <p id="msg-envoye" style="color: green; font-weight: bold;">Votre message a bien été envoyé.</p>
+            <div class="message-flash message-warning">Vous avez déjà postulé à ce projet.</div>
         <?php endif; ?>
 
         <?php if (isset($_GET['msg']) && in_array($_GET['msg'], ['saved', 'already'])): ?>
-            <p id="msg-sauvegarde" style="color: <?= $_GET['msg'] === 'saved' ? 'green' : 'orange' ?>; font-weight: bold;">
+            <div class="message-flash <?= $_GET['msg'] === 'saved' ? 'message-success' : 'message-warning' ?>">
                 <?= $_GET['msg'] === 'saved' ? 'Annonce sauvegardée avec succès.' : 'Annonce déjà sauvegardée.' ?>
-            </p>
+            </div>
         <?php endif; ?>
         <script>
         // Cible tous les messages affichés
@@ -328,6 +355,7 @@ function dragElement(elmnt) {
             }
         });
         </script>
+
 
         <script>
         // Sauvegarde la position de scroll avant de soumettre le formulaire
@@ -373,5 +401,21 @@ function dragElement(elmnt) {
 
         <?php include('../templates/footer.php'); ?>
 
+
+
+        <?php include('../templates/footer.php'); ?> 
+
+        <script>
+            const msgEnvoye = document.getElementById("msg-envoye") || document.getElementById("msg-postule");
+            if (msgEnvoye) {
+                setTimeout(() => {
+                    msgEnvoye.style.transition = "opacity 0.5s";
+                    msgEnvoye.style.opacity = 0;
+                    setTimeout(() => msgEnvoye.remove(), 500);
+                }, 3000);
+            }
+        </script>
+
+  
     </body>
 </html>
