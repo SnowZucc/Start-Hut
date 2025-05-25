@@ -69,7 +69,7 @@ if($missing_data) {
     <body>
         <?php include('../../../templates/header.php'); ?>             <!-- Rajoute le header par la magie de PHP  -->
         
-             <div class="content">                       <!-- on met tout dans cette classe pour que les info soient centrées -->
+        <div class="content">                       <!-- on met tout dans cette classe pour que les info soient centrées -->
      
 
                 <!-- Barre de progression -->
@@ -143,8 +143,10 @@ if($missing_data) {
                     <a href="posterannonce.php" class="back-btn2">Retour</a>
                     <button type="submit" class="next-btn2">Continuer</button>
     </div>
-            </form>
+    </form>
             
+            
+        
             </div>
             <?php include('../../../templates/footer.php'); ?>    
     </body>

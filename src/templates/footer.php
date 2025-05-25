@@ -7,6 +7,7 @@
 </style>
 
 <footer>
+<?php include('messagerie.php'); ?>
     <div class="footer-container">
 
 
@@ -136,5 +137,4 @@
     © 2025 StartHut - Tous droits réservés.
 </div>
 
-  
 </footer>
