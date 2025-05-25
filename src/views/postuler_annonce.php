@@ -10,10 +10,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_type'] !== 'collaborateur') 
 
 // Récupération des données
 $id_utilisateur = $_SESSION['user_id'];
-$id_projet = $_POST['id_projet'] ?? null;
+$id_projet = isset($_POST['id_projet']) ? (int)$_POST['id_projet'] : 0;
 $from = $_POST['from'] ?? null;
 
-if (!$id_projet) {
+if ($id_projet <= 0) {
     echo "Projet non spécifié.";
     exit;
 }

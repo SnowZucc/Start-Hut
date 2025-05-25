@@ -103,17 +103,18 @@
 
       <div class="grid">
         <?php
-        while($row = $result->fetch_assoc()) {
-            echo "<a href='annonce.php?id=" . $row["id"] . "' class='nav-links'>";
-            echo "<figure>";
-            echo "<img src='" . ($row["lien"] ?? 'https://vection-cms-prod.s3.eu-central-1.amazonaws.com/Adobe_Stock_525614074_8ab9bd18e3.jpeg') . "'>";
-            echo "<figcaption>";
-            echo "<h3>" . htmlspecialchars($row["annonce_titre"]) . "</h3>";
-            echo "<p>" . htmlspecialchars($row["annonce_description"]) . "</p>";
-            echo "</figcaption>";
-            echo "</figure>";
-            echo "</a>";
-        }
+        // Afficher les annonces récupérées par le PHP en haut dans une boucle
+            while($row = $result->fetch_assoc()) {
+                echo "<a href='annonce.php?id=" . $row["id"] . "&from=annonces' class='nav-links'>";
+                echo "<figure>";
+                echo "<img src='" . ($row["lien"] ?? 'https://vection-cms-prod.s3.eu-central-1.amazonaws.com/Adobe_Stock_525614074_8ab9bd18e3.jpeg') . "'>"; // Cherche l'image depuis le lien dans la db dans documents, sinon image par défaut
+                echo "<figcaption>";
+                echo "<h3>" . htmlspecialchars($row["annonce_titre"]) . "</h3>";
+                echo "<p>" . htmlspecialchars($row["annonce_description"]) . "</p>";
+                echo "</figcaption>";
+                echo "</figure>";
+                echo "</a>";
+            }
         $conn->close();
         ?>
       </div>

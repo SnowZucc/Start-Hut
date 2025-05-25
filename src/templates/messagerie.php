@@ -81,7 +81,7 @@ $conn->close();
 <a id="open-message-modal" class="message-floating-btn">💬</a>
 <!-- Fenêtre modale cachée par défaut -->
 <div id="messagerie-modal" style="display: none;">
-
+<p style="text-align: center; font-size: 18px; margin: 10px 0;">Start-Chat</p>
   <!-- Bouton pour afficher/masquer le formulaire d'envoi -->
   <div id="new-message-btn">➕ nouveau message</div>
 
