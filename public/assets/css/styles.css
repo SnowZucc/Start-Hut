@@ -58,7 +58,6 @@ body {
   gap: 10px;
   color: black;
 
-
 }
 .auth-buttons .login {
   text-decoration: none;
@@ -71,100 +70,131 @@ body {
   color: green;
   padding: 10px;
 }
-
-.header-profile-pic {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile-image-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 /* Navbar */
 
-/* Navbar Mobile */
-/* Navbar Mobile */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+/* Navbar responsive pour les tablettes et mobiles */
+@media (max-width: 1024px) {
 
-@media (max-width: 768px) {
   .navbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 10px 20px; /* Réduit le padding sur les petits écrans */
+    gap: 30px; /* Réduit l'espace entre les éléments */
   }
 
-  .hamburger {
-    display: block;
-    margin-left: auto;
-  }
-
-  .nav-links,
-  .auth-buttons {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    padding: 10px 0;
-  }
-
-  .nav-links.show,
-  .auth-buttons.show {
+  .nav-links {
     display: flex;
+    flex-direction: column; /* Empile les liens */
+    gap: 10px;
+    align-items: flex-start; /* Aligne les liens à gauche */
   }
 
   .nav-links li {
-    width: 100%;
-    padding: 10px;
+    padding: 5px 0; /* Ajoute un peu d'espace entre les liens */
   }
 
-  .auth-buttons a {
-    padding: 10px 20px;
+  .auth-buttons {
+    flex-direction: column; /* Empile les boutons */
+    gap: 8px; /* Moins d'espace entre les boutons */
+  }
+
+  .auth-buttons .signup {
+    padding: 8px 16px; /* Ajuste la taille des boutons pour les petits écrans */
   }
 }
 
-/* Navbar Mobile */
+/* Navbar responsive pour les très petits écrans (mobiles) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px; /* Plus d'espace entre les éléments */
+  }
 
-/* Barre de navigation active */
+  .nav-links {
+    gap: 8px;
+    font-size: 14px; /* Réduit la taille des liens */
+  }
+
+  .auth-buttons {
+    gap: 6px;
+  }
+
+  .header-profile-pic {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ==================================== */
+/*  BARRE DE NAVIGATION SECONDAIRE */
+/* ==================================== */
+
+/* Barre des menus secondaire */
 .sub-navbar {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
-  background: white;
-  border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 10px 0;
+    background: white;
+    border-bottom: 2px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .sub-navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 60px;
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+/* ✅ Responsive pour petits écrans */
+@media (max-width: 600px) {
+    .sub-navbar ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sub-navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-navbar li a {
+        width: 100%;
+        padding: 8px 0;
+    }
+}
+
+/* Liens de navigation */
 .sub-navbar li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    text-align: center;
 }
 
 .sub-navbar li a:hover {
-  color: green;
+    color: green;
 }
 
 .sub-navbar li a.active {
-  color: green;
-  border-bottom: 3px solid green;
+    color: green;
+    border-bottom: 3px solid green;
 }
-  
+
+/* 🔒 Verrouille l'overflow global */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+
 
 /* Contenu de la page (centré) */
 .content {
@@ -506,125 +536,3 @@ header {
   background-color: white !important;
   color: black !important;
 }
-
-
-
-                                               /* ==================================== */
-                                              /*  MESSAGERIE */
-                                              /* ==================================== */  
-#messagerie-modal {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 270px;
-  background: #f5f5f5;
-  border-left: 1px solid #ccc;
-  border-radius: 8px 0 0 8px;
-  padding: 10px;
-  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
-  z-index: 9999;
-  font-family: Arial, sans-serif;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.message-prive {
-  margin: 5px 0;
-  max-width: 80%;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background-color: #f0f0f0;
-}
-
-.message-prive.from-me {
-  text-align: right;
-  background-color: #d1f0d1;
-}
-
-.message-prive.from-them {
-  text-align: left;
-  background-color: #ffffff;
-}
-
-
-.contact-card {
-  background-color: #c8e6c9;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.contact-card:hover {
-  background-color: #a5d6a7;
-}
-#messagerie-modal,
-#messagerie-modal * {
-  color: black !important;
-}
-
-.contact-card i {
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-.contact-name {
-  font-size: 14px;
-  font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  flex: 1;
-}
-
-.active-contact {
-  background-color: #81c784 !important;
-  border: 2px solid #388e3c;
-}
-
-#new-message-btn {
-  background-color: #dcdcdc;
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-#new-message-form {
-  display: none;
-  margin-bottom: 15px;
-}
-
-#new-message-form input,
-#new-message-form textarea {
-  width: 100%;
-  margin-bottom: 5px;
-  padding: 6px;
-}
-.message-floating-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  z-index: 9999;
-}
-
-                                                  /* ==================================== */
-                                              /*  MESSAGERIE */
-                                              /* ==================================== */  
