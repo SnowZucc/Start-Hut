@@ -49,6 +49,8 @@ $user_type = $_SESSION['user_type'] ?? null;
       <a href="/Start-Hut/src/views/projet/espace-projet.php" class="signup">Espace projet</a>
     <?php elseif ($user_type === 'collaborateur'): ?>
       <a href="/Start-Hut/src/views/projet/espace-collaborateur.php" class="signup">Espace collaborateur</a>
+    <?php elseif ($user_type === 'admin'): ?>
+      <a href="/Start-Hut/src/views/admin.php" class="signup">Panel Admin</a>
     <?php endif; ?>
     <a href="/Start-Hut/src/views/user/profil.php" class="signup">Mon profil</a>
 
