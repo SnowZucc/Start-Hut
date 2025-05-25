@@ -1,15 +1,4 @@
-/* ===================== RESET ET BASE ===================== */
-* {
-    box-sizing: border-box;
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.5;
-    scroll-behavior: smooth;
-}
+
 /* ===================== VARIABLES CSS ===================== */
 :root {
     --primary-color: #28a745;

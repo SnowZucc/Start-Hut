@@ -40,6 +40,7 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hutbox – Start-Hut</title>
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-khaleb.css">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
 </head>
 <body>
     <div class="content">   

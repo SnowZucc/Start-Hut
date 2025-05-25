@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Mon Profil</title>
-    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-quentin.css">
+    <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
     <?php include('../../templates/head.php'); ?>
 </head>
 <body>

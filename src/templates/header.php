@@ -84,5 +84,3 @@ $user_type = $_SESSION['user_type'] ?? null;
     document.querySelector('.auth-buttons').classList.toggle('show');
   }
 </script>
-
-
