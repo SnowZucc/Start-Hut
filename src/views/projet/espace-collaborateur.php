@@ -19,8 +19,8 @@ $page = $_GET['view'] ?? 'historique';
 <nav class="sub-navbar">
     <ul>
         <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=historique" class="<?= $page == 'historique' ? 'active' : '' ?>">Mes candidatures</a></li>
-    <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=dashbord" class="<?= $page == 'dashbord' ? 'active' : '' ?>">Dashbord</a></li>
-    <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox" class="<?= $page == 'Hutbox' ? 'active' : '' ?>">Hutbox</a></li>
+        <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=dashbord" class="<?= $page == 'dashbord' ? 'active' : '' ?>">Dashbord</a></li>
+        <li><a href="/Start-Hut/src/views/projet/espace-collaborateur.php?view=Hutbox" class="<?= $page == 'Hutbox' ? 'active' : '' ?>">Hutbox</a></li>
 
     </ul>
 </nav>

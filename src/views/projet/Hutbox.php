@@ -47,7 +47,7 @@ $result = $stmt->get_result();
         <div class="grid">
             <?php
             while($row = $result->fetch_assoc()) {
-                echo "<a href='/Start-Hut/src/views/annonce.php?id=" . $row["id"] . "&from=hutbox' class='nav-links'>";
+                echo "<a href='/Start-Hut/src/views/annonce.php?id=" . $row['id'] . "&from=hutbox' class='nav-links'>";
                 echo "<figure>";
                 echo "<img src='" . ($row["lien"] ?? 'https://vection-cms-prod.s3.eu-central-1.amazonaws.com/Adobe_Stock_525614074_8ab9bd18e3.jpeg') . "'>";
                 echo "<figcaption>";

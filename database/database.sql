@@ -216,3 +216,66 @@ VALUES (1, 'Général', NULL, '2023-10-01 10:00:00', 'Contenu du message du foru
 
 INSERT INTO Messages (id_expediteur, id_destinataire, contenu, date)
 VALUES (1, 2, 'Contenu du message privé', '2023-10-01 10:00:00');
+
+INSERT INTO Projets (
+    createur, nom, taches_effectuees, principe_du_projet,
+    definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence,
+    annonce_date_creation, annonce_titre, annonce_description,
+    annonce_competences_recherchees, annonce_categorie,
+    annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat
+) VALUES
+-- Projet 1 : CleanDrop
+(1, 'CleanDrop', 0, 'Développement d’un boîtier connecté pour économiser l’eau à chaque douche.',
+ 'Marché des objets connectés éco-responsables.',
+ 'De plus en plus de foyers souhaitent contrôler leur consommation d’eau.',
+ 'Peu de solutions intelligentes avec retour d\'information en temps réel.',
+ '2025-05-01 09:30:00', 'Développeur embarqué pour CleanDrop',
+ 'Rejoins une équipe motivée pour créer une solution innovante de gestion de l’eau !',
+ 'developpeur', 'technologies', 2, 0, 'ouvert'),
+
+-- Projet 2 : BookLoop
+(2, 'BookLoop', 1, 'Application de troc de livres entre particuliers.',
+ 'Marché de l’économie circulaire et du livre d’occasion.',
+ 'Les étudiants et lecteurs réguliers cherchent des solutions économiques.',
+ 'Aucun acteur dominant le marché francophone.',
+ '2025-05-02 15:00:00', 'Designer pour une app mobile de troc de livres',
+ 'Crée avec nous une interface ludique et intuitive pour les amoureux de la lecture.',
+ 'designer', 'education', 1, 100, 'ouvert'),
+
+-- Projet 3 : FoodSense
+(3, 'FoodSense', 0, 'Application de détection des allergènes dans les aliments à partir d\'une simple photo.',
+ 'Marché des applications santé et alimentation.',
+ 'Les personnes allergiques veulent identifier rapidement les risques.',
+ 'Des apps existent, mais peu fiables ou trop lentes.',
+ '2025-05-04 11:45:00', 'Rejoins FoodSense : IA et santé au menu !',
+ 'Tu es passionné(e) d’IA et santé ? Viens créer une app qui sauve des vies !',
+ 'developpeur', 'technologies', 3, 200, 'ouvert'),
+
+-- Projet 4 : YouniFeed
+(4, 'YouniFeed', 2, 'Plateforme collaborative pour que les étudiants partagent leurs bons plans repas et recettes économiques.',
+ 'Ciblage des étudiants et jeunes actifs.',
+ 'Forte demande pour cuisiner pas cher et bien manger.',
+ 'Pas de plateforme francophone orientée “communauté étudiante”.',
+ '2025-05-05 14:15:00', 'Community manager pour startup étudiante',
+ 'Aide-nous à animer une communauté jeune, fun et engagée !',
+ 'communication', 'autre', 2, 0, 'ouvert'),
+
+-- Projet 5 : SafeSteps
+(3, 'SafeSteps', 1, 'Semelles intelligentes pour seniors, détectant les chutes et alertant les proches.',
+ 'Silver Economy en plein essor.',
+ 'Les familles veulent des dispositifs discrets et fiables.',
+ 'Peu de solutions non-invasives.',
+ '2025-05-06 08:30:00', 'Développeur embarqué ou hardware pour SafeSteps',
+ 'Tu veux allier tech et impact social ? Ce projet est pour toi !',
+ 'developpeur', 'technologies', 2, 150, 'ouvert'),
+
+-- Projet 6 : LinguaLoop
+(4, 'LinguaLoop', 4, 'Appli mobile de pratique des langues via échange audio anonyme entre natifs.',
+ 'Marché des apps linguistiques en croissance constante.',
+ 'Beaucoup cherchent à pratiquer sans stress ou jugement.',
+ 'Les apps comme Duolingo ne proposent pas d’échanges vocaux anonymes.',
+ '2025-05-07 17:00:00', 'Co-fondateur marketing pour app linguistique',
+ 'On a la vision tech, on veut booster la croissance ! Tu es partant ?',
+ 'marketing', 'education', 1, 0, 'ouvert');
+
+ INSERT INTO documents (projet,lien,type) VALUES (18,"https://media.istockphoto.com/id/1408371424/fr/photo/application-mobile-pour-suivre-les-calories-consomm%C3%A9es.webp?s=2048x2048&w=is&k=20&c=aRVpR24AWbs5ucMu8LRLOMIUQZBMyzCB8_ZWOtxzE70=",'image'); 
