@@ -1,149 +1,210 @@
+/* ===================== RESET ET BASE ===================== */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+/* ===================== VARIABLES CSS ===================== */
+:root {
+    --primary-color: #28a745;
+    --primary-hover: #218838;
+    --primary-green: #1e7a1e;
+    --border-color: #ddd;
+    --bg-light: #f9f9f9;
+    --text-color: #333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    /* Tailles responsives */
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --input-height: 50px;
+    --button-height: 50px;
+    --profile-pic-size: 180px;
+    --padding-base: 15px;
+    --gap-base: 30px;
+}
 /* ===================== STYLES GÉNÉRAUX ===================== */
 .profile-section {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 40px;
-    flex-wrap: wrap;
+    background-color: #ffffff;
+    border: 3px solid var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 20px;
+    padding: var(--gap-base);
+    width: calc(100% - 40px);
+    gap: var(--gap-base);
+    min-height: calc(100vh - 60px);
 }
-
 .profile-container {
+    flex: 0 0 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 220px;
 }
-
 .profile-pic {
-    width: 180px;
-    height: 180px;
+    width: var(--profile-pic-size);
+    height: var(--profile-pic-size);
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
-    border: 3px solid #ddd;
+    border: 3px solid var(--border-color);
     transition: transform 0.3s ease;
 }
-
 .profile-pic:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
-
 .edit-text {
     text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #218b3a;
+    margin-top: 15px;
+    font-size: var(--font-size-base);
+    color: var(--primary-green);
     cursor: pointer;
+    font-weight: 500;
 }
-
 .form-grid {
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
 }
-
 .form-box {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
 }
-
 .input-field, .dropdown {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    padding: var(--padding-base);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: var(--font-size-base);
+    height: var(--input-height);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
+.input-field:focus, .dropdown:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
 .description {
-    min-height: 220px;
+    min-height: 250px;
     border-radius: 10px;
-    background-color: #f9f9f9;
-    margin-bottom: 15px;
+    background-color: var(--bg-light);
+    margin-bottom: 20px;
+    width: 100%;
+    padding: var(--padding-base);
+    border: 2px solid #ccc;
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    box-sizing: border-box;
+    resize: vertical;
+    line-height: 1.6;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
+.description:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
 .CV-input {
     display: none;
 }
-
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    gap: 20px;
 }
-
 .save-button,
 .logout-button {
-    padding: 12px 20px;
-    background-color: #28a745;
+    padding: var(--padding-base) 30px;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    min-height: var(--button-height);
 }
-
 .save-button:hover,
 .logout-button:hover {
-    background-color: #218838;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
 }
-
 .nom {
     margin-bottom: 30px;
     border-radius: 10px;
-    width: 95%;
-    height: 30px;
-    padding-left: 20px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    margin-left: 70px;
-    margin-right: auto;
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 20px;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-light);
+    font-size: var(--font-size-lg);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
+.nom:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
 /* ===================== MODIFIER ANNONCES ===================== */
 textarea.description {
     width: 100%;
-    min-height: 120px;
+    min-height: 150px;
     resize: vertical;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: var(--padding-base);
+    border: 2px solid #ccc;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     font-family: inherit;
     box-sizing: border-box;
+    line-height: 1.6;
 }
-
-/* Responsive ajustement du champ description */
-@media (max-width: 768px) {
-    textarea.description {
-        min-height: 100px;
-        font-size: 0.95rem;
-    }
-}
-
 .annonce-edit-container {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
     gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto;
+    width: calc(100% - 40px);
+    margin: 20px;
     padding: 40px;
-    background-color: #f9f9f9;
+    background-color: var(--bg-light);
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 60px);
 }
-
 .annonce-image-container {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    max-width: 500px;
 }
-
 .annonce-image {
     width: 100%;
     max-width: 400px;
@@ -152,114 +213,300 @@ textarea.description {
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 form {
     flex: 2;
+    max-width: 700px;
 }
-
 .annonce-form-group {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
-
 .annuler-lien {
-    margin-left: 15px;
+    margin-left: 20px;
     color: #666;
     text-decoration: underline;
-    font-size: 16px;
+    font-size: var(--font-size-base);
+    transition: color 0.3s ease;
+}
+.annuler-lien:hover {
+    color: var(--primary-color);
 }
 
-/* ===================== RESPONSIVE : TABLETTE ===================== */
+/* ===================== RESPONSIVE : TABLETTE (768px - 1024px) ===================== */
+@media screen and (max-width: 1024px) {
+    :root {
+        --font-size-base: 18px;
+        --font-size-lg: 20px;
+        --input-height: 55px;
+        --button-height: 55px;
+        --profile-pic-size: 200px;
+        --padding-base: 18px;
+        --gap-base: 35px;
+    }
+
+    .profile-section {
+        margin: 15px;
+        padding: var(--gap-base);
+        width: calc(100% - 30px);
+        gap: var(--gap-base);
+    }
+    .form-grid {
+        gap: 25px;
+    }
+    .annonce-edit-container {
+        margin: 15px;
+        padding: 35px;
+        width: calc(100% - 30px);
+        gap: 35px;
+    }
+}
+
+/* ===================== RESPONSIVE : TABLETTE ET MOBILE ===================== */
 @media screen and (max-width: 992px) {
+    :root {
+        --font-size-base: 20px;
+        --font-size-lg: 22px;
+        --input-height: 60px;
+        --button-height: 60px;
+        --profile-pic-size: 180px;
+        --padding-base: 20px;
+        --gap-base: 30px;
+    }
+
     .profile-section {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        padding: 0 20px;
+        text-align: center;
+        padding: var(--gap-base) 20px;
+        gap: var(--gap-base);
+        margin: 10px;
+        width: calc(100% - 20px);
+        min-height: auto;
     }
-
+    .profile-container {
+        flex: none;
+        max-width: 100%;
+        text-align: center;
+    }
     .form-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .profile-container {
+        gap: 25px;
         width: 100%;
-        max-width: 300px;
     }
-
+    .nom {
+        width: 100%;
+        text-align: center;
+    }
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+    .save-button,
+    .logout-button {
+        width: 100%;
+        max-width: 400px;
+        padding: var(--padding-base);
+    }
     .annonce-edit-container {
         flex-direction: column;
-        padding: 30px 20px;
+        padding: var(--gap-base) 20px;
+        text-align: center;
+        margin: 10px;
+        width: calc(100% - 20px);
+        gap: var(--gap-base);
     }
-
+    .annonce-image-container {
+        max-width: 100%;
+    }
     .annonce-image {
         max-width: 100%;
     }
-
-    .nom {
-        margin-left: 0;
-        width: 100%;
-        padding-left: 15px;
+    .annuler-lien {
+        display: block;
+        text-align: center;
+        margin: 20px 0 0 0;
     }
-
-    .map-contact iframe {
-        height: 300px;
+    .description {
+        min-height: 200px;
+    }
+    textarea.description {
+        min-height: 140px;
     }
 }
 
-/* ===================== RESPONSIVE : MOBILE ===================== */
+/* ===================== RESPONSIVE : MOBILE STRICT ===================== */
 @media screen and (max-width: 480px) {
-    .profile-pic {
-        width: 120px;
-        height: 120px;
+    :root {
+        --font-size-base: 22px;
+        --font-size-lg: 24px;
+        --input-height: 70px;
+        --button-height: 70px;
+        --profile-pic-size: 160px;
+        --padding-base: 22px;
+        --gap-base: 25px;
     }
 
+    .profile-section {
+        padding: 20px 15px;
+        margin: 5px;
+        width: calc(100% - 10px);
+        gap: var(--gap-base);
+    }
+    .profile-pic:hover {
+        transform: scale(1.02);
+    }
     .edit-text {
-        font-size: 12px;
+        font-size: 18px;
+        margin-top: 20px;
     }
-
     .save-button,
     .logout-button {
-        font-size: 13px;
-        padding: 8px 14px;
+        font-size: var(--font-size-base);
+        padding: var(--padding-base) 25px;
+        min-height: var(--button-height);
+        max-width: 100%;
+    }
+    .input-field,
+    .dropdown {
+        margin-bottom: 20px;
+    }
+    .description {
+        min-height: 180px;
+    }
+    textarea.description {
+        min-height: 150px;
+    }
+    .annonce-edit-container {
+        padding: 20px 15px;
+        margin: 5px;
+        width: calc(100% - 10px);
+        gap: var(--gap-base);
+    }
+    .annuler-lien {
+        font-size: 18px;
+    }
+    .form-grid {
+        gap: 20px;
+    }
+}
+
+/* ===================== RESPONSIVE : TRÈS PETIT MOBILE ===================== */
+@media screen and (max-width: 360px) {
+    :root {
+        --font-size-base: 24px;
+        --font-size-lg: 26px;
+        --input-height: 75px;
+        --button-height: 75px;
+        --profile-pic-size: 140px;
+        --padding-base: 24px;
+        --gap-base: 20px;
     }
 
+    .profile-section {
+        padding: 15px 10px;
+        margin: 5px;
+        width: calc(100% - 10px);
+        gap: var(--gap-base);
+    }
+    .form-grid {
+        gap: 18px;
+    }
+    .input-field,
+    .dropdown {
+        margin-bottom: 18px;
+    }
+    .save-button,
+    .logout-button {
+        padding: var(--padding-base) 20px;
+    }
+    .annonce-edit-container {
+        padding: 15px 10px;
+        margin: 5px;
+        width: calc(100% - 10px);
+    }
+    .description {
+        min-height: 160px;
+    }
+    .edit-text {
+        font-size: 20px;
+    }
+}
+
+/* ===================== OPTIMISATIONS TACTILES ===================== */
+@media (hover: none) and (pointer: coarse) {
+    .profile-pic:hover {
+        transform: none;
+    }
+    
+    .save-button:hover,
+    .logout-button:hover {
+        transform: none;
+    }
+    
     .input-field,
     .dropdown,
+    .save-button,
+    .logout-button,
+    .nom,
     .description {
-        font-size: 13px;
+        min-height: var(--button-height);
     }
+}
 
-    .annuler-lien {
-        font-size: 13px;
-        display: block;
-        text-align: center;
-        margin-top: 10px;
+/* ===================== PRÉFÉRENCES UTILISATEUR ===================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
     }
-
-    .form-box {
-        gap: 8px;
+    
+    .profile-pic:hover,
+    .save-button:hover,
+    .logout-button:hover {
+        transform: none !important;
     }
+}
 
-    textarea.description {
-        font-size: 0.9rem;
-    }
-
-    .annonce-edit-container {
-        padding: 15px;
-    }
-
-    .profile-container {
-        max-width: 100%;
-        padding: 0 10px;
-    }
-
-    .form-grid {
-        padding: 0 10px;
-    }
-
+/* ===================== CONTRASTE ÉLEVÉ ===================== */
+@media (prefers-contrast: high) {
+    .input-field,
+    .dropdown,
+    .description,
     .nom {
-        font-size: 14px;
+        border-width: 3px;
+        border-color: #000;
+    }
+    
+    .save-button,
+    .logout-button {
+        border: 2px solid #000;
+    }
+}
+
+/* ===================== IMPRESSION ===================== */
+@media print {
+    .save-button,
+    .logout-button,
+    .edit-text {
+        display: none;
+    }
+    
+    .profile-section {
+        flex-direction: column;
+        border: 2px solid #000;
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .annonce-edit-container {
+        box-shadow: none;
+        background: white;
+        margin: 0;
+        width: 100%;
+        padding: 20px;
     }
 }

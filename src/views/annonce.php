@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,38 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
+        <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles-meryem.css">
         <link rel="stylesheet" href="/Start-Hut/public/assets/css/styles.css">
         <title>Annonce - Start-Hut</title>
         <?php include('../templates/head.php'); ?>
+       
     </head>
     <body>
-        <?php        
+        <?php
         // // Affichage des erreurs PHP
         // ini_set('display_errors', 1);
-        // error_reporting(E_ALL);       
-                                                                                   
-        include('../templates/header.php');                                                          // Inclusion du header contenant la navigation
+        // error_reporting(E_ALL);
+
+        include('../templates/header.php');
         require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
-        
-        $bdd = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);              // Création objet PDO pour connexion MySQL
-        
-        $id_annonce = isset($_GET['id']) ? (int)$_GET['id'] : 0;                                      // Récupère ID URL ou 0 si absent
-        
-        // Récupération des informations de l'annonce
-        $req = $bdd->prepare('SELECT p.*, u.nom, u.prenom, d.lien FROM Projets p 
-                     JOIN Utilisateurs u ON p.createur = u.id 
+
+        $bdd = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
+
+        $id_annonce = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+        $req = $bdd->prepare('SELECT p.*, u.nom, u.prenom, d.lien FROM Projets p
+                     JOIN Utilisateurs u ON p.createur = u.id
                      LEFT JOIN Documents d ON p.id = d.projet AND d.type = "image"
-                     WHERE p.id = ?');                                                                   // Préparation de la requête SQL avec jointure. Infos projet + lien de l'image depuis documeents
-        $req->execute([$id_annonce]);                                                                 // Exécute requête avec paramètre ID
-        $annonce = $req->fetch(PDO::FETCH_ASSOC);                                                    // Récupère résultat en tableau associatif
-        
-        if (!$annonce) {                                                                              // Si aucune annonce trouvée
-            echo "Annonce non trouvée";                                                              // Affiche message d'erreur
-            exit;                                                                                     // Arrête l'exécution du script
+                     WHERE p.id = ?');
+        $req->execute([$id_annonce]);
+        $annonce = $req->fetch(PDO::FETCH_ASSOC);
+
+        if (!$annonce) {
+            echo "Annonce non trouvée";
+            exit;
         }
-        ?>                                                                                      
-        
+        ?>
+
         <div class="content">
         <div class="containerAnnonceFlex">
     <!-- Colonne gauche -->
@@ -242,7 +241,6 @@ function dragElement(elmnt) {
             $user_type = $_SESSION['user_type'] ?? null;
             ?>
 
-
                 <?php if ($user_type === 'porteur'): ?>
                
                 <?php endif; ?>
@@ -301,24 +299,22 @@ function dragElement(elmnt) {
         
 
 
-                <!-- Boutons en bas -->
-             
-
-
+            <!-- Boutons en bas -->
 
         </div>
         <?php if (isset($_GET['msg']) && $_GET['msg'] === 'success'): ?>
             <p id="msg-envoye" style="color: green; font-weight: bold;">Votre candidature a bien été envoyée.</p>
         <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'already_postulated'): ?>
             <p id="msg-postule" style="color: orange; font-weight: bold;">Vous avez déjà postulé à ce projet.</p>
+        <?php elseif (isset($_GET['msg']) && $_GET['msg'] === 'message_sent'): ?>
+            <p id="msg-envoye" style="color: green; font-weight: bold;">Votre message a bien été envoyé.</p>
         <?php endif; ?>
- 
+
         <?php if (isset($_GET['msg']) && in_array($_GET['msg'], ['saved', 'already'])): ?>
             <p id="msg-sauvegarde" style="color: <?= $_GET['msg'] === 'saved' ? 'green' : 'orange' ?>; font-weight: bold;">
                 <?= $_GET['msg'] === 'saved' ? 'Annonce sauvegardée avec succès.' : 'Annonce déjà sauvegardée.' ?>
             </p>
         <?php endif; ?>
-
         <script>
         // Cible tous les messages affichés
         ['msg-envoye', 'msg-postule', 'msg-sauvegarde'].forEach(function(id) {
@@ -332,7 +328,7 @@ function dragElement(elmnt) {
             }
         });
         </script>
-        
+
         <script>
         // Sauvegarde la position de scroll avant de soumettre le formulaire
         const formsToTrack = [
@@ -359,12 +355,23 @@ function dragElement(elmnt) {
         });
         </script>
 
+        <script>
+            // Fonctions pour ouvrir et fermer le modal
+            function openModal() {
+                document.getElementById('contactModal').style.display = 'block';
+            }
+            function closeModal() {
+                document.getElementById('contactModal').style.display = 'none';
+            }
+            window.onclick = function(event) {
+                var modal = document.getElementById('contactModal');
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
 
+        <?php include('../templates/footer.php'); ?>
 
-
-
-        <?php include('../templates/footer.php'); ?> 
-
-  
     </body>
 </html>

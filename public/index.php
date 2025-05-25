@@ -108,7 +108,7 @@ ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
                     <?php foreach ($annonces_populaires as $annonce): ?>
                         <div class="project-card">
                             <div class="icon-container">
-                                <img src="<?= htmlspecialchars($annonce['lien'] ?: $image_defaut) ?>" alt="Icône projet" width="45" height="45">
+                                <img src="<?= htmlspecialchars($annonce['lien'] ?: $image_defaut) ?>" alt="Icône projet" class="icon-image">
                             </div>
                             <h3><?= htmlspecialchars($annonce['annonce_titre']) ?></h3>
                             <p><?= htmlspecialchars($annonce['annonce_description']) ?></p>
