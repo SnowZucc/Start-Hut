@@ -157,8 +157,6 @@ ini_set('display_errors', 0); // N'affiche pas les erreurs à l'écran
 
 </div>
 
-<?php include('../src/templates/messagerie.php'); ?>
-
 <?php include('../src/templates/footer.php'); ?>    
 </body>
 </html>

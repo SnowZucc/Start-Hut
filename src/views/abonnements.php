@@ -38,7 +38,7 @@
   
                 <p class=""></p>
                
-            </div>
+            </div> 
             <!-- Bloc représentant l'offre STANDARD -->
             <div class="plan standard">
                 <h2>STANDARD</h2>
