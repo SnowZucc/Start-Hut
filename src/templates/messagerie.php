@@ -73,7 +73,7 @@ if ($contact_id && !$mode_general) {
 $conn->close();
 ?>
 <!-- On lie la feuille de style CSS externe pour la messagerie -->
-<link rel="stylesheet" href="assets/css/styles-meryem.css">
+<link rel="stylesheet" href="../../../public/assets/css/styles-meryem.css">
 
 <!-- Librairie d'icônes (utilisée pour les bulles de messages) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
