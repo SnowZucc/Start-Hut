@@ -401,10 +401,6 @@ function dragElement(elmnt) {
 
         <?php include('../templates/footer.php'); ?>
 
-
-
-        <?php include('../templates/footer.php'); ?> 
-
         <script>
             const msgEnvoye = document.getElementById("msg-envoye") || document.getElementById("msg-postule");
             if (msgEnvoye) {
