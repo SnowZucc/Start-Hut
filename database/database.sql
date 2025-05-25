@@ -78,7 +78,7 @@ CREATE TABLE Documents (
     id INT PRIMARY KEY AUTO_INCREMENT,
     proprietaire INT ,
     projet INT ,
-    lien VARCHAR(255) NOT NULL UNIQUE,
+    lien VARCHAR(255) NOT NULL,
     type ENUM('texte', 'image', 'video', 'pdf') NOT NULL ,
 
     FOREIGN KEY (proprietaire) REFERENCES Utilisateurs(id),
@@ -174,6 +174,9 @@ VALUES ('Echtebez', 'Philippe', 'jean.dupont2@example.com', 'motdepassehash123',
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
 VALUES ('Alexandre', 'Louis', 'louis.alexandre@tutanota.com', 'louis.alexandre@tutanota.com', 'Je suis Louis, créateur de projets depuis 1999', 'Francais', 'admin');
 
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
+VALUES ('Martin', 'Sophie', 'sophie.martin@example.com', 'motdepassehash456', 'Passionnée d\'innovation et de startups', 'Francais', 'porteur');
+
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
 VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 1500, 'ouvert');
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
@@ -189,14 +192,20 @@ INSERT INTO Abonnements (type, prix, duree)
 VALUES (1, 19.99, 30);
 
 -- Images pour les utilisateurs
-
 INSERT INTO Documents (proprietaire, lien, type)
 VALUES (1, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+
+INSERT INTO Documents (proprietaire, lien, type)
 VALUES (2, 'https://i.etsystatic.com/10914225/r/il/219147/2049245914/il_1588xN.2049245914_60h3.jpg', 'image');
+
+INSERT INTO Documents (proprietaire, lien, type)
+VALUES (3, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400', 'image');
 
 -- Images pour les projets
 INSERT INTO Documents (projet, lien, type)
 VALUES (1, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+
+INSERT INTO Documents (projet, lien, type)
 VALUES (2, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
 
 INSERT INTO Competences (nom, domaine)
@@ -278,4 +287,21 @@ INSERT INTO Projets (
  'On a la vision tech, on veut booster la croissance ! Tu es partant ?',
  'marketing', 'education', 1, 0, 'ouvert');
 
- INSERT INTO documents (projet,lien,type) VALUES (18,"https://media.istockphoto.com/id/1408371424/fr/photo/application-mobile-pour-suivre-les-calories-consomm%C3%A9es.webp?s=2048x2048&w=is&k=20&c=aRVpR24AWbs5ucMu8LRLOMIUQZBMyzCB8_ZWOtxzE70=",'image'); 
+-- Images pour les nouveaux projets
+INSERT INTO Documents (projet, lien, type) 
+VALUES (3, "https://media.istockphoto.com/id/1408371424/fr/photo/application-mobile-pour-suivre-les-calories-consomm%C3%A9es.webp?s=2048x2048&w=is&k=20&c=aRVpR24AWbs5ucMu8LRLOMIUQZBMyzCB8_ZWOtxzE70=", 'image');
+
+INSERT INTO Documents (projet, lien, type) 
+VALUES (4, "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400", 'image');
+
+INSERT INTO Documents (projet, lien, type) 
+VALUES (5, "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400", 'image');
+
+INSERT INTO Documents (projet, lien, type) 
+VALUES (6, "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400", 'image');
+
+INSERT INTO Documents (projet, lien, type) 
+VALUES (7, "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", 'image');
+
+INSERT INTO Documents (projet, lien, type) 
+VALUES (8, "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400", 'image'); 
