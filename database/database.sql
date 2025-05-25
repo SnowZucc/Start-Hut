@@ -193,7 +193,7 @@ VALUES (1, 19.99, 30);
 
 -- Images pour les utilisateurs
 INSERT INTO Documents (proprietaire, lien, type)
-VALUES (1, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+VALUES (1, 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face', 'image');
 
 INSERT INTO Documents (proprietaire, lien, type)
 VALUES (2, 'https://i.etsystatic.com/10914225/r/il/219147/2049245914/il_1588xN.2049245914_60h3.jpg', 'image');
@@ -203,10 +203,10 @@ VALUES (3, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
 
 -- Images pour les projets
 INSERT INTO Documents (projet, lien, type)
-VALUES (1, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+VALUES (1, 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop', 'image');
 
 INSERT INTO Documents (projet, lien, type)
-VALUES (2, 'https://www.planetegrandesecoles.com/wp-content/uploads/2023/02/cnje.jpeg', 'image');
+VALUES (2, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop', 'image');
 
 INSERT INTO Competences (nom, domaine)
 VALUES ('Programmation', 'Informatique');
