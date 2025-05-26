@@ -295,7 +295,7 @@ INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, defin
 VALUES (5, 'HopOn', 0, 'Moins de voitures, plus de rencontres.',
  NULL, NULL, NULL,
  '2025-05-26 11:39:55', 'HopOn',
- 'Moins de voitures, plus de rencontres.',
+ 'Moins de voitures, plus de rencontres. https://demojadelchammas.amicalelfk.fr/',
  'developpeur', 'business', 2, 1000, 'ouvert');
 
 -- Images pour les nouveaux projets
