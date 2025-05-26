@@ -13,8 +13,14 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_type']) || $_SESSION[
 
 // Connexion à la base de données
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$connection_error = null;
 if ($conn->connect_error) {
-    die("Connexion échouée : " . $conn->connect_error);
+    $connection_error = "Connexion à la base de données échouée : " . $conn->connect_error;
+    // Afficher l'erreur de manière proéminente si la connexion échoue tôt
+    // Cela pourrait empêcher le reste de la page de se charger, donc nous la plaçons ici.
+    // Si vous voyez un écran blanc, vérifiez les logs PHP pour cette erreur.
+    error_log($connection_error); // Loggue l'erreur pour le serveur
+    // Ne pas utiliser die() ici pour permettre l'affichage potentiel d'erreurs dans le HTML
 }
 
 // Traitement des modifications d'utilisateur
@@ -56,6 +62,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 // Récupération des utilisateurs
 $sql = "SELECT id, nom, prenom, email, type FROM Utilisateurs ORDER BY id DESC";
 $result = $conn->query($sql);
+$query_error = null; 
+$all_users = []; // Pour stocker les utilisateurs si fetch_all fonctionne
+
+if (!$connection_error && $result === false) { 
+    $query_error = "Erreur lors de la récupération des utilisateurs : " . $conn->error;
+    error_log($query_error); 
+} elseif (!$connection_error && $result) {
+    // Tentative avec fetch_all
+    // echo "<div style='background-color: mediumpurple; color: white; padding: 10px; border: 1px solid purple;'>DEBUG: Tentative avec fetch_all(MYSQLI_ASSOC). Nombre de lignes attendues: {$result->num_rows}<pre>";
+    $all_users = $result->fetch_all(MYSQLI_ASSOC);
+    // var_dump($all_users);
+    // echo "</pre>Erreur MySQLi après fetch_all: " . mysqli_error($conn) . "</div>";
+    
+    if (empty($all_users) && $result->num_rows > 0) {
+        // Si fetch_all ne retourne rien mais num_rows > 0, c'est toujours très étrange
+        $query_error = "fetch_all n'a retourné aucun utilisateur bien que num_rows soit > 0.";
+         error_log($query_error);
+    }
+    $result->close(); // Fermer le résultat ici car nous avons (ou pas) toutes les données
+}
 
 ?>
 <!DOCTYPE html>
@@ -174,6 +200,18 @@ $result = $conn->query($sql);
     <div class="admin-container">
         <h1 class="admin-title">Gestion des Utilisateurs</h1>
         
+        <?php if (isset($connection_error)): ?>
+            <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; margin-bottom: 20px;">
+                <strong>Erreur Critique:</strong> <?php echo htmlspecialchars($connection_error); ?>
+            </div>
+        <?php endif; ?>
+        
+        <?php if (isset($query_error)): ?>
+            <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; margin-bottom: 20px;">
+                <?php echo htmlspecialchars($query_error); ?>
+            </div>
+        <?php endif; ?>
+        
         <?php if (isset($success_message)): ?>
             <div class="alert alert-success" style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 4px; margin-bottom: 20px;">
                 <?php echo htmlspecialchars($success_message); ?>
@@ -198,8 +236,11 @@ $result = $conn->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php if ($result && $result->num_rows > 0): ?>
-                    <?php while($row = $result->fetch_assoc()): ?>
+                <?php 
+                // Nettoyage des anciens messages de débogage
+                ?>
+                <?php if (!$connection_error && !empty($all_users)): ?>
+                    <?php foreach($all_users as $row): ?>
                         <tr id="user-row-<?php echo $row['id']; ?>">
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo htmlspecialchars($row['nom']); ?></td>
@@ -252,10 +293,20 @@ $result = $conn->query($sql);
                                 </form>
                             </td>
                         </tr>
-                    <?php endwhile; ?>
-                <?php else: ?>
+                    <?php endforeach; ?>
+                <?php elseif (isset($query_error)):
+                     // S'assurer d'afficher query_error s'il a été défini plus haut
+                ?>
                     <tr>
-                        <td colspan="6" style="text-align: center;">Aucun utilisateur trouvé. <?php echo isset($conn->error) && $conn->error ? "Erreur DB: " . htmlspecialchars($conn->error) : ""; ?></td>
+                        <td colspan="6" style="text-align: center;">Impossible de charger les utilisateurs : <?php echo htmlspecialchars($query_error); ?></td>
+                    </tr>
+                <?php elseif ($connection_error): ?>
+                     <tr>
+                        <td colspan="6" style="text-align: center;">Impossible de se connecter à la base de données. Vérifiez le message d'erreur ci-dessus.</td>
+                    </tr>
+                <?php else: // Cas où $all_users est vide et pas d'autre erreur spécifique ?>
+                    <tr>
+                        <td colspan="6" style="text-align: center;">Aucun utilisateur trouvé dans la base de données.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

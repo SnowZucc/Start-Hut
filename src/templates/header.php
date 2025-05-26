@@ -49,10 +49,13 @@ $user_type = $_SESSION['user_type'] ?? null;
       <a href="/Start-Hut/src/views/projet/espace-projet.php" class="signup">Espace projet</a>
     <?php elseif ($user_type === 'collaborateur'): ?>
       <a href="/Start-Hut/src/views/projet/espace-collaborateur.php" class="signup">Espace collaborateur</a>
+    <?php elseif ($user_type === 'admin'): ?>
+      <a href="/Start-Hut/src/views/admin.php" class="signup">Panel Admin</a>
     <?php endif; ?>
     <a href="/Start-Hut/src/views/user/profil.php" class="signup">Mon profil</a>
 
     <?php
+    /* Commentaire de bloc pour le débogage
     require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     if ($conn->connect_error) {
@@ -66,6 +69,8 @@ $user_type = $_SESSION['user_type'] ?? null;
     $result = $stmt->get_result();
     $user_image = $result->fetch_assoc();
     $conn->close();
+    */
+    $user_image = []; // Valeur par défaut pour éviter les erreurs sur la ligne suivante si le bloc est commenté
     ?>
 
     <a href="/Start-Hut/src/views/user/profil.php" class="profile-image-link">
