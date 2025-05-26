@@ -8,32 +8,7 @@ if(!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Suppression d'une annonce
-if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/Start-Hut/config/config.php');
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    
-    if ($conn->connect_error) {
-        die("Connexion échouée: " . $conn->connect_error);
-    }
-    
-    // Vérifier que l'annonce appartient bien à l'utilisateur
-    $stmt = $conn->prepare("SELECT id FROM Projets WHERE id = ? AND createur = ?");
-    $stmt->bind_param("ii", $_GET['delete'], $_SESSION['user_id']);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if($result->num_rows > 0) {
-        // Supprimer l'annonce
-        $stmt = $conn->prepare("DELETE FROM Projets WHERE id = ?");
-        $stmt->bind_param("i", $_GET['delete']);
-        $stmt->execute();
-        
-        $success_message = "L'annonce a été supprimée avec succès.";
-    }
-    
-    $conn->close();
-}
+// La logique de suppression a été déplacée vers espace-projet.php
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +25,7 @@ if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
       // Script pour la confirmation de suppression
       function confirmDelete(id) {
           if(confirm('Êtes-vous sûr de vouloir supprimer cette annonce ?')) {
-              window.location.href = 'monannonce.php?delete=' + id;
+              window.location.href = '/Start-Hut/src/views/projet/espace-projet.php?delete=' + id;
           }
       }
       </script>
@@ -60,12 +35,21 @@ if(isset($_GET['delete']) && is_numeric($_GET['delete'])) {
 
     <div class="content">
         <h2 class="page-title">Mes annonces</h2>
-        
-        <?php if(isset($success_message)): ?>
-            <div class="success-message"><?php echo $success_message; ?></div>
+
+        <?php 
+        // Affichage des messages de l'espace projet (succès/erreur de suppression)
+        if(isset($_SESSION['message_espace_projet'])):
+        ?>
+            <div class="<?= $_SESSION['message_espace_projet_type'] == 'success' ? 'success-message' : 'error-message' ?>">
+                <?php 
+                echo $_SESSION['message_espace_projet']; 
+                unset($_SESSION['message_espace_projet']); // Supprimer le message après l'affichage
+                unset($_SESSION['message_espace_projet_type']);
+                ?>
+            </div>
         <?php endif; ?>
         
-        <?php if(isset($_GET['success'])): ?>
+        <?php if(isset($_GET['success'])): // Conserver pour la confirmation de publication d'annonce ?>
             <div class="success-message">Votre annonce a été publiée avec succès !</div>
         <?php endif; ?>
 
