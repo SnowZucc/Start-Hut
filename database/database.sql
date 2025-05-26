@@ -170,14 +170,16 @@ CREATE TABLE Annonces_Sauvegardees (
 -- Utilisateurs mdp : motdepassehash123
 
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
-VALUES ('Scénat', 'Jean', 'jean.dupont@example.com', '$2y$10$8cFccmfc6dbRvqwgLvY72OMvXu42pzDmTtT2s68SFhgu3X9Xxn5Dq', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'collaborateur');
+VALUES ('Bonbeurre', 'Jean', 'jean.bonbeurre@start-hut.com', '$2y$10$8cFccmfc6dbRvqwgLvY72OMvXu42pzDmTtT2s68SFhgu3X9Xxn5Dq', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'collaborateur');
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
-VALUES ('Echtebez', 'Philippe', 'jean.dupont2@example.com', '$2y$10$8cFccmfc6dbRvqwgLvY72OMvXu42pzDmTtT2s68SFhgu3X9Xxn5Dq', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'porteur');
+VALUES ('Echtebez', 'Philippe', 'philippe.echtebez@start-hut.com', '$2y$10$8cFccmfc6dbRvqwgLvY72OMvXu42pzDmTtT2s68SFhgu3X9Xxn5Dq', 'Je suis Jean, créateur de projets depuis 1999', 'Francais', 'porteur');
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
 VALUES ('Alexandre', 'Louis', 'louis.alexandre@tutanota.com', '$2y$10$fcMAF5eBfJ5ipRcwafCRAepegQ2Lz0RlaHK4nDaMJmNTC36DPb.6G', 'Je suis Louis, créateur de projets depuis 1999', 'Francais', 'admin');
-
 INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, description_profil, langues_parlees, type)
-VALUES ('Martin', 'Sophie', 'sophie.martin@example.com', '$2y$10$8cFccmfc6dbRvqwgLvY72OMvXu42pzDmTtT2s68SFhgu3X9Xxn5Dq', 'Passionnée d\'innovation et de startups', 'Francais', 'porteur');
+VALUES ('LePain', 'Marine', 'marine.lepain@start-hut.com', '$2y$10$8cFccmfc6dbRvqwgLvY72OMvXu42pzDmTtT2s68SFhgu3X9Xxn5Dq', 'Passionnée d innovation et de startups', 'Francais', 'porteur');
+INSERT INTO Utilisateurs (nom, prenom, email, mot_de_passe, langues_parlees, type)
+VALUES ('El Chammas', 'Jad', 'jelchammas04@gmail.com', '$2y$10$4xqigkODppz.fk8KZAJwOONNG5RoEkXPx4QVVJ0dv/0vrAiL15mh6', 'Francais', 'porteur');
+
 
 INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
 VALUES (1, 'Rarissimo', 0, 'Site web de vente objets rares', 'Définition du marché Alpha', 'Analyse de la demande Alpha', 'Analyse de la concurrence Alpha', '2023-10-01 10:00:00', 'Rarissimo', 'Site web de vente objets rares', 'developpeur', 'technologies', 3, 1500, 'ouvert');
@@ -289,6 +291,13 @@ INSERT INTO Projets (
  'On a la vision tech, on veut booster la croissance ! Tu es partant ?',
  'marketing', 'education', 1, 0, 'ouvert');
 
+INSERT INTO Projets (createur, nom, taches_effectuees, principe_du_projet, definition_du_marche, analyse_de_la_demande, analyse_de_la_concurrence, annonce_date_creation, annonce_titre, annonce_description, annonce_competences_recherchees, annonce_categorie, annonce_collaborateurs_souhaites, annonce_remuneration, annonce_etat)
+VALUES (5, 'HopOn', 0, 'Moins de voitures, plus de rencontres.',
+ NULL, NULL, NULL,
+ '2025-05-26 11:39:55', 'HopOn',
+ 'Moins de voitures, plus de rencontres.',
+ 'developpeur', 'business', 2, 1000, 'ouvert');
+
 -- Images pour les nouveaux projets
 INSERT INTO Documents (projet, lien, type) 
 VALUES (3, "https://media.istockphoto.com/id/1408371424/fr/photo/application-mobile-pour-suivre-les-calories-consomm%C3%A9es.webp?s=2048x2048&w=is&k=20&c=aRVpR24AWbs5ucMu8LRLOMIUQZBMyzCB8_ZWOtxzE70=", 'image');
@@ -306,4 +315,7 @@ INSERT INTO Documents (projet, lien, type)
 VALUES (7, "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", 'image');
 
 INSERT INTO Documents (projet, lien, type) 
-VALUES (8, "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400", 'image'); 
+VALUES (8, "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400", 'image');
+
+INSERT INTO Documents (projet, lien, type) 
+VALUES (9, "https://media.discordapp.net/attachments/1328647521672630273/1376525528886149170/Logo_HopOn.jpg?ex=6835a4cc&is=6834534c&hm=d0e5a9d4b614bfedc2e5c77e4b885a0a823077c155def09c81bb42cb05ed0a5d&=&format=webp&width=648&height=648", 'image');
