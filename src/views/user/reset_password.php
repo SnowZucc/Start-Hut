@@ -39,11 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows === 1) {
         // Générer un mot de passe temporaire
         $temp_password = generateTemporaryPassword();
+        $hashed_temp_password = password_hash($temp_password, PASSWORD_BCRYPT); // Hasher le mot de passe temporaire
         
         // Mettre à jour le mot de passe dans la base de données
         $update_sql = "UPDATE Utilisateurs SET mot_de_passe = ? WHERE email = ?";
         $update_stmt = $conn->prepare($update_sql);
-        $update_stmt->bind_param("ss", $temp_password, $email);
+        $update_stmt->bind_param("ss", $hashed_temp_password, $email); // Utiliser le mot de passe hashé
         $update_result = $update_stmt->execute();
         
         if ($update_result) {
